@@ -13,14 +13,14 @@ module.exports = function(grunt) {
                 files: [
                     {
                         src: ['skin/frontend/default/blank/css/styles.css'],
-                        dest: 'styleguide/assets/css/',
+                        dest: 'assets/css/',
                         filter: 'isFile',
                         expand: true,
                         flatten: true
                     },
                     {
                         src: ['skin/frontend/default/blank/images/**/*'],
-                        dest: 'styleguide/assets/images/',
+                        dest: 'assets/images/',
                         filter: 'isFile',
                         expand: true,
                         flatten: true
@@ -32,13 +32,13 @@ module.exports = function(grunt) {
             styleguide: {
                 options: {
                     assets: 'styleguide/assets/css/styles.css',
-                    baseUrl: '/styleguide/'
+                    baseUrl: '/'
                 },
                 files: [{
                     expand: true,
                     cwd: 'skin/frontend/default/blank/scss/magento',
                     src: ['**/*.scss'],
-                    dest: 'styleguide/'
+                    dest: '.'
                 }]
             }
         }

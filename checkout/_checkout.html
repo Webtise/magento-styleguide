@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>One Page Checkout &middot; Styleguide</title>
+    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
+    <script>/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
+ */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
+Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
+;
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
+;
+Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
+;
+</script>
+</head>
+<body>
+
+    <div class="navigation">
+        <div class="gutter">
+            <div class="group ">
+                <a href="/">Home</a>
+            </div>
+            
+            <div class="group ">
+                <span>.</span>
+                <ul>
+                    
+                    <li><a class="" href="_inbox/html">_inbox</a></li>
+                    
+                    <li><a class="" href="_mixins/html">_mixins</a></li>
+                    
+                    <li><a class="" href="_variables/html">_variables</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>catalog</span>
+                <ul>
+                    
+                    <li><a class="" href="catalog/_category/html">Category Page</a></li>
+                    
+                    <li><a class="" href="catalog/_product/html">Product View</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>checkout</span>
+                <ul>
+                    
+                    <li><a class="" href="checkout/_cart/html">Shopping Cart</a></li>
+                    
+                    <li><a class="" href="checkout/_checkout/html">One Page Checkout</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>cms</span>
+                <ul>
+                    
+                    <li><a class="" href="cms/_homepage/html">Homepage</a></li>
+                    
+                    <li><a class="" href="cms/_sitemap/html">Sitemap</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>common</span>
+                <ul>
+                    
+                    <li><a class="" href="common/_buttons/html">Button</a></li>
+                    
+                    <li><a class="" href="common/_forms/html">Form Elements</a></li>
+                    
+                    <li><a class="" href="common/_headings/html">Page Heading</a></li>
+                    
+                    <li><a class="" href="common/_messages/html">Messages</a></li>
+                    
+                    <li><a class="" href="common/_misc/html">Misc</a></li>
+                    
+                    <li><a class="" href="common/_tables/html">Data Table</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>customer</span>
+                <ul>
+                    
+                    <li><a class="" href="customer/_dashboard/html">Dashboard</a></li>
+                    
+                    <li><a class="" href="customer/_login/html">Login/Create Account</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>layout</span>
+                <ul>
+                    
+                    <li><a class="" href="layout/_content/html">Content</a></li>
+                    
+                    <li><a class="" href="layout/_footer/html">Footer</a></li>
+                    
+                    <li><a class="" href="layout/_header/html">Header</a></li>
+                    
+                    <li><a class="" href="layout/_page/html">Pages</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>navigation</span>
+                <ul>
+                    
+                    <li><a class="" href="navigation/_breadcrumbs/html">Breadcrumbs</a></li>
+                    
+                    <li><a class="" href="navigation/_navbar/html">Nav Bar</a></li>
+                    
+                    <li><a class="" href="navigation/_toolbar/html">Toolbar</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>normalize</span>
+                <ul>
+                    
+                    <li><a class="" href="normalize/_base/html">Admin controlled content</a></li>
+                    
+                    <li><a class="" href="normalize/_reset/html">Reset</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>sidebar</span>
+                <ul>
+                    
+                    <li><a class="" href="sidebar/_blocks/html">Sidebar Blocks</a></li>
+                    
+                    <li><a class="" href="sidebar/_miniproductlist/html">Mini Products List</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="gutter">
+        
+            <div class="section">
+                
+                    <div class="comment"><h1 id="one-page-checkout">One Page Checkout</h1>
+<h2 id="checkout-steps">Checkout Steps</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_93cwz" height="0" src="about:blank"></iframe>
+                        <script id="script_93cwz">
+                            var iframe  = document.getElementById('iframe_93cwz');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_93cwz');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<ol id="checkoutSteps" class="opc">	<li class="section allow" id="opc-login">	   <div class="step-title">	  <span class="number">1</span>	  <h2>Checkout Method</h2>	  <a href="#">Edit</a>	   </div>	   <div style="display: none;" class="step a-item" id="checkout-step-login"></div>	</li>	<li class="section allow active" id="opc-billing">	   <div class="step-title">	  <span class="number">2</span>	  <h2>Billing Information</h2>	  <a href="#">Edit</a>	   </div>	   <div style="" class="step a-item" id="checkout-step-billing">	  [Current Step Content]				<div class="buttons-set">			   <p class="required">* Required Fields</p>			   <button class="button" title="Continue" type="button"><span><span>Continue</span></span></button>			   <span class="please-wait">			  <img class="v-middle" title="Loading next step..." alt="Loading next step..." src="/styleguide/assets/images/opc-ajax-loader.gif">Loading next step...			   </span>			</div>	   </div>	</li>	<li class="section" id="opc-shipping">	   <div class="step-title">	  <span class="number">3</span>	  <h2>Shipping Information</h2>	  <a href="#">Edit</a>	   </div>	   <div style="display:none;" class="step a-item" id="checkout-step-shipping">	</div>	</li>	<li class="section" id="opc-shipping_method">	   <div class="step-title">	  <span class="number">4</span>	  <h2>Shipping Method</h2>	  <a href="#">Edit</a>	   </div>	   <div style="display:none;" class="step a-item" id="checkout-step-shipping_method"></div>	</li>	<li class="section" id="opc-payment">	   <div class="step-title">	  <span class="number">5</span>	  <h2>Payment Information</h2>	  <a href="#">Edit</a>	   </div>	   <div style="display:none;" class="step a-item" id="checkout-step-payment"></div>	</li>	<li class="section" id="opc-review">	   <div class="step-title">	  <span class="number">6</span>	  <h2>Order Review</h2>	  <a href="#">Edit</a>	   </div>	   <div style="display:none;" class="step a-item" id="checkout-step-review"></div>	</li>	</ol>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ol id=&quot;checkoutSteps&quot; class=&quot;opc&quot;&gt;
+        &lt;li class=&quot;section allow&quot; id=&quot;opc-login&quot;&gt;
+            &lt;div class=&quot;step-title&quot;&gt;
+                &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
+                &lt;h2&gt;Checkout Method&lt;/h2&gt;
+                &lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;display: none;&quot; class=&quot;step a-item&quot; id=&quot;checkout-step-login&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;section allow active&quot; id=&quot;opc-billing&quot;&gt;
+            &lt;div class=&quot;step-title&quot;&gt;
+                &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;
+                &lt;h2&gt;Billing Information&lt;/h2&gt;
+                &lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;&quot; class=&quot;step a-item&quot; id=&quot;checkout-step-billing&quot;&gt;
+                [Current Step Content]
+                &lt;div class=&quot;buttons-set&quot;&gt;
+                    &lt;p class=&quot;required&quot;&gt;* Required Fields&lt;/p&gt;
+                    &lt;button class=&quot;button&quot; title=&quot;Continue&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Continue&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+                    &lt;span class=&quot;please-wait&quot;&gt;
+                        &lt;img class=&quot;v-middle&quot; title=&quot;Loading next step...&quot; alt=&quot;Loading next step...&quot; src=&quot;/styleguide/assets/images/opc-ajax-loader.gif&quot;&gt;Loading next step...
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;section&quot; id=&quot;opc-shipping&quot;&gt;
+            &lt;div class=&quot;step-title&quot;&gt;
+                &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;
+                &lt;h2&gt;Shipping Information&lt;/h2&gt;
+                &lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;display:none;&quot; class=&quot;step a-item&quot; id=&quot;checkout-step-shipping&quot;&gt;
+    &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;section&quot; id=&quot;opc-shipping_method&quot;&gt;
+            &lt;div class=&quot;step-title&quot;&gt;
+                &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;
+                &lt;h2&gt;Shipping Method&lt;/h2&gt;
+                &lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;display:none;&quot; class=&quot;step a-item&quot; id=&quot;checkout-step-shipping_method&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;section&quot; id=&quot;opc-payment&quot;&gt;
+            &lt;div class=&quot;step-title&quot;&gt;
+                &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;
+                &lt;h2&gt;Payment Information&lt;/h2&gt;
+                &lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;display:none;&quot; class=&quot;step a-item&quot; id=&quot;checkout-step-payment&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;section&quot; id=&quot;opc-review&quot;&gt;
+            &lt;div class=&quot;step-title&quot;&gt;
+                &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;
+                &lt;h2&gt;Order Review&lt;/h2&gt;
+                &lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;display:none;&quot; class=&quot;step a-item&quot; id=&quot;checkout-step-review&quot;&gt;&lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.opc { 
+	border-bottom:1px solid #ddd; 
+	position:relative;
+	li {
+		&.section { 
+			border:1px solid #ddd; 
+			border-bottom:0;
+		}
+	}
+	.buttons-set {
+		&.disabled {
+			button.button { display:none; }
+		}
+		.please-wait { 
+			height:21px; 
+			line-height:21px; 
+		}
+	}
+	.step-title { 
+		background-color:#f6f6f6; 
+		padding:0 5px; 
+		text-align:right;
+		.number { 
+			float:left; 
+			line-height:22px; 
+			margin-right:5px;
+		}
+		h2 { float:left; }
+		a { 
+			display:none; 
+			float:right;
+		}
+	}
+	
+	.allow {
+		.step-title { cursor: pointer; }
+	}
+	.active {
+		.step-title { background-color:#ccc; cursor:default; }
+	}
+	.step {
+		border-top:1px solid #ddd; 
+		padding:10px; 
+		position:relative;
+		.tool-tip { 
+			right:10px;
+		}
+	}
+	.order-review {
+		.authentication {}
+		.warning-message {}
+	}
+
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="progress-block">Progress Block</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_2tzll" height="0" src="about:blank"></iframe>
+                        <script id="script_2tzll">
+                            var iframe  = document.getElementById('iframe_2tzll');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_2tzll');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="block block-progress opc-block-progress">	<div class="block-title">	   <strong><span>Your Checkout Progress</span></strong>	</div>	<div class="block-content">	   <dl>	  <div id="billing-progress-opcheckout">	 <dt class="complete">	Billing Address 	<span class="changelink"> 	<span class="separator">|</span> 	<a href="#billing">Change</a>	</span>	 </dt>	 <dd class="complete">	<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>	 </dd>	  </div>	  <div id="shipping-progress-opcheckout">	 <dt class="complete">	Shipping Address 	<span class="changelink">	<span class="separator">|</span> 	<a href="#payment">Change</a>	</span>	 </dt>	 <dd class="complete">	<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>	 </dd>	  </div>	  <div id="shipping_method-progress-opcheckout">	 <dt class="complete">	Shipping Method	<span class="changelink">	<span class="separator">|</span>	<a href="#shipping_method">Change</a>	</span>	 </dt>	 <dd class="complete">	Flat Rate - Fixed	<span class="price">£10.00</span>  	 </dd>	  </div>	  <div id="payment-progress-opcheckout">	 <dt class="complete">	Payment Method	<span class="changelink">	<span class="separator">|</span>	<a href="#payment">Change</a>	</span>	 </dt>	 <dd class="complete">	<p>Check / Money order</p>	 </dd>	  </div>	   </dl>	</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;block block-progress opc-block-progress&quot;&gt;
+        &lt;div class=&quot;block-title&quot;&gt;
+            &lt;strong&gt;&lt;span&gt;Your Checkout Progress&lt;/span&gt;&lt;/strong&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;block-content&quot;&gt;
+            &lt;dl&gt;
+                &lt;div id=&quot;billing-progress-opcheckout&quot;&gt;
+                    &lt;dt class=&quot;complete&quot;&gt;
+                        Billing Address 
+                        &lt;span class=&quot;changelink&quot;&gt; 
+                            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; 
+                            &lt;a href=&quot;#billing&quot;&gt;Change&lt;/a&gt;
+                        &lt;/span&gt;
+                    &lt;/dt&gt;
+                    &lt;dd class=&quot;complete&quot;&gt;
+                        &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;/address&gt;
+                    &lt;/dd&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;shipping-progress-opcheckout&quot;&gt;
+                    &lt;dt class=&quot;complete&quot;&gt;
+                        Shipping Address 
+                        &lt;span class=&quot;changelink&quot;&gt;
+                            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; 
+                            &lt;a href=&quot;#payment&quot;&gt;Change&lt;/a&gt;
+                        &lt;/span&gt;
+                    &lt;/dt&gt;
+                    &lt;dd class=&quot;complete&quot;&gt;
+                        &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;/address&gt;
+                    &lt;/dd&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;shipping_method-progress-opcheckout&quot;&gt;
+                    &lt;dt class=&quot;complete&quot;&gt;
+                        Shipping Method
+                        &lt;span class=&quot;changelink&quot;&gt;
+                            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
+                            &lt;a href=&quot;#shipping_method&quot;&gt;Change&lt;/a&gt;
+                        &lt;/span&gt;
+                    &lt;/dt&gt;
+                    &lt;dd class=&quot;complete&quot;&gt;
+                        Flat Rate - Fixed
+                        &lt;span class=&quot;price&quot;&gt;£10.00&lt;/span&gt;            
+                    &lt;/dd&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;payment-progress-opcheckout&quot;&gt;
+                    &lt;dt class=&quot;complete&quot;&gt;
+                        Payment Method
+                        &lt;span class=&quot;changelink&quot;&gt;
+                            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
+                            &lt;a href=&quot;#payment&quot;&gt;Change&lt;/a&gt;
+                        &lt;/span&gt;
+                    &lt;/dt&gt;
+                    &lt;dd class=&quot;complete&quot;&gt;
+                        &lt;p&gt;Check / Money order&lt;/p&gt;
+                    &lt;/dd&gt;
+                &lt;/div&gt;
+            &lt;/dl&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.block-progress {
+	dt { font-weight:bold; }
+	dt, dd {
+		.complete { background-color:#f6f6f6; }
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="multiple-addresses-checkout">Multiple Addresses Checkout</h2>
+</div>
+                
+                
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.multiple-checkout { 
+	position:relative; 
+	.tool-tip { 
+		top:50%; 
+		margin-top:-120px; 
+		right:10px;
+	}
+	.grand-total { 
+		font-size:1.5em; 
+		text-align:right;
+		big {}
+		.price {}
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="progress">Progress</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_w8ciq" height="0" src="about:blank"></iframe>
+                        <script id="script_w8ciq">
+                            var iframe  = document.getElementById('iframe_w8ciq');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_w8ciq');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<ul class="checkout-progress">	<li title="Select Addresses" class="first"><span>Select Addresses</span></li>	<li title="Shipping Information"><span>Shipping Information</span></li>	<li class="active" title="Billing Information"><span>Billing Information</span></li>	<li title="Place Order"><span>Place Order</span></li>	<li title="Order Success" class="last"><span>Order Success</span></li>	</ul>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;checkout-progress&quot;&gt;
+        &lt;li title=&quot;Select Addresses&quot; class=&quot;first&quot;&gt;&lt;span&gt;Select Addresses&lt;/span&gt;&lt;/li&gt;
+        &lt;li title=&quot;Shipping Information&quot;&gt;&lt;span&gt;Shipping Information&lt;/span&gt;&lt;/li&gt;
+        &lt;li class=&quot;active&quot; title=&quot;Billing Information&quot;&gt;&lt;span&gt;Billing Information&lt;/span&gt;&lt;/li&gt;
+        &lt;li title=&quot;Place Order&quot;&gt;&lt;span&gt;Place Order&lt;/span&gt;&lt;/li&gt;
+        &lt;li title=&quot;Order Success&quot; class=&quot;last&quot;&gt;&lt;span&gt;Order Success&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.checkout-progress { 
+	padding:0 50px; 
+	margin:10px 0; 
+	li { 
+		float:left; 
+		width:20%; 
+		border-top:5px solid #ccc; 
+		text-align:center; 
+		color:#ccc; 
+		&.active { 
+			border-top-color:#000; 
+			color:#000;
+		}
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="common-checkout-styles">Common Checkout Styles</h2>
+<h3 id="shipping-and-payment-methods">Shipping and Payment methods</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_jgb3o" height="0" src="about:blank"></iframe>
+                        <script id="script_jgb3o">
+                            var iframe  = document.getElementById('iframe_jgb3o');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_jgb3o');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<!-- Shipping Methods -->	<dl class="sp-methods">		<dt>Free Shipping</dt>		<dd>			<ul>				<li>					<input type="radio" class="radio" id="s_method_freeshipping_freeshipping" value="freeshipping_freeshipping" name="shipping_method">					<label for="s_method_freeshipping_freeshipping">Free<span class="price">£0.00</span></label>				</li>			</ul>		</dd>		<dt>Flat Rate</dt>		<dd>			<ul>				<li>					<input type="radio" class="radio" checked="checked" id="s_method_flatrate_flatrate" value="flatrate_flatrate" name="shipping_method">					<label for="s_method_flatrate_flatrate">Fixed <span class="price">£10.00</span></label>				</li>			</ul>		</dd>	</dl>	<!-- Payment Methods -->	<dl class="sp-methods">	<dt>	   <input type="radio" class="radio" title="PayPal Express Checkout" name="payment[method]" value="paypal_express" id="p_method_paypal_express" autocomplete="off">	   <label for="p_method_paypal_express">	  <img class="v-middle" alt="Acceptance Mark" src="https://fpdbs.paypal.com/dynamicimageweb?cmd=_dynamic-image&amp;buttontype=ecmark&amp;locale=en_GB">&nbsp;	  <a href="">What is PayPal?</a>	   </label>	</dt>	<dd>	   <ul id="payment_form_paypal_express" class="form-list">	  <li class="form-alt">You will be redirected to the PayPal website.</li>	   </ul>	</dd>	<dt>	   <input type="radio" class="radio" checked="checked" title="Check / Money order" name="payment[method]" value="checkmo" id="p_method_checkmo" autocomplete="off">	   <label for="p_method_checkmo">Check / Money order </label>	</dt>	<dt>	   <input type="radio" class="radio" title="Credit Card (saved)" name="payment[method]" value="ccsave" id="p_method_ccsave" autocomplete="off">	   <label for="p_method_ccsave">Credit Card (saved) </label>	</dt>	<dd>	   <ul id="payment_form_ccsave" class="form-list">	  <li>	 <label class="required" for="ccsave_cc_owner"><em>*</em>Name on Card</label>	 <div class="input-box">	<input type="text" value="" name="payment[cc_owner]" id="ccsave_cc_owner" class="input-text required-entry" title="Name on Card" disabled="" autocomplete="off">	 </div>	  </li>	  <li>	 <label class="required" for="ccsave_cc_type"><em>*</em>Credit Card Type</label>	 <div class="input-box">	<select class="required-entry validate-cc-type-select" title="Credit Card Type" name="payment[cc_type]" id="ccsave_cc_type" disabled="" autocomplete="off">	<option value="">--Please Select--</option>	</select>	 </div>	  </li>	  <li>	 <label class="required" for="ccsave_cc_number"><em>*</em>Credit Card Number</label>	 <div class="input-box">	<input type="text" value="" class="input-text validate-cc-number validate-cc-type" title="Credit Card Number" name="payment[cc_number]" id="ccsave_cc_number" disabled="" autocomplete="off">	 </div>	  </li>	  <li>	 <label class="required" for="ccsave_expiration"><em>*</em>Expiration Date</label>	 <div class="input-box">	<div class="v-fix">	<select class="month validate-cc-exp required-entry" name="payment[cc_exp_month]" id="ccsave_expiration" disabled="" autocomplete="off">	   <option selected="selected" value="">Month</option>	</select>	</div>	<div class="v-fix">	<select class="year required-entry" name="payment[cc_exp_year]" id="ccsave_expiration_yr" disabled="" autocomplete="off">	   <option selected="selected" value="">Year</option>	</select>	</div>	 </div>	  </li>	  <li>			   <label class="required"><em>*</em>Card Verification Number</label>			   <div class="input-box">			  <div class="v-fix">			 <input type="text" value="" name="payment[cc_cid]" class="input-text cvv required-entry validate-cc-cvn" title="Card Verification Number" autocomplete="off">			  </div>			  <a class="cvv-what-is-this" href="#">What is this?</a>			   </div>			</li>	   </ul>	</dd>	</dl>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;!-- Shipping Methods --&gt;
+    &lt;dl class=&quot;sp-methods&quot;&gt;
+        &lt;dt&gt;Free Shipping&lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;input type=&quot;radio&quot; class=&quot;radio&quot; id=&quot;s_method_freeshipping_freeshipping&quot; value=&quot;freeshipping_freeshipping&quot; name=&quot;shipping_method&quot;&gt;
+                    &lt;label for=&quot;s_method_freeshipping_freeshipping&quot;&gt;Free&lt;span class=&quot;price&quot;&gt;£0.00&lt;/span&gt;&lt;/label&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/dd&gt;
+        &lt;dt&gt;Flat Rate&lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;input type=&quot;radio&quot; class=&quot;radio&quot; checked=&quot;checked&quot; id=&quot;s_method_flatrate_flatrate&quot; value=&quot;flatrate_flatrate&quot; name=&quot;shipping_method&quot;&gt;
+                    &lt;label for=&quot;s_method_flatrate_flatrate&quot;&gt;Fixed &lt;span class=&quot;price&quot;&gt;£10.00&lt;/span&gt;&lt;/label&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;
+
+    &lt;!-- Payment Methods --&gt;
+    &lt;dl class=&quot;sp-methods&quot;&gt;
+        &lt;dt&gt;
+            &lt;input type=&quot;radio&quot; class=&quot;radio&quot; title=&quot;PayPal Express Checkout&quot; name=&quot;payment[method]&quot; value=&quot;paypal_express&quot; id=&quot;p_method_paypal_express&quot; autocomplete=&quot;off&quot;&gt;
+            &lt;label for=&quot;p_method_paypal_express&quot;&gt;
+                &lt;img class=&quot;v-middle&quot; alt=&quot;Acceptance Mark&quot; src=&quot;https://fpdbs.paypal.com/dynamicimageweb?cmd=_dynamic-image&amp;amp;buttontype=ecmark&amp;amp;locale=en_GB&quot;&gt;&amp;nbsp;
+                &lt;a href=&quot;&quot;&gt;What is PayPal?&lt;/a&gt;
+            &lt;/label&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;ul id=&quot;payment_form_paypal_express&quot; class=&quot;form-list&quot;&gt;
+                &lt;li class=&quot;form-alt&quot;&gt;You will be redirected to the PayPal website.&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/dd&gt;
+        &lt;dt&gt;
+            &lt;input type=&quot;radio&quot; class=&quot;radio&quot; checked=&quot;checked&quot; title=&quot;Check / Money order&quot; name=&quot;payment[method]&quot; value=&quot;checkmo&quot; id=&quot;p_method_checkmo&quot; autocomplete=&quot;off&quot;&gt;
+            &lt;label for=&quot;p_method_checkmo&quot;&gt;Check / Money order &lt;/label&gt;
+        &lt;/dt&gt;
+        &lt;dt&gt;
+            &lt;input type=&quot;radio&quot; class=&quot;radio&quot; title=&quot;Credit Card (saved)&quot; name=&quot;payment[method]&quot; value=&quot;ccsave&quot; id=&quot;p_method_ccsave&quot; autocomplete=&quot;off&quot;&gt;
+            &lt;label for=&quot;p_method_ccsave&quot;&gt;Credit Card (saved) &lt;/label&gt;
+        &lt;/dt&gt;
+        &lt;dd&gt;
+            &lt;ul id=&quot;payment_form_ccsave&quot; class=&quot;form-list&quot;&gt;
+                &lt;li&gt;
+                    &lt;label class=&quot;required&quot; for=&quot;ccsave_cc_owner&quot;&gt;&lt;em&gt;*&lt;/em&gt;Name on Card&lt;/label&gt;
+                    &lt;div class=&quot;input-box&quot;&gt;
+                        &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;payment[cc_owner]&quot; id=&quot;ccsave_cc_owner&quot; class=&quot;input-text required-entry&quot; title=&quot;Name on Card&quot; disabled=&quot;&quot; autocomplete=&quot;off&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;label class=&quot;required&quot; for=&quot;ccsave_cc_type&quot;&gt;&lt;em&gt;*&lt;/em&gt;Credit Card Type&lt;/label&gt;
+                    &lt;div class=&quot;input-box&quot;&gt;
+                        &lt;select class=&quot;required-entry validate-cc-type-select&quot; title=&quot;Credit Card Type&quot; name=&quot;payment[cc_type]&quot; id=&quot;ccsave_cc_type&quot; disabled=&quot;&quot; autocomplete=&quot;off&quot;&gt;
+                            &lt;option value=&quot;&quot;&gt;--Please Select--&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;label class=&quot;required&quot; for=&quot;ccsave_cc_number&quot;&gt;&lt;em&gt;*&lt;/em&gt;Credit Card Number&lt;/label&gt;
+                    &lt;div class=&quot;input-box&quot;&gt;
+                        &lt;input type=&quot;text&quot; value=&quot;&quot; class=&quot;input-text validate-cc-number validate-cc-type&quot; title=&quot;Credit Card Number&quot; name=&quot;payment[cc_number]&quot; id=&quot;ccsave_cc_number&quot; disabled=&quot;&quot; autocomplete=&quot;off&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;label class=&quot;required&quot; for=&quot;ccsave_expiration&quot;&gt;&lt;em&gt;*&lt;/em&gt;Expiration Date&lt;/label&gt;
+                    &lt;div class=&quot;input-box&quot;&gt;
+                        &lt;div class=&quot;v-fix&quot;&gt;
+                            &lt;select class=&quot;month validate-cc-exp required-entry&quot; name=&quot;payment[cc_exp_month]&quot; id=&quot;ccsave_expiration&quot; disabled=&quot;&quot; autocomplete=&quot;off&quot;&gt;
+                                &lt;option selected=&quot;selected&quot; value=&quot;&quot;&gt;Month&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;v-fix&quot;&gt;
+                            &lt;select class=&quot;year required-entry&quot; name=&quot;payment[cc_exp_year]&quot; id=&quot;ccsave_expiration_yr&quot; disabled=&quot;&quot; autocomplete=&quot;off&quot;&gt;
+                                &lt;option selected=&quot;selected&quot; value=&quot;&quot;&gt;Year&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Card Verification Number&lt;/label&gt;
+                    &lt;div class=&quot;input-box&quot;&gt;
+                        &lt;div class=&quot;v-fix&quot;&gt;
+                            &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;payment[cc_cid]&quot; class=&quot;input-text cvv required-entry validate-cc-cvn&quot; title=&quot;Card Verification Number&quot; autocomplete=&quot;off&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;a class=&quot;cvv-what-is-this&quot; href=&quot;#&quot;&gt;What is this?&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/dd&gt;
+    &lt;/dl&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.sp-methods  {
+	dt { font-weight:bold; }
+	.price { font-weight:bold; }
+	.form-list { padding-left:20px; }
+	select.month { width:150px; margin-right:10px; }
+	select.year { width:96px; }
+	input.cvv { width:3em !important; }
+	.checkmo-list {
+		li { margin:0 0 5px; }
+		label { width:135px; padding-right:10px; text-align:right; }
+		address { float:left; }
+	}
+	.centinel-logos {
+		a { margin-right:3px; }
+		img { vertical-align:middle; }
+	}
+	.release-amounts { 
+		margin:0.5em 0 1em;
+		button { float:left; margin:5px 10px 0 0; }
+	}
+}
+
+.please-wait { 
+	float:right; 
+	margin-right:5px; 
+	img { vertical-align:middle; }
+}
+.cvv-what-is-this { cursor:help; margin-left:5px; }
+
+.centinel {
+	.authentication { 
+		border:1px solid #ddd; 
+		background:#fff;
+		iframe { 
+			width:99%; 
+			height:400px; 
+			background:transparent !important; 
+			margin:0 !important; 
+			padding:0 !important; 
+			border:0 !important;
+		}
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="tooltip">Tooltip</h3>
+<p>Used on the &quot;What&#39;s This?&quot; link next to CVV</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_mg0t7" height="0" src="about:blank"></iframe>
+                        <script id="script_mg0t7">
+                            var iframe  = document.getElementById('iframe_mg0t7');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_mg0t7');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div style="" id="payment-tool-tip" class="tool-tip">	<div class="btn-close"><a title="Close" href="#">Close</a></div>	<div class="tool-tip-content">			[Tooltip Content]	</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div style=&quot;&quot; id=&quot;payment-tool-tip&quot; class=&quot;tool-tip&quot;&gt;
+        &lt;div class=&quot;btn-close&quot;&gt;&lt;a title=&quot;Close&quot; href=&quot;#&quot;&gt;Close&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;tool-tip-content&quot;&gt;
+            [Tooltip Content]
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.tool-tip { 
+	border:1px solid #ddd; 
+	background-color:#f6f6f6; 
+	padding:5px; 
+	position:absolute; 
+	z-index:9999;
+	.btn-close { 
+		text-align:right;
+		a { 
+			display:block; 
+			margin:0 0 0 auto; 
+			width:15px; 
+			height:15px; 
+			background:url(../images/btn_window_close.gif) 100% 0 no-repeat; 
+			text-align:left; 
+			text-indent:-999em; 
+			overflow:hidden;
+		}
+	}
+	.tool-tip-content { padding:5px; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="checkout-agreements">Checkout Agreements</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_hj9n5" height="0" src="about:blank"></iframe>
+                        <script id="script_hj9n5">
+                            var iframe  = document.getElementById('iframe_hj9n5');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_hj9n5');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<ol class="checkout-agreements">	<li>	   <div class="agreement-content">	  Full agreement content			</div>	   <p class="agree">	  <input type="checkbox" class="checkbox" title="Terms and Conditions (Checkbox Text)" value="1" name="agreement[1]" id="agreement-1">	  <label for="agreement-1">Agreement Checkbox Text Value</label>	   </p>	</li>	</ol>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ol class=&quot;checkout-agreements&quot;&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;agreement-content&quot;&gt;
+                Full agreement content
+            &lt;/div&gt;
+            &lt;p class=&quot;agree&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; title=&quot;Terms and Conditions (Checkbox Text)&quot; value=&quot;1&quot; name=&quot;agreement[1]&quot; id=&quot;agreement-1&quot;&gt;
+                &lt;label for=&quot;agreement-1&quot;&gt;Agreement Checkbox Text Value&lt;/label&gt;
+            &lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.checkout-agreements {
+	li {
+		margin: 10px 0;
+	}
+	.agreement-content {
+		border: 1px solid #ddd;
+		background-color: #f6f6f6;
+		padding: 5px;
+		height: 10em;
+		overflow: auto;
+	}
+	.agree {
+		padding: 6px;
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="gift-messages">Gift Messages</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_bvclj" height="0" src="about:blank"></iframe>
+                        <script id="script_bvclj">
+                            var iframe  = document.getElementById('iframe_bvclj');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_bvclj');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="gift-messages">	<h3>Do you have any gift items in your order?</h3>	<p class="control">	   <input type="checkbox" class="checkbox validation-passed" value="1" id="allow_gift_messages" name="allow_gift_messages">	   <label for="allow_gift_messages">Add gift options.</label>	</p>	</div>	<div id="allow-gift-message-container" class="gift-messages-form" style="">	<div class="inner-box">	   <h4>Gift Options for the Entire Order.</h4>	   <p>	  <input type="checkbox" class="checkbox validation-passed" value="1" name="allow_gift_messages_for_order">	  <label>Add gift options for the Entire Order</label>	   </p>	   <div style="" id="allow-gift-messages-for-order-container" class="allow-gift-messages-for-order-container">	  <p>You can leave this box blank if you do not wish to add a gift message for whole order.</p>	  <ul class="form-list">	 <li class="fields">	<div class="field">	<label>From</label>	<div class="input-box">	   <input type="text" class="input-text" value="From Name" title="From">	</div>	</div>	<div class="field">	<label>To</label>	<div class="input-box">	   <input type="text" class="input-text" value="To Name" title="To">	</div>	</div>	 </li>	 <li class="wide">	<label>Message</label>	<div class="input-box">	<textarea cols="10" rows="5" title="Message" class="input-text giftmessage-area"></textarea>	</div>	 </li>	  </ul>	   </div>	   <h4>Gift Options for Individual Items</h4>	   <p>	  <input type="checkbox" class="checkbox validation-passed" value="1" name="allow_gift_messages_for_items">	  <label>Add gift options for Individual Items</label>	   </p>	   <div id="allow-gift-messages-for-items-container" style="">	  <p>You can leave this box blank if you do not wish to add a gift message for the item.</p>	  <ol>	 <li class="item">	<div class="product-img-box">	<p class="product-image">	   <img width="75" height="75" title="Product Name" alt="Product Name" src="http://placekitten.com/75/75">	</p>	<p class="number">Item 1 of 1</p>	</div>	<div class="details">	<div class="f-fix">	   <h5 class="product-name">Product Name</h5>	   <ul class="form-list">	  <li class="fields">	 <div class="field">	<label>From</label>	<div class="input-box">	<input type="text" class="input-text" value="From Name" title="From">	</div>	 </div>	 <div class="field">	<label>To</label>	<div class="input-box">	<input type="text" class="input-text" value="To Name" title="To">	</div>	 </div>	  </li>	  <li class="wide">	 <label>Message</label>	 <div class="input-box">	<textarea cols="40" rows="5" title="Message" class="input-text giftmessage-area" o></textarea>	 </div>	  </li>	   </ul>	</div>	</div>	 </li>	  </ol>	   </div>	</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;gift-messages&quot;&gt;
+        &lt;h3&gt;Do you have any gift items in your order?&lt;/h3&gt;
+        &lt;p class=&quot;control&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; class=&quot;checkbox validation-passed&quot; value=&quot;1&quot; id=&quot;allow_gift_messages&quot; name=&quot;allow_gift_messages&quot;&gt;
+            &lt;label for=&quot;allow_gift_messages&quot;&gt;Add gift options.&lt;/label&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;allow-gift-message-container&quot; class=&quot;gift-messages-form&quot; style=&quot;&quot;&gt;
+        &lt;div class=&quot;inner-box&quot;&gt;
+            &lt;h4&gt;Gift Options for the Entire Order.&lt;/h4&gt;
+            &lt;p&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;checkbox validation-passed&quot; value=&quot;1&quot; name=&quot;allow_gift_messages_for_order&quot;&gt;
+                &lt;label&gt;Add gift options for the Entire Order&lt;/label&gt;
+            &lt;/p&gt;
+            &lt;div style=&quot;&quot; id=&quot;allow-gift-messages-for-order-container&quot; class=&quot;allow-gift-messages-for-order-container&quot;&gt;
+                &lt;p&gt;You can leave this box blank if you do not wish to add a gift message for whole order.&lt;/p&gt;
+                &lt;ul class=&quot;form-list&quot;&gt;
+                    &lt;li class=&quot;fields&quot;&gt;
+                        &lt;div class=&quot;field&quot;&gt;
+                            &lt;label&gt;From&lt;/label&gt;
+                            &lt;div class=&quot;input-box&quot;&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;From Name&quot; title=&quot;From&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;field&quot;&gt;
+                            &lt;label&gt;To&lt;/label&gt;
+                            &lt;div class=&quot;input-box&quot;&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;To Name&quot; title=&quot;To&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;wide&quot;&gt;
+                        &lt;label&gt;Message&lt;/label&gt;
+                        &lt;div class=&quot;input-box&quot;&gt;
+                            &lt;textarea cols=&quot;10&quot; rows=&quot;5&quot; title=&quot;Message&quot; class=&quot;input-text giftmessage-area&quot;&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;h4&gt;Gift Options for Individual Items&lt;/h4&gt;
+            &lt;p&gt;
+                &lt;input type=&quot;checkbox&quot; class=&quot;checkbox validation-passed&quot; value=&quot;1&quot; name=&quot;allow_gift_messages_for_items&quot;&gt;
+                &lt;label&gt;Add gift options for Individual Items&lt;/label&gt;
+            &lt;/p&gt;
+            &lt;div id=&quot;allow-gift-messages-for-items-container&quot; style=&quot;&quot;&gt;
+                &lt;p&gt;You can leave this box blank if you do not wish to add a gift message for the item.&lt;/p&gt;
+                &lt;ol&gt;
+                    &lt;li class=&quot;item&quot;&gt;
+                        &lt;div class=&quot;product-img-box&quot;&gt;
+                            &lt;p class=&quot;product-image&quot;&gt;
+                                &lt;img width=&quot;75&quot; height=&quot;75&quot; title=&quot;Product Name&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/75/75&quot;&gt;
+                            &lt;/p&gt;
+                            &lt;p class=&quot;number&quot;&gt;Item 1 of 1&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;details&quot;&gt;
+                            &lt;div class=&quot;f-fix&quot;&gt;
+                                &lt;h5 class=&quot;product-name&quot;&gt;Product Name&lt;/h5&gt;
+                                &lt;ul class=&quot;form-list&quot;&gt;
+                                    &lt;li class=&quot;fields&quot;&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                            &lt;label&gt;From&lt;/label&gt;
+                                            &lt;div class=&quot;input-box&quot;&gt;
+                                                &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;From Name&quot; title=&quot;From&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                            &lt;label&gt;To&lt;/label&gt;
+                                            &lt;div class=&quot;input-box&quot;&gt;
+                                                &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;To Name&quot; title=&quot;To&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                    &lt;li class=&quot;wide&quot;&gt;
+                                        &lt;label&gt;Message&lt;/label&gt;
+                                        &lt;div class=&quot;input-box&quot;&gt;
+                                            &lt;textarea cols=&quot;40&quot; rows=&quot;5&quot; title=&quot;Message&quot; class=&quot;input-text giftmessage-area&quot; o&gt;&lt;/textarea&gt;
+                                        &lt;/div&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.gift-messages {}
+.gift-messages-form {
+	border: 1px solid #ddd;
+	background-color: #f5f5f5;
+	position: relative;
+	label {
+		float: none !important;
+		position: static !important;
+	}
+	h4 {}
+	.whole-order {}
+	.item {
+		margin: 0 0 10px;
+		.product-img-box {
+			float: left;
+			width: 75px;
+		}
+		.product-image {
+			margin: 0 0 7px;
+		}
+		.number {
+			margin: 0;
+			font-weight: bold;
+			text-align: center;
+		}
+		.details {
+			margin-left: 90px;
+			.product-name {}
+		}
+	}
+}
+
+.gift-message-link { 
+	display:block; 
+	background:url(../images/bkg_collapse.gif) 0 4px no-repeat; 
+	padding-left:20px; 
+	&.expanded { background-position:0 -53px; }
+}
+.gift-message-row {
+	.btn-close { float:right; }
+}
+.gift-message {
+	dt {
+		strong { font-weight: bold; } 
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="generic-info-set">Generic Info Set</h2>
+<p>Seems to be unused.</p>
+</div>
+                
+                
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.info-set {}</code></pre></div>
+                
+
+            </div>
+        
+    </div>
+
+    <script>
+        // Resize all iframes to exactly fit content within
+        window.onload = function() {
+            var iframes = document.querySelectorAll('iframe');
+            for ( var i = 0; i < iframes.length; i++ ){
+                iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
+            }
+        };
+    </script>
+
+</body>
+</html>

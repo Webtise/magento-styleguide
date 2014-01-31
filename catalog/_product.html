@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product View &middot; Styleguide</title>
+    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
+    <script>/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
+ */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
+Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
+;
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
+;
+Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
+;
+</script>
+</head>
+<body>
+
+    <div class="navigation">
+        <div class="gutter">
+            <div class="group ">
+                <a href="/">Home</a>
+            </div>
+            
+            <div class="group ">
+                <span>.</span>
+                <ul>
+                    
+                    <li><a class="" href="_inbox/html">_inbox</a></li>
+                    
+                    <li><a class="" href="_mixins/html">_mixins</a></li>
+                    
+                    <li><a class="" href="_variables/html">_variables</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>catalog</span>
+                <ul>
+                    
+                    <li><a class="" href="catalog/_category/html">Category Page</a></li>
+                    
+                    <li><a class="" href="catalog/_product/html">Product View</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>checkout</span>
+                <ul>
+                    
+                    <li><a class="" href="checkout/_cart/html">Shopping Cart</a></li>
+                    
+                    <li><a class="" href="checkout/_checkout/html">One Page Checkout</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>cms</span>
+                <ul>
+                    
+                    <li><a class="" href="cms/_homepage/html">Homepage</a></li>
+                    
+                    <li><a class="" href="cms/_sitemap/html">Sitemap</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>common</span>
+                <ul>
+                    
+                    <li><a class="" href="common/_buttons/html">Button</a></li>
+                    
+                    <li><a class="" href="common/_forms/html">Form Elements</a></li>
+                    
+                    <li><a class="" href="common/_headings/html">Page Heading</a></li>
+                    
+                    <li><a class="" href="common/_messages/html">Messages</a></li>
+                    
+                    <li><a class="" href="common/_misc/html">Misc</a></li>
+                    
+                    <li><a class="" href="common/_tables/html">Data Table</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>customer</span>
+                <ul>
+                    
+                    <li><a class="" href="customer/_dashboard/html">Dashboard</a></li>
+                    
+                    <li><a class="" href="customer/_login/html">Login/Create Account</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>layout</span>
+                <ul>
+                    
+                    <li><a class="" href="layout/_content/html">Content</a></li>
+                    
+                    <li><a class="" href="layout/_footer/html">Footer</a></li>
+                    
+                    <li><a class="" href="layout/_header/html">Header</a></li>
+                    
+                    <li><a class="" href="layout/_page/html">Pages</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>navigation</span>
+                <ul>
+                    
+                    <li><a class="" href="navigation/_breadcrumbs/html">Breadcrumbs</a></li>
+                    
+                    <li><a class="" href="navigation/_navbar/html">Nav Bar</a></li>
+                    
+                    <li><a class="" href="navigation/_toolbar/html">Toolbar</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>normalize</span>
+                <ul>
+                    
+                    <li><a class="" href="normalize/_base/html">Admin controlled content</a></li>
+                    
+                    <li><a class="" href="normalize/_reset/html">Reset</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="group ">
+                <span>sidebar</span>
+                <ul>
+                    
+                    <li><a class="" href="sidebar/_blocks/html">Sidebar Blocks</a></li>
+                    
+                    <li><a class="" href="sidebar/_miniproductlist/html">Mini Products List</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="gutter">
+        
+            <div class="section">
+                
+                    <div class="comment"><h1 id="product-view">Product View</h1>
+</div>
+                
+                
+                
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="ratings">Ratings</h2>
+<h3 id="no-rating">No Rating</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_cxizv" height="0" src="about:blank"></iframe>
+                        <script id="script_cxizv">
+                            var iframe  = document.getElementById('iframe_cxizv');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_cxizv');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        		<p class="no-rating">		<a href="#">Be the first to review this product</a>	</p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;no-rating&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;Be the first to review this product&lt;/a&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.no-rating { margin:0; }</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="rated">Rated</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_fd8qe" height="0" src="about:blank"></iframe>
+                        <script id="script_fd8qe">
+                            var iframe  = document.getElementById('iframe_fd8qe');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_fd8qe');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="ratings">   <div class="rating-box">  <div style="width:73%" class="rating"></div>   </div>   <p class="rating-links">  <a href="#">2 Review(s)</a>  <span class="separator">|</span>  <a href="#">Add Your Review</a>   </p></div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;ratings&quot;&gt;
+        &lt;div class=&quot;rating-box&quot;&gt;
+            &lt;div style=&quot;width:73%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;rating-links&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;2 Review(s)&lt;/a&gt;
+            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
+            &lt;a href=&quot;#&quot;&gt;Add Your Review&lt;/a&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.ratings { 
+	font-size:11px; 
+	line-height:1.25; 
+	margin:7px 0; 
+	strong { 
+		float:left; 
+		margin:1px 3px 0 0;
+	}
+	dt {}
+	dd {}
+	.rating-links { 
+		margin:0; 
+		.separator { margin:0 2px; }
+	}
+	.rating-box { 
+		float:left; 
+		margin-right:3px;
+	}
+	.amount {}
+}
+
+.rating-box { 
+	width:69px; 
+	height:13px;
+	font-size:0;
+	line-height:0;
+	background:url(../images/bkg_rating.gif) 0 0 repeat-x;
+	text-indent:-999em;
+	overflow:hidden;
+	.rating { 
+		float:left;
+		height:13px;
+		background:url(../images/bkg_rating.gif) 0 100% repeat-x;
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="ratings-table">Ratings Table</h3>
+<p>Table to show ratings for each point (found on product review list page)</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_34k56" height="0" src="about:blank"></iframe>
+                        <script id="script_34k56">
+                            var iframe  = document.getElementById('iframe_34k56');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_34k56');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<table class="ratings-table">	   <colgroup>	   	<col width="1">	   	<col>	   </colgroup>	   <tbody>		   <tr>		  <th>Quality</th>		  <td>		 <div class="rating-box">		<div style="width:40%;" class="rating"></div>		 </div>		  </td>		   </tr>		   <tr>		  <th>Price</th>		  <td>		 <div class="rating-box">		<div style="width:20%;" class="rating"></div>		 </div>		  </td>		   </tr>		   <tr>		  <th>Value</th>		  <td>		 <div class="rating-box">		<div style="width:60%;" class="rating"></div>		 </div>		  </td>		   </tr>	   </tbody>	</table>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;table class=&quot;ratings-table&quot;&gt;
+            &lt;colgroup&gt;
+                &lt;col width=&quot;1&quot;&gt;
+                &lt;col&gt;
+            &lt;/colgroup&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Quality&lt;/th&gt;
+                    &lt;td&gt;
+                        &lt;div class=&quot;rating-box&quot;&gt;
+                            &lt;div style=&quot;width:40%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Price&lt;/th&gt;
+                    &lt;td&gt;
+                        &lt;div class=&quot;rating-box&quot;&gt;
+                            &lt;div style=&quot;width:20%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Value&lt;/th&gt;
+                    &lt;td&gt;
+                        &lt;div class=&quot;rating-box&quot;&gt;
+                            &lt;div style=&quot;width:60%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.ratings-table {
+	th, td { font-size:11px; line-height:1.15; padding:3px 0; } 
+	th { font-weight:bold; padding-right:8px; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="availability">Availability</h2>
+<p>Shows current stock status for product.</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_u3c34" height="0" src="about:blank"></iframe>
+                        <script id="script_u3c34">
+                            var iframe  = document.getElementById('iframe_u3c34');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_u3c34');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="availability in-stock">Availability: <span>In stock</span></p>	<p class="availability out-of-stock">Availability: <span>Out of stock</span></p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;availability in-stock&quot;&gt;Availability: &lt;span&gt;In stock&lt;/span&gt;&lt;/p&gt;
+
+    &lt;p class=&quot;availability out-of-stock&quot;&gt;Availability: &lt;span&gt;Out of stock&lt;/span&gt;&lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.availability { 
+	margin:0; 
+	span { font-weight:bold; }
+	&.in-stock {
+		span {}
+	}
+	&.out-of-stock { 
+		span { color:#d83820; } 
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="availability-only">Availability Only</h3>
+<p>When Configuration-&gt;Inventory-&gt;Stock Options-&gt;Only X left Threshold is set</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_ys0vw" height="0" src="about:blank"></iframe>
+                        <script id="script_ys0vw">
+                            var iframe  = document.getElementById('iframe_ys0vw');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_ys0vw');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="availability-only">   <span title="Only 2 left">Only <strong>2</strong> left</span></p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;availability-only&quot;&gt;
+        &lt;span title=&quot;Only 2 left&quot;&gt;Only &lt;strong&gt;2&lt;/strong&gt; left&lt;/span&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.availability-only { 
+	margin:0 0 7px; 
+	a { 
+		background:url(../images/i_availability_only_arrow.gif) 100% 0 no-repeat; 
+		cursor:pointer; 
+		padding-right:15px; 
+	}
+	strong { }
+	.expanded { background-position:100% -15px; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><p>Show stock levels for individual products on a configurable/bundle product</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_jivhs" height="0" src="about:blank"></iframe>
+                        <script id="script_jivhs">
+                            var iframe  = document.getElementById('iframe_jivhs');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_jivhs');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="availability-only">   <a title="Only 1749 left" href="#" class="expanded">Only <strong>1749</strong> left</a></p>	<table class="availability-only-details">	<colgroup><col>	<col width="1">	</colgroup><thead>	   <tr class="first last">	  <th>Product Name</th>	  <th class="a-center">Qty</th>	   </tr>	</thead>	<tbody>		<tr class="first odd">	  <td>Product Name</td>	  <td class="a-center last">2</td>	   </tr>			<tr class="even">	  <td>Product Name</td>	  <td class="a-center last">998</td>	   </tr>			<tr class="last odd">	  <td>Product Name</td>	  <td class="a-center last">749</td>	   </tr>	</tbody>	</table>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;availability-only&quot;&gt;
+        &lt;a title=&quot;Only 1749 left&quot; href=&quot;#&quot; class=&quot;expanded&quot;&gt;Only &lt;strong&gt;1749&lt;/strong&gt; left&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;table class=&quot;availability-only-details&quot;&gt;
+        &lt;colgroup&gt;&lt;col&gt;
+        &lt;col width=&quot;1&quot;&gt;
+        &lt;/colgroup&gt;&lt;thead&gt;
+            &lt;tr class=&quot;first last&quot;&gt;
+                &lt;th&gt;Product Name&lt;/th&gt;
+                &lt;th class=&quot;a-center&quot;&gt;Qty&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr class=&quot;first odd&quot;&gt;
+                &lt;td&gt;Product Name&lt;/td&gt;
+                &lt;td class=&quot;a-center last&quot;&gt;2&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;even&quot;&gt;
+                &lt;td&gt;Product Name&lt;/td&gt;
+                &lt;td class=&quot;a-center last&quot;&gt;998&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;last odd&quot;&gt;
+                &lt;td&gt;Product Name&lt;/td&gt;
+                &lt;td class=&quot;a-center last&quot;&gt;749&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.availability-only-details { 
+	margin:0 0 7px; 
+	th { background:#f2f2f2; font-size:10px; padding:0 8px; }
+	td { border-bottom:1px solid #ddd; font-size:11px; padding:2px 8px 1px; }
+	tr.odd td.last {}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="email-to-a-friend">Email to a Friend</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_nnhv5" height="0" src="about:blank"></iframe>
+                        <script id="script_nnhv5">
+                            var iframe  = document.getElementById('iframe_nnhv5');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_nnhv5');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="email-friend"><a href="#">Email to a Friend</a></p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;email-friend&quot;&gt;&lt;a href=&quot;#&quot;&gt;Email to a Friend&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.email-friend {}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="send-a-friend">Send a Friend</h3>
+<p>Located on separate page after clicking &#39;Email to a Friend&#39; link.</p>
+<p>Uses common elements, <code>.page-title</code>, <code>.fieldset</code>, <code>.buttons-set</code> and <code>.form-list</code>.</p>
+</div>
+                
+                
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.send-friend {}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="alerts">Alerts</h2>
+</div>
+                
+                
+                
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="price-alert">Price Alert</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_3xnl5" height="0" src="about:blank"></iframe>
+                        <script id="script_3xnl5">
+                            var iframe  = document.getElementById('iframe_3xnl5');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_3xnl5');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="alert-price link-price-alert">	<a title="Sign up for price alert" href="#">Sign up for price alert</a>	</p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;alert-price link-price-alert&quot;&gt;
+        &lt;a title=&quot;Sign up for price alert&quot; href=&quot;#&quot;&gt;Sign up for price alert&lt;/a&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.alert-price {}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="stock-alert">Stock Alert</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_a711a" height="0" src="about:blank"></iframe>
+                        <script id="script_a711a">
+                            var iframe  = document.getElementById('iframe_a711a');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_a711a');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="alert-stock link-stock-alert">	<a title="Sign up to get notified when this product is back in stock" href="#">Sign up to get notified when this product is back in stock</a>	</p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;alert-stock link-stock-alert&quot;&gt;
+        &lt;a title=&quot;Sign up to get notified when this product is back in stock&quot; href=&quot;#&quot;&gt;Sign up to get notified when this product is back in stock&lt;/a&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.alert-stock {}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="pricing">Pricing</h2>
+<p>Each price type commonly wrapped with:</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_rwrry" height="0" src="about:blank"></iframe>
+                        <script id="script_rwrry">
+                            var iframe  = document.getElementById('iframe_rwrry');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_rwrry');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="price-box">		<span class="[PRICE_TYPE]">			<span class="price">Pricing HTML</span>		</span>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;price-box&quot;&gt;
+        &lt;span class=&quot;[PRICE_TYPE]&quot;&gt;
+            &lt;span class=&quot;price&quot;&gt;Pricing HTML&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.price { white-space:nowrap !important; }
+
+.price-box {
+	.price { font-weight:bold; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="regular-price">Regular price</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_y83hd" height="0" src="about:blank"></iframe>
+                        <script id="script_y83hd">
+                            var iframe  = document.getElementById('iframe_y83hd');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_y83hd');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<span class="regular-price">		<span class="price">£15.00</span>	</span>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;span class=&quot;regular-price&quot;&gt;
+        &lt;span class=&quot;price&quot;&gt;£15.00&lt;/span&gt;
+    &lt;/span&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.regular-price {
+	.price { font-weight:bold; }
+}
+
+// ### Old price 
+.old-price {
+	.price-label { white-space:nowrap; }
+	.price { font-weight:bold; text-decoration:line-through; }
+}
+
+// ### Special price 
+.special-price {
+	.price-label { font-weight:bold; white-space:nowrap; }
+	.price { font-weight:bold; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="minimal-price">Minimal price</h3>
+<p>Grouped product:</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_ohi9p" height="0" src="about:blank"></iframe>
+                        <script id="script_ohi9p">
+                            var iframe  = document.getElementById('iframe_ohi9p');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_ohi9p');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="minimal-price">		<span class="price-label">Starting at:</span>		<span id="product-minimal-price-54" class="price">£129.99</span>	</p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;minimal-price&quot;&gt;
+        &lt;span class=&quot;price-label&quot;&gt;Starting at:&lt;/span&gt;
+        &lt;span id=&quot;product-minimal-price-54&quot; class=&quot;price&quot;&gt;£129.99&lt;/span&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.minimal-price {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><p>Configurable product (List/Grid view)</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_d1oxp" height="0" src="about:blank"></iframe>
+                        <script id="script_d1oxp">
+                            var iframe  = document.getElementById('iframe_d1oxp');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_d1oxp');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        <a class="minimal-price-link" href="#">   <span class="label">As low as:</span>   <span class="price">£449.00</span></a>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;a class=&quot;minimal-price-link&quot; href=&quot;#&quot;&gt;
+        &lt;span class=&quot;label&quot;&gt;As low as:&lt;/span&gt;
+        &lt;span class=&quot;price&quot;&gt;£449.00&lt;/span&gt;
+    &lt;/a&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.minimal-price-link { 
+	display:block;
+	.label {}
+	.price { font-weight:normal; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="incl-tax-excl-tax">Incl tax &amp; Excl tax</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_2qcva" height="0" src="about:blank"></iframe>
+                        <script id="script_2qcva">
+                            var iframe  = document.getElementById('iframe_2qcva');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_2qcva');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="price-box">		<span class="price-excluding-tax">			<span class="label">Excl. Tax:</span>			<span id="price-excluding-tax-41" class="price">£399.99</span>		</span>		<span class="price-including-tax">			<span class="label">Incl. Tax:</span>			<span id="price-including-tax-41" class="price">£399.99</span>		</span>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;price-box&quot;&gt;
+        &lt;span class=&quot;price-excluding-tax&quot;&gt;
+            &lt;span class=&quot;label&quot;&gt;Excl. Tax:&lt;/span&gt;
+            &lt;span id=&quot;price-excluding-tax-41&quot; class=&quot;price&quot;&gt;£399.99&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&quot;price-including-tax&quot;&gt;
+            &lt;span class=&quot;label&quot;&gt;Incl. Tax:&lt;/span&gt;
+            &lt;span id=&quot;price-including-tax-41&quot; class=&quot;price&quot;&gt;£399.99&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.price-excluding-tax { 
+	display:block;
+	.label { white-space:nowrap; }
+	.price { font-weight:normal; }
+}
+.price-including-tax { 
+	display:block; 
+	.label { white-space:nowrap; }
+	.price { font-weight:bold; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="configured-price">Configured price</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_saj7f" height="0" src="about:blank"></iframe>
+                        <script id="script_saj7f">
+                            var iframe  = document.getElementById('iframe_saj7f');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_saj7f');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="price-as-configured">	<span class="price-label">Price as configured:</span>   <span class="full-product-price">  <span class="price">£5,074.95</span>   </span></p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;price-as-configured&quot;&gt;
+        &lt;span class=&quot;price-label&quot;&gt;Price as configured:&lt;/span&gt;
+        &lt;span class=&quot;full-product-price&quot;&gt;
+            &lt;span class=&quot;price&quot;&gt;£5,074.95&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.configured-price {
+	.price-label { font-weight:bold; white-space:nowrap; }
+	.price { font-weight:bold; }
+}
+
+// ### FPT 
+.weee { 
+	display:block; 
+	font-size:11px; 
+	color:#444;
+	.price { 
+		font-size:11px; 
+		font-weight:normal;
+	}
+}
+
+// ### Excl tax (for order tables) 
+.price-excl-tax  { 
+	display:block;
+	.label { display:block; white-space:nowrap; }
+	.price { display:block; }
+}
+
+// ### Incl tax (for order tables) 
+.price-incl-tax { 
+	display:block;
+	.label { display:block; white-space:nowrap; }
+	.price { display:block; font-weight:bold; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="price-range">Price range</h3>
+<p>Bundle Products:</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_tc1yu" height="0" src="about:blank"></iframe>
+                        <script id="script_tc1yu">
+                            var iframe  = document.getElementById('iframe_tc1yu');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_tc1yu');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<p class="price-from">		<span class="price-label">From:</span>		<span class="price">£447.98</span>	</p>	<p class="price-to">		<span class="price-label">To:</span>		<span class="price">£4,477.92</span>	</p>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;p class=&quot;price-from&quot;&gt;
+        &lt;span class=&quot;price-label&quot;&gt;From:&lt;/span&gt;
+        &lt;span class=&quot;price&quot;&gt;£447.98&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p class=&quot;price-to&quot;&gt;
+        &lt;span class=&quot;price-label&quot;&gt;To:&lt;/span&gt;
+        &lt;span class=&quot;price&quot;&gt;£4,477.92&lt;/span&gt;
+    &lt;/p&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.price-from {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}
+.price-to {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="price-notice">Price notice</h3>
+<p>Next to the options on a configurable product.</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_xwgqs" height="0" src="about:blank"></iframe>
+                        <script id="script_xwgqs">
+                            var iframe  = document.getElementById('iframe_xwgqs');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_xwgqs');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="input-box">		Product Option Name &nbsp; 		<span class="price-notice">			+<span class="price">£0.00</span>		</span>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;input-box&quot;&gt;
+        Product Option Name &amp;nbsp; 
+        &lt;span class=&quot;price-notice&quot;&gt;
+            +&lt;span class=&quot;price&quot;&gt;£0.00&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.price-notice { 
+	padding-left:10px;
+	.price { font-weight:bold; }
+}
+
+// ### Price as configured 
+.price-as-configured {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}
+
+.price-box-bundle {}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="tier-pricing">Tier Pricing</h3>
+<p>Offers discounts on higher quantity of single item purchases</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_gp9mq" height="0" src="about:blank"></iframe>
+                        <script id="script_gp9mq">
+                            var iframe  = document.getElementById('iframe_gp9mq');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_gp9mq');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<ul class="tier-prices product-pricing">			<li class="tier-price tier-0">			Buy 5 for <span class="price">£12.50</span> each and&nbsp;			<strong class="benefit">save&nbsp;<span class="percent tier-0">8</span>%</strong>	   <span class="msrp-price-hide-message"></span>	</li>		<li class="tier-price tier-1">			Buy 10 for <span class="price">£11.50</span> each and&nbsp;			<strong class="benefit">save&nbsp;<span class="percent tier-1">15</span>%</strong>	   <span class="msrp-price-hide-message"></span>	</li>		<li class="tier-price tier-2">			Buy 20 for <span class="price">£9.50</span> each and&nbsp;			<strong class="benefit">save&nbsp;<span class="percent tier-2">30</span>%</strong>	   <span class="msrp-price-hide-message"></span>		</li>	</ul>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;tier-prices product-pricing&quot;&gt;    
+        &lt;li class=&quot;tier-price tier-0&quot;&gt;
+            Buy 5 for &lt;span class=&quot;price&quot;&gt;£12.50&lt;/span&gt; each and&amp;nbsp;
+            &lt;strong class=&quot;benefit&quot;&gt;save&amp;nbsp;&lt;span class=&quot;percent tier-0&quot;&gt;8&lt;/span&gt;%&lt;/strong&gt;
+            &lt;span class=&quot;msrp-price-hide-message&quot;&gt;&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;tier-price tier-1&quot;&gt;
+            Buy 10 for &lt;span class=&quot;price&quot;&gt;£11.50&lt;/span&gt; each and&amp;nbsp;
+            &lt;strong class=&quot;benefit&quot;&gt;save&amp;nbsp;&lt;span class=&quot;percent tier-1&quot;&gt;15&lt;/span&gt;%&lt;/strong&gt;
+            &lt;span class=&quot;msrp-price-hide-message&quot;&gt;&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;tier-price tier-2&quot;&gt;
+            Buy 20 for &lt;span class=&quot;price&quot;&gt;£9.50&lt;/span&gt; each and&amp;nbsp;
+            &lt;strong class=&quot;benefit&quot;&gt;save&amp;nbsp;&lt;span class=&quot;percent tier-2&quot;&gt;30&lt;/span&gt;%&lt;/strong&gt;
+            &lt;span class=&quot;msrp-price-hide-message&quot;&gt;&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.tier-prices {
+	.price { font-weight:bold; }
+	.benefit {}
+}
+.tier-prices-grouped {}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="add-to">Add to</h2>
+<h3 id="cart">Cart</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_oc01c" height="0" src="about:blank"></iframe>
+                        <script id="script_oc01c">
+                            var iframe  = document.getElementById('iframe_oc01c');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_oc01c');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="add-to-cart">		<label for="qty">Qty:</label>		<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">		<button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;add-to-cart&quot;&gt;
+        &lt;label for=&quot;qty&quot;&gt;Qty:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; class=&quot;input-text qty&quot; title=&quot;Qty&quot; value=&quot;1&quot; maxlength=&quot;12&quot; id=&quot;qty&quot; name=&quot;qty&quot;&gt;
+        &lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.add-to-cart {
+	label { float:left; margin-right:5px; }
+	.qty { float:left; }
+	button.button { float:left; margin-left:5px; }
+	.paypal-logo { 
+		clear:left; 
+		text-align:right;
+		.paypal-or { 
+			clear:both; 
+			display:block; 
+			margin:5px 60px 5px 0; 
+		}
+	}
+}
+.product-view .add-to-cart .paypal-logo { margin:0; }</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="links">Links</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_hamo0" height="0" src="about:blank"></iframe>
+                        <script id="script_hamo0">
+                            var iframe  = document.getElementById('iframe_hamo0');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_hamo0');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<ul class="add-to-links">	<li><a class="link-wishlist" href="#">Add to Wishlist</a></li>	<li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>	</ul>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;add-to-links&quot;&gt;
+        &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.add-to-links {
+	.separator { display:none; }
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="links-cart">Links &amp; Cart</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_kg8fu" height="0" src="about:blank"></iframe>
+                        <script id="script_kg8fu">
+                            var iframe  = document.getElementById('iframe_kg8fu');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_kg8fu');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="add-to-box">		<div class="add-to-cart">			<label for="qty">Qty:</label>			<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">			<button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>		</div>		<span class="or">OR</span>		<ul class="add-to-links">		<li><a class="link-wishlist" href="#">Add to Wishlist</a></li>		<li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>		</ul>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;add-to-box&quot;&gt;
+        &lt;div class=&quot;add-to-cart&quot;&gt;
+            &lt;label for=&quot;qty&quot;&gt;Qty:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;input-text qty&quot; title=&quot;Qty&quot; value=&quot;1&quot; maxlength=&quot;12&quot; id=&quot;qty&quot; name=&quot;qty&quot;&gt;
+            &lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;span class=&quot;or&quot;&gt;OR&lt;/span&gt;
+        &lt;ul class=&quot;add-to-links&quot;&gt;
+            &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.add-to-box {
+	.add-to-cart { float:left; }
+	.or { float:left; margin:0 10px; }
+	.add-to-links { float:left; }
+}
+
+.product-view {}
+
+.product-essential {}
+
+.product-collateral .box-collateral { margin:0 0 15px; }</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="product-images">Product Images</h2>
+<h3 id="zoom-enabled">Zoom Enabled</h3>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_eqrnf" height="0" src="about:blank"></iframe>
+                        <script id="script_eqrnf">
+                            var iframe  = document.getElementById('iframe_eqrnf');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_eqrnf');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="product-img-box">	<p class="product-image product-image-zoom">	   <img title="Product Name" alt="Product Name" src="http://placekitten.com/265/265" id="image" style="left: 0px; top: 0px;">	</p>	<p id="track_hint" class="zoom-notice">Double click on above image to view full picture</p>	<div class="zoom">	   <img class="btn-zoom-out" title="Zoom Out" alt="Zoom Out" src="http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_out.gif" id="zoom_out">	   <div id="track">	  <div id="handle" class="selected" style="left: 0px;"></div>	   </div>	   <img class="btn-zoom-in" title="Zoom In" alt="Zoom In" src="http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_in.gif" id="zoom_in">	</div>	<div class="more-views">	   <h2>More Views</h2>	   <ul>	  <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>	  <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>	   </ul>	</div>	</div>### Zoom disabled	<div class="product-img-box">	<p class="product-image">	   <img title="Product Name" alt="Product Name" src="http://placekitten.com/265/265" id="image" style="left: 0px; top: 0px;">	</p>	<div class="more-views">	   <h2>More Views</h2>	   <ul>	  <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>	  <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>	   </ul>	</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;product-img-box&quot;&gt;
+        &lt;p class=&quot;product-image product-image-zoom&quot;&gt;
+            &lt;img title=&quot;Product Name&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/265/265&quot; id=&quot;image&quot; style=&quot;left: 0px; top: 0px;&quot;&gt;
+        &lt;/p&gt;
+        &lt;p id=&quot;track_hint&quot; class=&quot;zoom-notice&quot;&gt;Double click on above image to view full picture&lt;/p&gt;
+        &lt;div class=&quot;zoom&quot;&gt;
+            &lt;img class=&quot;btn-zoom-out&quot; title=&quot;Zoom Out&quot; alt=&quot;Zoom Out&quot; src=&quot;http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_out.gif&quot; id=&quot;zoom_out&quot;&gt;
+            &lt;div id=&quot;track&quot;&gt;
+                &lt;div id=&quot;handle&quot; class=&quot;selected&quot; style=&quot;left: 0px;&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;img class=&quot;btn-zoom-in&quot; title=&quot;Zoom In&quot; alt=&quot;Zoom In&quot; src=&quot;http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_in.gif&quot; id=&quot;zoom_in&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;more-views&quot;&gt;
+            &lt;h2&gt;More Views&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a title=&quot;&quot; href=&quot;#&quot;&gt;&lt;img width=&quot;56&quot; height=&quot;56&quot; alt=&quot;&quot; src=&quot;http://placekitten.com/56/56&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a title=&quot;&quot; href=&quot;#&quot;&gt;&lt;img width=&quot;56&quot; height=&quot;56&quot; alt=&quot;&quot; src=&quot;http://placekitten.com/56/56&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<h3 id="zoom-disabled">Zoom disabled</h3>
+<pre><code>    &lt;div class=&quot;product-img-box&quot;&gt;
+        &lt;p class=&quot;product-image&quot;&gt;
+            &lt;img title=&quot;Product Name&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/265/265&quot; id=&quot;image&quot; style=&quot;left: 0px; top: 0px;&quot;&gt;
+        &lt;/p&gt;
+        &lt;div class=&quot;more-views&quot;&gt;
+            &lt;h2&gt;More Views&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a title=&quot;&quot; href=&quot;#&quot;&gt;&lt;img width=&quot;56&quot; height=&quot;56&quot; alt=&quot;&quot; src=&quot;http://placekitten.com/56/56&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a title=&quot;&quot; href=&quot;#&quot;&gt;&lt;img width=&quot;56&quot; height=&quot;56&quot; alt=&quot;&quot; src=&quot;http://placekitten.com/56/56&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-img-box { 
+	float:left; 
+	width:267px;
+	.col3-layout & { 
+		float:none; 
+		margin:0 auto; 
+	}
+	.product-image { border:1px solid #ddd; }
+	.product-image-zoom { 
+		position:relative; 
+		width:265px; 
+		height:265px; 
+		overflow:hidden; 
+		z-index:9; 
+		img { 
+			position:absolute; 
+			left:0; 
+			top:0; 
+			cursor:move; 
+		}
+	}
+	.zoom-notice { text-align:center; }
+	.zoom { 
+		position:relative; 
+		z-index:9; 
+		height:18px;
+		margin:0 auto 13px;
+		padding:0 28px;
+		background:url(../images/slider_bg.gif) 50% 50% no-repeat;
+		cursor:pointer;
+		&.disabled { 
+			-moz-opacity:.3;
+			-webkit-opacity:.3;
+			-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; // IE8
+			opacity:.3;
+		}
+		#track { 
+			position:relative; 
+			height:18px;
+		}
+		#handle { 
+			position:absolute;
+			left:0;
+			top:-1px;
+			width:9px;
+			height:22px;
+			background:url(../images/magnifier_handle.gif) 0 0 no-repeat;
+		}
+		.btn-zoom-out { 
+			position:absolute;
+			left:2px;
+			top:0;
+		}
+		.btn-zoom-in { 
+			position:absolute;
+			right:2px;
+			top:0;
+		}
+	}
+	.more-views {
+		ul { margin-left:-4px }
+		li { 
+			float:left; 
+			padding:1px; 
+			background-color:#ddd; 
+			margin:0 0 8px 4px ;
+		}
+	} 
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h3 id="product-image-popup">Product Image Popup</h3>
+<p>Popup when a product thumbnail is clicked from product page image thumbnails.</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_ruvlp" height="0" src="about:blank"></iframe>
+                        <script id="script_ruvlp">
+                            var iframe  = document.getElementById('iframe_ruvlp');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_ruvlp');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="product-image-popup">	<div class="buttons-set">	   <a class="button" href="#"><span>Close Window</span></a>	</div>	<div class="nav">	   <a class="prev" href="#">« Prev</a>	</div>	<img class="image" id="product-gallery-image" title="" alt="" src="http://placekitten.com/600/600">	<div class="buttons-set">	   <a class="button" href="#"><span>Close Window</span></a>	</div>	<div class="nav">	   <a class="prev" href="#">« Prev</a>	</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;product-image-popup&quot;&gt;
+        &lt;div class=&quot;buttons-set&quot;&gt;
+            &lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;&lt;span&gt;Close Window&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;nav&quot;&gt;
+            &lt;a class=&quot;prev&quot; href=&quot;#&quot;&gt;« Prev&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;img class=&quot;image&quot; id=&quot;product-gallery-image&quot; title=&quot;&quot; alt=&quot;&quot; src=&quot;http://placekitten.com/600/600&quot;&gt;
+        &lt;div class=&quot;buttons-set&quot;&gt;
+            &lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;&lt;span&gt;Close Window&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;nav&quot;&gt;
+            &lt;a class=&quot;prev&quot; href=&quot;#&quot;&gt;« Prev&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-image-popup { 
+	margin:0 auto;
+	.buttons-set { 
+		float:right; 
+		clear:none; 
+		border:0; 
+		margin:0; 
+		padding:0;
+	}
+	.nav { 
+		margin:0 100px; 
+		text-align:center;
+	}
+	.image { display:block; }
+	.image-label {}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="product-shop">Product Shop</h2>
+<p>Contains vital product information, name, reviews, add to cart and short description.</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_adwps" height="0" src="about:blank"></iframe>
+                        <script id="script_adwps">
+                            var iframe  = document.getElementById('iframe_adwps');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_adwps');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="product-view">		<div class="product-shop">			<div class="product-name">				<h1>Product Name</h1>			</div>			<div class="short-description"> <h2>Quick Overview</h2> <div class="std">					[ADMIN_CONTENT] </div>  </div>		</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;product-view&quot;&gt;
+        &lt;div class=&quot;product-shop&quot;&gt;
+            &lt;div class=&quot;product-name&quot;&gt;
+                &lt;h1&gt;Product Name&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;short-description&quot;&gt;
+                &lt;h2&gt;Quick Overview&lt;/h2&gt;
+                &lt;div class=&quot;std&quot;&gt;
+                    [ADMIN_CONTENT]
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-view {
+	.product-shop { float:right; width:445px; }
+	.col1-layout & {
+		.product-shop { float:right; width:700px; }
+	}
+	.col3-layout & {
+		.product-shop { float:none; width:auto; }
+	}
+	.product-name {}
+	.short-description {}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="product-options">Product Options</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_os5t4" height="0" src="about:blank"></iframe>
+                        <script id="script_os5t4">
+                            var iframe  = document.getElementById('iframe_os5t4');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_os5t4');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div id="product-options-wrapper" class="product-options">	<dl class="last">  <dt><label class="required"><em>*</em>Size</label></dt>	   <dd>	  <div class="input-box">	 <select class="required-entry super-attribute-select validation-failed">	<option value="">Choose an Option...</option>	<option value="100" price="0">Small</option>	<option value="99" price="0">Medium</option>	<option value="98" price="0">Large</option>	 </select>	 <div class="validation-advice">This is a required field.</div>	  </div>	   </dd>  <dt><label class="required"><em>*</em>Color</label></dt>	   <dd class="last">	  <div class="input-box">	 <select class="required-entry super-attribute-select" disabled="">	<option>Choose an Option...</option>	 </select>	  </div>	   </dd>   </dl>   <p class="required">* Required Fields</p></div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div id=&quot;product-options-wrapper&quot; class=&quot;product-options&quot;&gt;
+        &lt;dl class=&quot;last&quot;&gt;
+            &lt;dt&gt;&lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Size&lt;/label&gt;&lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;div class=&quot;input-box&quot;&gt;
+                    &lt;select class=&quot;required-entry super-attribute-select validation-failed&quot;&gt;
+                        &lt;option value=&quot;&quot;&gt;Choose an Option...&lt;/option&gt;
+                        &lt;option value=&quot;100&quot; price=&quot;0&quot;&gt;Small&lt;/option&gt;
+                        &lt;option value=&quot;99&quot; price=&quot;0&quot;&gt;Medium&lt;/option&gt;
+                        &lt;option value=&quot;98&quot; price=&quot;0&quot;&gt;Large&lt;/option&gt;
+                    &lt;/select&gt;
+                    &lt;div class=&quot;validation-advice&quot;&gt;This is a required field.&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/dd&gt;
+            &lt;dt&gt;&lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Color&lt;/label&gt;&lt;/dt&gt;
+            &lt;dd class=&quot;last&quot;&gt;
+                &lt;div class=&quot;input-box&quot;&gt;
+                    &lt;select class=&quot;required-entry super-attribute-select&quot; disabled=&quot;&quot;&gt;
+                        &lt;option&gt;Choose an Option...&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/dd&gt;
+        &lt;/dl&gt;
+        &lt;p class=&quot;required&quot;&gt;* Required Fields&lt;/p&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-options { 
+	padding:10px; 
+	margin:10px 0 0; 
+	border:1px solid #ddd; 
+	background-color:#f6f6f6;
+	dt {
+		label { font-weight:bold; }
+		.qty-holder { 
+			float:right; 
+			label { vertical-align:middle; }
+		}
+		.qty-disabled { 
+			background:none; 
+			border:0; 
+			padding:3px; 
+			color:#000; 
+		}
+	}
+	dd { 
+		margin:10px 0; 
+		input {
+			.input-text { width:98%; }
+			.datetime-picker { width:150px; }
+		}
+		textarea { width:98%; height:8em; }
+		select { width:100%; }
+		.time-picker { 
+			display:-moz-inline-box; 
+			display:inline-block; 
+			padding:2px 0; 
+			vertical-align:middle; 
+		}
+	}
+	dl.last dd.last {}
+	.options-list {
+		input {
+			.radio { float:left; margin:3px -18px 0 0; }
+			.checkbox { float:left; margin:3px -20px 0 0; }
+		}
+		.label { display:block; margin-left:20px; }
+	}
+	ul.validation-failed { padding:0 7px; }
+	p.required { padding:15px 0 0; }
+}
+
+.product-options-bottom { 
+	padding:10px; 
+	border:1px solid #ddd; 
+	border-top:0; 
+	.price-box { margin:10px 0; }
+}
+
+// Grouped Product 
+.product-view {
+	.grouped-items-table {}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="block-description">Block: Description</h2>
+<p>Contains product data from the &quot;description&quot; attribute. See Normalize-&gt;Base for <code>.std</code> definitions.</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_j7iw8" height="0" src="about:blank"></iframe>
+                        <script id="script_j7iw8">
+                            var iframe  = document.getElementById('iframe_j7iw8');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_j7iw8');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="box-collateral box-description">		<h2>Details</h2>		<div class="std">			[ADMIN_CONTENT]		</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;box-collateral box-description&quot;&gt;
+        &lt;h2&gt;Details&lt;/h2&gt;
+        &lt;div class=&quot;std&quot;&gt;
+            [ADMIN_CONTENT]
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-view {
+	.box-description {}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="block-additional">Block: Additional</h2>
+<p>Contains table of attributes set to &#39;Show on Product View Page&#39;</p>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_1om29" height="0" src="about:blank"></iframe>
+                        <script id="script_1om29">
+                            var iframe  = document.getElementById('iframe_1om29');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_1om29');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="box-collateral box-additional">	<h2>Additional Information</h2>	<table id="product-attribute-specs-table" class="data-table">	   <colgroup>	  <col width="25%">	  <col>	   </colgroup>	   <tbody>	  <tr class="first odd">	 <th class="label">Attribute Label</th>	 <td class="data last">Attribute Value</td>	  </tr>	  <tr class="last even">	 <th class="label">Attribute Label</th>	 <td class="data last">Attribute Value</td>	  </tr>	   </tbody>	</table>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;box-collateral box-additional&quot;&gt;
+        &lt;h2&gt;Additional Information&lt;/h2&gt;
+        &lt;table id=&quot;product-attribute-specs-table&quot; class=&quot;data-table&quot;&gt;
+            &lt;colgroup&gt;
+                &lt;col width=&quot;25%&quot;&gt;
+                &lt;col&gt;
+            &lt;/colgroup&gt;
+            &lt;tbody&gt;
+                &lt;tr class=&quot;first odd&quot;&gt;
+                    &lt;th class=&quot;label&quot;&gt;Attribute Label&lt;/th&gt;
+                    &lt;td class=&quot;data last&quot;&gt;Attribute Value&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr class=&quot;last even&quot;&gt;
+                    &lt;th class=&quot;label&quot;&gt;Attribute Label&lt;/th&gt;
+                    &lt;td class=&quot;data last&quot;&gt;Attribute Value&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-view {
+	.box-additional {}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="block-upsell">Block: Upsell</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_bq2ch" height="0" src="about:blank"></iframe>
+                        <script id="script_bq2ch">
+                            var iframe  = document.getElementById('iframe_bq2ch');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_bq2ch');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="box-collateral box-up-sell">	<h2>You may also be interested in the following product(s)</h2>	<table id="upsell-product-table" class="products-grid">	   <tbody>	  <tr class="first last odd">	 <td>	<a class="product-image" title="Product Name" href="#">	<img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">	</a>	<h3 class="product-name"><a title="Product Name" href="#">Product Name</a></h3>	<div class="price-box">	<span class="regular-price">	   <span class="price">£1,799.99</span>	</span>	</div>	<div class="ratings">	<div class="rating-box">	   <div style="width:64%" class="rating"></div>	</div>	<p class="rating-links">	   <a href="#">6 Review(s)</a>	   <span class="separator">|</span>	   <a href="#">Add Your Review</a>	</p>	</div>	 </td>	 <td>	<a class="product-image" title="Product Name" href="#">	<img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">	</a>	<h3 class="product-name"><a title="Product Name" href="#">Product Name</a></h3>	<div class="price-box">	<span class="regular-price">	   <span class="price">£1,799.99</span>	</span>	</div>	<div class="ratings">	<div class="rating-box">	   <div style="width:64%" class="rating"></div>	</div>	<p class="rating-links">	   <a href="#">6 Review(s)</a>	   <span class="separator">|</span>	   <a href="#">Add Your Review</a>	</p>	</div>	 </td>	 <td class="empty">&nbsp;</td>	 <td class="empty last">&nbsp;</td>	  </tr>	   </tbody>	</table>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;box-collateral box-up-sell&quot;&gt;
+        &lt;h2&gt;You may also be interested in the following product(s)&lt;/h2&gt;
+        &lt;table id=&quot;upsell-product-table&quot; class=&quot;products-grid&quot;&gt;
+            &lt;tbody&gt;
+                &lt;tr class=&quot;first last odd&quot;&gt;
+                    &lt;td&gt;
+                        &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
+                            &lt;img width=&quot;125&quot; height=&quot;125&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/125/125&quot;&gt;
+                        &lt;/a&gt;
+                        &lt;h3 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h3&gt;
+                        &lt;div class=&quot;price-box&quot;&gt;
+                            &lt;span class=&quot;regular-price&quot;&gt;
+                                &lt;span class=&quot;price&quot;&gt;£1,799.99&lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;    
+                        &lt;div class=&quot;ratings&quot;&gt;
+                            &lt;div class=&quot;rating-box&quot;&gt;
+                                &lt;div style=&quot;width:64%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;rating-links&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;6 Review(s)&lt;/a&gt;
+                                &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
+                                &lt;a href=&quot;#&quot;&gt;Add Your Review&lt;/a&gt;
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
+                            &lt;img width=&quot;125&quot; height=&quot;125&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/125/125&quot;&gt;
+                        &lt;/a&gt;
+                        &lt;h3 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h3&gt;
+                        &lt;div class=&quot;price-box&quot;&gt;
+                            &lt;span class=&quot;regular-price&quot;&gt;
+                                &lt;span class=&quot;price&quot;&gt;£1,799.99&lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;    
+                        &lt;div class=&quot;ratings&quot;&gt;
+                            &lt;div class=&quot;rating-box&quot;&gt;
+                                &lt;div style=&quot;width:64%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;rating-links&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;6 Review(s)&lt;/a&gt;
+                                &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
+                                &lt;a href=&quot;#&quot;&gt;Add Your Review&lt;/a&gt;
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td class=&quot;empty&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                    &lt;td class=&quot;empty last&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-view {
+	.box-up-sell {
+		.products-grid {
+			td { width:25%; }
+		}
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="block-tags">Block: Tags</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_557g0" height="0" src="about:blank"></iframe>
+                        <script id="script_557g0">
+                            var iframe  = document.getElementById('iframe_557g0');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_557g0');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div class="product-view">		<div class="box-collateral box-tags">		<h2>Product Tags</h2>		<h3>Other people marked this product with these tags:</h3>		<ul class="product-tags">		   <li class="first"><a href="#">young</a> (4)</li> 		   <li><a href="#">hip</a> (4)</li> 		   <li class="last"><a href="#">cool t-shirt</a> (4)</li>		</ul>		<form method="get" action="#" id="addTagForm">		   <div class="form-add">		  <label for="productTagName">Add Your Tags:</label>		  <div class="input-box">		 <input type="text" id="productTagName" name="productTagName" class="input-text required-entry">		  </div>		  <button class="button" title="Add Tags" type="button">		 <span>		<span>Add Tags</span>		 </span>		  </button>		   </div>		</form>		<p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>		</div>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;product-view&quot;&gt;
+        &lt;div class=&quot;box-collateral box-tags&quot;&gt;
+            &lt;h2&gt;Product Tags&lt;/h2&gt;
+            &lt;h3&gt;Other people marked this product with these tags:&lt;/h3&gt;
+            &lt;ul class=&quot;product-tags&quot;&gt;
+                &lt;li class=&quot;first&quot;&gt;&lt;a href=&quot;#&quot;&gt;young&lt;/a&gt; (4)&lt;/li&gt; 
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;hip&lt;/a&gt; (4)&lt;/li&gt; 
+                &lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;cool t-shirt&lt;/a&gt; (4)&lt;/li&gt;    
+            &lt;/ul&gt;
+            &lt;form method=&quot;get&quot; action=&quot;#&quot; id=&quot;addTagForm&quot;&gt;
+                &lt;div class=&quot;form-add&quot;&gt;
+                    &lt;label for=&quot;productTagName&quot;&gt;Add Your Tags:&lt;/label&gt;
+                    &lt;div class=&quot;input-box&quot;&gt;
+                        &lt;input type=&quot;text&quot; id=&quot;productTagName&quot; name=&quot;productTagName&quot; class=&quot;input-text required-entry&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;button&quot; title=&quot;Add Tags&quot; type=&quot;button&quot;&gt;
+                        &lt;span&gt;
+                            &lt;span&gt;Add Tags&lt;/span&gt;
+                        &lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+            &lt;p class=&quot;note&quot;&gt;Use spaces to separate tags. Use single quotes (&#39;) for phrases.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-view { 
+	.box-tags {
+		.form-add {
+			label { float:left; }
+			.input-box { float:left; width:260px; margin:0 5px; }
+			input.input-text { width:254px; }
+			p { clear:both; }
+		}
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><h2 id="block-reviews">Block: Reviews</h2>
+</div>
+                
+                
+                    <div class="result">
+                        <iframe id="iframe_pvabl" height="0" src="about:blank"></iframe>
+                        <script id="script_pvabl">
+                            var iframe  = document.getElementById('iframe_pvabl');
+                            var context = iframe.contentWindow.document;
+                            var script  = document.getElementById('script_pvabl');
+                            context.open();
+                            context.write('<!doctype html>'
+                                +'<html>'
+                                +'    <head>'
+                                +'        '
+                                +'    </head>'
+                                +'    <body>'
+                                +'        	<div id="customer-reviews" class="box-collateral box-reviews">	<h2>Customer Reviews</h2>	<dl>	   <dt>	  <a href="#">Review Title</a> Review by <span>Review Name</span>	   </dt>	   <dd>	  <table class="ratings-table">	 [RATINGS_TABLE]	  </table>	  Review Text	  <small class="date">(Posted on 31/08/2007)</small>	   </dd>	</dl>	</div>'
+                                +'    </body>'
+                                +'</html>');
+                            context.close();
+                            script.parentNode.removeChild(script);
+                        </script>
+                    </div>
+                
+                
+                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div id=&quot;customer-reviews&quot; class=&quot;box-collateral box-reviews&quot;&gt;
+        &lt;h2&gt;Customer Reviews&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;
+                &lt;a href=&quot;#&quot;&gt;Review Title&lt;/a&gt; Review by &lt;span&gt;Review Name&lt;/span&gt;
+            &lt;/dt&gt;
+            &lt;dd&gt;
+                &lt;table class=&quot;ratings-table&quot;&gt;
+                    [RATINGS_TABLE]
+                &lt;/table&gt;
+                Review Text
+                &lt;small class=&quot;date&quot;&gt;(Posted on 31/08/2007)&lt;/small&gt;
+            &lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/div&gt;</code></pre>
+</div>
+                
+                
+                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-view {
+	.box-reviews {
+		.form-add {}
+	}
+}</code></pre></div>
+                
+
+            </div>
+        
+    </div>
+
+    <script>
+        // Resize all iframes to exactly fit content within
+        window.onload = function() {
+            var iframes = document.querySelectorAll('iframe');
+            for ( var i = 0; i < iframes.length; i++ ){
+                iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
+            }
+        };
+    </script>
+
+</body>
+</html>

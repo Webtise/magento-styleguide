@@ -1,0 +1,5795 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_blank
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/* Layout ================================================================================ */
+
+.page-print {
+  background: #fff;
+  padding: 20px;
+  text-align: left; }
+
+.page-empty {
+  background: #fff;
+  padding: 20px;
+  text-align: left; }
+
+.page-popup {
+  padding: 20px;
+  text-align: left; }
+
+/* ======================================================================================= */
+/* Global Styles ========================================================================= */
+/* Misc */
+.links li {
+  display: inline; }
+
+.links li.first {
+  padding-left: 0 !important; }
+
+.links li.last {
+  background: none !important;
+  padding-right: 0 !important; }
+
+.link-cart {
+  font-weight: bold;
+  color: #f00; }
+
+.link-wishlist {
+  font-weight: bold; }
+
+.link-reorder {
+  font-weight: bold; }
+
+.link-compare {
+  font-weight: bold; }
+
+.link-print {
+  background: url(../images/i_print.gif) 0 2px no-repeat;
+  padding: 2px 0 2px 25px; }
+
+.link-rss {
+  background: url(../images/i_rss.gif) 0 1px no-repeat;
+  padding-left: 18px;
+  white-space: nowrap; }
+
+.btn-remove {
+  display: block;
+  width: 11px;
+  height: 11px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/btn_remove.gif) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden; }
+
+.btn-remove2 {
+  display: block;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/btn_trash.gif) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden; }
+
+.btn-edit {
+  display: block;
+  width: 11px;
+  height: 11px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/btn_edit.gif) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden; }
+
+.cards-list dt {
+  margin: 5px 0 0; }
+
+.cards-list .offset {
+  padding: 2px 0 2px 20px; }
+
+.separator {
+  margin: 0 3px; }
+
+.divider {
+  clear: both;
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  height: 1px;
+  margin: 10px 0;
+  background: #ddd;
+  text-indent: -999em;
+  overflow: hidden; }
+
+/* ======================================================================================= */
+/* Content Styles ================================================================= */
+.product-name {
+  font-size: 1em;
+  font-weight: normal; }
+
+
+/* Product Tags */
+.tags-list li {
+  display: inline; }
+
+/* Advanced Search */
+
+
+
+/* CMS Home Page */
+
+
+/* RSS */
+.rss-title h1 {
+  background: url(../images/i_rss-big.png) 0 4px no-repeat;
+  padding-left: 27px; }
+
+.rss-table .link-rss {
+  display: block;
+  line-height: 1.35;
+  background-position: 0 2px; }
+
+/* ======================================================================================= */
+/* Clears ================================================================================ */
+.clearer:after, .header-container:after, .header-container .top-container:after, .header:after, .header .quick-access:after, #nav:after, .footer:after, .footer-container .bottom-container:after, .col-main:after, .col2-set:after, .col3-set:after, .col4-set:after, .search-autocomplete li:after, .block .block-content:after, .block .actions:after, .block li.item:after, .block-poll li:after, .block-layered-nav .currently li:after, .page-title:after, .products-grid:after, .products-list li.item:after, .box-account .box-head:after, .dashboard .box .box-title:after, .box-reviews li.item:after, .box-tags li.item:after, .pager:after, .sorter:after, .ratings:after, .add-to-box:after, .add-to-cart:after, .product-essential:after, .product-collateral:after, .product-view .product-img-box .more-views ul:after, .product-view .product-shop .short-description:after, .product-view .box-description:after, .product-view .box-tags .form-add:after, .product-options .options-list li:after, .product-options-bottom:after, .product-review:after, .cart:after, .cart-collaterals:after, .cart .crosssell li.item:after, .opc .step-title:after, .checkout-progress:after, .multiple-checkout .place-order:after, .group-select li:after, .form-list li:after, .form-list .field:after, .buttons-set:after, .page-print .print-head:after, .advanced-search-summary:after, .gift-messages-form .item:after, .send-friend .form-list li p:after {
+  display: block;
+  content: ".";
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden; }
+
+/* ======================================================================================= */
+/* 
+
+# Category Page 
+
+Contains the category title, description and image as well as the list and/or grid view of the products contained in it.
+
+*/
+/*
+
+## Category Header
+
+```
+	<div class="page-title category-title">
+    	<h1>Category Title</h1>
+	</div>
+	<p class="category-image"><img title="Category Image" alt="Category Image" src="http://placekitten.com/475/215"></p>
+	<div class="category-description std">
+		Category Description
+    </div>
+```
+
+*/
+.category-title {
+  border: 0;
+  margin: 0 0 7px; }
+
+.category-image {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 0 10px;
+  text-align: center; }
+
+
+.category-description {
+  margin: 0 0 10px; }
+
+/*
+
+## Product Views
+
+### Product Grid
+
+```
+	<div class="category-products">
+		<ul class="products-grid first last odd">
+		    <li class="item first">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		    <li class="item">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		    <li class="item last">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		</ul>
+	</div>
+```
+
+*/
+
+.products-grid {
+  border-bottom: 1px solid #ddd;
+  position: relative; }
+  .products-grid.last {
+    border-bottom: 0; }
+  .products-grid li.item {
+    float: left;
+    padding: 12px 10px 80px;
+    width: 138px; }
+  .products-grid .product-image {
+    display: block;
+    width: 135px;
+    height: 135px;
+    margin: 0 0 10px; }
+  .products-grid .product-name {
+    margin: 0 0 5px;
+    font-weight: bold;
+    font-size: 13px; }
+  .products-grid .price-box {
+    margin: 5px 0; }
+  .products-grid .availability {
+    line-height: 21px; }
+  .products-grid .actions {
+    position: absolute;
+    bottom: 12px; }
+  .col2-left-layout .products-grid, .col2-right-layout .products-grid {
+    width: 632px;
+    margin: 0 auto; }
+  .col1-layout .products-grid {
+    width: 790px;
+    margin: 0 auto; }
+
+/* 
+
+### Product List
+
+```
+	<ol id="products-list" class="products-list">
+	    <li class="item odd">
+	        <a class="product-image" title="Product Name" href="#">
+	            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+	        </a>
+	        <div class="product-shop">
+	            <div class="f-fix">
+	                <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+	                <div class="ratings">
+	                    <div class="rating-box">
+	                        <div style="width:62%" class="rating"></div>
+	                    </div>
+	                    <p class="rating-links">
+	                        <a href="#">3 Review(s)</a>
+	                        <span class="separator">|</span>
+	                        <a href="#">Add Your Review</a>
+	                    </p>
+	                </div>
+	                <div class="price-box">
+	                    <span id="product-price-83" class="regular-price">
+	                        <span class="price">£15.99</span>
+	                    </span>
+	                </div>
+	                <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>
+	                <div class="desc std">
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <a class="link-learn" title="Product Name" href="#">Learn More</a>
+	                </div>
+	                <ul class="add-to-links">
+	                    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	                    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </li>
+	    <li class="item last even">
+	        <a class="product-image" title="Product Name" href="#">
+	            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+	        </a>
+	        <div class="product-shop">
+	            <div class="f-fix">
+	                <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+	                <div class="ratings">
+	                    <div class="rating-box">
+	                        <div style="width:62%" class="rating"></div>
+	                    </div>
+	                    <p class="rating-links">
+	                        <a href="#">3 Review(s)</a>
+	                        <span class="separator">|</span>
+	                        <a href="#">Add Your Review</a>
+	                    </p>
+	                </div>
+	                <div class="price-box">
+	                    <span id="product-price-83" class="regular-price">
+	                        <span class="price">£15.99</span>
+	                    </span>
+	                </div>
+	                <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>
+	                <div class="desc std">
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <a class="link-learn" title="Product Name" href="#">Learn More</a>
+	                </div>
+	                <ul class="add-to-links">
+	                    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	                    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </li>
+	</ol>
+```
+
+*/
+.products-list li.item {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 10px; }
+  .products-list li.item.last {
+    border-bottom: 0; }
+.products-list .product-image {
+  float: left;
+  width: 135px;
+  height: 135px;
+  margin: 0 0 10px; }
+.products-list .product-shop {
+  margin-left: 150px; }
+.products-list .product-name {
+  margin: 0 0 5px;
+  font-weight: bold;
+  font-size: 13px; }
+.products-list .price-box {
+  float: left;
+  margin: 3px 13px 5px 0; }
+.products-list .availability {
+  float: left;
+  margin: 3px 0 0; }
+.products-list .desc {
+  clear: both;
+  padding: 6px 0 0;
+  margin: 0 0 15px;
+  line-height: 1.35; }
+  .products-list .desc .link-learn {
+    font-size: 11px; }
+.products-list .add-to-links {
+  clear: both; }
+  .products-list .add-to-links li {
+    display: inline; }
+  .products-list .add-to-links .separator {
+    display: inline;
+    margin: 0 2px; }
+
+/*
+
+# Product View
+
+*/
+/* 
+## Ratings 
+
+### No Rating
+
+```	
+	<p class="no-rating">
+		<a href="#">Be the first to review this product</a>
+	</p>
+```
+*/
+.no-rating {
+  margin: 0; }
+
+/*
+
+### Rated
+
+```
+	<div class="ratings">
+        <div class="rating-box">
+            <div style="width:73%" class="rating"></div>
+        </div>
+        <p class="rating-links">
+            <a href="#">2 Review(s)</a>
+            <span class="separator">|</span>
+            <a href="#">Add Your Review</a>
+        </p>
+    </div>
+```
+
+*/
+.ratings {
+  font-size: 11px;
+  line-height: 1.25;
+  margin: 7px 0; }
+  .ratings strong {
+    float: left;
+    margin: 1px 3px 0 0; }
+  .ratings .rating-links {
+    margin: 0; }
+    .ratings .rating-links .separator {
+      margin: 0 2px; }
+  .ratings .rating-box {
+    float: left;
+    margin-right: 3px; }
+
+.rating-box {
+  width: 69px;
+  height: 13px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/bkg_rating.gif) 0 0 repeat-x;
+  text-indent: -999em;
+  overflow: hidden; }
+  .rating-box .rating {
+    float: left;
+    height: 13px;
+    background: url(../images/bkg_rating.gif) 0 100% repeat-x; }
+
+/*
+
+### Ratings Table
+
+Table to show ratings for each point (found on product review list page)
+
+```
+	<table class="ratings-table">
+	        <colgroup>
+	        	<col width="1">
+	        	<col>
+	        </colgroup>
+	        <tbody>
+		        <tr>
+		            <th>Quality</th>
+		            <td>
+		                <div class="rating-box">
+		                    <div style="width:40%;" class="rating"></div>
+		                </div>
+		            </td>
+		        </tr>
+		        <tr>
+		            <th>Price</th>
+		            <td>
+		                <div class="rating-box">
+		                    <div style="width:20%;" class="rating"></div>
+		                </div>
+		            </td>
+		        </tr>
+		        <tr>
+		            <th>Value</th>
+		            <td>
+		                <div class="rating-box">
+		                    <div style="width:60%;" class="rating"></div>
+		                </div>
+		            </td>
+		        </tr>
+	        </tbody>
+	</table>
+```
+
+*/
+.ratings-table th, .ratings-table td {
+  font-size: 11px;
+  line-height: 1.15;
+  padding: 3px 0; }
+.ratings-table th {
+  font-weight: bold;
+  padding-right: 8px; }
+
+/* 
+
+## Availability 
+
+Shows current stock status for product.
+
+```
+	<p class="availability in-stock">Availability: <span>In stock</span></p>
+
+	<p class="availability out-of-stock">Availability: <span>Out of stock</span></p>
+```
+
+*/
+.availability {
+  margin: 0; }
+  .availability span {
+    font-weight: bold; }
+  .availability.out-of-stock span {
+    color: #d83820; }
+
+/*
+### Availability Only
+
+When Configuration->Inventory->Stock Options->Only X left Threshold is set
+
+```
+	<p class="availability-only">
+        <span title="Only 2 left">Only <strong>2</strong> left</span>
+    </p>
+```
+*/
+.availability-only {
+  margin: 0 0 7px; }
+  .availability-only a {
+    background: url(../images/i_availability_only_arrow.gif) 100% 0 no-repeat;
+    cursor: pointer;
+    padding-right: 15px; }
+  .availability-only .expanded {
+    background-position: 100% -15px; }
+
+/*
+Show stock levels for individual products on a configurable/bundle product
+
+```
+	<p class="availability-only">
+        <a title="Only 1749 left" href="#" class="expanded">Only <strong>1749</strong> left</a>
+    </p>
+	<table class="availability-only-details">
+	    <colgroup><col>
+	    <col width="1">
+	    </colgroup><thead>
+	        <tr class="first last">
+	            <th>Product Name</th>
+	            <th class="a-center">Qty</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	<tr class="first odd">
+	            <td>Product Name</td>
+	            <td class="a-center last">2</td>
+	        </tr>
+			<tr class="even">
+	            <td>Product Name</td>
+	            <td class="a-center last">998</td>
+	        </tr>
+			<tr class="last odd">
+	            <td>Product Name</td>
+	            <td class="a-center last">749</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.availability-only-details {
+  margin: 0 0 7px; }
+  .availability-only-details th {
+    background: #f2f2f2;
+    font-size: 10px;
+    padding: 0 8px; }
+  .availability-only-details td {
+    border-bottom: 1px solid #ddd;
+    font-size: 11px;
+    padding: 2px 8px 1px; }
+
+/* 
+## Email to a Friend 
+```
+	<p class="email-friend"><a href="#">Email to a Friend</a></p>
+```
+*/
+
+/* 
+### Send a Friend
+
+Located on separate page after clicking 'Email to a Friend' link.
+
+Uses common elements, `.page-title`, `.fieldset`, `.buttons-set` and `.form-list`.
+
+*/
+
+/* 
+## Alerts 
+*/
+/*
+### Price Alert
+```
+	<p class="alert-price link-price-alert">
+    	<a title="Sign up for price alert" href="#">Sign up for price alert</a>
+	</p>
+```
+*/
+
+/*
+### Stock Alert
+```
+	<p class="alert-stock link-stock-alert">
+	    <a title="Sign up to get notified when this product is back in stock" href="#">Sign up to get notified when this product is back in stock</a>
+	</p>
+```
+*/
+
+/*
+## Pricing
+
+Each price type commonly wrapped with:
+
+```
+	<div class="price-box">
+		<span class="[PRICE_TYPE]">
+			<span class="price">Pricing HTML</span>
+		</span>
+	</div>
+```
+
+*/
+.price {
+  white-space: nowrap !important; }
+
+.price-box .price {
+  font-weight: bold; }
+
+/* 
+### Regular price 
+
+```
+	<span class="regular-price">
+		<span class="price">£15.00</span>
+	</span>
+```
+
+*/
+.regular-price .price {
+  font-weight: bold; }
+
+/* ### Old price */
+.old-price .price-label {
+  white-space: nowrap; }
+.old-price .price {
+  font-weight: bold;
+  text-decoration: line-through; }
+
+/* ### Special price */
+.special-price .price-label {
+  font-weight: bold;
+  white-space: nowrap; }
+.special-price .price {
+  font-weight: bold; }
+
+/* 
+### Minimal price 
+
+Grouped product:
+
+```
+	<p class="minimal-price">
+		<span class="price-label">Starting at:</span>
+		<span id="product-minimal-price-54" class="price">£129.99</span>
+	</p>
+```
+
+*/
+.minimal-price .price-label {
+  font-weight: bold;
+  white-space: nowrap; }
+
+/*
+Configurable product (List/Grid view)
+
+```
+    <a class="minimal-price-link" href="#">
+        <span class="label">As low as:</span>
+        <span class="price">£449.00</span>
+    </a>
+```
+
+*/
+.minimal-price-link {
+  display: block; }
+  .minimal-price-link .price {
+    font-weight: normal; }
+
+/*
+
+### Incl tax & Excl tax
+
+```
+	<div class="price-box">
+		<span class="price-excluding-tax">
+			<span class="label">Excl. Tax:</span>
+			<span id="price-excluding-tax-41" class="price">£399.99</span>
+		</span>
+		<span class="price-including-tax">
+			<span class="label">Incl. Tax:</span>
+			<span id="price-including-tax-41" class="price">£399.99</span>
+		</span>
+	</div>
+```
+
+*/
+.price-excluding-tax {
+  display: block; }
+  .price-excluding-tax .label {
+    white-space: nowrap; }
+  .price-excluding-tax .price {
+    font-weight: normal; }
+
+.price-including-tax {
+  display: block; }
+  .price-including-tax .label {
+    white-space: nowrap; }
+  .price-including-tax .price {
+    font-weight: bold; }
+
+/* 
+### Configured price 
+
+```
+	<p class="price-as-configured">
+    	<span class="price-label">Price as configured:</span>
+        <span class="full-product-price">
+            <span class="price">£5,074.95</span>
+        </span>
+    </p>
+```
+
+*/
+.configured-price .price-label {
+  font-weight: bold;
+  white-space: nowrap; }
+.configured-price .price {
+  font-weight: bold; }
+
+/* ### FPT */
+.weee {
+  display: block;
+  font-size: 11px;
+  color: #444; }
+  .weee .price {
+    font-size: 11px;
+    font-weight: normal; }
+
+/* ### Excl tax (for order tables) */
+.price-excl-tax {
+  display: block; }
+  .price-excl-tax .label {
+    display: block;
+    white-space: nowrap; }
+  .price-excl-tax .price {
+    display: block; }
+
+/* ### Incl tax (for order tables) */
+.price-incl-tax {
+  display: block; }
+  .price-incl-tax .label {
+    display: block;
+    white-space: nowrap; }
+  .price-incl-tax .price {
+    display: block;
+    font-weight: bold; }
+
+/* 
+### Price range 
+
+Bundle Products:
+
+```
+	<p class="price-from">
+		<span class="price-label">From:</span>
+		<span class="price">£447.98</span>
+	</p>
+	<p class="price-to">
+		<span class="price-label">To:</span>
+		<span class="price">£4,477.92</span>
+	</p>                    
+```
+
+*/
+.price-from .price-label {
+  font-weight: bold;
+  white-space: nowrap; }
+
+.price-to .price-label {
+  font-weight: bold;
+  white-space: nowrap; }
+
+/* 
+### Price notice 
+
+Next to the options on a configurable product.
+
+```
+	<div class="input-box">
+		Product Option Name &nbsp; 
+		<span class="price-notice">
+			+<span class="price">£0.00</span>
+		</span>
+	</div>
+```
+
+*/
+.price-notice {
+  padding-left: 10px; }
+  .price-notice .price {
+    font-weight: bold; }
+
+/* ### Price as configured */
+.price-as-configured .price-label {
+  font-weight: bold;
+  white-space: nowrap; }
+
+
+/* 
+
+### Tier Pricing
+
+Offers discounts on higher quantity of single item purchases
+
+```
+	<ul class="tier-prices product-pricing">	
+		<li class="tier-price tier-0">
+			Buy 5 for <span class="price">£12.50</span> each and&nbsp;
+			<strong class="benefit">save&nbsp;<span class="percent tier-0">8</span>%</strong>
+	        <span class="msrp-price-hide-message"></span>
+	    </li>
+		<li class="tier-price tier-1">
+			Buy 10 for <span class="price">£11.50</span> each and&nbsp;
+			<strong class="benefit">save&nbsp;<span class="percent tier-1">15</span>%</strong>
+	        <span class="msrp-price-hide-message"></span>
+	    </li>
+		<li class="tier-price tier-2">
+			Buy 20 for <span class="price">£9.50</span> each and&nbsp;
+			<strong class="benefit">save&nbsp;<span class="percent tier-2">30</span>%</strong>
+	        <span class="msrp-price-hide-message"></span>
+		</li>
+	</ul>
+```
+
+*/
+.tier-prices .price {
+  font-weight: bold; }
+
+
+/* 
+## Add to
+
+### Cart 
+
+```
+	<div class="add-to-cart">
+		<label for="qty">Qty:</label>
+		<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+		<button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+	</div>
+```
+*/
+.add-to-cart label {
+  float: left;
+  margin-right: 5px; }
+.add-to-cart .qty {
+  float: left; }
+.add-to-cart button.button {
+  float: left;
+  margin-left: 5px; }
+.add-to-cart .paypal-logo {
+  clear: left;
+  text-align: right; }
+  .add-to-cart .paypal-logo .paypal-or {
+    clear: both;
+    display: block;
+    margin: 5px 60px 5px 0; }
+
+.product-view .add-to-cart .paypal-logo {
+  margin: 0; }
+
+/* 
+### Links 
+
+```
+	<ul class="add-to-links">
+	    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	</ul>
+```
+
+*/
+.add-to-links .separator {
+  display: none; }
+
+/* 
+### Links & Cart 
+
+```
+	<div class="add-to-box">
+		<div class="add-to-cart">
+			<label for="qty">Qty:</label>
+			<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+			<button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		</div>
+		<span class="or">OR</span>
+		<ul class="add-to-links">
+		    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		</ul>
+	</div>
+```
+
+*/
+.add-to-box .add-to-cart {
+  float: left; }
+.add-to-box .or {
+  float: left;
+  margin: 0 10px; }
+.add-to-box .add-to-links {
+  float: left; }
+
+
+
+.product-collateral .box-collateral {
+  margin: 0 0 15px; }
+
+/* 
+## Product Images 
+
+### Zoom Enabled
+
+```
+	<div class="product-img-box">
+	    <p class="product-image product-image-zoom">
+	        <img title="Product Name" alt="Product Name" src="http://placekitten.com/265/265" id="image" style="left: 0px; top: 0px;">
+	    </p>
+	    <p id="track_hint" class="zoom-notice">Double click on above image to view full picture</p>
+	    <div class="zoom">
+	        <img class="btn-zoom-out" title="Zoom Out" alt="Zoom Out" src="http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_out.gif" id="zoom_out">
+	        <div id="track">
+	            <div id="handle" class="selected" style="left: 0px;"></div>
+	        </div>
+	        <img class="btn-zoom-in" title="Zoom In" alt="Zoom In" src="http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_in.gif" id="zoom_in">
+	    </div>
+	    <div class="more-views">
+	        <h2>More Views</h2>
+	        <ul>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	        </ul>
+	    </div>
+	</div>
+```
+
+### Zoom disabled
+
+```
+	<div class="product-img-box">
+	    <p class="product-image">
+	        <img title="Product Name" alt="Product Name" src="http://placekitten.com/265/265" id="image" style="left: 0px; top: 0px;">
+	    </p>
+	    <div class="more-views">
+	        <h2>More Views</h2>
+	        <ul>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	        </ul>
+	    </div>
+	</div>
+```
+
+*/
+.product-img-box {
+  float: left;
+  width: 267px; }
+  .col3-layout .product-img-box {
+    float: none;
+    margin: 0 auto; }
+  .product-img-box .product-image {
+    border: 1px solid #ddd; }
+  .product-img-box .product-image-zoom {
+    position: relative;
+    width: 265px;
+    height: 265px;
+    overflow: hidden;
+    z-index: 9; }
+    .product-img-box .product-image-zoom img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor: move; }
+  .product-img-box .zoom-notice {
+    text-align: center; }
+  .product-img-box .zoom {
+    position: relative;
+    z-index: 9;
+    height: 18px;
+    margin: 0 auto 13px;
+    padding: 0 28px;
+    background: url(../images/slider_bg.gif) 50% 50% no-repeat;
+    cursor: pointer; }
+    .product-img-box .zoom.disabled {
+      -moz-opacity: 0.3;
+      -webkit-opacity: 0.3;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+      opacity: 0.3; }
+    .product-img-box .zoom #track {
+      position: relative;
+      height: 18px; }
+    .product-img-box .zoom #handle {
+      position: absolute;
+      left: 0;
+      top: -1px;
+      width: 9px;
+      height: 22px;
+      background: url(../images/magnifier_handle.gif) 0 0 no-repeat; }
+    .product-img-box .zoom .btn-zoom-out {
+      position: absolute;
+      left: 2px;
+      top: 0; }
+    .product-img-box .zoom .btn-zoom-in {
+      position: absolute;
+      right: 2px;
+      top: 0; }
+  .product-img-box .more-views ul {
+    margin-left: -4px; }
+  .product-img-box .more-views li {
+    float: left;
+    padding: 1px;
+    background-color: #ddd;
+    margin: 0 0 8px 4px; }
+
+/*
+
+### Product Image Popup
+
+Popup when a product thumbnail is clicked from product page image thumbnails.
+
+```
+	<div class="product-image-popup">
+	    <div class="buttons-set">
+	        <a class="button" href="#"><span>Close Window</span></a>
+	    </div>
+	    <div class="nav">
+	        <a class="prev" href="#">« Prev</a>
+	    </div>
+	    <img class="image" id="product-gallery-image" title="" alt="" src="http://placekitten.com/600/600">
+	    <div class="buttons-set">
+	        <a class="button" href="#"><span>Close Window</span></a>
+	    </div>
+	    <div class="nav">
+	        <a class="prev" href="#">« Prev</a>
+	    </div>
+	</div>
+```
+
+*/
+.product-image-popup {
+  margin: 0 auto; }
+  .product-image-popup .buttons-set {
+    float: right;
+    clear: none;
+    border: 0;
+    margin: 0;
+    padding: 0; }
+  .product-image-popup .nav {
+    margin: 0 100px;
+    text-align: center; }
+  .product-image-popup .image {
+    display: block; }
+
+/* 
+## Product Shop 
+
+Contains vital product information, name, reviews, add to cart and short description.
+
+```
+	<div class="product-view">
+		<div class="product-shop">
+			<div class="product-name">
+				<h1>Product Name</h1>
+			</div>
+			<div class="short-description">
+                <h2>Quick Overview</h2>
+                <div class="std">
+					[ADMIN_CONTENT]
+                </div>
+            </div>
+		</div>
+	</div>
+```
+
+*/
+.product-view .product-shop {
+  float: right;
+  width: 445px; }
+.col1-layout .product-view .product-shop {
+  float: right;
+  width: 700px; }
+.col3-layout .product-view .product-shop {
+  float: none;
+  width: auto; }
+
+/* 
+
+## Product Options 
+
+```
+	<div id="product-options-wrapper" class="product-options">
+    	<dl class="last">
+            <dt><label class="required"><em>*</em>Size</label></dt>
+	        <dd>
+	            <div class="input-box">
+	                <select class="required-entry super-attribute-select validation-failed">
+	                    <option value="">Choose an Option...</option>
+	                    <option value="100" price="0">Small</option>
+	                    <option value="99" price="0">Medium</option>
+	                    <option value="98" price="0">Large</option>
+	                </select>
+	                <div class="validation-advice">This is a required field.</div>
+	            </div>
+	        </dd>
+            <dt><label class="required"><em>*</em>Color</label></dt>
+	        <dd class="last">
+	            <div class="input-box">
+	                <select class="required-entry super-attribute-select" disabled="">
+	                    <option>Choose an Option...</option>
+	                </select>
+	            </div>
+	        </dd>
+        </dl>
+        <p class="required">* Required Fields</p>
+    </div>
+```
+
+*/
+.product-options {
+  padding: 10px;
+  margin: 10px 0 0;
+  border: 1px solid #ddd;
+  background-color: #f6f6f6; }
+  .product-options dt label {
+    font-weight: bold; }
+  .product-options dt .qty-holder {
+    float: right; }
+    .product-options dt .qty-holder label {
+      vertical-align: middle; }
+  .product-options dt .qty-disabled {
+    background: none;
+    border: 0;
+    padding: 3px;
+    color: #000; }
+  .product-options dd {
+    margin: 10px 0; }
+    .product-options dd input .input-text {
+      width: 98%; }
+    .product-options dd input .datetime-picker {
+      width: 150px; }
+    .product-options dd textarea {
+      width: 98%;
+      height: 8em; }
+    .product-options dd select {
+      width: 100%; }
+    .product-options dd .time-picker {
+      display: -moz-inline-box;
+      display: inline-block;
+      padding: 2px 0;
+      vertical-align: middle; }
+  .product-options .options-list input .radio {
+    float: left;
+    margin: 3px -18px 0 0; }
+  .product-options .options-list input .checkbox {
+    float: left;
+    margin: 3px -20px 0 0; }
+  .product-options .options-list .label {
+    display: block;
+    margin-left: 20px; }
+  .product-options ul.validation-failed {
+    padding: 0 7px; }
+  .product-options p.required {
+    padding: 15px 0 0; }
+
+.product-options-bottom {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top: 0; }
+  .product-options-bottom .price-box {
+    margin: 10px 0; }
+
+/* Grouped Product */
+
+/* 
+## Block: Description
+
+Contains product data from the "description" attribute. See Normalize->Base for `.std` definitions.
+
+```
+	<div class="box-collateral box-description">
+		<h2>Details</h2>
+		<div class="std">
+			[ADMIN_CONTENT]
+		</div>
+	</div>
+```
+
+*/
+
+/* 
+## Block: Additional
+
+Contains table of attributes set to 'Show on Product View Page'
+
+```
+	<div class="box-collateral box-additional">
+	    <h2>Additional Information</h2>
+	    <table id="product-attribute-specs-table" class="data-table">
+	        <colgroup>
+	            <col width="25%">
+	            <col>
+	        </colgroup>
+	        <tbody>
+	            <tr class="first odd">
+	                <th class="label">Attribute Label</th>
+	                <td class="data last">Attribute Value</td>
+	            </tr>
+	            <tr class="last even">
+	                <th class="label">Attribute Label</th>
+	                <td class="data last">Attribute Value</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+```
+
+*/
+
+/* 
+## Block: Upsell
+
+```
+	<div class="box-collateral box-up-sell">
+	    <h2>You may also be interested in the following product(s)</h2>
+	    <table id="upsell-product-table" class="products-grid">
+	        <tbody>
+	            <tr class="first last odd">
+	                <td>
+	                    <a class="product-image" title="Product Name" href="#">
+	                        <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	                    </a>
+	                    <h3 class="product-name"><a title="Product Name" href="#">Product Name</a></h3>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£1,799.99</span>
+	                        </span>
+	                    </div>    
+	                    <div class="ratings">
+	                        <div class="rating-box">
+	                            <div style="width:64%" class="rating"></div>
+	                        </div>
+	                        <p class="rating-links">
+	                            <a href="#">6 Review(s)</a>
+	                            <span class="separator">|</span>
+	                            <a href="#">Add Your Review</a>
+	                        </p>
+	                    </div>
+	                </td>
+	                <td>
+	                    <a class="product-image" title="Product Name" href="#">
+	                        <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	                    </a>
+	                    <h3 class="product-name"><a title="Product Name" href="#">Product Name</a></h3>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£1,799.99</span>
+	                        </span>
+	                    </div>    
+	                    <div class="ratings">
+	                        <div class="rating-box">
+	                            <div style="width:64%" class="rating"></div>
+	                        </div>
+	                        <p class="rating-links">
+	                            <a href="#">6 Review(s)</a>
+	                            <span class="separator">|</span>
+	                            <a href="#">Add Your Review</a>
+	                        </p>
+	                    </div>
+	                </td>
+	                <td class="empty">&nbsp;</td>
+	                <td class="empty last">&nbsp;</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+```
+
+*/
+.product-view .box-up-sell .products-grid td {
+  width: 25%; }
+
+/* 
+## Block: Tags 
+
+```
+	<div class="product-view">
+		<div class="box-collateral box-tags">
+		    <h2>Product Tags</h2>
+		    <h3>Other people marked this product with these tags:</h3>
+		    <ul class="product-tags">
+		        <li class="first"><a href="#">young</a> (4)</li> 
+		        <li><a href="#">hip</a> (4)</li> 
+		        <li class="last"><a href="#">cool t-shirt</a> (4)</li>    
+		    </ul>
+		    <form method="get" action="#" id="addTagForm">
+		        <div class="form-add">
+		            <label for="productTagName">Add Your Tags:</label>
+		            <div class="input-box">
+		                <input type="text" id="productTagName" name="productTagName" class="input-text required-entry">
+		            </div>
+		            <button class="button" title="Add Tags" type="button">
+		                <span>
+		                    <span>Add Tags</span>
+		                </span>
+		            </button>
+		        </div>
+		    </form>
+		    <p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
+		</div>
+	</div>
+```
+
+*/
+.product-view .box-tags .form-add label {
+  float: left; }
+.product-view .box-tags .form-add .input-box {
+  float: left;
+  width: 260px;
+  margin: 0 5px; }
+.product-view .box-tags .form-add input.input-text {
+  width: 254px; }
+.product-view .box-tags .form-add p {
+  clear: both; }
+
+/* 
+## Block: Reviews
+
+```
+	<div id="customer-reviews" class="box-collateral box-reviews">
+	    <h2>Customer Reviews</h2>
+	    <dl>
+	        <dt>
+	            <a href="#">Review Title</a> Review by <span>Review Name</span>
+	        </dt>
+	        <dd>
+	            <table class="ratings-table">
+	                [RATINGS_TABLE]
+	            </table>
+	            Review Text
+	            <small class="date">(Posted on 31/08/2007)</small>
+	        </dd>
+	    </dl>
+	</div>
+```
+
+*/
+
+/*
+
+# Shopping Cart
+
+## Checkout Types
+
+```
+	<div class="cart">
+		<!-- Checkout types in pagetitle -->
+		<div class="page-title title-buttons">
+        	<h1>Shopping Cart</h1>
+            <ul class="checkout-types">
+                <li>
+                	<p class="paypal-logo">
+                		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7">
+                			<img title="Checkout with PayPal" alt="Checkout with PayPal" src="">
+                		</a>
+    					<span class="paypal-or">-OR-</span>
+    				</p>
+				</li>
+                <li>
+                	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+				</li>
+            </ul>
+        </div>
+        <!-- Checkout types below cart table -->
+		<div class="totals">
+		    <ul class="checkout-types">
+		        <li>
+                	<p class="paypal-logo">
+                		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7">
+                			<img title="Checkout with PayPal" alt="Checkout with PayPal" src="">
+                		</a>
+    					<span class="paypal-or">-OR-</span>
+    				</p>
+		        </li>
+		        <li>
+		        	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+		        </li>
+		        <li>
+		        	<a title="Checkout with Multiple Addresses" href="">Checkout with Multiple Addresses</a>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+```
+
+*/
+.cart .title-buttons .checkout-types li {
+  float: left;
+  margin: 0 0 5px 5px; }
+.cart .checkout-types {
+  float: right;
+  text-align: right; }
+  .cart .checkout-types .paypal-or {
+    margin: 0 8px;
+    line-height: 2.3; }
+.cart .totals .checkout-types .paypal-or {
+  clear: both;
+  display: block;
+  padding: 3px 55px 8px 0;
+  line-height: 1;
+  font-size: 11px; }
+
+/* 
+
+## Collateral boxes
+
+```
+	<div class="cart">
+		<div class="cart-collaterals">
+	        <div class="col2-set">
+	            <div class="col-1">
+	            	[CROSSSELLS]
+	            </div>
+	            <div class="col-2">
+					[DISCOUNT]
+					[SHIPPING]
+	            </div>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.cart .cart-collaterals {
+  padding: 25px 0 0; }
+  .cart .cart-collaterals .col2-set {
+    float: left;
+    width: 700px; }
+
+/*
+
+## Crosssells
+
+```
+	<div class="cart">
+		<div class="crosssell">
+		    <h2>Based on your selection, you may be interested in the following items:</h2>
+		    <ul id="crosssell-products-list">
+		        <li class="item odd">
+		            <a title="Product Name" href="" class="product-image">
+		                <img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75">
+		            </a>
+		            <div class="product-details">
+		                <h3 class="product-name"><a href="">Product Name</a></h3>
+		                <div class="price-box">
+		                    <span id="product-price-25" class="regular-price">
+		                        <span class="price">£2,299.99</span>
+		                    </span>
+		                </div>
+		                <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		                <ul class="add-to-links">
+		                    <li><a class="link-wishlist" href="">Add to Wishlist</a></li>
+		                    <li><span class="separator">|</span> <a class="link-compare" href="">Add to Compare</a></li>
+		                </ul>
+		            </div>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+```
+
+*/
+.cart .crosssell h2 {
+  font-size: 13px;
+  font-weight: bold; }
+.cart .crosssell .product-image {
+  float: left;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #ddd; }
+.cart .crosssell .product-details {
+  margin-left: 90px; }
+.cart .crosssell li .item {
+  margin: 12px 0; }
+
+/*
+
+## Discount Codes
+
+```
+	<div class="cart">
+		<div class="discount">
+		    <h2>Discount Codes</h2>
+		    <div class="discount-form">
+		        <label for="coupon_code">Enter your coupon code if you have one.</label>
+		        <div class="input-box">
+		            <input value="" name="coupon_code" id="coupon_code" class="input-text">
+		        </div>
+		        <div class="buttons-set">
+		            <button value="Apply Coupon" onclick="discountForm.submit(false)" class="button" title="Apply Coupon" type="button"><span><span>Apply Coupon</span></span></button>
+		        </div>
+		    </div>
+		</div>
+	</div>
+```
+
+*/
+
+/*
+
+## Estimate Shipping and Tax Boxes 
+
+```
+	<div class="cart">
+		<div class="shipping">
+		    <h2>Estimate Shipping and Tax</h2>
+		    <div class="shipping-form">
+		       <form id="shipping-zip-form" method="post" action="http://magebase.local/checkout/cart/estimatePost/">
+		            <p>Enter your destination to get a shipping estimate.</p>
+		            <ul class="form-list">
+		                <li>
+		                    <label class="required" for="country"><em>*</em>Country</label>
+		                    <div class="input-box">
+		                        <select title="Country" class="validate-select" id="country" name="country_id">
+		                        	<option value=""> </option>
+									<option selected="selected" value="US">United States</option>
+		                        </select>
+		                    </div>
+		                </li>
+		                <li>
+		                    <label for="region_id">State/Province</label>
+		                    <div class="input-box">
+		                        <select title="State/Province" name="region_id" id="region_id" class="required-entry validate-select">
+		                            <option value="">Please select region, state or province</option>
+		                        	<option value="1" title="Alabama">Alabama</option>
+		                        </select>
+		                       <input type="text" style="display:none;" class="input-text required-entry" title="State/Province" value="" name="region" id="region">
+		                   </div>
+		                </li>
+		                <li>
+		                    <label for="postcode">Zip/Postal Code</label>
+		                    <div class="input-box">
+		                        <input type="text" value="" name="estimate_postcode" id="postcode" class="input-text validate-postcode">
+		                    </div>
+		                </li>
+		            </ul>
+		            <div class="buttons-set">
+		                <button class="button" onclick="coShippingMethodForm.submit()" title="Get a Quote" type="button"><span><span>Get a Quote</span></span></button>
+		            </div>
+		        </form>
+				<form action="" id="co-shipping-method-form">
+				    <dl class="sp-methods">
+				        <dt>Flat Rate</dt>
+				        <dd>
+				            <ul>
+				                <li>
+				                    <input type="radio" class="radio" name="estimate_method">
+				                    <label>Fixed <span class="price">£10.00</span></label>
+				                </li>
+				            </ul>
+				        </dd>
+				    </dl>
+				    <div class="buttons-set">
+				        <button value="Update Total" name="do" class="button" title="Update Total" type="submit"><span><span>Update Total</span></span></button>
+				    </div>
+				</form>
+		    </div>
+		</div>
+	</div>
+```
+
+*/
+
+/*
+
+## Shopping Cart Totals 
+
+```
+	<div class="cart">
+	    <div class="totals">
+	        <table id="shopping-cart-totals-table">
+	            <colgroup>
+	                <col>
+	                <col width="1">
+	            </colgroup>
+	            <tfoot>
+					<tr class="summary-details-1 summary-details summary-details-first">
+            			<td colspan="1" style="" class="a-right">Tax Zone (8.25%)<br></td>
+                        <td rowspan="1" class="a-right" style=""><span class="price">£248.65</span></td>
+                    </tr>
+					<tr class="summary-total show-details">
+					    <td colspan="1" class="a-right" style=""><div class="summary-collapse">Tax</div></td>
+					    <td class="a-right" style=""><span class="price">£248.65</span></td>
+					</tr>
+	                <tr>
+	                    <td colspan="1" class="a-right" style=""><strong>Grand Total</strong></td>
+	                    <td class="a-right" style=""><strong><span class="price">£414.99</span></strong></td>
+	                </tr>
+	            </tfoot>
+	            <tbody>
+	                <tr>
+	                    <td colspan="1" class="a-right" style="">Subtotal</td>
+	                    <td class="a-right" style=""><span class="price">£414.99</span></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        [CHECKOUT_TYPES]
+	    </div>
+	</div>
+```
+
+*/
+.cart .totals {
+  float: right; }
+  .cart .totals table {
+    width: 100%; }
+    .cart .totals table th, .cart .totals table td {
+      padding: 5px; }
+    .cart .totals table th {
+      font-weight: bold; }
+
+tr.summary-total {
+  cursor: pointer; }
+  tr.summary-total .summary-collapse {
+    float: right;
+    text-align: right;
+    padding-left: 20px;
+    background: url(../images/bkg_collapse.gif) 0 4px no-repeat;
+    cursor: pointer; }
+tr.show-details .summary-collapse {
+  background-position: 0 -53px; }
+tr.summary-details td {
+  font-size: 11px;
+  background-color: #dae1e4;
+  color: #626465; }
+tr.summary-details-first td {
+  border-top: 1px solid #d2d8db; }
+tr.summary-details-excluded {
+  font-style: italic; }
+
+/*
+
+## Shopping Cart Table 
+
+### Full Table
+
+```
+	<table class="data-table cart-table" id="shopping-cart-table">
+	    <colgroup>
+	        <col width="1">
+	        <col>
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	    </colgroup>
+	    <thead>
+	        <tr class="first">
+	            <th rowspan="2">&nbsp;</th>
+	            <th rowspan="2"><span class="nobr">Product Name</span></th>
+	            <th rowspan="2"></th>
+	            <th colspan="2" class="a-center"><span class="nobr">Unit Price</span></th>
+	            <th class="a-center" rowspan="2">Qty</th>
+	            <th colspan="2" class="a-center">Subtotal</th>
+	            <th class="a-center" rowspan="2">&nbsp;</th>
+	        </tr>
+	        <tr class="last">
+	            <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>
+	            <th> <span class="tax-flag">(Incl. Tax)</span></th>
+	            <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>
+	            <th> <span class="tax-flag">(Incl. Tax)</span></th>
+	        </tr>
+	    </thead>
+	    <tfoot>
+	        <tr class="first last">
+	            <td class="a-right last" colspan="50">
+	                <button class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
+	                <button class="button btn-update" title="Update Shopping Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Shopping Cart</span></span></button>
+	                <button id="empty_cart_button" class="button btn-empty" title="Clear Shopping Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Shopping Cart</span></span></button>
+	            </td>
+	        </tr>
+	    </tfoot>
+	    <tbody>
+	        <tr class="first odd">
+	            <td><a class="product-image" title="Product Name" href=""><img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75"></a></td>
+	            <td>
+	                <h2 class="product-name"><a href="">Product Name</a></h2>
+	                <dl class="item-options">
+	                    <dt>Option</dt>
+	                    <dd>Value</dd>
+	                </dl>
+	                <p class="item-msg error">* The requested quantity for "Product Name" is not available.</p>
+	            </td>
+	            <td class="a-center">
+	                <a title="Edit item parameters" href="">Edit</a>
+	            </td>
+	            <td class="a-right">
+	                <span class="cart-price"><span class="price">£15.00</span></span>
+	            </td>
+	            <!-- inclusive price starts here -->
+	            <td>
+	                <span class="cart-price"><span class="price">£16.24</span></span>
+	            </td>
+	            <td class="a-center">
+	                <input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15][qty]">
+	            </td>
+	            <!--Sub total starts here -->
+	            <td class="a-right">
+	                <span class="cart-price"><span class="price">£15.00</span></span>
+	            </td>
+	            <td>
+	                <span class="cart-price"><span class="price">£16.24</span></span>
+	            </td>
+	            <td class="a-center last">
+	                <a class="btn-remove btn-remove2" title="Remove item" href="">Remove item</a>
+	            </td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.cart-table .item-msg {
+  font-size: 10px; }
+
+/*
+
+### Item Options
+
+#### List
+
+```
+	<dl class="item-options">
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	</dl>
+```
+
+*/
+.item-options dt {
+  font-weight: bold;
+  font-style: italic; }
+.item-options dd {
+  padding-left: 10px; }
+
+/*
+
+#### Truncated
+
+```
+<div class="truncated">
+	<div class="truncated_full_value show">
+		<dl class="item-options">
+			<dt>Option</dt>
+			<dd>Value</dd>
+			<dt>Option</dt>
+			<dd>Value</dd>
+			<dt>Option</dt>
+			<dd>Value</dd>
+		</dl>
+	</div>
+	<a class="details" href="">Details</a>
+</div>
+```
+
+*/
+.truncated {
+  cursor: help; }
+  .truncated a.dots, .truncated a.details {
+    cursor: help; }
+  .truncated .truncated_full_value {
+    position: relative;
+    z-index: 999; }
+    .truncated .truncated_full_value.show .item-options {
+      top: -20px;
+      left: 50%; }
+    .truncated .truncated_full_value .item-options {
+      position: absolute;
+      top: -99999em;
+      left: -99999em;
+      z-index: 999;
+      width: 250px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      background-color: #f6f6f6; }
+      .truncated .truncated_full_value .item-options > p {
+        font-weight: bold;
+        text-transform: uppercase; }
+
+.col-left .truncated .show .item-options {
+  left: 30px;
+  top: 7px; }
+
+.col-right .truncated .show .item-options {
+  left: -240px;
+  top: 7px; }
+
+/*
+
+## Shopping cart fixed price tax info
+
+```
+	<div class="cart-tax-info">
+		<span class="weee">Tax Label: <span class="price">£0.20</span></span>
+	</div>
+	<div class="cart-tax-total cart-tax-total-expanded">
+        <span class="weee">Total incl. tax: <span class="price">£812.07</span></span>
+    </div>
+```
+
+*/
+.cart-tax-info {
+  display: block;
+  padding-right: 20px; }
+  .cart-tax-info .cart-price {
+    padding-right: 20px; }
+  .cart-tax-info .price {
+    display: inline !important;
+    font-weight: normal !important; }
+
+.cart-tax-total {
+  display: block;
+  padding-right: 20px;
+  background: url(../images/bkg_collapse.gif) 100% 4px no-repeat;
+  cursor: pointer; }
+  .cart-tax-total.cart-tax-total-expanded {
+    background-position: 100% -53px; }
+  .cart-tax-total .price {
+    display: inline !important;
+    font-weight: normal !important; }
+
+/* 
+# One Page Checkout 
+
+## Checkout Steps
+
+```
+	<ol id="checkoutSteps" class="opc">
+	    <li class="section allow" id="opc-login">
+	        <div class="step-title">
+	            <span class="number">1</span>
+	            <h2>Checkout Method</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display: none;" class="step a-item" id="checkout-step-login"></div>
+	    </li>
+	    <li class="section allow active" id="opc-billing">
+	        <div class="step-title">
+	            <span class="number">2</span>
+	            <h2>Billing Information</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="" class="step a-item" id="checkout-step-billing">
+	            [Current Step Content]
+				<div class="buttons-set">
+			        <p class="required">* Required Fields</p>
+			        <button class="button" title="Continue" type="button"><span><span>Continue</span></span></button>
+			        <span class="please-wait">
+			            <img class="v-middle" title="Loading next step..." alt="Loading next step..." src="/styleguide/assets/images/opc-ajax-loader.gif">Loading next step...
+			        </span>
+			    </div>
+	        </div>
+	    </li>
+	    <li class="section" id="opc-shipping">
+	        <div class="step-title">
+	            <span class="number">3</span>
+	            <h2>Shipping Information</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-shipping">
+	</div>
+	    </li>
+	    <li class="section" id="opc-shipping_method">
+	        <div class="step-title">
+	            <span class="number">4</span>
+	            <h2>Shipping Method</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-shipping_method"></div>
+	    </li>
+	    <li class="section" id="opc-payment">
+	        <div class="step-title">
+	            <span class="number">5</span>
+	            <h2>Payment Information</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-payment"></div>
+	    </li>
+	    <li class="section" id="opc-review">
+	        <div class="step-title">
+	            <span class="number">6</span>
+	            <h2>Order Review</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-review"></div>
+	    </li>
+	</ol>
+```
+
+*/
+.opc {
+  border-bottom: 1px solid #ddd;
+  position: relative; }
+  .opc li.section {
+    border: 1px solid #ddd;
+    border-bottom: 0; }
+  .opc .buttons-set.disabled button.button {
+    display: none; }
+  .opc .buttons-set .please-wait {
+    height: 21px;
+    line-height: 21px; }
+  .opc .step-title {
+    background-color: #f6f6f6;
+    padding: 0 5px;
+    text-align: right; }
+    .opc .step-title .number {
+      float: left;
+      line-height: 22px;
+      margin-right: 5px; }
+    .opc .step-title h2 {
+      float: left; }
+    .opc .step-title a {
+      display: none;
+      float: right; }
+  .opc .allow .step-title {
+    cursor: pointer; }
+  .opc .active .step-title {
+    background-color: #ccc;
+    cursor: default; }
+  .opc .step {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    position: relative; }
+    .opc .step .tool-tip {
+      right: 10px; }
+
+/*
+
+## Progress Block
+
+```
+	<div class="block block-progress opc-block-progress">
+	    <div class="block-title">
+	        <strong><span>Your Checkout Progress</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <dl>
+	            <div id="billing-progress-opcheckout">
+	                <dt class="complete">
+	                    Billing Address 
+	                    <span class="changelink"> 
+	                        <span class="separator">|</span> 
+	                        <a href="#billing">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                </dd>
+	            </div>
+	            <div id="shipping-progress-opcheckout">
+	                <dt class="complete">
+	                    Shipping Address 
+	                    <span class="changelink">
+	                        <span class="separator">|</span> 
+	                        <a href="#payment">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                </dd>
+	            </div>
+	            <div id="shipping_method-progress-opcheckout">
+	                <dt class="complete">
+	                    Shipping Method
+	                    <span class="changelink">
+	                        <span class="separator">|</span>
+	                        <a href="#shipping_method">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    Flat Rate - Fixed
+	                    <span class="price">£10.00</span>            
+	                </dd>
+	            </div>
+	            <div id="payment-progress-opcheckout">
+	                <dt class="complete">
+	                    Payment Method
+	                    <span class="changelink">
+	                        <span class="separator">|</span>
+	                        <a href="#payment">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    <p>Check / Money order</p>
+	                </dd>
+	            </div>
+	        </dl>
+	    </div>
+	</div>
+```
+
+*/
+.block-progress dt {
+  font-weight: bold; }
+.block-progress dt .complete, .block-progress dd .complete {
+  background-color: #f6f6f6; }
+
+/* 
+
+## Multiple Addresses Checkout 
+
+*/
+.multiple-checkout {
+  position: relative; }
+  .multiple-checkout .tool-tip {
+    top: 50%;
+    margin-top: -120px;
+    right: 10px; }
+  .multiple-checkout .grand-total {
+    font-size: 1.5em;
+    text-align: right; }
+
+/*
+
+### Progress
+
+```
+	<ul class="checkout-progress">
+	    <li title="Select Addresses" class="first"><span>Select Addresses</span></li>
+	    <li title="Shipping Information"><span>Shipping Information</span></li>
+	    <li class="active" title="Billing Information"><span>Billing Information</span></li>
+	    <li title="Place Order"><span>Place Order</span></li>
+	    <li title="Order Success" class="last"><span>Order Success</span></li>
+	</ul>
+```
+
+*/
+.checkout-progress {
+  padding: 0 50px;
+  margin: 10px 0; }
+  .checkout-progress li {
+    float: left;
+    width: 20%;
+    border-top: 5px solid #ccc;
+    text-align: center;
+    color: #ccc; }
+    .checkout-progress li.active {
+      border-top-color: #000;
+      color: #000; }
+
+/*
+
+## Common Checkout Styles
+
+### Shipping and Payment methods 
+
+```
+	<!-- Shipping Methods -->
+	<dl class="sp-methods">
+		<dt>Free Shipping</dt>
+		<dd>
+			<ul>
+				<li>
+					<input type="radio" class="radio" id="s_method_freeshipping_freeshipping" value="freeshipping_freeshipping" name="shipping_method">
+					<label for="s_method_freeshipping_freeshipping">Free<span class="price">£0.00</span></label>
+				</li>
+			</ul>
+		</dd>
+		<dt>Flat Rate</dt>
+		<dd>
+			<ul>
+				<li>
+					<input type="radio" class="radio" checked="checked" id="s_method_flatrate_flatrate" value="flatrate_flatrate" name="shipping_method">
+					<label for="s_method_flatrate_flatrate">Fixed <span class="price">£10.00</span></label>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+
+	<!-- Payment Methods -->
+	<dl class="sp-methods">
+	    <dt>
+	        <input type="radio" class="radio" title="PayPal Express Checkout" name="payment[method]" value="paypal_express" id="p_method_paypal_express" autocomplete="off">
+	        <label for="p_method_paypal_express">
+	            <img class="v-middle" alt="Acceptance Mark" src="https://fpdbs.paypal.com/dynamicimageweb?cmd=_dynamic-image&amp;buttontype=ecmark&amp;locale=en_GB">&nbsp;
+	            <a href="">What is PayPal?</a>
+	        </label>
+	    </dt>
+	    <dd>
+	        <ul id="payment_form_paypal_express" class="form-list">
+	            <li class="form-alt">You will be redirected to the PayPal website.</li>
+	        </ul>
+	    </dd>
+	    <dt>
+	        <input type="radio" class="radio" checked="checked" title="Check / Money order" name="payment[method]" value="checkmo" id="p_method_checkmo" autocomplete="off">
+	        <label for="p_method_checkmo">Check / Money order </label>
+	    </dt>
+	    <dt>
+	        <input type="radio" class="radio" title="Credit Card (saved)" name="payment[method]" value="ccsave" id="p_method_ccsave" autocomplete="off">
+	        <label for="p_method_ccsave">Credit Card (saved) </label>
+	    </dt>
+	    <dd>
+	        <ul id="payment_form_ccsave" class="form-list">
+	            <li>
+	                <label class="required" for="ccsave_cc_owner"><em>*</em>Name on Card</label>
+	                <div class="input-box">
+	                    <input type="text" value="" name="payment[cc_owner]" id="ccsave_cc_owner" class="input-text required-entry" title="Name on Card" disabled="" autocomplete="off">
+	                </div>
+	            </li>
+	            <li>
+	                <label class="required" for="ccsave_cc_type"><em>*</em>Credit Card Type</label>
+	                <div class="input-box">
+	                    <select class="required-entry validate-cc-type-select" title="Credit Card Type" name="payment[cc_type]" id="ccsave_cc_type" disabled="" autocomplete="off">
+	                        <option value="">--Please Select--</option>
+	                    </select>
+	                </div>
+	            </li>
+	            <li>
+	                <label class="required" for="ccsave_cc_number"><em>*</em>Credit Card Number</label>
+	                <div class="input-box">
+	                    <input type="text" value="" class="input-text validate-cc-number validate-cc-type" title="Credit Card Number" name="payment[cc_number]" id="ccsave_cc_number" disabled="" autocomplete="off">
+	                </div>
+	            </li>
+	            <li>
+	                <label class="required" for="ccsave_expiration"><em>*</em>Expiration Date</label>
+	                <div class="input-box">
+	                    <div class="v-fix">
+	                        <select class="month validate-cc-exp required-entry" name="payment[cc_exp_month]" id="ccsave_expiration" disabled="" autocomplete="off">
+	                            <option selected="selected" value="">Month</option>
+	                        </select>
+	                    </div>
+	                    <div class="v-fix">
+	                        <select class="year required-entry" name="payment[cc_exp_year]" id="ccsave_expiration_yr" disabled="" autocomplete="off">
+	                            <option selected="selected" value="">Year</option>
+	                        </select>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+			        <label class="required"><em>*</em>Card Verification Number</label>
+			        <div class="input-box">
+			            <div class="v-fix">
+			                <input type="text" value="" name="payment[cc_cid]" class="input-text cvv required-entry validate-cc-cvn" title="Card Verification Number" autocomplete="off">
+			            </div>
+			            <a class="cvv-what-is-this" href="#">What is this?</a>
+			        </div>
+			    </li>
+	        </ul>
+	    </dd>
+	</dl>
+```
+
+*/
+.sp-methods dt {
+  font-weight: bold; }
+.sp-methods .price {
+  font-weight: bold; }
+.sp-methods .form-list {
+  padding-left: 20px; }
+.sp-methods select.month {
+  width: 150px;
+  margin-right: 10px; }
+.sp-methods select.year {
+  width: 96px; }
+.sp-methods input.cvv {
+  width: 3em !important; }
+.sp-methods .checkmo-list li {
+  margin: 0 0 5px; }
+.sp-methods .checkmo-list label {
+  width: 135px;
+  padding-right: 10px;
+  text-align: right; }
+.sp-methods .checkmo-list address {
+  float: left; }
+.sp-methods .centinel-logos a {
+  margin-right: 3px; }
+.sp-methods .centinel-logos img {
+  vertical-align: middle; }
+.sp-methods .release-amounts {
+  margin: 0.5em 0 1em; }
+  .sp-methods .release-amounts button {
+    float: left;
+    margin: 5px 10px 0 0; }
+
+.please-wait {
+  float: right;
+  margin-right: 5px; }
+  .please-wait img {
+    vertical-align: middle; }
+
+.cvv-what-is-this {
+  cursor: help;
+  margin-left: 5px; }
+
+.centinel .authentication {
+  border: 1px solid #ddd;
+  background: #fff; }
+  .centinel .authentication iframe {
+    width: 99%;
+    height: 400px;
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important; }
+
+/* 
+
+### Tooltip 
+
+Used on the "What's This?" link next to CVV
+
+```
+	<div style="" id="payment-tool-tip" class="tool-tip">
+	    <div class="btn-close"><a title="Close" href="#">Close</a></div>
+	    <div class="tool-tip-content">
+			[Tooltip Content]
+	    </div>
+	</div>
+```
+
+*/
+.tool-tip {
+  border: 1px solid #ddd;
+  background-color: #f6f6f6;
+  padding: 5px;
+  position: absolute;
+  z-index: 9999; }
+  .tool-tip .btn-close {
+    text-align: right; }
+    .tool-tip .btn-close a {
+      display: block;
+      margin: 0 0 0 auto;
+      width: 15px;
+      height: 15px;
+      background: url(../images/btn_window_close.gif) 100% 0 no-repeat;
+      text-align: left;
+      text-indent: -999em;
+      overflow: hidden; }
+  .tool-tip .tool-tip-content {
+    padding: 5px; }
+
+/* 
+
+### Checkout Agreements
+
+```
+	<ol class="checkout-agreements">
+	    <li>
+	        <div class="agreement-content">
+	            Full agreement content
+			</div>
+	        <p class="agree">
+	            <input type="checkbox" class="checkbox" title="Terms and Conditions (Checkbox Text)" value="1" name="agreement[1]" id="agreement-1">
+	            <label for="agreement-1">Agreement Checkbox Text Value</label>
+	        </p>
+	    </li>
+	</ol>
+```
+
+*/
+.checkout-agreements li {
+  margin: 10px 0; }
+.checkout-agreements .agreement-content {
+  border: 1px solid #ddd;
+  background-color: #f6f6f6;
+  padding: 5px;
+  height: 10em;
+  overflow: auto; }
+.checkout-agreements .agree {
+  padding: 6px; }
+
+/* 
+
+## Gift Messages 
+
+```
+	<div class="gift-messages">
+	    <h3>Do you have any gift items in your order?</h3>
+	    <p class="control">
+	        <input type="checkbox" class="checkbox validation-passed" value="1" id="allow_gift_messages" name="allow_gift_messages">
+	        <label for="allow_gift_messages">Add gift options.</label>
+	    </p>
+	</div>
+	<div id="allow-gift-message-container" class="gift-messages-form" style="">
+	    <div class="inner-box">
+	        <h4>Gift Options for the Entire Order.</h4>
+	        <p>
+	            <input type="checkbox" class="checkbox validation-passed" value="1" name="allow_gift_messages_for_order">
+	            <label>Add gift options for the Entire Order</label>
+	        </p>
+	        <div style="" id="allow-gift-messages-for-order-container" class="allow-gift-messages-for-order-container">
+	            <p>You can leave this box blank if you do not wish to add a gift message for whole order.</p>
+	            <ul class="form-list">
+	                <li class="fields">
+	                    <div class="field">
+	                        <label>From</label>
+	                        <div class="input-box">
+	                            <input type="text" class="input-text" value="From Name" title="From">
+	                        </div>
+	                    </div>
+	                    <div class="field">
+	                        <label>To</label>
+	                        <div class="input-box">
+	                            <input type="text" class="input-text" value="To Name" title="To">
+	                        </div>
+	                    </div>
+	                </li>
+	                <li class="wide">
+	                    <label>Message</label>
+	                    <div class="input-box">
+	                        <textarea cols="10" rows="5" title="Message" class="input-text giftmessage-area"></textarea>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	        <h4>Gift Options for Individual Items</h4>
+	        <p>
+	            <input type="checkbox" class="checkbox validation-passed" value="1" name="allow_gift_messages_for_items">
+	            <label>Add gift options for Individual Items</label>
+	        </p>
+	        <div id="allow-gift-messages-for-items-container" style="">
+	            <p>You can leave this box blank if you do not wish to add a gift message for the item.</p>
+	            <ol>
+	                <li class="item">
+	                    <div class="product-img-box">
+	                        <p class="product-image">
+	                            <img width="75" height="75" title="Product Name" alt="Product Name" src="http://placekitten.com/75/75">
+	                        </p>
+	                        <p class="number">Item 1 of 1</p>
+	                    </div>
+	                    <div class="details">
+	                        <div class="f-fix">
+	                            <h5 class="product-name">Product Name</h5>
+	                            <ul class="form-list">
+	                                <li class="fields">
+	                                    <div class="field">
+	                                        <label>From</label>
+	                                        <div class="input-box">
+	                                            <input type="text" class="input-text" value="From Name" title="From">
+	                                        </div>
+	                                    </div>
+	                                    <div class="field">
+	                                        <label>To</label>
+	                                        <div class="input-box">
+	                                            <input type="text" class="input-text" value="To Name" title="To">
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                                <li class="wide">
+	                                    <label>Message</label>
+	                                    <div class="input-box">
+	                                        <textarea cols="40" rows="5" title="Message" class="input-text giftmessage-area" o></textarea>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </li>
+	            </ol>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+
+.gift-messages-form {
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  position: relative; }
+  .gift-messages-form label {
+    float: none !important;
+    position: static !important; }
+  .gift-messages-form .item {
+    margin: 0 0 10px; }
+    .gift-messages-form .item .product-img-box {
+      float: left;
+      width: 75px; }
+    .gift-messages-form .item .product-image {
+      margin: 0 0 7px; }
+    .gift-messages-form .item .number {
+      margin: 0;
+      font-weight: bold;
+      text-align: center; }
+    .gift-messages-form .item .details {
+      margin-left: 90px; }
+
+.gift-message-link {
+  display: block;
+  background: url(../images/bkg_collapse.gif) 0 4px no-repeat;
+  padding-left: 20px; }
+  .gift-message-link.expanded {
+    background-position: 0 -53px; }
+
+.gift-message-row .btn-close {
+  float: right; }
+
+.gift-message dt strong {
+  font-weight: bold; }
+
+/* 
+
+## Generic Info Set 
+
+Seems to be unused.
+
+*/
+
+/*
+
+# Homepage
+
+Homepage specific styles
+
+*/
+
+
+/* 
+
+# Sitemap 
+
+## Tree
+
+```
+	<div class="page-sitemap">
+		<ul class="sitemap">
+		    <li class="level-0"><a href="">Category Name</a></li>
+		    <li style="padding-left:20px;" class="level-1"><a href="">Category Name</a></li>
+		    <li style="padding-left:40px;" class="level-2"><a href="">Category Name</a></li>
+		</ul>
+	</div>
+```
+
+## Non-tree
+
+```
+	<div class="page-sitemap">
+		<ul class="sitemap">
+		    <li><a href="">Category Name</a></li>
+		    <li><a href="">Category Name</a></li>
+		    <li><a href="">Category Name</a></li>
+		</ul>
+	</div>
+
+```
+
+*/
+.page-sitemap .sitemap {
+  margin: 12px; }
+  .page-sitemap .sitemap li {
+    margin: 3px 0; }
+    .page-sitemap .sitemap li.level-0 {
+      margin: 10px 0 0;
+      font-weight: bold; }
+
+/*
+
+## Sitemap Links
+
+<div class="page-sitemap">
+    <ul class="links">
+    	<li class="first last"><a title="Products Sitemap" href="">Products Sitemap</a></li>
+    </ul>
+</div>
+
+*/
+.page-sitemap .links {
+  text-align: right;
+  margin: 0 8px -22px 0; }
+  .page-sitemap .links a {
+    text-decoration: none;
+    position: relative; }
+    .page-sitemap .links a:hover {
+      text-decoration: underline; }
+
+/*
+# Button
+
+```
+	<button class="button" type="button"><span><span>Button</span></span></button>
+	<!-- Disabled -->
+	<button class="button disabled" type="button"><span><span>Disabled</span></span></button>
+	<!-- Add to Cart button -->
+	<button class="button btn-cart" type="button"><span><span>Add to Cart</span></span></button>
+	<!-- Place order button -->
+	<button class="button btn-checkout" type="submit"><span><span>Place Order</span></span></button>
+	<!-- Proceed to checkout button -->
+	<button class="button btn-proceed-checkout btn-checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+```
+
+*/
+button {
+  font: 12px Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  color: #000; }
+  button.button {
+    overflow: visible;
+    width: auto;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    cursor: pointer; }
+    button.button span {
+      float: left;
+      height: 21px;
+      background: transparent url(../images/bkg_button.gif) 0 0 no-repeat;
+      padding: 0 0 0 8px;
+      font: bold 12px/21px Arial, Helvetica, sans-serif;
+      text-align: center;
+      white-space: nowrap;
+      color: #fff; }
+      button.button span span {
+        background-position: 100% 0;
+        padding: 0 12px 0 4px; }
+
+/* 
+
+# Form Elements 
+
+## Generic Styling
+
+*/
+input, select, textarea {
+  font: 12px Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  color: #000; }
+
+input.input-text, select, textarea {
+  background: #fff;
+  border: 1px solid #ddd; }
+
+input.input-text, textarea {
+  padding: 2px; }
+
+select {
+  padding: 1px; }
+  select option {
+    padding-right: 10px; }
+  select.multiselect option {
+    border-bottom: 1px solid #ddd;
+    padding: 2px 5px; }
+    select.multiselect option:last-child {
+      border-bottom: 0; }
+
+textarea {
+  overflow: auto; }
+
+input.qty {
+  width: 2.5em !important; }
+input.radio, input.checkbox {
+  margin-right: 3px; }
+
+p.control input.radio, p.control input.checkbox {
+  margin-right: 6px; }
+
+/*
+
+## Fieldsets
+
+Used to break down and encapsulate form lists with appropriate legends.
+
+```	
+    <div class="fieldset">
+        <h2 class="legend">Personal Information</h2>
+        [FORM_LIST]
+    </div>
+    <div class="fieldset">
+        <h2 class="legend">Login Information</h2>
+        [FORM_LIST]
+        [BUTTON_SET]
+    </div>
+```
+
+*/
+.fieldset {
+  border: 1px solid #ddd;
+  background: #fefefe;
+  padding: 22px 25px 12px 33px;
+  margin: 28px 0; }
+  .fieldset .legend {
+    float: left;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid #fefefe;
+    background: #dedede;
+    color: #333;
+    margin: -33px 0 0 -10px;
+    padding: 0 8px;
+    position: relative; }
+
+/* 
+
+## Form lists 
+
+Generic form lists used site wide
+
+```
+	<ul class="form-list">
+	    <li>
+	        <label>Text Input</label>
+	        <div class="input-box">
+	            <input type="text" class="input-text" value="">
+	        </div>
+	    </li>
+		<li>
+            <label>Select</label>
+			<div class="input-box">
+				<select>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+				</select>
+			</div>
+		</li>
+		<li>
+            <label>Multiselect</label>
+			<div class="input-box">
+				<select size="4" multiple="multiple" class="multiselect">
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+				</select>
+			</div>
+		</li>
+		<li>
+            <label>Textarea</label>
+			<div class="input-box">
+				<textarea class="input-text"></textarea>
+			</div>
+		</li>
+		<li>
+			<label>Range</label>
+			<div class="input-range">
+				<input type="text" maxlength="128" class="input-text" id="price" value="">
+				<span class="separator">-</span>
+				<input type="text" maxlength="128" class="input-text" value="">
+				<small>(Unit/Currency)</small>
+			</div>
+        </li>
+	    <li class="fields">
+	        <div class="field">
+	            <label class="required"><em>*</em>Split Text Field</label>
+	            <div class="input-box">
+	                <input type="text" class="input-text required-entry" value="">
+	            </div>
+	        </div>
+	        <div class="field">
+	            <label class="required"><em>*</em>Split Text Field</label>
+	            <div class="input-box">
+	                <input type="text" class="input-text required-entry" value="">
+	            </div>
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label>Wide Input</label>
+	        <div class="input-box">
+	            <input type="text" class="input-text" value="">
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label>Wide Select</label>
+	        <div class="input-box">
+	            <select>
+					<option>Option</option>
+					<option>Option</option>
+	            </select>
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label class="required"><em>*</em>Wide Texarea</label>
+	        <div class="input-box">
+	            <textarea rows="3" cols="5" class="required-entry input-text"></textarea>
+	        </div>
+	    </li>
+	    <li class="control">
+	    	<input class="checkbox" type="checkbox" checked="checked" value="">
+			<label>Check box</label>
+	    </li>
+	    <li class="control">
+			<input class="radio" type="radio" value="value">
+			<label>Radio box</label>
+	    </li> 
+	</ul>
+```
+
+*/
+.form-list li {
+  margin: 0 0 8px; }
+  .form-list li.control label {
+    float: none; }
+  .form-list li.control input.radio, .form-list li.control input.checkbox {
+    margin-right: 6px; }
+  .form-list li.control .input-box {
+    clear: none;
+    display: inline;
+    width: auto; }
+  .form-list li.wide .input-box {
+    width: 535px; }
+  .form-list li.wide input.input-text {
+    width: 529px; }
+  .form-list li.wide textarea {
+    width: 529px; }
+  .form-list li.wide select {
+    width: 535px; }
+  .form-list li.additional-row {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 7px; }
+    .form-list li.additional-row .btn-remove {
+      float: right;
+      margin: 5px 0 0; }
+.form-list label {
+  float: left;
+  color: #111;
+  font-weight: bold;
+  position: relative;
+  z-index: 0; }
+  .form-list label.required em {
+    float: right;
+    font-style: normal;
+    color: #eb340a;
+    position: absolute;
+    top: 0;
+    right: -8px; }
+.form-list input.input-text {
+  width: 254px; }
+.form-list textarea {
+  width: 254px;
+  height: 10em; }
+.form-list select {
+  width: 260px; }
+.form-list .field {
+  float: left;
+  width: 275px; }
+.form-list .input-box {
+  display: block;
+  clear: both;
+  width: 260px; }
+.form-list .input-range input.input-text {
+  width: 74px; }
+
+/*
+
+### Customer Speicifc Form Elements
+
+These can be enabled under System->Configuration->Customer Configuration->Name and Address Options
+
+Outer class changes based on what is enabled possible combinations:
+- `.customer-name-prefix`
+- `.customer-name-suffix`
+- `.customer-name-prefix-suffix`
+- `.customer-name-prefix-middlename`
+- `.customer-name-middlename-suffix`
+- `.customer-name-prefix-middlename-suffix`
+
+```
+	<ul class="form-list">
+		<li class="fields">
+			<div class="customer-name-prefix-middlename-suffix">
+			    <div class="field name-prefix">
+			        <label for="prefix">Prefix</label>
+			        <div class="input-box">
+                    	<select>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option selected="selected" value=""></option>
+                        </select>
+                    </div>
+			    </div>
+			    <div class="field name-firstname">
+			        <label>First Name</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-middlename">
+			        <label>Middle Name/Initial</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-lastname">
+			        <label>Last Name</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-suffix">
+			        <label>Suffix</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			</div>
+		</li>
+	</ul>
+```
+
+*/
+.form-list .customer-name-prefix .input-box, .form-list .customer-name-suffix .input-box, .form-list .customer-name-prefix-suffix .input-box, .form-list .customer-name-prefix-middlename .input-box, .form-list .customer-name-middlename-suffix .input-box, .form-list .customer-name-prefix-middlename-suffix .input-box {
+  width: auto; }
+.form-list .name-prefix {
+  width: 65px; }
+  .form-list .name-prefix select {
+    width: 55px; }
+  .form-list .name-prefix input.input-text {
+    width: 49px; }
+.form-list .name-suffix {
+  width: 65px; }
+  .form-list .name-suffix select {
+    width: 55px; }
+  .form-list .name-suffix input.input-text {
+    width: 49px; }
+.form-list .name-middlename {
+  width: 70px; }
+  .form-list .name-middlename input.input-text {
+    width: 49px; }
+.form-list .customer-name-prefix-middlename .name-firstname, .form-list .customer-name-prefix-middlename-suffix .name-firstname {
+  width: 140px; }
+  .form-list .customer-name-prefix-middlename .name-firstname input.input-text, .form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text {
+    width: 124px; }
+.form-list .customer-name-prefix-middlename-suffix .name-lastname {
+  width: 205px; }
+  .form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text {
+    width: 189px; }
+.form-list .customer-name-prefix-suffix .name-firstname {
+  width: 210px; }
+.form-list .customer-name-prefix-suffix .name-lastname {
+  width: 205px; }
+.form-list .customer-name-prefix-suffix .name-firstname input.input-text, .form-list .customer-name-prefix-suffix .name-lastname input.input-text {
+  width: 189px; }
+.form-list .customer-name-prefix .name-firstname, .form-list .customer-name-middlename .name-firstname {
+  width: 210px; }
+.form-list .customer-name-middlename .name-firstname, .form-list .customer-name-middlename-suffix .name-firstname, .form-list .customer-name-suffix .name-lastname, .form-list .customer-name-middlename-suffix .name-lastname {
+  width: 205px; }
+.form-list .customer-name-prefix .name-firstname input.input-text, .form-list .customer-name-middlename .name-firstname input.input-text, .form-list .customer-name-middlename-suffix .name-firstname input.input-text, .form-list .customer-name-suffix .name-lastname input.input-text, .form-list .customer-name-middlename-suffix .name-lastname input.input-text {
+  width: 189px; }
+
+/*
+
+#### DOB
+
+```
+	<ul class="form-list">
+		<li>
+			<label for="month">Date of Birth</label>
+			<div class="input-box customer-dob">
+		    	<div class="dob-day">
+		             <input type="text" class="input-text" value="">
+		             <label>DD</label>
+		        </div>
+		        <div class="dob-month">
+		             <input type="text" class="input-text" value="">
+		             <label>MM</label>
+		        </div>
+		        <div class="dob-year">
+		             <input type="text" class="input-text" value="">
+		             <label>YYYY</label>
+		        </div>    			    
+			</div>
+		</li>
+	</ul>
+```
+
+*/
+.form-list .customer-dob .dob-month, .form-list .customer-dob .dob-day, .form-list .customer-dob .dob-year {
+  float: left;
+  width: 85px; }
+
+.form-list .customer-dob input.input-text {
+  display: block;
+  width: 74px; }
+
+.form-list .customer-dob label {
+  font-size: 10px;
+  font-weight: normal;
+  color: #888; }
+
+.form-list .customer-dob .dob-day, .form-list .customer-dob .dob-month {
+  width: 60px; }
+
+.form-list .customer-dob .dob-day input.input-text, .form-list .customer-dob .dob-month input.input-text {
+  width: 46px; }
+
+.form-list .customer-dob .dob-year {
+  width: 140px; }
+
+.form-list .customer-dob .dob-year input.input-text {
+  width: 134px; }
+
+/*
+## Button Sets
+
+Usually appends to a `.form-list` element providing actions for the form.
+
+```
+	<div class="buttons-set">
+		<p class="required">* Required Fields</p>
+		<p class="back-link"><a href="#"><small>« </small>Back</a></p>
+		<button type="button" class="button"><span><span>Action</span></span></button>
+		<button type="submit" class="button"><span><span>Submit</span></span></button>
+	</div>
+```
+
+*/
+.buttons-set {
+  clear: both;
+  margin: 5px 0 0;
+  padding: 5px;
+  border: 1px solid #ddd; }
+  .buttons-set .back-link {
+    float: left; }
+  .buttons-set button.button {
+    float: right; }
+  .buttons-set p.required {
+    margin: 0 0 5px; }
+
+
+p.required {
+  font-size: 10px;
+  text-align: right;
+  color: #f00; }
+
+/* 
+## Form Validation 
+
+On valid input appends `.validation-passed` to the input element.
+
+On invalid input appends class `.validation-failed` to the input element and adds `.validation-advice` containing the validation message.
+
+```
+	<ul class="form-list">
+		<li class="fields">
+			<div class="field">
+		        <label class="required"><em>*</em>Failed Validation</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text required-entry validation-failed" value="">
+		            <div class="validation-advice">This is a required field.</div>
+		        </div>
+			</div>
+			<div class="field">
+		        <label class="required"><em>*</em>Failed Validation</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text required-entry validation-failed" value="">
+		            <div class="validation-advice">This is a required field.</div>
+		        </div>
+		    </div>
+	    </li>
+	</ul>
+```
+
+*/
+.validation-failed {
+  border: 1px dashed #f00 !important;
+  background: #faebe7 !important; }
+
+
+.validation-advice {
+  clear: both;
+  min-height: 13px;
+  margin: 3px 0 0;
+  padding-left: 17px;
+  font-size: 10px;
+  line-height: 13px;
+  background: url(../images/validation_advice_bg.gif) 2px 1px no-repeat;
+  color: #f00; }
+
+/* Expiration date and CVV number validation fix */
+.v-fix {
+  float: left; }
+  .v-fix .validation-advice {
+    display: block;
+    width: 12em;
+    margin-right: -12em;
+    position: relative; }
+
+/*
+
+# Messages
+
+```
+	<ul class="messages">
+		<li class="success-msg">
+			<ul>
+				<li><span>Success message.</span></li>
+			</ul>
+		</li>
+		<li class="error-msg">
+			<ul>
+				<li><span>Error message.</span></li>
+			</ul>
+		</li>
+		<li class="note-msg">
+			<ul>
+				<li><span>Note message.</span></li>
+			</ul>
+		</li>
+		<li class="notice-msg">
+			<ul>
+				<li><span>Notice message.</span></li>
+			</ul>
+		</li>
+	</ul>
+```
+
+*/
+.messages {
+  overflow: hidden;
+  width: 100%; }
+  .messages, .messages ul {
+    list-style: none !important;
+    argin: 0 !important;
+    padding: 0 !important; }
+  .messages li {
+    margin: 0 0 10px; }
+    .messages li li {
+      margin: 0 0 3px; }
+
+.error-msg, .success-msg, .note-msg, .notice-msg {
+  border-style: solid !important;
+  border-width: 1px !important;
+  background-position: 10px 9px !important;
+  background-repeat: no-repeat !important;
+  min-height: 24px !important;
+  padding: 8px 8px 8px 32px !important;
+  font-size: 11px !important;
+  font-weight: bold !important; }
+
+.error-msg {
+  border-color: #f16048;
+  background-color: #faebe7;
+  background-image: url(../images/i_msg-error.gif);
+  color: #df280a; }
+
+.success-msg {
+  border-color: #446423;
+  background-color: #eff5ea;
+  background-image: url(../images/i_msg-success.gif);
+  color: #3d6611; }
+
+.note-msg, .notice-msg {
+  border-color: #fcd344;
+  background-color: #fafaec;
+  background-image: url(../images/i_msg-note.gif);
+  color: #3d6611; }
+
+.success {
+  color: #3d6611;
+  font-weight: bold; }
+
+.error {
+  color: #f00;
+  font-weight: bold; }
+
+.notice {
+  color: #ccc; }
+
+/* 
+
+## Noscript Notice 
+
+```
+	<div class="global-site-notice noscript">
+        <div class="notice-inner">
+            <p>
+                <strong>JavaScript seems to be disabled in your browser.</strong><br>
+                You must have JavaScript enabled in your browser to utilize the functionality of this website.
+            </p>
+        </div>
+    </div>
+```
+
+*/
+.noscript {
+  border: 1px solid #ddd;
+  border-width: 0 0 1px;
+  background: #ffff90;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  color: #2f2f2f; }
+  .noscript .noscript-inner {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 12px 0 12px;
+    background: url(../images/i_notice.gif) 20px 50% no-repeat; }
+  .noscript p {
+    margin: 0; }
+
+/* 
+
+## Demo Notice 
+
+```
+	<div class="global-site-notice demo-notice">
+	    <div class="notice-inner">
+	    	<p>This is a demo store. Any orders placed through this store will not be honored or fulfilled.</p>
+	    </div>
+	</div>
+```
+
+*/
+.demo-notice {
+  margin: 0;
+  padding: 6px 10px;
+  background: #d75f07;
+  font-size: 12px;
+  line-height: 1.15;
+  text-align: center;
+  color: #fff; }
+
+/* 
+
+## Cookie Notice 
+
+*/
+.notice-cookie {
+  border-bottom: 1px solid #cfcfcf;
+  background: #ffff90;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  color: #2f2f2f; }
+  .notice-cookie .notice-inner {
+    width: 870px;
+    margin: 0 auto;
+    padding: 12px 0 12px 80px;
+    background: url(../images/i_notice.gif) 20px 25px no-repeat;
+    text-align: left; }
+    .notice-cookie .notice-inner p {
+      margin: 0 0 10px;
+      border: 1px dotted #cccc73;
+      padding: 10px; }
+
+/* 
+
+# Misc 
+
+*/
+.links li {
+  display: inline; }
+  .links li.first {
+    padding-left: 0 !important; }
+  .links li.last {
+    background: none !important;
+    padding-right: 0 !important; }
+
+.link-cart {
+  font-weight: bold;
+  color: #f00; }
+
+.link-wishlist {
+  font-weight: bold; }
+
+.link-reorder {
+  font-weight: bold; }
+
+.link-compare {
+  font-weight: bold; }
+
+.link-print {
+  background: url(../images/i_print.gif) 0 2px no-repeat;
+  padding: 2px 0 2px 25px; }
+
+.link-rss {
+  background: url(../images/i_rss.gif) 0 1px no-repeat;
+  padding-left: 18px;
+  white-space: nowrap; }
+
+.btn-remove {
+  display: block;
+  width: 11px;
+  height: 11px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/btn_remove.gif) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden; }
+
+.btn-remove2 {
+  display: block;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/btn_trash.gif) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden; }
+
+.btn-edit {
+  display: block;
+  width: 11px;
+  height: 11px;
+  font-size: 0;
+  line-height: 0;
+  background: url(../images/btn_edit.gif) 0 0 no-repeat;
+  text-indent: -999em;
+  overflow: hidden; }
+
+.cards-list dt {
+  margin: 5px 0 0; }
+.cards-list .offset {
+  padding: 2px 0 2px 20px; }
+
+.separator {
+  margin: 0 3px; }
+
+.divider {
+  clear: both;
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  height: 1px;
+  margin: 10px 0;
+  background: #ddd;
+  text-indent: -999em;
+  overflow: hidden; }
+
+/* 
+
+## Product Name 
+
+*/
+.product-name {
+  font-size: 1em;
+  font-weight: normal; }
+
+/* 
+
+## Product Tags 
+
+*/
+.tags-list li {
+  display: inline; }
+
+/* 
+
+## Advanced Search 
+
+*/
+
+
+
+/* 
+
+## RSS 
+
+*/
+.rss-title h1 {
+  background: url(../images/i_rss-big.png) 0 4px no-repeat;
+  padding-left: 27px; }
+
+.rss-table .link-rss {
+  display: block;
+  line-height: 1.35;
+  background-position: 0 2px; }
+
+/* 
+
+## Clears
+
+*/
+.clearer:after, .header-container:after, .header-container .top-container:after, .header:after, .header .quick-access:after, #nav:after, .footer:after, .footer-container .bottom-container:after, .col-main:after, .col2-set:after, .col3-set:after, .col4-set:after, .search-autocomplete li:after, .block .block-content:after, .block .actions:after, .block li.item:after, .block-poll li:after, .block-layered-nav .currently li:after, .page-title:after, .products-grid:after, .products-list li.item:after, .box-account .box-head:after, .dashboard .box .box-title:after, .box-reviews li.item:after, .box-tags li.item:after, .pager:after, .sorter:after, .ratings:after, .add-to-box:after, .add-to-cart:after, .product-essential:after, .product-collateral:after, .product-view .product-img-box .more-views ul:after, .product-view .product-shop .short-description:after, .product-view .box-description:after, .product-view .box-tags .form-add:after, .product-options .options-list li:after, .product-options-bottom:after, .product-review:after, .cart:after, .cart-collaterals:after, .cart .crosssell li.item:after, .opc .step-title:after, .checkout-progress:after, .multiple-checkout .place-order:after, .group-select li:after, .form-list li:after, .form-list .field:after, .buttons-set:after, .page-print .print-head:after, .advanced-search-summary:after, .gift-messages-form .item:after, .send-friend .form-list li p:after {
+  display: block;
+  content: ".";
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden; }
+
+/* 
+# Data Table 
+## Horizontal Labels
+
+```
+	<table class="data-table">
+	    <thead>
+	        <tr class="first last">
+	            <th>Label</th>
+	            <th>Label</th>
+	            <th>Label</th>
+	            <th>Label</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr class="first odd">
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td class="last">Value</td>
+	        </tr>
+	        <tr class="even">
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td class="last">Value</td>
+	        </tr>
+	        <tr class="last odd">
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td class="last">Value</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+## Vertical Labels
+
+```
+	<table class="data-table">
+	    <colgroup>
+	        <col width="25%">
+	        <col>
+	    </colgroup>
+	    <tbody>
+	        <tr class="first odd">
+	            <th class="label">Label</th>
+	            <td class="data last">Value</td>
+	        </tr>
+	        <tr class="first even">
+	            <th class="label">Label</th>
+	            <td class="data last">Value</td>
+	        </tr>
+	        <tr class="last odd">
+	            <th class="label">Label</th>
+	            <td class="data last">Value</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.data-table {
+  width: 100%; }
+  .data-table thead {
+    background-color: #f2f2f2; }
+  td .data-table tbody.odd {
+    border-width: 0 1px; }
+  .data-table tbody.even {
+    background-color: #f6f6f6; }
+    .data-table tbody.even td {
+      border-width: 0 1px; }
+  .data-table tbody.odd tr.border td, .data-table tbody.even tr.border td {
+    border-bottom-width: 1px; }
+  .data-table tr.even {
+    background-color: #f6f6f6; }
+  .data-table th {
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    white-space: nowrap; }
+    .data-table th .tax-flag {
+      white-space: nowrap;
+      font-weight: normal; }
+  .data-table td {
+    padding: 5px;
+    border: 1px solid #ddd; }
+  .data-table td.label, .data-table th.label {
+    font-weight: bold;
+    background-color: #f6f6f6; }
+
+/* 
+
+# Dashboard 
+
+## Welcome Message
+
+```
+	<div class="dashboard">
+		<div class="welcome-msg">
+		    <p class="hello"><strong>Hello, Adam Johnson!</strong></p>
+		    <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
+		</div>
+	</div>
+```
+
+*/
+
+/*
+
+## Recent Orders
+
+```
+	<div class="dashboard">
+		<div class="box-account box-recent">
+		    <div class="box-head">
+		        <h2>Recent Orders</h2>
+		        <a href="#">View All</a>
+		    </div>
+		        <table id="my-orders-table" class="data-table">
+		        <colgroup>
+		            <col width="1">
+		            <col width="1">
+		            <col>
+		            <col width="1">
+		            <col width="1">
+		            <col width="1">
+		        </colgroup>
+		        <thead>
+		            <tr class="first last">
+		                <th>Order #</th>
+		                <th>Date</th>
+		                <th>Ship To</th>
+		                <th><span class="nobr">Order Total</span></th>
+		                <th>Status</th>
+		                <th>&nbsp;</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr class="first last odd">
+		                <td>100000001</td>
+		                <td><span class="nobr">01/01/1970</span></td>
+		                <td>Adam Johnson</td>
+		                <td><span class="price">£1,091.97</span></td>
+		                <td><em>Order Status</em></td>
+		                <td class="a-center last">
+		                    <span class="nobr">
+		                        <a href="">View Order</a>
+		                        <span class="separator">|</span> 
+		                        <a class="link-reorder" href="">Reorder</a>
+		                    </span>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</div>
+	</div>
+```
+
+*/
+.dashboard .box-recent {
+  margin: 10px 0; }
+
+/*
+
+## Account Information
+
+```
+	<div class="box-account box-info">
+	    <div class="box-head">
+	        <h2>Account Information</h2>
+	    </div>
+	    <div class="col2-set">
+	        <div class="col-1">
+	            <div class="box">
+	                <div class="box-title">
+	                    <h3>Contact Information</h3>
+	                    <a href="">Edit</a>
+	                </div>
+	                <div class="box-content">
+	                    <p>Customer Name<br>customer@email.com<br><a href="">Change Password</a></p>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-2">
+	            <div class="box">
+	                <div class="box-title">
+	                    <h3>Newsletters</h3>
+	                    <a href="">Edit</a>
+	                </div>
+	                <div class="box-content">
+	                    <p>You are currently not subscribed to any newsletter.</p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col2-set">
+	        <div class="box">
+	            <div class="box-title">
+	                <h3>Address Book</h3>
+	                <a href="#">Manage Addresses</a>
+	            </div>
+	            <div class="box-content">
+	                <div class="col-1">
+	                    <h4>Default Billing Address</h4>
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>
+	                </div>
+	                <div class="col-2">
+	                    <h4>Default Shipping Address</h4>
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+
+/*
+
+## Reviews
+
+```
+	<div class="box-account box-reviews">
+	    <div class="box-head">
+	        <h2>My Recent Reviews</h2>
+	        <a href="">View All Reviews</a>
+	    </div>
+	    <ol id="my_recent_reviews">
+	        <li class="item last odd">
+	            <span class="number">1</span>
+	            <div class="details">
+	                <h3 class="product-name"><a href="">Product Name</a></h3>
+	                <div class="ratings">
+	                    <strong>Rating:</strong>
+	                    <div class="rating-box">
+	                        <div style="width:60%;" class="rating"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	    </ol>
+	</div>
+```
+
+*/
+.dashboard .box-reviews .number {
+  float: left;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  margin: 3px -20px 0 0;
+  padding: 2px 3px;
+  background: #ddd; }
+.dashboard .box-reviews .details {
+  margin-left: 20px; }
+
+/*
+
+## Tags
+
+```
+    <div class="box-account box-tags">
+        <div class="box-head">
+            <h2>My Recent Tags</h2>
+            <a href="">View All Tags</a>
+        </div>
+        <ol id="my_recent_tags">
+            <li class="item last odd">
+                <span class="number">1</span>
+                <div class="details">
+                    <h3 class="product-name"><a href="">Product Name</a></h3>
+                    <div class="tags">
+                        <strong>Tags:</strong>
+                            <ul>
+                                <li><a href="">Tag</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+```
+
+*/
+.dashboard .box-tags .number {
+  float: left;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  margin: 3px -20px 0 0;
+  padding: 2px 3px;
+  background: #ddd; }
+.dashboard .box-tags .details {
+  margin-left: 20px; }
+
+/* 
+
+## Address Book 
+
+```
+	<div class="col2-set addresses-list">
+	    <div class="col-1 addresses-primary">
+	        <h2>Default Addresses</h2>
+	        <ol>
+	            <li class="item">
+	                <h3>Default Billing Address</h3>
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                <p><a href="">Change Billing Address</a></p>
+	           </li>
+	            <li class="item">
+	                <h3>Default Shipping Address</h3>
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                <p><a href="">Change Shipping Address</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	    <div class="col-2 addresses-additional">
+	        <h2>Additional Address Entries</h2>
+	        <ol>
+	            <li class="item empty">
+	                <p>You have no additional address entries in your address book.</p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+
+
+/* 
+
+## Order View 
+
+```
+	<dl class="order-info">
+	    <dt>About This Order:</dt>
+	    <dd>    
+	    	<ul id="order-info-tabs">
+		        <li class="current first">Order Information</li>
+		        <li><a href="">Invoices</a></li>
+		        <li><a href="">Shipments</a></li>
+		        <li class="last"><a href="">Refunds</a></li>
+			</ul>
+	    </dd>
+	</dl>
+	<p class="order-date">Order Date: 27 January 2014</p>
+	<div class="col2-set order-info-box">
+	    <div class="col-1">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Shipping Address</h2>
+	            </div>
+	            <div class="box-content">
+					<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-2">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Shipping Method</h2>
+	            </div>
+	            <div class="box-content">
+					Flat Rate - Fixed
+				</div>
+	        </div>
+	    </div>
+	</div>
+	<div class="col2-set order-info-box">
+	    <div class="col-1">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Billing Address</h2>
+	            </div>
+	            <div class="box-content">
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-2">
+	        <div class="box box-payment">
+	            <div class="box-title">
+	                <h2>Payment Method</h2>
+	            </div>
+	            <div class="box-content">
+	                <p>Check / Money order</p>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="order-items order-details">
+	    <h2 class="table-caption">
+	    	Items Ordered                    
+	    	<span class="separator">|</span> 
+	    	<a title="Track your order" href="#">Track your order</a>
+        </h2>
+        <!-- OR -->
+        <p class="order-links">
+			<a class="link-print" href="">Print All Invoices</a>
+		</p>
+		<h2 class="sub-title">
+			Invoice #100000002 
+			<span class="separator">|</span> 
+			<a class="link-print" href="">Print Invoice</a>
+		</h2>
+		<h3 class="table-caption">Items Invoiced</h3>
+	    <table summary="Items Ordered" id="my-orders-table" class="data-table">
+	        <colgroup>
+	            <col>
+	            <col width="1">
+	            <col width="1">
+	            <col width="1">
+	            <col width="1">
+	        </colgroup>
+	        <thead>
+	            <tr class="first last">
+	                <th>Product Name</th>
+	                <th>SKU</th>
+	                <th class="a-right">Price</th>
+	                <th class="a-center">Qty</th>
+	                <th class="a-right">Subtotal</th>
+	            </tr>
+	        </thead>
+	        <tfoot>
+	            <tr class="subtotal first">
+	                <td class="a-right" colspan="4">Subtotal</td>
+	                <td class="last a-right"><span class="price">£1,066.97</span></td>
+	            </tr>
+	            <tr class="shipping">
+	                <td class="a-right" colspan="4">Shipping &amp; Handling</td>
+	                <td class="last a-right"><span class="price">£25.00</span></td>
+	            </tr>
+	            <tr class="grand_total last">
+	                <td class="a-right" colspan="4"><strong>Grand Total</strong></td>
+	                <td class="last a-right"><strong><span class="price">£1,091.97</span></strong></td>
+	            </tr>
+	        </tfoot>
+	        <tbody class="odd">
+	            <tr id="order-item-row-1" class="border first">
+	                <td>
+	                	<h3 class="product-name">Product Name</h3>
+	                	<a class="gift-message-link expanded" id="order-item-gift-message-link-7" href="#">Gift Message</a>
+	                </td>
+	                <td>prod_sku</td>
+	                <td class="a-right">
+	                    <span class="price-excl-tax">
+	                        <span class="cart-price">
+	                            <span class="price">£15.00</span>                    
+	                        </span>
+	                    </span>
+	                    <br>
+	                </td>
+	                <td class="a-right">
+	                    <span class="nobr">
+	                        Ordered: <strong>1</strong><br>
+	                        Shipped: <strong>1</strong><br>
+	                        Refunded: <strong>1</strong><br>
+	                    </span>
+	                </td>
+	                <td class="a-right last">
+	                    <span class="price-excl-tax">
+	                        <span class="cart-price">
+	                            <span class="price">£15.00</span>                    
+	                        </span>
+	                    </span>
+	                    <br>
+	                </td>
+	            </tr>
+				<tr class="border last">
+					<td colspan="7" class="gift-message-row last">
+	                    <a class="btn-close" title="Close" href="#">Close</a>
+	                    <dl class="gift-message">
+	                        <dt><strong>From:</strong> From name</dt>
+	                        <dt><strong>To:</strong> To Name</dt>
+	                        <dd>Gift message text</dd>
+	                    </dl>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+	<div class="order-additional order-gift-message">
+        <h2 class="sub-title">Gift Message for This Order</h2>
+        <dl class="gift-message">
+            <dt><strong>From:</strong> From Name</dt>
+            <dt><strong>To:</strong> To Name</dt>
+            <dd>Gift message text</dd>
+        </dl>
+    </div>
+	<div class="order-additional order-comments">
+        <h2 class="sub-title">About Your Order</h2>
+        <dl class="order-about">
+            <dt>27 Jan 2014 10:34:25</dt>
+            <dd>Comment</dd>
+        </dl>
+    </div>
+```
+
+*/
+.order-info {
+  border: 1px solid #ddd;
+  padding: 5px; }
+  .order-info dt, .order-info dd, .order-info ul, .order-info li {
+    display: inline; }
+  .order-info dt {
+    font-weight: bold; }
+
+.order-date {
+  margin: 10px 0; }
+
+
+.order-items {
+  width: 100%;
+  overflow-x: auto; }
+
+.order-additional {
+  margin: 15px 0; }
+
+/* Order Gift Message */
+.gift-message dt strong {
+  color: #666; }
+.gift-message dd {
+  font-size: 13px;
+  margin: 5px 0 0; }
+
+/* Order Comments */
+.order-about dt {
+  font-weight: bold; }
+.order-about dd {
+  font-size: 13px;
+  margin: 0 0 7px; }
+
+/*
+
+## Order Tracking
+
+### Tracking Table
+
+```
+	<table id="my-tracking-table-2" class="data-table tracking-table">
+	    <tbody>
+	        <tr class="first odd">
+	            <td colspan="2" class="last">
+	                <a title="Track this shipment" href="#">Track this shipment</a>
+	            </td>
+	        </tr>
+	        <tr class="last even">
+	            <th class="label">Tracking Number(s):</th>
+	            <td class="last">&nbsp;Tracking Number</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.tracking-table {
+  margin: 0 0 15px; }
+  .tracking-table th {
+    font-weight: bold;
+    white-space: nowrap; }
+
+/*
+
+### Tracking Popup
+
+```
+	<table id="tracking-table-popup-0" class="tracking-table-popup data-table">
+	    <colgroup>
+	    	<col width="15%">
+	        <col>
+	    </colgroup>
+		<tbody>
+			<tr class="first last odd">
+				<th class="label">Tracking Title:</th>
+				<td class="value last">Tracking Number</td>
+			</tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.tracking-table-popup {
+  width: 100%; }
+  .tracking-table-popup th, .tracking-table-popup td {
+    padding: 1px 8px; }
+  .tracking-table-popup th {
+    font-weight: bold;
+    white-space: nowrap; }
+
+/*
+
+## Order Print Pages
+
+```
+	<div class="print-head">
+        <img alt="" class="logo" src="http://placekitten.com/167/47">
+    </div>
+```
+
+*/
+.page-print .print-head img {
+  float: left; }
+.page-print .print-head address {
+  float: left;
+  margin-left: 15px; }
+.page-print .gift-message-link {
+  display: none; }
+.page-print .price-excl-tax, .page-print .price-incl-tax {
+  display: block;
+  white-space: nowrap; }
+  .page-print .price-excl-tax.label, .page-print .price-excl-tax.price, .page-print .price-incl-tax.label, .page-print .price-incl-tax.price {
+    display: inline; }
+.page-print .cart-price {
+  display: inline; }
+
+/* 
+
+## My Reviews
+
+```
+	<div class="product-review">
+	    <div class="page-title">
+	        <h1>Review Details</h1>
+	    </div>
+	    <div class="product-img-box">
+	        <a class="product-image" title="Coalesce: Functioning On Impatience T-Shirt" href="">
+	            <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	        </a>
+	        <p class="label">Average Customer Rating:</p>
+	        <div class="ratings">
+	            <div class="rating-box">
+	                <div style="width:69%" class="rating"></div>
+	            </div>
+	            <p class="rating-links">
+	                <a href="">3 Review(s)</a>
+	                <span class="separator">|</span>
+	                <a href="">Add Your Review</a>
+	            </p>
+	        </div>
+	    </div>
+	    <div class="product-details">
+	        <h2 class="product-name">Product name</h2>
+	        <h3>Your Rating:</h3>
+	        <table class="ratings-table">
+	            <tbody>
+	                <tr>
+	                    <th>Quality</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:40%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>Price</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:60%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>Value</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:80%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <dl>
+	            <dt>Your Review (submitted on 27 January 2014):</dt>
+	            <dd>Review Text</dd>
+	        </dl>
+	    </div>
+	</div>
+```
+
+*/
+.product-review dt {
+  font-weight: bold; }
+.product-review dd {
+  font-size: 13px;
+  margin: 5px 0 0; }
+.product-review .product-img-box {
+  float: left;
+  width: 140px; }
+  .product-review .product-img-box .product-image {
+    display: block;
+    width: 125px;
+    height: 125px; }
+  .product-review .product-img-box .label {
+    font-size: 11px;
+    margin: 0 0 3px; }
+  .product-review .product-img-box .ratings .rating-box {
+    float: none;
+    display: block;
+    margin: 0 0 3px; }
+.product-review .product-details {
+  margin-left: 150px; }
+.product-review .product-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 10px; }
+.product-review .ratings-table {
+  margin: 0 0 10px; }
+
+/*
+
+## Misc
+
+*/
+.my-account .title-buttons .link-rss {
+  float: none;
+  margin: 0; }
+
+/* 
+# Login/Create Account
+
+User decision between logging in and creating account, can appear when a user tries to login to restricted pages or at the checkout.
+
+```
+	<div class="col2-set">
+	    <div class="col-1 new-users">
+	        <div class="content">
+	            <h2>New Customers</h2>
+	            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+	        </div>
+	    </div>
+	    <div class="col-2 registered-users">
+	        <div class="content">
+	            <h2>Registered Customers</h2>
+	            <p>If you have an account with us, please log in.</p>
+	            <ul class="form-list">
+	                <li>
+	                    <label class="required" for="email"><em>*</em>Email Address</label>
+	                    <div class="input-box">
+	                        <input type="text" title="Email Address" class="input-text required-entry validate-email" id="email" value="" name="login[username]">
+	                    </div>
+	                </li>
+	                <li>
+	                    <label class="required" for="pass"><em>*</em>Password</label>
+	                    <div class="input-box">
+	                        <input type="password" title="Password" id="pass" class="input-text required-entry validate-password" name="login[password]">
+	                    </div>
+	                </li>
+				</ul>
+	            <p class="required">* Required Fields</p>
+	        </div>
+	    </div>
+	</div>
+	<div class="col2-set">
+	    <div class="col-1 new-users">
+	        <div class="buttons-set">
+	            <button class="button" title="Create an Account" type="button"><span><span>Create an Account</span></span></button>
+	        </div>
+	    </div>
+	    <div class="col-2 registered-users">
+	        <div class="buttons-set">
+	            <a class="f-left" href="#">Forgot Your Password?</a>
+	            <button id="send2" name="send" title="Login" class="button" type="submit"><span><span>Login</span></span></button>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+
+
+/* 
+## Captcha 
+
+Can be enabled in System->Configuration->Customer Configuration->CAPTCHA
+
+```
+	<ul class="form-list">
+	    <li>
+	        <div id="captcha-image-box-user_login" class="captcha-image">
+	            <img alt="Reload captcha" src="http://placehold.it/24x24&text=Reload" class="captcha-reload" id="captcha-reload">
+	            <img height="50" src="http://placekitten.com/200/50" class="captcha-img" id="user_login">
+	            <div class="captcha-note">
+	                <strong>Attention</strong>: Captcha is case sensitive.
+	            </div>
+	        </div>
+	    </li>
+	</ul>
+```
+
+*/
+
+.captcha-image {
+  float: left;
+  position: relative; }
+
+.captcha-img {
+  border: 1px solid #ccc; }
+
+
+
+.captcha-reload {
+  position: absolute;
+  top: 2px;
+  right: 2px; }
+  .captcha-reload.refreshing {
+    animation: rotate 1.5s infinite linear;
+    -webkit-animation: rotate 1.5s infinite linear;
+    -moz-animation: rotate 1.5s infinite linear; }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0); }
+
+  0% {
+    -webkit-transform: rotate(-360deg); } }
+
+@-moz-keyframes rotate {
+  0% {
+    -moz-transform: rotate(0); }
+
+  0% {
+    -moz-transform: rotate(-360deg); } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+
+  0% {
+    transform: rotate(-360deg); } }
+
+/* 
+## Remember Me Popup 
+
+```
+	<div style="height: 745px;" class="window-overlay" id="window-overlay"></div>
+	<div style="" class="remember-me-popup" id="remember-me-popup">
+	    <div class="remember-me-popup-head">
+	        <h3>What's this?</h3>
+	        <a title="Close" class="remember-me-popup-close" href="#">Close</a>
+	    </div>
+	    <div class="remember-me-popup-body">
+	        <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>
+	        <div class="remember-me-popup-close-button a-right">
+	            <a title="Close" class="remember-me-popup-close button" href="#"><span>Close</span></a>
+	        </div>
+	    </div>
+	</div>
+```	
+
+*/
+.window-overlay {
+  background: url(../images/window_overlay.png) repeat;
+  background: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 990; }
+
+
+
+/*
+
+# Content
+
+Elements to control the layout which can be used within user entered data (typically via WYSIWYG editor) or used in custom blocks. 
+
+*/
+/*
+
+## 2 Column Set
+
+```
+	<div class="col2-set">
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+	</div>
+```
+
+```
+	<div class="col2-set">
+		<div class="col-1 col-narrow">Column 1</div>
+		<div class="col-2 col-wide">Column 2</div>
+	</div>
+```
+
+*/
+.col2-set .col-1 {
+  float: left;
+  width: 49%; }
+.col2-set .col-2 {
+  float: right;
+  width: 49%; }
+.col2-set .col-narrow {
+  width: 33%; }
+.col2-set .col-wide {
+  width: 65%; }
+
+/*
+
+## 3 Column Set
+
+Three equally spaced columns.
+
+```
+	<div class="col3-set">
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-3">Column 3</div>
+	</div>
+```
+
+*/
+.col3-set .col-1 {
+  float: left;
+  width: 32%; }
+.col3-set .col-2 {
+  float: left;
+  width: 32%;
+  margin-left: 2%; }
+.col3-set .col-3 {
+  float: right;
+  width: 32%; }
+
+/*
+
+## 4 Column Set
+
+Four equally spaced columns.
+
+```
+	<div class="col4-set">
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-3">Column 3</div>
+		<div class="col-4">Column 4</div>
+	</div>
+```
+
+*/
+.col4-set .col-1 {
+  float: left;
+  width: 23.5%; }
+.col4-set .col-2 {
+  float: left;
+  width: 23.5%;
+  margin: 0 2%; }
+.col4-set .col-3 {
+  float: left;
+  width: 23.5%; }
+.col4-set .col-4 {
+  float: right;
+  width: 23.5%; }
+
+/*
+
+# Footer
+
+```
+    <div class="footer-container">
+        <div class="footer">
+        	<ul>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Customer Service</a></li>
+				<li class="last privacy"><a href="">Privacy Policy</a></li>
+			</ul>
+			<ul class="links">
+                <li class="first"><a title="Site Map" href="">Site Map</a></li>
+				<li><a title="Search Terms" href="h">Search Terms</a></li>
+				<li><a title="Advanced Search" href="">Advanced Search</a></li>
+                <li><a title="Contact Us" href="">Contact Us</a></li>
+				<li class=" last"><a class="link-rss" title="RSS" href="">RSS</a></li>
+            </ul>
+        	<p class="bugs">Help Us to Keep Magento Healthy - <a href=""><strong>Report All Bugs</strong></a> (ver. 1.8.1.0)</p>
+        	<address>&copy; 2013 Magento Demo Store. All Rights Reserved.</address>
+    	</div>
+    </div>
+```
+
+*/
+.footer-container .bottom-container {
+  text-align: center; }
+
+.footer {
+  border: 1px solid #ddd;
+  padding: 10px; }
+  .footer p {
+    text-align: right; }
+  .footer address {
+    text-align: right; }
+  .footer ul li {
+    display: inline; }
+
+/*
+
+# Header
+
+```
+	<div class="header-container">
+	    <div class="header">
+	        <h1 class="logo"><strong>Magento Commerce</strong><a class="logo" title="Magento Commerce" href=""><img alt="Magento Commerce" src="/stylesheet/assets/images/logo.gif"></a></h1>
+	        <div class="quick-access">
+	            <form method="get" action="" id="search_mini_form">
+	                <div class="form-search">
+	                    <label for="search">Search:</label>
+	                    <input type="text" maxlength="128" class="input-text" value="" name="q" id="search" autocomplete="off">
+	                    <button class="button" title="Search" type="submit"><span><span>Search</span></span></button>
+	                    <div class="search-autocomplete" id="search_autocomplete">
+	                        <ul>
+	                            <li class="odd first selected"><span class="amount">10</span>Term</li>
+	                            <li class="even last"><span class="amount">10</span>Term</li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </form>
+	            <p class="welcome-msg">Welcome, Customer Name!</p>
+	            <ul class="links">
+	                <li class="first"><a title="My Account" href="">My Account</a></li>
+	                <li><a title="My Wishlist" href="">My Wishlist</a></li>
+	                <li><a class="top-link-cart" title="My Cart (2 items)" href="">My Cart (2 items)</a></li>
+	                <li><a class="top-link-checkout" title="Checkout" href="">Checkout</a></li>
+	                <li class=" last"><a title="Log Out" href="">Log Out</a></li>
+	            </ul>
+	            <div class="form-language">
+	                <label for="select-language">Your Language:</label>
+	                <select title="Your Language" id="select-language">
+	                    <option selected="selected" value="">English</option>
+	                    <option value="">French</option>
+	                    <option value="">German</option>
+	                </select>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.logo {
+  float: left; }
+
+.header-container .top-container {
+  clear: both;
+  text-align: right; }
+
+.header {
+  padding: 10px;
+  border: 1px solid #ddd; }
+  .header .logo {
+    float: left;
+    text-decoration: none !important; }
+    .header .logo h1 {
+      margin: 0;
+      padding: 0; }
+    .header .logo strong {
+      position: absolute;
+      top: -999em;
+      left: -999em;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+      text-indent: -999em;
+      overflow: hidden; }
+  .header .welcome-msg {
+    font-weight: bold;
+    text-align: right; }
+  .header .links {
+    float: right; }
+  .header .form-search {
+    text-align: right; }
+    .header .form-search .search-autocomplete {
+      z-index: 999; }
+      .header .form-search .search-autocomplete ul {
+        border: 1px solid #ddd;
+        background-color: #fff; }
+      .header .form-search .search-autocomplete li {
+        padding: 3px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer; }
+        .header .form-search .search-autocomplete li .amount {
+          float: right;
+          font-weight: bold; }
+  .header .form-language {
+    clear: both;
+    text-align: right; }
+
+/*
+
+# Pages
+
+Top level page layout for Magento's standard options, 1column, 2columns-left, 2-columns-right and 3columns.
+
+*/
+/*
+
+## Common Page Styling
+
+*/
+
+.page {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: left; }
+
+.page-print {
+  background: #fff;
+  padding: 20px;
+  text-align: left; }
+
+.page-empty {
+  background: #fff;
+  padding: 20px;
+  text-align: left; }
+
+.page-popup {
+  padding: 20px;
+  text-align: left; }
+
+
+.main {
+  margin: 10px 0; }
+
+/*
+
+## Base Column Sizes
+
+*/
+.col-left {
+  float: left;
+  width: 230px;
+  border: 1px solid #ddd;
+  padding: 5px 5px 0; }
+
+.col-main {
+  float: left;
+  width: 736px;
+  border: 1px solid #ddd;
+  padding: 5px; }
+
+.col-right {
+  float: right;
+  width: 230px;
+  border: 1px solid #ddd;
+  padding: 5px 5px 0; }
+
+/*
+
+## 1 Column
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col1-layout">
+                <div class="main">
+                    <div class="col-main">
+                        Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col1-layout .col-main {
+  float: none;
+  width: auto; }
+
+/* 
+
+## 2 Columns (Left)
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col2-left-layout">
+                <div class="main">
+                    <div class="col-main">
+                        Content
+                    </div>
+                    <div class="col-left sidebar">Left Column</div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col2-left-layout .col-main {
+  float: right; }
+
+/*
+
+## 2 Columns (Right)
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col2-right-layout">
+                <div class="main">
+                    <div class="col-main">
+                        Content
+                    </div>
+                    <div class="col-right sidebar">Right</div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+
+/*
+
+## 3 Columns
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col3-layout">
+                <div class="main">
+                    <div class="col-wrapper">
+                        <div class="col-main">
+                            Content
+                        </div>
+                        <div class="col-left sidebar">Left Column</div>
+                    </div>
+                    <div class="col-right sidebar">Right Column</div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col3-layout .col-main {
+  width: 484px;
+  margin-left: 10px; }
+.col3-layout .col-wrapper {
+  float: left;
+  width: 748px; }
+  .col3-layout .col-wrapper .col-main {
+    float: right; }
+
+/*
+
+# Breadcrumbs
+
+```
+	<div class="breadcrumbs">
+		<ul>
+			<li class="home">
+				<a title="Go to Home Page" href="#">Home</a>
+				<span>/ </span>
+			</li>
+			<li class="category">
+				<a title="" href="#">Sublink</a>
+				<span>/ </span>
+			</li>
+			<li class="category">
+				<a title="" href="#">Sublink</a>
+				<span>/ </span>
+			</li>
+			<li class="product">
+				<strong>Active</strong>
+			</li>
+		</ul>
+	</div>
+```
+
+*/
+.breadcrumbs {
+  padding: 10px;
+  margin: 0 0 10px;
+  border: 1px solid #ddd; }
+  .breadcrumbs li {
+    display: inline; }
+
+/*
+
+# Nav Bar
+
+*/
+/*
+
+## Top Navigation
+
+```
+	<div class="nav-container">
+		<ul id="nav">
+			<li class="level0 nav-1 first level-top parent">
+				<a class="level-top" href="#"><span>Furniture</span></a>
+				<ul class="level0">
+					<li class="level1 nav-1-1 first">
+						<a href="#"><span>Living Room</span></a>
+					</li>
+					<li class="level1 nav-1-2 last">
+						<a href=""><span>Bedroom</span></a>
+					</li>
+				</ul>
+			</li>
+			<li class="level0 nav-2 level-top">
+				<a class="level-top" href="#"><span>Electronics</span></a>
+			</li>
+			<li class="level0 nav-3 active last level-top parent over">
+				<a class="level-top over" href="#"><span>Apparel</span></a>
+				<ul class="level0 shown-sub">
+					<li class="level1 nav-3-1 first">
+						<a href="#"><span>Shirts</span></a>
+					</li>
+					<li class="level1 nav-3-2 active parent over">
+						<a href="#" class="over"><span>Shoes</span></a>
+						<ul class="level1 shown-sub">
+							<li class="level2 nav-3-2-1 first over">
+								<a href="#" class="over"><span>Mens</span></a>
+							</li>
+							<li class="level2 nav-3-2-2 last">
+								<a href="#"><span>Womens</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="level1 nav-3-3 last">
+						<a href="#"><span>Hoodies</span></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+```
+
+Note: hovering on element Apparel > Shoes > Mens
+
+*/
+
+#nav {
+  border: 1px solid #ddd;
+  font-size: 13px;
+  margin: 10px 0;
+  padding: 5px 0; }
+  #nav li {
+    float: left;
+    position: relative;
+    text-align: left; }
+    #nav li.active a, #nav li.over a {
+      color: #000; }
+    #nav li.over {
+      z-index: 998; }
+    #nav li ul a span {
+      white-space: normal; }
+  #nav a {
+    color: #888;
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none; }
+    #nav a:hover {
+      color: #000;
+      text-decoration: none; }
+    #nav a span {
+      display: block;
+      white-space: nowrap;
+      cursor: pointer; }
+  #nav ul, #nav div {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    left: -10000px;
+    position: absolute;
+    top: 25px;
+    width: 15em; }
+  #nav div ul {
+    position: static;
+    width: auto;
+    border: none; }
+  #nav ul ul, #nav ul div {
+    top: 7px; }
+  #nav ul li {
+    border-bottom: 1px solid #ddd;
+    float: none; }
+    #nav ul li.active > a, #nav ul li.over > a {
+      color: #000 !important; }
+    #nav ul li.last {
+      border-bottom: 0; }
+    #nav ul li a {
+      color: #888 !important;
+      float: none;
+      font-weight: normal;
+      padding: 3px 9px; }
+      #nav ul li a:hover {
+        color: #000 !important; }
+  #nav li ul.shown-sub, #nav li div.shown-sub {
+    left: 0;
+    z-index: 999; }
+  #nav li .shown-sub li ul.shown-sub, #nav li .shown-sub li div.shown-sub {
+    left: 100px; }
+
+/* 
+# Toolbar
+*/
+/* 
+
+## Pager
+
+```
+	<div class="pager">
+        <p class="amount">
+			<p class="amount">Items 10 to 20 of 22 total</p>
+        </p>
+        <div class="limiter">
+            <label>Show</label>
+            <select>
+                <option selected="selected" value="#">9</option>
+                <option value="#">15</option>
+                <option value="#">30</option>
+			</select> per page
+		</div>
+		<div class="pages">
+        	<strong>Page:</strong>
+        	<ol>
+	        	<li>
+	                <a title="Previous" href="#" class="previous i-previous">
+	                    <img class="v-middle" alt="Previous" src="http://magebase.local/skin/frontend/webtise/default/images/pager_arrow_left.gif">
+	                </a>
+	            </li>
+                <li>
+                	<a href="#">1</a>
+                </li>
+        		<li class="current">2</li>
+                <li>
+                	<a href="#">3</a>
+                </li>
+				<li>
+					<a title="Next" href="http://magebase.local/apparel.html?p=2" class="next i-next">
+						<img class="v-middle" alt="Next" src="http://magebase.local/skin/frontend/webtise/default/images/pager_arrow_right.gif">
+                    </a>
+            	</li>
+            </ol>
+    	</div>
+	</div>
+```
+
+*/
+.pager {
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  padding: 5px;
+  text-align: center; }
+  .pager .amount {
+    float: left; }
+  .pager .limiter {
+    float: right; }
+  .pager .pages {
+    margin: 0 135px; }
+    .pager .pages ol {
+      display: inline; }
+    .pager .pages li {
+      display: inline; }
+
+/* 
+
+## Sorter
+
+```
+	<div class="sorter">
+		<p class="view-mode">
+			<label>View as:</label>
+			<a class="grid" title="Grid" href="#">Grid</a>&nbsp;
+			<strong class="list" title="List">List</strong>&nbsp;
+		</p>
+		<div class="sort-by">
+	        <label>Sort By</label>
+	        <select>
+				<option selected="selected" value="#">Position</option>
+				<option value="#">Name</option>
+				<option value="#">Price</option>
+			</select>
+			<a title="Set Descending Direction" href="#">
+				<img class="v-middle" alt="Set Descending Direction" src="http://magebase.local/skin/frontend/webtise/default/images/i_asc_arrow.gif">
+			</a>
+		</div>
+	</div>
+```
+
+*/
+.sorter {
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  padding: 5px; }
+  .sorter .view-mode {
+    float: left; }
+  .sorter .sort-by {
+    float: right; }
+
+/* 
+
+## Toolbar 
+
+```
+	<div class="toolbar">
+		<div class="pager">Pager</div>
+		<div class="sorter">Sorter</div>
+	</div>
+
+	<div class="toolbar-bottom">
+		<div class="toolbar">
+			<div class="pager">Pager</div>
+			<div class="sorter">Sorter</div>
+		</div>
+	</div>
+```
+	
+*/
+
+
+/*
+
+# Admin controlled content
+
+```
+<div class="std">
+	<h2 class="subtitle">Subtitle</h2>
+	<p>Paragraph text with <em>italitcs</em> and <strong>bold</strong></p>
+	<ol class="ol">
+		<li>Ordered List Item</li>
+		<li>Ordered List Item</li>
+		<li>
+			Ordered List Item
+			<ol>
+				<li>Sub Ordered List Item</li>
+				<li>Sub Ordered List Item</li>
+				<li>Sub Ordered List Item</li>
+			</ol>
+		</li>
+	</ol>
+	<ul class="disc">
+		<li>Unordered List Item</li>
+		<li>Unordered List Item</li>
+		<li>
+			Unordered List Item
+			<ul>
+				<li>Sub Unordered List Item</li>
+				<li>Sub Unordered List Item</li>
+				<li>Sub Unordered List Item</li>
+			</ul>
+		</li>
+	</ul>
+	<dl>
+		<dt>Definition Term</dt>
+		<dd>Definition Description</dd>
+		<dt>Definition Term</dt>
+		<dd>Definition Description</dd>
+		<dt>Definition Term</dt>
+		<dd>Definition Description</dd>
+	</dl>
+	<address>Address Content</address>
+	<blockquote>
+		Blockquote
+		<cite>Citation</cite>
+	</blockquote>
+</div>
+```
+
+*/
+.std .subtitle {
+  padding: 0; }
+.std ol.ol {
+  list-style: decimal outside;
+  padding-left: 1.5em; }
+.std ul.disc {
+  list-style: disc outside;
+  padding-left: 18px;
+  margin: 0 0 10px; }
+.std dl dt {
+  font-weight: bold; }
+.std dl dd {
+  margin: 0 0 10px; }
+.std ul, .std ol, .std dl, .std p, .std address, .std blockquote {
+  margin: 0 0 1em;
+  padding: 0; }
+.std ul {
+  list-style: disc outside;
+  padding-left: 1.5em; }
+.std ol {
+  list-style: decimal outside;
+  padding-left: 1.5em; }
+.std ul ul {
+  list-style-type: circle; }
+.std ul ul, .std ol ol, .std ul ol, .std ol ul {
+  margin: 0.5em 0; }
+.std dt {
+  font-weight: bold; }
+.std dd {
+  padding: 0 0 0 1.5em; }
+.std blockquote {
+  font-style: italic;
+  padding: 0 0 0 1.5em; }
+.std address {
+  font-style: normal; }
+.std b, .std strong {
+  font-weight: bold; }
+.std i, .std em {
+  font-style: italic; }
+
+/*
+
+# Reset
+
+*/
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #fff;
+  font: 12px/1.35 Arial, Helvetica, sans-serif;
+  color: #000; }
+
+img {
+  border: 0;
+  vertical-align: top; }
+
+a {
+  color: #05c;
+  text-decoration: underline; }
+
+a:hover {
+  text-decoration: none; }
+
+:focus {
+  outline: 0; }
+
+/* 
+
+## Headings 
+
+*/
+h1 {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.15; }
+
+h2 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.25; }
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.25; }
+
+h4 {
+  font-size: 14px;
+  font-weight: bold; }
+
+h5 {
+  font-size: 12px;
+  font-weight: bold; }
+
+h6 {
+  font-size: 11px;
+  font-weight: bold; }
+
+/* 
+
+## Forms
+
+*/
+form {
+  display: inline; }
+
+fieldset {
+  border: 0; }
+
+legend {
+  display: none; }
+
+/* 
+
+## Table
+
+*/
+table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  font-size: 100%; }
+
+caption, th, td {
+  vertical-align: top;
+  text-align: left;
+  font-weight: normal; }
+
+/* 
+
+## Content
+
+*/
+strong {
+  font-weight: bold; }
+
+address {
+  font-style: normal; }
+
+cite {
+  font-style: normal; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after {
+  content: ''; }
+
+small, big {
+  font-size: 1em; }
+
+sup {
+  font-size: 1em;
+  vertical-align: top; }
+
+/* 
+
+## Lists
+
+*/
+ul, ol {
+  list-style: none; }
+
+/* 
+
+# Sidebar Blocks
+
+## Generic
+
+```
+	<div class="block">
+	    <div class="block-title">
+	        <strong><span>Block Title</span></strong>
+	    </div>
+	    <div class="block-content">
+	    	<p class="block-subtitle">Block Subtitle</p>
+	        <ul>
+	            <li class="item odd"></li>
+	            <li class="item even"></li>
+	            <li class="item odd"></li>
+	        </ul>
+	    </div>
+	</div>
+```
+
+*/
+.block {
+  border: 1px solid #ddd;
+  margin: 0 0 10px; }
+  .block .block-title {
+    border-bottom: 1px solid #ddd;
+    padding: 3px 10px; }
+    .block .block-title a {
+      text-decoration: none !important; }
+    .block .block-title strong {
+      font-size: 14px;
+      font-weight: bold; }
+  .block .block-subtitle {
+    font-size: 13px;
+    font-weight: bold; }
+  .block .block-content {
+    padding: 10px; }
+  .block .btn-remove, .block .btn-edit {
+    float: right; }
+  .block .actions {
+    text-align: right; }
+    .block .actions a {
+      float: left; }
+  .block li.item {
+    padding: 5px 0; }
+  .block li.even {
+    background-color: #f6f6f6; }
+
+/* 
+
+## Block: Account 
+
+```
+	<div class="block block-account">
+	    <div class="block-title">
+	        <strong><span>My Account</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ul>
+				<li class="current"><strong>Account Dashboard</strong></li>
+				<li><a href="">Account Information</a></li>
+				<li><a href="">Address Book</a></li>
+				<li><a href="">My Orders</a></li>
+				<li><a href="">Billing Agreements</a></li>
+				<li><a href="">Recurring Profiles</a></li>
+				<li><a href="">My Product Reviews</a></li>
+				<li><a href="">My Tags</a></li>
+				<li><a href="">My Wishlist</a></li>
+				<li><a href="">My Applications</a></li>
+				<li><a href="">Newsletter Subscriptions</a></li>
+				<li class="last"><a href="">My Downloadable Products</a></li>
+			</ul>
+	    </div>
+	</div>
+```
+
+*/
+
+/* 
+
+## Block: Currency Switcher 
+
+```
+	<div class="block block-currency">
+	    <div class="block-title">
+	        <strong><span>Select Your Currency</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <select title="Select Your Currency" name="currency">
+	            <option selected="selected" value="">British Pound Sterling - GBP</option>
+	            <option value="">Euro - EUR</option>
+	        </select>
+	    </div>
+	</div>
+```
+
+*/
+.block-currency select {
+  width: 100%;
+  border: 1px solid #888; }
+
+/* 
+
+## Block: Layered Navigation 
+
+```
+	<div class="block block-layered-nav">
+	    <div class="block-title">
+	        <strong><span>Shop By</span></strong>
+	    </div>
+	    <div class="block-content">
+			<p class="block-subtitle">Shopping Options</p>
+			<dl id="narrow-by-list">
+				<dt class="odd">Category</dt>
+				<dd class="odd">
+					<ol>
+						<li><a href="">Category</a> (4)</li>
+						<li><a href="">Category</a> (2)</li>
+					</ol>
+				</dd>
+				<dt class="even">Price</dt>
+				<dd class="even">
+					<ol>
+						<li><a href=""><span class="price">£0.00</span> - <span class="price">£999.99</span></a> (5)</li>
+						<li><a href=""><span class="price">£2,000.00</span> and above</a> (1)</li>
+					</ol>
+				</dd>
+				<dt class="last odd">Color</dt>
+				<dd class="last odd">
+					<ol>
+					<li><a href="">Color</a>(2)</li>
+					<li><a href="">Color</a>(4)</li></ol>
+				</dd>
+			</dl>
+		</div>
+	</div>
+```
+
+*/
+.block-layered-nav dt {
+  font-weight: bold; }
+.block-layered-nav .btn-remove {
+  float: left;
+  margin: 2px 3px 0 0; }
+
+/* 
+
+## Block: Cart 
+
+```
+	<div class="block block-cart">
+	        <div class="block-title">
+	        <strong><span>My Cart</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <div class="summary">
+	            <p class="amount">There are <a href="">2 items</a> in your cart.</p>
+	            <p class="subtotal">
+	                 <span class="label">Cart Subtotal:</span>
+	                 <span class="price">£161.94</span><br>
+	                 (<span class="price">£161.94</span> Incl. Tax)
+	            </p>
+	        </div>
+	        <div class="actions">
+	            <p class="paypal-logo">
+	                <a href=""><img title="Checkout with PayPal" alt="Checkout with PayPal" src="https://fpdbs.paypal.com/dynamicimageweb?cmd=_dynamic-image&amp;buttontype=ecshortcut&amp;locale=en_GB"></a>
+	                <span class="paypal-or">-OR-</span>
+	            </p>
+	            <buttonclass="button" title="Checkout" type="button"><span><span>Checkout</span></span></button>
+	        </div>
+	        <p class="block-subtitle">Recently added item(s)</p>
+	        <ol class="mini-products-list" id="cart-sidebar">
+	            <li class="item odd">
+	                <a class="product-image" title="Product Name" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <a class="btn-edit" title="Edit item" href="">Edit item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <strong>1</strong> x
+	                    Excl. Tax: <span class="price">£2,699.99</span><br>
+	                    Incl. Tax: <span class="price">£2,699.99</span>
+	                </div>
+	            </li>
+	            <li class="item even last">
+	                <a class="product-image" title="Product Name" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <a class="btn-edit" title="Edit item" href="">Edit item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <strong>1</strong> x
+	                    Excl. Tax: <span class="price">£2,699.99</span><br>
+	                    Incl. Tax: <span class="price">£2,699.99</span>
+	                </div>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.block-cart .subtotal {
+  text-align: center; }
+.block-cart .actions .paypal-logo {
+  float: left;
+  width: 100%;
+  margin: 3px 0 0;
+  text-align: right; }
+  .block-cart .actions .paypal-logo .paypal-or {
+    clear: both;
+    display: block;
+    padding: 0 55px 5px 0; }
+
+/* 
+
+## Block: Wishlist 
+
+```
+	<div class="block block-wishlist">
+	    <div class="block-title">
+	        <strong><span>My Wishlist <small>(2)</small></span></strong>
+	    </div>
+	    <div class="block-content">
+	        <p class="block-subtitle">Last Added Items</p>
+	        <ol id="wishlist-sidebar" class="mini-products-list">
+	            <li class="item odd">
+	                <a class="product-image" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£599.99</span>
+	                        </span>
+	                    </div>
+	                    <a class="link-cart" href="">Add to Cart</a>
+	                </div>
+	            </li>
+	            <li class="item even last">
+	                <a class="product-image" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£599.99</span>
+	                        </span>
+	                    </div>
+	                    <a class="link-cart" href="">Add to Cart</a>
+	                </div>
+	            </li>
+	        </ol>
+	        <div class="actions">
+	            <a href="">Go to Wishlist</a>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+
+/* 
+
+## Block: Related 
+
+```
+	<div class="block block-related">
+	    <div class="block-title">
+	        <strong><span>Related Products</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <p class="block-subtitle">Check items to add to the cart or&nbsp;<a href="#">select all</a></p>
+	        <ol id="block-related" class="mini-products-list">
+	            <li class="item odd">
+	                <input type="checkbox" value="51" name="related_products[]" class="checkbox related-checkbox">
+	                <div class="product">
+	                    <a class="product-image" title="Product Name" href="">
+	                        <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                    </a>
+	                    <div class="product-details">
+	                        <p class="product-name"><a href="">Product Name</a></p>
+	                        <div class="price-box">
+	                            <span class="regular-price">
+	                                <span class="price">£299.99</span>
+	                            </span>
+	                        </div>
+	                        <a class="link-wishlist" href="">Add to Wishlist</a>
+	                    </div>
+	                </div>
+	            </li>
+	            <li class="item even last">
+	                <input type="checkbox" value="51" name="related_products[]" class="checkbox related-checkbox">
+	                <div class="product">
+	                    <a class="product-image" title="Product Name" href="">
+	                        <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                    </a>
+	                    <div class="product-details">
+	                        <p class="product-name"><a href="">Product Name</a></p>
+	                        <div class="price-box">
+	                            <span class="regular-price">
+	                                <span class="price">£299.99</span>
+	                            </span>
+	                        </div>
+	                        <a class="link-wishlist" href="">Add to Wishlist</a>
+	                    </div>
+	                </div>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.block-related li {
+  padding: 5px 0; }
+.block-related input.checkbox {
+  float: left;
+  margin-right: -20px; }
+.block-related .product {
+  margin-left: 20px; }
+  .block-related .product .product-image {
+    float: left;
+    margin-right: -65px; }
+  .block-related .product .product-details {
+    margin-left: 65px; }
+
+/* 
+
+## Block: Compare Products 
+
+```
+	<div class="block block-list block-compare">
+	    <div class="block-title">
+	        <strong><span>Compare Products <small>(2)</small></span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ol id="compare-items">
+	            <li class="item odd">
+	                <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item last even">
+	                <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	        </ol>
+	        <div class="actions">
+	            <a href="">Clear All</a>
+	            <button class="button" title="Compare" type="button"><span><span>Compare</span></span></button>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.block-compare li {
+  padding: 5px 0; }
+
+/* 
+
+## Block: Recently Viewed 
+
+```
+	<div class="block block-list block-viewed">
+	    <div class="block-title">
+	        <strong><span>Recently Viewed Products</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ol id="recently-viewed-items">
+	            <li class="item odd">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item even">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item odd last">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+
+/* 
+
+## Block: Recently Compared 
+
+```
+	<div class="block block-list block-compared">
+	    <div class="block-title">
+	        <strong><span>Recently Compared Products</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ol id="recently-compared-items">
+	            <li class="item odd">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item even last">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+
+/* 
+
+## Block: Poll 
+
+```
+	<div class="block block-poll">
+	    <div class="block-title">
+	        <strong><span>Community Poll</span></strong>
+	    </div>
+	    <form method="post" action="" id="pollForm">
+	        <div class="block-content">
+	            <p class="block-subtitle">Question?</p>
+	            <ul id="poll-answers">
+	                <li class="odd">
+	                    <input type="radio" value="5" id="vote_5" class="radio poll_vote" name="vote">
+	                    <span class="label"><label for="vote_5">Option 1</label></span>
+	                </li>
+	                <li class="last even">
+	                    <input type="radio" value="8" id="vote_8" class="radio poll_vote" name="vote">
+	                    <span class="label"><label for="vote_8">Option 2</label></span>
+	                </li>
+	            </ul>
+	            <div class="actions">
+	                <button class="button" title="Vote" type="submit"><span><span>Vote</span></span></button>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-poll input.radio {
+  float: left;
+  margin: 1px -18px 0 0; }
+.block-poll .label {
+  display: block;
+  margin-left: 18px; }
+.block-poll li {
+  padding: 3px 9px; }
+.block-poll .actions {
+  margin: 5px 0 0; }
+.block-poll .answer {
+  font-weight: bold; }
+.block-poll .votes {
+  float: right;
+  margin-left: 10px; }
+
+/* 
+
+## Block: Tags 
+
+```
+	<div class="block block-tags">
+	    <div class="block-title">
+	        <strong><span>Popular Tags</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ul class="tags-list">
+	            <li><a style="font-size:95%;" href="">tag</a></li>
+	            <li><a style="font-size:85%;" href="">tag</a></li>
+	            <li><a style="font-size:145%;" href="">tag</a></li>
+	            <li><a style="font-size:115%;" href="">tag</a></li>
+	            <li><a style="font-size:95%;" href="">tag</a></li>
+	        </ul>
+	        <div class="actions">
+	            <a href="">View All Tags</a>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.block-tags ul, .block-tags li {
+  display: inline; }
+
+/* 
+
+## Block: Subscribe 
+
+```
+	<div class="block block-subscribe">
+	    <div class="block-title">
+	        <strong><span>Newsletter</span></strong>
+	    </div>
+	    <form id="newsletter-validate-detail" method="post" action="">
+	        <div class="block-content">
+	            <div class="form-subscribe-header">
+	                <label for="newsletter">Sign Up for Our Newsletter:</label>
+	            </div>
+	            <div class="input-box">
+	               <input type="text" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+	            </div>
+	            <div class="actions">
+	                <button class="button" title="Subscribe" type="submit"><span><span>Subscribe</span></span></button>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+
+/* 
+
+## Block: Reorder 
+
+```
+	<div class="block block-reorder">
+	    <div class="block-title">
+	        <strong><span>My Orders</span></strong>
+	    </div>
+	    <form id="reorder-validate-detail" action="http://magebase.local/checkout/cart/addgroup/" method="post">
+	        <div class="block-content">
+	            <p class="block-subtitle">Last Ordered Items</p>
+	            <ol id="cart-sidebar-reorder">
+	                <li class="item odd">
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                </li>
+	                <li class="item even last">
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                </li>
+	            </ol>
+	            <div class="actions">
+	                <button class="button btn-cart" title="Add to Cart" type="submit"><span><span>Add to Cart</span></span></button>
+	                <a href="">View All</a>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-reorder li {
+  padding: 5px 0; }
+.block-reorder input.checkbox {
+  float: left;
+  margin: 3px -20px 0 0; }
+.block-reorder .product-name {
+  margin-left: 20px; }
+
+/* 
+
+## Block: Banner 
+
+```
+	<div class="block block-banner">
+	    <div class="block-content">
+			<a href="">
+				<img src="http://placekitten.com/125/125">
+			</a>
+	    </div>
+	</div>
+```
+
+*/
+.block-banner .block-content {
+  text-align: center; }
+
+/* 
+
+## Block: Login 
+
+```
+	<div class="block block-login">
+	    <div class="block-title">
+	        <strong><span>Login</span></strong>
+	    </div>
+	    <form action="" method="post">
+	        <div class="block-content">
+	            <label for="mini-login">Email:</label>
+	            <input type="text" name="login[username]" id="mini-login" class="input-text" />
+	            <label for="mini-password">Password:</label>
+	            <input type="password" name="login[password]" id="mini-password" class="input-text" />
+	            <div class="actions">
+	                <button type="submit" class="button"><span><span>Login</span></span></button>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-login label {
+  font-weight: bold;
+  color: #666; }
+.block-login input.input-text {
+  display: block;
+  width: 167px;
+  margin: 3px 0; }
+
+/* 
+
+## Paypal 
+
+```
+	<div class="sidebar">
+		<div class="paypal-logo">
+		    <a title="Additional Options" href="#">
+		    	<img title="Additional Options" alt="Additional Options" src="https://www.paypalobjects.com/en_GB/i/bnr/bnr_nowAccepting_150x60.gif">
+		    </a>
+		</div>
+	</div>
+```
+
+*/
+.sidebar .paypal-logo {
+  display: block;
+  margin: 10px 0;
+  text-align: center; }
+  .sidebar .paypal-logo a {
+    float: none; }
+
+/* 
+# Mini Products List 
+
+```
+	<ol class="mini-products-list">
+		<li class="item odd">
+            <a class="product-image" href="#">
+            	<img width="50" height="50" src="http://placekitten.com/50/50">
+            </a>
+        	<div class="product-details">
+                <p class="product-name">
+                	<a href="#">Product Name</a>
+                </p>
+        		<strong>1</strong> x <span class="price">£22.00</span>
+        		<div class="truncated">
+          			<div class="truncated_full_value">
+            			<dl class="item-options">
+                            <dt>Size</dt>
+                			<dd>Large</dd>
+                        </dl>
+          			</div>
+        			<a class="details" onclick="return false;" href="#">Details</a>
+        		</div>
+            </div>
+		</li>
+		<li class="item even last">
+            <a class="product-image" href="#">
+            	<img width="50" height="50" src="http://placekitten.com/50/50">
+            </a>
+        	<div class="product-details">
+                <p class="product-name">
+                	<a href="#">Product Name</a>
+                </p>
+        		<strong>1</strong> x <span class="price">£22.00</span>
+        		<div class="truncated">
+          			<div class="truncated_full_value">
+            			<dl class="item-options">
+                            <dt>Size</dt>
+                			<dd>Large</dd>
+                        </dl>
+          			</div>
+        			<a class="details" onclick="return false;" href="#">Details</a>
+        		</div>
+            </div>
+		</li>
+	</ol>
+```
+
+*/
+.mini-products-list li {
+  padding: 5px 0; }
+.mini-products-list .product-image {
+  float: left;
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd; }
+.mini-products-list .product-details {
+  margin-left: 75px; }
+  .mini-products-list .product-details h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0; }
+.block-cart .mini-products-list .product-details .product-name, .block-cart .mini-products-list .product-details .nobr small {
+  word-wrap: break-word; }
+.block-cart .mini-products-list .product-details .nobr {
+  white-space: normal !important; }
