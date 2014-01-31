@@ -1,0 +1,629 @@
+/* 
+# One Page Checkout 
+
+## Checkout Steps
+
+```
+	<ol id="checkoutSteps" class="opc">
+	    <li class="section allow" id="opc-login">
+	        <div class="step-title">
+	            <span class="number">1</span>
+	            <h2>Checkout Method</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display: none;" class="step a-item" id="checkout-step-login"></div>
+	    </li>
+	    <li class="section allow active" id="opc-billing">
+	        <div class="step-title">
+	            <span class="number">2</span>
+	            <h2>Billing Information</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="" class="step a-item" id="checkout-step-billing">
+	            [Current Step Content]
+				<div class="buttons-set">
+			        <p class="required">* Required Fields</p>
+			        <button class="button" title="Continue" type="button"><span><span>Continue</span></span></button>
+			        <span class="please-wait">
+			            <img class="v-middle" title="Loading next step..." alt="Loading next step..." src="/styleguide/assets/images/opc-ajax-loader.gif">Loading next step...
+			        </span>
+			    </div>
+	        </div>
+	    </li>
+	    <li class="section" id="opc-shipping">
+	        <div class="step-title">
+	            <span class="number">3</span>
+	            <h2>Shipping Information</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-shipping">
+	</div>
+	    </li>
+	    <li class="section" id="opc-shipping_method">
+	        <div class="step-title">
+	            <span class="number">4</span>
+	            <h2>Shipping Method</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-shipping_method"></div>
+	    </li>
+	    <li class="section" id="opc-payment">
+	        <div class="step-title">
+	            <span class="number">5</span>
+	            <h2>Payment Information</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-payment"></div>
+	    </li>
+	    <li class="section" id="opc-review">
+	        <div class="step-title">
+	            <span class="number">6</span>
+	            <h2>Order Review</h2>
+	            <a href="#">Edit</a>
+	        </div>
+	        <div style="display:none;" class="step a-item" id="checkout-step-review"></div>
+	    </li>
+	</ol>
+```
+
+*/
+
+.opc { 
+	border-bottom:1px solid #ddd; 
+	position:relative;
+	li {
+		&.section { 
+			border:1px solid #ddd; 
+			border-bottom:0;
+		}
+	}
+	.buttons-set {
+		&.disabled {
+			button.button { display:none; }
+		}
+		.please-wait { 
+			height:21px; 
+			line-height:21px; 
+		}
+	}
+	.step-title { 
+		background-color:#f6f6f6; 
+		padding:0 5px; 
+		text-align:right;
+		.number { 
+			float:left; 
+			line-height:22px; 
+			margin-right:5px;
+		}
+		h2 { float:left; }
+		a { 
+			display:none; 
+			float:right;
+		}
+	}
+	
+	.allow {
+		.step-title { cursor: pointer; }
+	}
+	.active {
+		.step-title { background-color:#ccc; cursor:default; }
+	}
+	.step {
+		border-top:1px solid #ddd; 
+		padding:10px; 
+		position:relative;
+		.tool-tip { 
+			right:10px;
+		}
+	}
+	.order-review {
+		.authentication {}
+		.warning-message {}
+	}
+
+}
+
+/*
+
+## Progress Block
+
+```
+	<div class="block block-progress opc-block-progress">
+	    <div class="block-title">
+	        <strong><span>Your Checkout Progress</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <dl>
+	            <div id="billing-progress-opcheckout">
+	                <dt class="complete">
+	                    Billing Address 
+	                    <span class="changelink"> 
+	                        <span class="separator">|</span> 
+	                        <a href="#billing">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                </dd>
+	            </div>
+	            <div id="shipping-progress-opcheckout">
+	                <dt class="complete">
+	                    Shipping Address 
+	                    <span class="changelink">
+	                        <span class="separator">|</span> 
+	                        <a href="#payment">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                </dd>
+	            </div>
+	            <div id="shipping_method-progress-opcheckout">
+	                <dt class="complete">
+	                    Shipping Method
+	                    <span class="changelink">
+	                        <span class="separator">|</span>
+	                        <a href="#shipping_method">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    Flat Rate - Fixed
+	                    <span class="price">£10.00</span>            
+	                </dd>
+	            </div>
+	            <div id="payment-progress-opcheckout">
+	                <dt class="complete">
+	                    Payment Method
+	                    <span class="changelink">
+	                        <span class="separator">|</span>
+	                        <a href="#payment">Change</a>
+	                    </span>
+	                </dt>
+	                <dd class="complete">
+	                    <p>Check / Money order</p>
+	                </dd>
+	            </div>
+	        </dl>
+	    </div>
+	</div>
+```
+
+*/
+
+.block-progress {
+	dt { font-weight:bold; }
+	dt, dd {
+		.complete { background-color:#f6f6f6; }
+	}
+}
+
+
+/* 
+
+## Multiple Addresses Checkout 
+
+*/
+
+.multiple-checkout { 
+	position:relative; 
+	.tool-tip { 
+		top:50%; 
+		margin-top:-120px; 
+		right:10px;
+	}
+	.grand-total { 
+		font-size:1.5em; 
+		text-align:right;
+		big {}
+		.price {}
+	}
+}
+
+/*
+
+### Progress
+
+```
+	<ul class="checkout-progress">
+	    <li title="Select Addresses" class="first"><span>Select Addresses</span></li>
+	    <li title="Shipping Information"><span>Shipping Information</span></li>
+	    <li class="active" title="Billing Information"><span>Billing Information</span></li>
+	    <li title="Place Order"><span>Place Order</span></li>
+	    <li title="Order Success" class="last"><span>Order Success</span></li>
+	</ul>
+```
+
+*/
+.checkout-progress { 
+	padding:0 50px; 
+	margin:10px 0; 
+	li { 
+		float:left; 
+		width:20%; 
+		border-top:5px solid #ccc; 
+		text-align:center; 
+		color:#ccc; 
+		&.active { 
+			border-top-color:#000; 
+			color:#000;
+		}
+	}
+}
+
+
+
+
+/*
+
+## Common Checkout Styles
+
+### Shipping and Payment methods 
+
+```
+	<!-- Shipping Methods -->
+	<dl class="sp-methods">
+		<dt>Free Shipping</dt>
+		<dd>
+			<ul>
+				<li>
+					<input type="radio" class="radio" id="s_method_freeshipping_freeshipping" value="freeshipping_freeshipping" name="shipping_method">
+					<label for="s_method_freeshipping_freeshipping">Free<span class="price">£0.00</span></label>
+				</li>
+			</ul>
+		</dd>
+		<dt>Flat Rate</dt>
+		<dd>
+			<ul>
+				<li>
+					<input type="radio" class="radio" checked="checked" id="s_method_flatrate_flatrate" value="flatrate_flatrate" name="shipping_method">
+					<label for="s_method_flatrate_flatrate">Fixed <span class="price">£10.00</span></label>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+
+	<!-- Payment Methods -->
+	<dl class="sp-methods">
+	    <dt>
+	        <input type="radio" class="radio" title="PayPal Express Checkout" name="payment[method]" value="paypal_express" id="p_method_paypal_express" autocomplete="off">
+	        <label for="p_method_paypal_express">
+	            <img class="v-middle" alt="Acceptance Mark" src="https://fpdbs.paypal.com/dynamicimageweb?cmd=_dynamic-image&amp;buttontype=ecmark&amp;locale=en_GB">&nbsp;
+	            <a href="">What is PayPal?</a>
+	        </label>
+	    </dt>
+	    <dd>
+	        <ul id="payment_form_paypal_express" class="form-list">
+	            <li class="form-alt">You will be redirected to the PayPal website.</li>
+	        </ul>
+	    </dd>
+	    <dt>
+	        <input type="radio" class="radio" checked="checked" title="Check / Money order" name="payment[method]" value="checkmo" id="p_method_checkmo" autocomplete="off">
+	        <label for="p_method_checkmo">Check / Money order </label>
+	    </dt>
+	    <dt>
+	        <input type="radio" class="radio" title="Credit Card (saved)" name="payment[method]" value="ccsave" id="p_method_ccsave" autocomplete="off">
+	        <label for="p_method_ccsave">Credit Card (saved) </label>
+	    </dt>
+	    <dd>
+	        <ul id="payment_form_ccsave" class="form-list">
+	            <li>
+	                <label class="required" for="ccsave_cc_owner"><em>*</em>Name on Card</label>
+	                <div class="input-box">
+	                    <input type="text" value="" name="payment[cc_owner]" id="ccsave_cc_owner" class="input-text required-entry" title="Name on Card" disabled="" autocomplete="off">
+	                </div>
+	            </li>
+	            <li>
+	                <label class="required" for="ccsave_cc_type"><em>*</em>Credit Card Type</label>
+	                <div class="input-box">
+	                    <select class="required-entry validate-cc-type-select" title="Credit Card Type" name="payment[cc_type]" id="ccsave_cc_type" disabled="" autocomplete="off">
+	                        <option value="">--Please Select--</option>
+	                    </select>
+	                </div>
+	            </li>
+	            <li>
+	                <label class="required" for="ccsave_cc_number"><em>*</em>Credit Card Number</label>
+	                <div class="input-box">
+	                    <input type="text" value="" class="input-text validate-cc-number validate-cc-type" title="Credit Card Number" name="payment[cc_number]" id="ccsave_cc_number" disabled="" autocomplete="off">
+	                </div>
+	            </li>
+	            <li>
+	                <label class="required" for="ccsave_expiration"><em>*</em>Expiration Date</label>
+	                <div class="input-box">
+	                    <div class="v-fix">
+	                        <select class="month validate-cc-exp required-entry" name="payment[cc_exp_month]" id="ccsave_expiration" disabled="" autocomplete="off">
+	                            <option selected="selected" value="">Month</option>
+	                        </select>
+	                    </div>
+	                    <div class="v-fix">
+	                        <select class="year required-entry" name="payment[cc_exp_year]" id="ccsave_expiration_yr" disabled="" autocomplete="off">
+	                            <option selected="selected" value="">Year</option>
+	                        </select>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+			        <label class="required"><em>*</em>Card Verification Number</label>
+			        <div class="input-box">
+			            <div class="v-fix">
+			                <input type="text" value="" name="payment[cc_cid]" class="input-text cvv required-entry validate-cc-cvn" title="Card Verification Number" autocomplete="off">
+			            </div>
+			            <a class="cvv-what-is-this" href="#">What is this?</a>
+			        </div>
+			    </li>
+	        </ul>
+	    </dd>
+	</dl>
+```
+
+*/
+.sp-methods  {
+	dt { font-weight:bold; }
+	.price { font-weight:bold; }
+	.form-list { padding-left:20px; }
+	select.month { width:150px; margin-right:10px; }
+	select.year { width:96px; }
+	input.cvv { width:3em !important; }
+	.checkmo-list {
+		li { margin:0 0 5px; }
+		label { width:135px; padding-right:10px; text-align:right; }
+		address { float:left; }
+	}
+	.centinel-logos {
+		a { margin-right:3px; }
+		img { vertical-align:middle; }
+	}
+	.release-amounts { 
+		margin:0.5em 0 1em;
+		button { float:left; margin:5px 10px 0 0; }
+	}
+}
+
+.please-wait { 
+	float:right; 
+	margin-right:5px; 
+	img { vertical-align:middle; }
+}
+.cvv-what-is-this { cursor:help; margin-left:5px; }
+
+.centinel {
+	.authentication { 
+		border:1px solid #ddd; 
+		background:#fff;
+		iframe { 
+			width:99%; 
+			height:400px; 
+			background:transparent !important; 
+			margin:0 !important; 
+			padding:0 !important; 
+			border:0 !important;
+		}
+	}
+}
+
+/* 
+
+### Tooltip 
+
+Used on the "What's This?" link next to CVV
+
+```
+	<div style="" id="payment-tool-tip" class="tool-tip">
+	    <div class="btn-close"><a title="Close" href="#">Close</a></div>
+	    <div class="tool-tip-content">
+			[Tooltip Content]
+	    </div>
+	</div>
+```
+
+*/
+.tool-tip { 
+	border:1px solid #ddd; 
+	background-color:#f6f6f6; 
+	padding:5px; 
+	position:absolute; 
+	z-index:9999;
+	.btn-close { 
+		text-align:right;
+		a { 
+			display:block; 
+			margin:0 0 0 auto; 
+			width:15px; 
+			height:15px; 
+			background:url(../images/btn_window_close.gif) 100% 0 no-repeat; 
+			text-align:left; 
+			text-indent:-999em; 
+			overflow:hidden;
+		}
+	}
+	.tool-tip-content { padding:5px; }
+}
+
+
+/* 
+
+### Checkout Agreements
+
+```
+	<ol class="checkout-agreements">
+	    <li>
+	        <div class="agreement-content">
+	            Full agreement content
+			</div>
+	        <p class="agree">
+	            <input type="checkbox" class="checkbox" title="Terms and Conditions (Checkbox Text)" value="1" name="agreement[1]" id="agreement-1">
+	            <label for="agreement-1">Agreement Checkbox Text Value</label>
+	        </p>
+	    </li>
+	</ol>
+```
+
+*/
+.checkout-agreements {
+	li {
+		margin: 10px 0;
+	}
+	.agreement-content {
+		border: 1px solid #ddd;
+		background-color: #f6f6f6;
+		padding: 5px;
+		height: 10em;
+		overflow: auto;
+	}
+	.agree {
+		padding: 6px;
+	}
+}
+
+/* 
+
+## Gift Messages 
+
+```
+	<div class="gift-messages">
+	    <h3>Do you have any gift items in your order?</h3>
+	    <p class="control">
+	        <input type="checkbox" class="checkbox validation-passed" value="1" id="allow_gift_messages" name="allow_gift_messages">
+	        <label for="allow_gift_messages">Add gift options.</label>
+	    </p>
+	</div>
+	<div id="allow-gift-message-container" class="gift-messages-form" style="">
+	    <div class="inner-box">
+	        <h4>Gift Options for the Entire Order.</h4>
+	        <p>
+	            <input type="checkbox" class="checkbox validation-passed" value="1" name="allow_gift_messages_for_order">
+	            <label>Add gift options for the Entire Order</label>
+	        </p>
+	        <div style="" id="allow-gift-messages-for-order-container" class="allow-gift-messages-for-order-container">
+	            <p>You can leave this box blank if you do not wish to add a gift message for whole order.</p>
+	            <ul class="form-list">
+	                <li class="fields">
+	                    <div class="field">
+	                        <label>From</label>
+	                        <div class="input-box">
+	                            <input type="text" class="input-text" value="From Name" title="From">
+	                        </div>
+	                    </div>
+	                    <div class="field">
+	                        <label>To</label>
+	                        <div class="input-box">
+	                            <input type="text" class="input-text" value="To Name" title="To">
+	                        </div>
+	                    </div>
+	                </li>
+	                <li class="wide">
+	                    <label>Message</label>
+	                    <div class="input-box">
+	                        <textarea cols="10" rows="5" title="Message" class="input-text giftmessage-area"></textarea>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	        <h4>Gift Options for Individual Items</h4>
+	        <p>
+	            <input type="checkbox" class="checkbox validation-passed" value="1" name="allow_gift_messages_for_items">
+	            <label>Add gift options for Individual Items</label>
+	        </p>
+	        <div id="allow-gift-messages-for-items-container" style="">
+	            <p>You can leave this box blank if you do not wish to add a gift message for the item.</p>
+	            <ol>
+	                <li class="item">
+	                    <div class="product-img-box">
+	                        <p class="product-image">
+	                            <img width="75" height="75" title="Product Name" alt="Product Name" src="http://placekitten.com/75/75">
+	                        </p>
+	                        <p class="number">Item 1 of 1</p>
+	                    </div>
+	                    <div class="details">
+	                        <div class="f-fix">
+	                            <h5 class="product-name">Product Name</h5>
+	                            <ul class="form-list">
+	                                <li class="fields">
+	                                    <div class="field">
+	                                        <label>From</label>
+	                                        <div class="input-box">
+	                                            <input type="text" class="input-text" value="From Name" title="From">
+	                                        </div>
+	                                    </div>
+	                                    <div class="field">
+	                                        <label>To</label>
+	                                        <div class="input-box">
+	                                            <input type="text" class="input-text" value="To Name" title="To">
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                                <li class="wide">
+	                                    <label>Message</label>
+	                                    <div class="input-box">
+	                                        <textarea cols="40" rows="5" title="Message" class="input-text giftmessage-area" o></textarea>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </li>
+	            </ol>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.gift-messages {}
+.gift-messages-form {
+	border: 1px solid #ddd;
+	background-color: #f5f5f5;
+	position: relative;
+	label {
+		float: none !important;
+		position: static !important;
+	}
+	h4 {}
+	.whole-order {}
+	.item {
+		margin: 0 0 10px;
+		.product-img-box {
+			float: left;
+			width: 75px;
+		}
+		.product-image {
+			margin: 0 0 7px;
+		}
+		.number {
+			margin: 0;
+			font-weight: bold;
+			text-align: center;
+		}
+		.details {
+			margin-left: 90px;
+			.product-name {}
+		}
+	}
+}
+
+.gift-message-link { 
+	display:block; 
+	background:url(../images/bkg_collapse.gif) 0 4px no-repeat; 
+	padding-left:20px; 
+	&.expanded { background-position:0 -53px; }
+}
+.gift-message-row {
+	.btn-close { float:right; }
+}
+.gift-message {
+	dt {
+		strong { font-weight: bold; } 
+	}
+}
+
+
+
+/* 
+
+## Generic Info Set 
+
+Seems to be unused.
+
+*/
+.info-set {}
+
+

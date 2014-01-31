@@ -1,0 +1,151 @@
+/* 
+# Login/Create Account
+
+User decision between logging in and creating account, can appear when a user tries to login to restricted pages or at the checkout.
+
+```
+	<div class="col2-set">
+	    <div class="col-1 new-users">
+	        <div class="content">
+	            <h2>New Customers</h2>
+	            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+	        </div>
+	    </div>
+	    <div class="col-2 registered-users">
+	        <div class="content">
+	            <h2>Registered Customers</h2>
+	            <p>If you have an account with us, please log in.</p>
+	            <ul class="form-list">
+	                <li>
+	                    <label class="required" for="email"><em>*</em>Email Address</label>
+	                    <div class="input-box">
+	                        <input type="text" title="Email Address" class="input-text required-entry validate-email" id="email" value="" name="login[username]">
+	                    </div>
+	                </li>
+	                <li>
+	                    <label class="required" for="pass"><em>*</em>Password</label>
+	                    <div class="input-box">
+	                        <input type="password" title="Password" id="pass" class="input-text required-entry validate-password" name="login[password]">
+	                    </div>
+	                </li>
+				</ul>
+	            <p class="required">* Required Fields</p>
+	        </div>
+	    </div>
+	</div>
+	<div class="col2-set">
+	    <div class="col-1 new-users">
+	        <div class="buttons-set">
+	            <button class="button" title="Create an Account" type="button"><span><span>Create an Account</span></span></button>
+	        </div>
+	    </div>
+	    <div class="col-2 registered-users">
+	        <div class="buttons-set">
+	            <a class="f-left" href="#">Forgot Your Password?</a>
+	            <button id="send2" name="send" title="Login" class="button" type="submit"><span><span>Login</span></span></button>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.account-login {
+	.new-users {}
+	.registered-users {}
+}
+
+.account-create {}
+
+/* 
+## Captcha 
+
+Can be enabled in System->Configuration->Customer Configuration->CAPTCHA
+
+```
+	<ul class="form-list">
+	    <li>
+	        <div id="captcha-image-box-user_login" class="captcha-image">
+	            <img alt="Reload captcha" src="http://placehold.it/24x24&text=Reload" class="captcha-reload" id="captcha-reload">
+	            <img height="50" src="http://placekitten.com/200/50" class="captcha-img" id="user_login">
+	            <div class="captcha-note">
+	                <strong>Attention</strong>: Captcha is case sensitive.
+	            </div>
+	        </div>
+	    </li>
+	</ul>
+```
+
+*/
+.captcha-note  {}
+.captcha-image { float:left; position:relative; }
+.captcha-img { border:1px solid #ccc; }
+.registered-users .captcha-image    {}
+#checkout-step-login .captcha-image {}
+.captcha-reload { 
+	position:absolute; 
+	top:2px; 
+	right:2px;
+	&.refreshing { 
+		animation:rotate 1.5s infinite linear; 
+		-webkit-animation:rotate 1.5s infinite linear; 
+		-moz-animation:rotate 1.5s infinite linear; 
+	}
+}
+
+@-webkit-keyframes rotate {
+    0% { -webkit-transform:rotate(0); }
+    0% { -webkit-transform:rotate(-360deg); }
+}
+@-moz-keyframes rotate {
+    0% { -moz-transform:rotate(0); }
+    0% { -moz-transform:rotate(-360deg); }
+}
+@keyframes rotate {
+    0% { transform:rotate(0); }
+    0% { transform:rotate(-360deg); }
+}
+
+/* 
+## Remember Me Popup 
+
+```
+	<div style="height: 745px;" class="window-overlay" id="window-overlay"></div>
+	<div style="" class="remember-me-popup" id="remember-me-popup">
+	    <div class="remember-me-popup-head">
+	        <h3>What's this?</h3>
+	        <a title="Close" class="remember-me-popup-close" href="#">Close</a>
+	    </div>
+	    <div class="remember-me-popup-body">
+	        <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>
+	        <div class="remember-me-popup-close-button a-right">
+	            <a title="Close" class="remember-me-popup-close button" href="#"><span>Close</span></a>
+	        </div>
+	    </div>
+	</div>
+```	
+
+*/
+.window-overlay { 
+	background:url(../images/window_overlay.png) repeat; background:rgba(0, 0, 0, 0.35); 
+	position:absolute; 
+	top:0; 
+	left:0; 
+	height:100%; 
+	width:100%; 
+	z-index:990;
+}
+
+.remember-me {
+	label {}
+}
+.remember-me-popup {
+	h3 {}
+	.remember-me-popup-head {
+		.remember-me-popup-close {}
+	}
+	.remember-me-popup-body {
+		a {}
+	}
+}
+
+

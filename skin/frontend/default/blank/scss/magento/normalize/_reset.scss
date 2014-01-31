@@ -1,0 +1,66 @@
+/*
+
+# Reset
+
+*/
+
+* 			  { margin: 0; padding: 0; }
+
+body          { background:#fff; font:12px/1.35 Arial, Helvetica, sans-serif; color:#000; }
+
+img           { border:0; vertical-align:top; }
+
+a             { color:#05c; text-decoration:underline; }
+a:hover       { text-decoration:none; }
+:focus        { outline:0; }
+
+/* 
+
+## Headings 
+
+*/
+h1            { font-size:20px; font-weight:normal; line-height:1.15; }
+h2            { font-size:18px; font-weight:normal; line-height:1.25; }
+h3            { font-size:16px; font-weight:bold; line-height:1.25; }
+h4            { font-size:14px; font-weight:bold; }
+h5            { font-size:12px; font-weight:bold; }
+h6            { font-size:11px; font-weight:bold; }
+
+/* 
+
+## Forms
+
+*/
+form          { display:inline; }
+fieldset      { border:0; }
+legend        { display:none; }
+
+/* 
+
+## Table
+
+*/
+table         { border:0; border-collapse:collapse; border-spacing:0; empty-cells:show; font-size:100%; }
+caption,th,td { vertical-align:top; text-align:left; font-weight:normal; }
+
+/* 
+
+## Content
+
+*/
+strong        { font-weight:bold; }
+address       { font-style:normal; }
+cite          { font-style:normal; }
+q,
+blockquote    { quotes:none; }
+q:before,
+q:after       { content:''; }
+small,big     { font-size:1em; }
+sup           { font-size:1em; vertical-align:top; }
+
+/* 
+
+## Lists
+
+*/
+ul,ol         { list-style:none; }

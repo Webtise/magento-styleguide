@@ -1,0 +1,161 @@
+/*
+
+# Nav Bar
+
+*/
+
+/*
+
+## Top Navigation
+
+```
+	<div class="nav-container">
+		<ul id="nav">
+			<li class="level0 nav-1 first level-top parent">
+				<a class="level-top" href="#"><span>Furniture</span></a>
+				<ul class="level0">
+					<li class="level1 nav-1-1 first">
+						<a href="#"><span>Living Room</span></a>
+					</li>
+					<li class="level1 nav-1-2 last">
+						<a href=""><span>Bedroom</span></a>
+					</li>
+				</ul>
+			</li>
+			<li class="level0 nav-2 level-top">
+				<a class="level-top" href="#"><span>Electronics</span></a>
+			</li>
+			<li class="level0 nav-3 active last level-top parent over">
+				<a class="level-top over" href="#"><span>Apparel</span></a>
+				<ul class="level0 shown-sub">
+					<li class="level1 nav-3-1 first">
+						<a href="#"><span>Shirts</span></a>
+					</li>
+					<li class="level1 nav-3-2 active parent over">
+						<a href="#" class="over"><span>Shoes</span></a>
+						<ul class="level1 shown-sub">
+							<li class="level2 nav-3-2-1 first over">
+								<a href="#" class="over"><span>Mens</span></a>
+							</li>
+							<li class="level2 nav-3-2-2 last">
+								<a href="#"><span>Womens</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="level1 nav-3-3 last">
+						<a href="#"><span>Hoodies</span></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+```
+
+Note: hovering on element Apparel > Shoes > Mens
+
+*/
+
+.nav-container {}
+#nav { 
+
+	// 1st Level
+
+	border: 1px solid #ddd; 
+	font-size: 13px;  
+	margin: 10px 0; 
+	padding: 5px 0;
+	li { 
+		float:left;
+		position:relative;
+		text-align:left; 
+		&.active, &.over {
+			a {
+				color: #000;
+			}
+		}
+		&.over { 
+			z-index: 998;
+		}
+		&.parent {}
+		ul {
+			a {
+				span { white-space:normal; }
+			}
+		}
+	}
+	a {
+		color:#888;
+		display:block; 
+		float:left;
+		font-weight:bold;
+		padding:5px 10px;
+		text-decoration:none; 
+		&:hover { 
+			color:#000;
+			text-decoration:none;
+		}
+		span { 
+			display:block; 
+			white-space:nowrap; 
+			cursor:pointer;
+		}
+	}
+
+	// 2nd Level
+
+	ul, div {
+		background:#fafafa;
+		border:1px solid #ddd;
+		left:-10000px; 
+		position:absolute; 
+		top:25px; 
+		width:15em; 
+	}
+	div {
+		ul {
+			position:static; width:auto; border:none; 
+		}
+	}
+
+	// 3rd Level
+
+	ul {
+		ul, div {
+			top: 7px;
+		}
+		li {
+			border-bottom:1px solid #ddd;
+			float: none;
+			&.active, &.over {
+				> a { color: #000 !important; }
+			}
+			&.last { border-bottom: 0; }
+
+			a {
+				color:#888 !important; 
+				float:none;
+				font-weight:normal; 
+				padding:3px 9px; 
+				&:hover { color: #000 !important; }
+			}
+		}
+	}
+
+	// Shown Submenu
+
+	li {
+		ul, div {
+			&.shown-sub {
+				left: 0;
+				z-index: 999;
+			}
+		}
+		.shown-sub { 
+			li {
+				ul, div { 
+					&.shown-sub { left:100px; }
+				}
+			}
+		}
+	}
+
+}

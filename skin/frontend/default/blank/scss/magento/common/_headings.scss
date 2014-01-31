@@ -1,0 +1,57 @@
+/* 
+
+# Page Heading
+
+## Page Title
+
+```
+	<!-- Normal Pagetitle ->
+	<div class="page-title">
+		<h1>Page Title</h1>
+	</div>
+	<!-- With RSS Feed -->
+	<div class="page-title">
+		<a class="link-rss" href="">Subscribe to RSS Feed</a>
+		<h1>Page Title</h1>
+	</div>
+	<!-- With Buttons -->
+	<div class="page-title title-buttons">
+	    <h1>Address Book</h1>
+	    <button class="button" type="button"><span><span>Button</span></span></button>
+	</div>
+	<!-- With Links -->
+	<div class="page-title title-buttons">
+	    <h1>Page Title</h1>
+	    <a href="">Link</a>
+	    <span class="separator">|</span>
+		<a href="">Link</a>
+	</div>
+```
+
+*/
+.page-title { 
+	border-bottom:1px solid #ddd; 
+	padding:0 0 5px; 
+	margin:0 0 10px;
+	&.title-buttons { 
+		text-align:right;
+		h1, h2, h3,
+		h4, h5, h6 { float:left; }
+	}
+	h1, h2 { font-size:18px; color:#000; }
+	.separator { margin:0 3px; }
+	.link-rss { float:right; }
+}
+
+/*
+
+## Subtitle
+
+```
+	<h2 class="subtitle">Subtitle</h2>
+```
+
+*/
+
+.subtitle,
+.sub-title { clear:both; }

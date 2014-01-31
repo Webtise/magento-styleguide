@@ -1,0 +1,72 @@
+/*
+
+# Admin controlled content
+
+```
+<div class="std">
+	<h2 class="subtitle">Subtitle</h2>
+	<p>Paragraph text with <em>italitcs</em> and <strong>bold</strong></p>
+	<ol class="ol">
+		<li>Ordered List Item</li>
+		<li>Ordered List Item</li>
+		<li>
+			Ordered List Item
+			<ol>
+				<li>Sub Ordered List Item</li>
+				<li>Sub Ordered List Item</li>
+				<li>Sub Ordered List Item</li>
+			</ol>
+		</li>
+	</ol>
+	<ul class="disc">
+		<li>Unordered List Item</li>
+		<li>Unordered List Item</li>
+		<li>
+			Unordered List Item
+			<ul>
+				<li>Sub Unordered List Item</li>
+				<li>Sub Unordered List Item</li>
+				<li>Sub Unordered List Item</li>
+			</ul>
+		</li>
+	</ul>
+	<dl>
+		<dt>Definition Term</dt>
+		<dd>Definition Description</dd>
+		<dt>Definition Term</dt>
+		<dd>Definition Description</dd>
+		<dt>Definition Term</dt>
+		<dd>Definition Description</dd>
+	</dl>
+	<address>Address Content</address>
+	<blockquote>
+		Blockquote
+		<cite>Citation</cite>
+	</blockquote>
+</div>
+```
+
+*/
+.std {
+	.subtitle { padding:0; }
+	ol.ol { list-style:decimal outside; padding-left:1.5em; }
+	ul.disc { list-style:disc outside; padding-left:18px; margin:0 0 10px; }
+	dl { 
+		dt { font-weight:bold; }
+		dd { margin:0 0 10px; }
+	}
+	ul, ol,
+	dl, p,
+	address, blockquote { margin:0 0 1em; padding:0; }
+	ul { list-style:disc outside; padding-left:1.5em; }
+	ol { list-style:decimal outside; padding-left:1.5em; }
+	ul ul { list-style-type:circle; }
+	ul ul, ol ol,
+	ul ol, ol ul { margin:.5em 0; }
+	dt { font-weight:bold; }
+	dd { padding:0 0 0 1.5em; }
+	blockquote { font-style:italic; padding:0 0 0 1.5em; }
+	address { font-style:normal; }
+	b, strong { font-weight:bold; }
+	i, em { font-style:italic; }
+}

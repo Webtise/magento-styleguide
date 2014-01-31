@@ -1,0 +1,556 @@
+/*
+
+# Shopping Cart
+
+## Checkout Types
+
+```
+	<div class="cart">
+		<!-- Checkout types in pagetitle -->
+		<div class="page-title title-buttons">
+        	<h1>Shopping Cart</h1>
+            <ul class="checkout-types">
+                <li>
+                	<p class="paypal-logo">
+                		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7">
+                			<img title="Checkout with PayPal" alt="Checkout with PayPal" src="">
+                		</a>
+    					<span class="paypal-or">-OR-</span>
+    				</p>
+				</li>
+                <li>
+                	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+				</li>
+            </ul>
+        </div>
+        <!-- Checkout types below cart table -->
+		<div class="totals">
+		    <ul class="checkout-types">
+		        <li>
+                	<p class="paypal-logo">
+                		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7">
+                			<img title="Checkout with PayPal" alt="Checkout with PayPal" src="">
+                		</a>
+    					<span class="paypal-or">-OR-</span>
+    				</p>
+		        </li>
+		        <li>
+		        	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+		        </li>
+		        <li>
+		        	<a title="Checkout with Multiple Addresses" href="">Checkout with Multiple Addresses</a>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+```
+
+*/
+.cart {
+	.title-buttons {
+		.checkout-types { 
+			li { 
+				float:left; 
+				margin:0 0 5px 5px; 
+			}
+		}
+	}
+	.checkout-types { 
+		float:right; 
+		text-align:right;
+		.paypal-or { 
+			margin:0 8px; 
+			line-height:2.3;
+		}
+	}
+	.totals {
+		.checkout-types {
+			.paypal-or { 
+				clear:both; 
+				display:block; 
+				padding:3px 55px 8px 0; 
+				line-height:1.0; 
+				font-size:11px;
+			}
+		}
+	}
+}
+
+/* 
+
+## Collateral boxes
+
+```
+	<div class="cart">
+		<div class="cart-collaterals">
+	        <div class="col2-set">
+	            <div class="col-1">
+	            	[CROSSSELLS]
+	            </div>
+	            <div class="col-2">
+					[DISCOUNT]
+					[SHIPPING]
+	            </div>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.cart {
+	.cart-collaterals { 
+		padding:25px 0 0;
+		.col2-set { 
+			float:left; 
+			width:700px; 
+		}
+	}
+}
+
+
+/*
+
+## Crosssells
+
+```
+	<div class="cart">
+		<div class="crosssell">
+		    <h2>Based on your selection, you may be interested in the following items:</h2>
+		    <ul id="crosssell-products-list">
+		        <li class="item odd">
+		            <a title="Product Name" href="" class="product-image">
+		                <img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75">
+		            </a>
+		            <div class="product-details">
+		                <h3 class="product-name"><a href="">Product Name</a></h3>
+		                <div class="price-box">
+		                    <span id="product-price-25" class="regular-price">
+		                        <span class="price">£2,299.99</span>
+		                    </span>
+		                </div>
+		                <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		                <ul class="add-to-links">
+		                    <li><a class="link-wishlist" href="">Add to Wishlist</a></li>
+		                    <li><span class="separator">|</span> <a class="link-compare" href="">Add to Compare</a></li>
+		                </ul>
+		            </div>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+```
+
+*/
+.cart {	
+	.crosssell {
+		h2 { 
+			font-size:13px; 
+			font-weight:bold;
+		}
+		.product-image { 
+			float:left; 
+			width:75px; 
+			height:75px; 
+			border:1px solid #ddd;
+		}
+		.product-details { margin-left:90px; }
+		li {
+			.item { margin:12px 0; }
+		}
+	}
+}
+
+/*
+
+## Discount Codes
+
+```
+	<div class="cart">
+		<div class="discount">
+		    <h2>Discount Codes</h2>
+		    <div class="discount-form">
+		        <label for="coupon_code">Enter your coupon code if you have one.</label>
+		        <div class="input-box">
+		            <input value="" name="coupon_code" id="coupon_code" class="input-text">
+		        </div>
+		        <div class="buttons-set">
+		            <button value="Apply Coupon" onclick="discountForm.submit(false)" class="button" title="Apply Coupon" type="button"><span><span>Apply Coupon</span></span></button>
+		        </div>
+		    </div>
+		</div>
+	</div>
+```
+
+*/
+.cart {
+	.discount {}
+}
+
+/*
+
+## Estimate Shipping and Tax Boxes 
+
+```
+	<div class="cart">
+		<div class="shipping">
+		    <h2>Estimate Shipping and Tax</h2>
+		    <div class="shipping-form">
+		       <form id="shipping-zip-form" method="post" action="http://magebase.local/checkout/cart/estimatePost/">
+		            <p>Enter your destination to get a shipping estimate.</p>
+		            <ul class="form-list">
+		                <li>
+		                    <label class="required" for="country"><em>*</em>Country</label>
+		                    <div class="input-box">
+		                        <select title="Country" class="validate-select" id="country" name="country_id">
+		                        	<option value=""> </option>
+									<option selected="selected" value="US">United States</option>
+		                        </select>
+		                    </div>
+		                </li>
+		                <li>
+		                    <label for="region_id">State/Province</label>
+		                    <div class="input-box">
+		                        <select title="State/Province" name="region_id" id="region_id" class="required-entry validate-select">
+		                            <option value="">Please select region, state or province</option>
+		                        	<option value="1" title="Alabama">Alabama</option>
+		                        </select>
+		                       <input type="text" style="display:none;" class="input-text required-entry" title="State/Province" value="" name="region" id="region">
+		                   </div>
+		                </li>
+		                <li>
+		                    <label for="postcode">Zip/Postal Code</label>
+		                    <div class="input-box">
+		                        <input type="text" value="" name="estimate_postcode" id="postcode" class="input-text validate-postcode">
+		                    </div>
+		                </li>
+		            </ul>
+		            <div class="buttons-set">
+		                <button class="button" onclick="coShippingMethodForm.submit()" title="Get a Quote" type="button"><span><span>Get a Quote</span></span></button>
+		            </div>
+		        </form>
+				<form action="" id="co-shipping-method-form">
+				    <dl class="sp-methods">
+				        <dt>Flat Rate</dt>
+				        <dd>
+				            <ul>
+				                <li>
+				                    <input type="radio" class="radio" name="estimate_method">
+				                    <label>Fixed <span class="price">£10.00</span></label>
+				                </li>
+				            </ul>
+				        </dd>
+				    </dl>
+				    <div class="buttons-set">
+				        <button value="Update Total" name="do" class="button" title="Update Total" type="submit"><span><span>Update Total</span></span></button>
+				    </div>
+				</form>
+		    </div>
+		</div>
+	</div>
+```
+
+*/
+.cart {
+	.shipping {}
+}
+
+/*
+
+## Shopping Cart Totals 
+
+```
+	<div class="cart">
+	    <div class="totals">
+	        <table id="shopping-cart-totals-table">
+	            <colgroup>
+	                <col>
+	                <col width="1">
+	            </colgroup>
+	            <tfoot>
+					<tr class="summary-details-1 summary-details summary-details-first">
+            			<td colspan="1" style="" class="a-right">Tax Zone (8.25%)<br></td>
+                        <td rowspan="1" class="a-right" style=""><span class="price">£248.65</span></td>
+                    </tr>
+					<tr class="summary-total show-details">
+					    <td colspan="1" class="a-right" style=""><div class="summary-collapse">Tax</div></td>
+					    <td class="a-right" style=""><span class="price">£248.65</span></td>
+					</tr>
+	                <tr>
+	                    <td colspan="1" class="a-right" style=""><strong>Grand Total</strong></td>
+	                    <td class="a-right" style=""><strong><span class="price">£414.99</span></strong></td>
+	                </tr>
+	            </tfoot>
+	            <tbody>
+	                <tr>
+	                    <td colspan="1" class="a-right" style="">Subtotal</td>
+	                    <td class="a-right" style=""><span class="price">£414.99</span></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        [CHECKOUT_TYPES]
+	    </div>
+	</div>
+```
+
+*/
+.cart {
+	.totals {
+		float:right;
+		table { 
+			width:100%;
+			th, td { padding:5px; }
+			th { font-weight:bold; }
+			tfoot {
+				th {}
+			}
+		}
+	}
+
+}
+// Shopping cart total summary row expandable to details
+tr {
+	&.summary-total { 
+		cursor:pointer;
+		td {}
+		.summary-collapse { 
+			float:right; 
+			text-align:right; 
+			padding-left:20px; 
+			background:url(../images/bkg_collapse.gif) 0 4px no-repeat; 
+			cursor:pointer;
+		}
+	}
+	&.show-details {
+		.summary-collapse { background-position:0 -53px; }
+		td {}
+	}
+	&.summary-details {
+		td { 
+			font-size:11px; 
+			background-color:#dae1e4; 
+			color:#626465;
+		}
+	}
+	&.summary-details-first {
+		td { border-top:1px solid #d2d8db; }
+	}
+	&.summary-details-excluded { font-style:italic; }
+}
+
+/*
+
+## Shopping Cart Table 
+
+### Full Table
+
+```
+	<table class="data-table cart-table" id="shopping-cart-table">
+	    <colgroup>
+	        <col width="1">
+	        <col>
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	    </colgroup>
+	    <thead>
+	        <tr class="first">
+	            <th rowspan="2">&nbsp;</th>
+	            <th rowspan="2"><span class="nobr">Product Name</span></th>
+	            <th rowspan="2"></th>
+	            <th colspan="2" class="a-center"><span class="nobr">Unit Price</span></th>
+	            <th class="a-center" rowspan="2">Qty</th>
+	            <th colspan="2" class="a-center">Subtotal</th>
+	            <th class="a-center" rowspan="2">&nbsp;</th>
+	        </tr>
+	        <tr class="last">
+	            <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>
+	            <th> <span class="tax-flag">(Incl. Tax)</span></th>
+	            <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>
+	            <th> <span class="tax-flag">(Incl. Tax)</span></th>
+	        </tr>
+	    </thead>
+	    <tfoot>
+	        <tr class="first last">
+	            <td class="a-right last" colspan="50">
+	                <button class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
+	                <button class="button btn-update" title="Update Shopping Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Shopping Cart</span></span></button>
+	                <button id="empty_cart_button" class="button btn-empty" title="Clear Shopping Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Shopping Cart</span></span></button>
+	            </td>
+	        </tr>
+	    </tfoot>
+	    <tbody>
+	        <tr class="first odd">
+	            <td><a class="product-image" title="Product Name" href=""><img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75"></a></td>
+	            <td>
+	                <h2 class="product-name"><a href="">Product Name</a></h2>
+	                <dl class="item-options">
+	                    <dt>Option</dt>
+	                    <dd>Value</dd>
+	                </dl>
+	                <p class="item-msg error">* The requested quantity for "Product Name" is not available.</p>
+	            </td>
+	            <td class="a-center">
+	                <a title="Edit item parameters" href="">Edit</a>
+	            </td>
+	            <td class="a-right">
+	                <span class="cart-price"><span class="price">£15.00</span></span>
+	            </td>
+	            <!-- inclusive price starts here -->
+	            <td>
+	                <span class="cart-price"><span class="price">£16.24</span></span>
+	            </td>
+	            <td class="a-center">
+	                <input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15][qty]">
+	            </td>
+	            <!--Sub total starts here -->
+	            <td class="a-right">
+	                <span class="cart-price"><span class="price">£15.00</span></span>
+	            </td>
+	            <td>
+	                <span class="cart-price"><span class="price">£16.24</span></span>
+	            </td>
+	            <td class="a-center last">
+	                <a class="btn-remove btn-remove2" title="Remove item" href="">Remove item</a>
+	            </td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.cart-table { 
+	.item-msg { font-size:10px; } 
+}
+
+/*
+
+### Item Options
+
+#### List
+
+```
+	<dl class="item-options">
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	</dl>
+```
+
+*/
+.item-options {
+	dt {
+		font-weight: bold;
+		font-style: italic;
+	}
+	dd {
+		padding-left: 10px;
+	}
+}
+
+/*
+
+#### Truncated
+
+```
+<div class="truncated">
+	<div class="truncated_full_value show">
+		<dl class="item-options">
+			<dt>Option</dt>
+			<dd>Value</dd>
+			<dt>Option</dt>
+			<dd>Value</dd>
+			<dt>Option</dt>
+			<dd>Value</dd>
+		</dl>
+	</div>
+	<a class="details" href="">Details</a>
+</div>
+```
+
+*/
+.truncated {
+	cursor: help;
+	a {
+		&.dots, &.details {
+			cursor: help;
+		}
+	}
+	.truncated_full_value {
+		position: relative;
+		z-index: 999;
+		&.show {
+			.item-options {
+				top: -20px;
+				left: 50%;
+			}
+		}
+		.item-options {
+			position: absolute;
+			top: -99999em;
+			left: -99999em;
+			z-index: 999;
+			width: 250px;
+			padding: 8px;
+			border: 1px solid #ddd;
+			background-color: #f6f6f6;
+			> p {
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+.col-left .truncated .show .item-options {
+	left: 30px;
+	top: 7px;
+}
+
+.col-right .truncated .show .item-options {
+	left: -240px;
+	top: 7px;
+}
+
+/*
+
+## Shopping cart fixed price tax info
+
+```
+	<div class="cart-tax-info">
+		<span class="weee">Tax Label: <span class="price">£0.20</span></span>
+	</div>
+	<div class="cart-tax-total cart-tax-total-expanded">
+        <span class="weee">Total incl. tax: <span class="price">£812.07</span></span>
+    </div>
+```
+
+*/ 
+
+.cart-tax-info { 
+	display:block;
+	padding-right: 20px;
+	.cart-price {
+		padding-right: 20px;
+	}
+	.price {
+		display:inline !important;
+		font-weight:normal !important;
+	}
+}
+.cart-tax-total { 
+	display:block; 
+	padding-right:20px; 
+	background:url(../images/bkg_collapse.gif) 100% 4px no-repeat; 
+	cursor:pointer;
+	&.cart-tax-total-expanded { background-position:100% -53px; }
+	.price {
+		display: inline !important;
+		font-weight: normal !important;
+	}
+}

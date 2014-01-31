@@ -1,0 +1,36 @@
+@import "magento/variables";
+@import "magento/mixins";
+@import "magento/inbox";
+
+@import "magento/catalog/category";
+@import "magento/catalog/product";
+
+@import "magento/checkout/cart";
+@import "magento/checkout/checkout";
+
+@import "magento/cms/homepage";
+@import "magento/cms/sitemap";
+
+@import "magento/common/buttons";
+@import "magento/common/forms";
+@import "magento/common/messages";
+@import "magento/common/misc";
+@import "magento/common/tables";
+
+@import "magento/customer/dashboard";
+@import "magento/customer/login";
+
+@import "magento/layout/content";
+@import "magento/layout/footer";
+@import "magento/layout/header";
+@import "magento/layout/page";
+
+@import "magento/navigation/breadcrumbs";
+@import "magento/navigation/navbar";
+@import "magento/navigation/toolbar";
+
+@import "magento/normalize/base";
+@import "magento/normalize/reset";
+
+@import "magento/sidebar/blocks";
+@import "magento/sidebar/miniproductlist";

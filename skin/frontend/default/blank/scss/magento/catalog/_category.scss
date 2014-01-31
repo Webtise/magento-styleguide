@@ -1,0 +1,276 @@
+/* 
+
+# Category Page 
+
+Contains the category title, description and image as well as the list and/or grid view of the products contained in it.
+
+*/
+
+/*
+
+## Category Header
+
+```
+	<div class="page-title category-title">
+    	<h1>Category Title</h1>
+	</div>
+	<p class="category-image"><img title="Category Image" alt="Category Image" src="http://placekitten.com/475/215"></p>
+	<div class="category-description std">
+		Category Description
+    </div>
+```
+
+*/
+.category-title { border:0; margin:0 0 7px; }
+.category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
+.category-image img {}
+.category-description { margin:0 0 10px; }
+
+/*
+
+## Product Views
+
+### Product Grid
+
+```
+	<div class="category-products">
+		<ul class="products-grid first last odd">
+		    <li class="item first">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		    <li class="item">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		    <li class="item last">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		</ul>
+	</div>
+```
+
+*/
+.category-products {}
+.products-grid { 
+	border-bottom:1px solid #ddd; 
+	position:relative; 
+	&.last { border-bottom: 0; }
+	li {
+		&.item {
+			float:left; 
+			padding:12px 10px 80px;
+			width:138px; 
+		}
+	}
+	.product-image { 
+		display:block; 
+		width:135px; 
+		height:135px; 
+		margin:0 0 10px; 
+	}
+	.product-name { 
+		margin:0 0 5px; 
+		font-weight:bold; 
+		font-size:13px; 
+		a {}
+	}
+	.price-box { margin:5px 0; }
+	.availability { line-height:21px; }
+	.actions { 
+		position:absolute; 
+		bottom:12px; 
+	}
+
+	.col2-left-layout &,
+	.col2-right-layout & {
+		width:632px; 
+		margin:0 auto;
+	}
+	.col1-layout & {
+		width:790px; 
+		margin:0 auto;
+	}
+}
+
+/* 
+
+### Product List
+
+```
+	<ol id="products-list" class="products-list">
+	    <li class="item odd">
+	        <a class="product-image" title="Product Name" href="#">
+	            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+	        </a>
+	        <div class="product-shop">
+	            <div class="f-fix">
+	                <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+	                <div class="ratings">
+	                    <div class="rating-box">
+	                        <div style="width:62%" class="rating"></div>
+	                    </div>
+	                    <p class="rating-links">
+	                        <a href="#">3 Review(s)</a>
+	                        <span class="separator">|</span>
+	                        <a href="#">Add Your Review</a>
+	                    </p>
+	                </div>
+	                <div class="price-box">
+	                    <span id="product-price-83" class="regular-price">
+	                        <span class="price">£15.99</span>
+	                    </span>
+	                </div>
+	                <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>
+	                <div class="desc std">
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <a class="link-learn" title="Product Name" href="#">Learn More</a>
+	                </div>
+	                <ul class="add-to-links">
+	                    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	                    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </li>
+	    <li class="item last even">
+	        <a class="product-image" title="Product Name" href="#">
+	            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+	        </a>
+	        <div class="product-shop">
+	            <div class="f-fix">
+	                <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+	                <div class="ratings">
+	                    <div class="rating-box">
+	                        <div style="width:62%" class="rating"></div>
+	                    </div>
+	                    <p class="rating-links">
+	                        <a href="#">3 Review(s)</a>
+	                        <span class="separator">|</span>
+	                        <a href="#">Add Your Review</a>
+	                    </p>
+	                </div>
+	                <div class="price-box">
+	                    <span id="product-price-83" class="regular-price">
+	                        <span class="price">£15.99</span>
+	                    </span>
+	                </div>
+	                <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>
+	                <div class="desc std">
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <a class="link-learn" title="Product Name" href="#">Learn More</a>
+	                </div>
+	                <ul class="add-to-links">
+	                    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	                    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </li>
+	</ol>
+```
+
+*/
+.products-list {
+	li { 
+		&.item {
+			border-bottom:1px solid #ddd; 
+			padding:12px 10px; 
+			&.last { border-bottom:0; }
+		}
+	}
+	.product-image { 
+		float:left; 
+		width:135px; 
+		height:135px; 
+		margin:0 0 10px; 
+	}
+	.product-shop { margin-left:150px; }
+	.product-name { 
+		margin:0 0 5px; 
+		font-weight:bold; 
+		font-size:13px; 
+		a {}
+	}
+	.price-box { 
+		float:left; 
+		margin:3px 13px 5px 0; 
+	}
+	.availability { 
+		float:left; 
+		margin:3px 0 0; 
+	}
+	.desc { 
+		clear:both; 
+		padding:6px 0 0; 
+		margin:0 0 15px; 
+		line-height:1.35; 
+		.link-learn { font-size:11px; }
+	}
+	.add-to-links { 
+		clear:both; 
+		li { display:inline; }
+		.separator { display:inline; margin:0 2px; }
+	}
+}

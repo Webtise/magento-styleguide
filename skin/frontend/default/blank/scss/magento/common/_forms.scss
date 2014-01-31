@@ -1,0 +1,486 @@
+/* 
+
+# Form Elements 
+
+## Generic Styling
+
+*/
+input, select, textarea { 
+	font:12px Arial, Helvetica, sans-serif; 
+	vertical-align:middle; 
+	color:#000;
+}
+input.input-text, select, textarea { 
+	background:#fff; 
+	border:1px solid #ddd;
+}
+input.input-text, textarea { padding:2px; }
+select { 
+	padding:1px; 
+	option { padding-right:10px; }
+	&.multiselect {
+		option { 
+			border-bottom:1px solid #ddd; 
+			padding:2px 5px; 
+			&:last-child { border-bottom: 0; }
+		}
+	}
+}
+textarea { overflow:auto; }
+
+input {
+	&.qty { width:2.5em !important; }
+	&.radio, &.checkbox { margin-right:3px;  }
+}
+
+p.control input.radio, 
+p.control input.checkbox {
+	margin-right: 6px;
+}
+
+/*
+
+## Fieldsets
+
+Used to break down and encapsulate form lists with appropriate legends.
+
+```	
+    <div class="fieldset">
+        <h2 class="legend">Personal Information</h2>
+        [FORM_LIST]
+    </div>
+    <div class="fieldset">
+        <h2 class="legend">Login Information</h2>
+        [FORM_LIST]
+        [BUTTON_SET]
+    </div>
+```
+
+*/
+.fieldset { 
+	border:1px solid #ddd; 
+	background:#fefefe; 
+	padding:22px 25px 12px 33px; 
+	margin:28px 0; 
+	.legend { 
+		float:left;
+		font-weight:bold;
+		font-size:13px;
+		border:1px solid #fefefe;
+		background:#dedede;
+		color:#333;
+		margin:-33px 0 0 -10px;
+		padding:0 8px;
+		position:relative;
+	}
+}
+
+
+/* 
+
+## Form lists 
+
+Generic form lists used site wide
+
+```
+	<ul class="form-list">
+	    <li>
+	        <label>Text Input</label>
+	        <div class="input-box">
+	            <input type="text" class="input-text" value="">
+	        </div>
+	    </li>
+		<li>
+            <label>Select</label>
+			<div class="input-box">
+				<select>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+				</select>
+			</div>
+		</li>
+		<li>
+            <label>Multiselect</label>
+			<div class="input-box">
+				<select size="4" multiple="multiple" class="multiselect">
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+				</select>
+			</div>
+		</li>
+		<li>
+            <label>Textarea</label>
+			<div class="input-box">
+				<textarea class="input-text"></textarea>
+			</div>
+		</li>
+		<li>
+			<label>Range</label>
+			<div class="input-range">
+				<input type="text" maxlength="128" class="input-text" id="price" value="">
+				<span class="separator">-</span>
+				<input type="text" maxlength="128" class="input-text" value="">
+				<small>(Unit/Currency)</small>
+			</div>
+        </li>
+	    <li class="fields">
+	        <div class="field">
+	            <label class="required"><em>*</em>Split Text Field</label>
+	            <div class="input-box">
+	                <input type="text" class="input-text required-entry" value="">
+	            </div>
+	        </div>
+	        <div class="field">
+	            <label class="required"><em>*</em>Split Text Field</label>
+	            <div class="input-box">
+	                <input type="text" class="input-text required-entry" value="">
+	            </div>
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label>Wide Input</label>
+	        <div class="input-box">
+	            <input type="text" class="input-text" value="">
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label>Wide Select</label>
+	        <div class="input-box">
+	            <select>
+					<option>Option</option>
+					<option>Option</option>
+	            </select>
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label class="required"><em>*</em>Wide Texarea</label>
+	        <div class="input-box">
+	            <textarea rows="3" cols="5" class="required-entry input-text"></textarea>
+	        </div>
+	    </li>
+	    <li class="control">
+	    	<input class="checkbox" type="checkbox" checked="checked" value="">
+			<label>Check box</label>
+	    </li>
+	    <li class="control">
+			<input class="radio" type="radio" value="value">
+			<label>Radio box</label>
+	    </li> 
+	</ul>
+```
+
+*/
+
+.form-list {
+
+	li { 
+		margin:0 0 8px; 
+		&.control {
+			label { float:none; }
+			input { 
+				&.radio, &.checkbox { margin-right:6px; }
+			}
+			.input-box { 
+				clear:none; 
+				display:inline; 
+				width:auto; 
+			}
+		}
+		&.wide {
+			.input-box { width:535px; }
+			input { 
+				&.input-text { width:529px; } 
+			}
+			textarea { width:529px; }
+			select { width:535px; }
+		}
+		&.additional-row { 
+			border-top:1px solid #ccc; 
+			margin-top:10px; 
+			padding-top:7px; 
+			.btn-remove { float:right; margin:5px 0 0; }
+		}
+	}
+
+	label {
+		float:left; 
+		color:#111; 
+		font-weight:bold; 
+		position:relative; 
+		z-index:0; 
+		&.required {
+			em {
+				float:right; 
+				font-style:normal; 
+				color:#eb340a; 
+				position:absolute; 
+				top:0; 
+				right:-8px;
+			}
+		}
+	}
+
+	input {
+		&.input-text { width:254px; }
+	}
+	textarea { width:254px; height:10em; }
+	select { width:260px; }
+
+	.field { float:left; width:275px; }
+	.input-box { display:block; clear:both; width:260px; }
+	.input-range { 
+		input.input-text { width:74px; }
+	}	
+	
+}
+
+/*
+
+### Customer Speicifc Form Elements
+
+These can be enabled under System->Configuration->Customer Configuration->Name and Address Options
+
+Outer class changes based on what is enabled possible combinations:
+- `.customer-name-prefix`
+- `.customer-name-suffix`
+- `.customer-name-prefix-suffix`
+- `.customer-name-prefix-middlename`
+- `.customer-name-middlename-suffix`
+- `.customer-name-prefix-middlename-suffix`
+
+```
+	<ul class="form-list">
+		<li class="fields">
+			<div class="customer-name-prefix-middlename-suffix">
+			    <div class="field name-prefix">
+			        <label for="prefix">Prefix</label>
+			        <div class="input-box">
+                    	<select>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option selected="selected" value=""></option>
+                        </select>
+                    </div>
+			    </div>
+			    <div class="field name-firstname">
+			        <label>First Name</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-middlename">
+			        <label>Middle Name/Initial</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-lastname">
+			        <label>Last Name</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-suffix">
+			        <label>Suffix</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			</div>
+		</li>
+	</ul>
+```
+
+*/
+
+.form-list {
+	.customer-name-prefix .input-box,
+	.customer-name-suffix .input-box,
+	.customer-name-prefix-suffix .input-box,
+	.customer-name-prefix-middlename .input-box,
+	.customer-name-middlename-suffix .input-box,
+	.customer-name-prefix-middlename-suffix .input-box { width:auto; }
+
+	.name-prefix { 
+		width:65px;
+		select { width:55px; }
+		input.input-text { width:49px; }
+	}
+	
+	.name-suffix { 
+		width:65px;
+		select { width:55px; }
+		input.input-text { width:49px; }
+	}
+
+	.name-middlename { 
+		width:70px;
+		input.input-text { width:49px; }
+	}
+
+	.customer-name-prefix-middlename,
+	.customer-name-prefix-middlename-suffix {
+		.name-firstname { 
+			width:140px;
+			input.input-text { width:124px; }
+		}
+	}
+
+	.customer-name-prefix-middlename-suffix {
+		.name-lastname { 
+			width:205px;
+			input.input-text { width:189px; }
+		}
+	}
+
+	.customer-name-prefix-suffix {
+		.name-firstname { width:210px; }
+		.name-lastname { width:205px; }
+		.name-firstname, .name-lastname {
+			input.input-text { width:189px; }
+		}
+	}
+
+	.customer-name-prefix, .customer-name-middlename {
+		.name-firstname { width:210px; }
+	}
+
+	.customer-name-middlename .name-firstname,
+	.customer-name-middlename-suffix .name-firstname,
+	.customer-name-suffix .name-lastname,
+	.customer-name-middlename-suffix .name-lastname { width:205px; }
+
+	.customer-name-prefix .name-firstname input.input-text,
+	.customer-name-middlename .name-firstname input.input-text,
+	.customer-name-middlename-suffix .name-firstname input.input-text,
+	.customer-name-suffix .name-lastname input.input-text,
+	.customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
+}
+
+/*
+
+#### DOB
+
+```
+	<ul class="form-list">
+		<li>
+			<label for="month">Date of Birth</label>
+			<div class="input-box customer-dob">
+		    	<div class="dob-day">
+		             <input type="text" class="input-text" value="">
+		             <label>DD</label>
+		        </div>
+		        <div class="dob-month">
+		             <input type="text" class="input-text" value="">
+		             <label>MM</label>
+		        </div>
+		        <div class="dob-year">
+		             <input type="text" class="input-text" value="">
+		             <label>YYYY</label>
+		        </div>    			    
+			</div>
+		</li>
+	</ul>
+```
+
+*/
+
+.form-list .customer-dob .dob-month,
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-year { float:left; width:85px; }
+.form-list .customer-dob input.input-text { display:block; width:74px; }
+.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-month { width:60px; }
+.form-list .customer-dob .dob-day input.input-text,
+.form-list .customer-dob .dob-month input.input-text { width:46px; }
+.form-list .customer-dob .dob-year { width:140px; }
+.form-list .customer-dob .dob-year input.input-text { width:134px; }
+
+/*
+## Button Sets
+
+Usually appends to a `.form-list` element providing actions for the form.
+
+```
+	<div class="buttons-set">
+		<p class="required">* Required Fields</p>
+		<p class="back-link"><a href="#"><small>« </small>Back</a></p>
+		<button type="button" class="button"><span><span>Action</span></span></button>
+		<button type="submit" class="button"><span><span>Submit</span></span></button>
+	</div>
+```
+
+*/
+.buttons-set { 
+	clear:both; margin:5px 0 0; padding:5px; border:1px solid #ddd; 
+	.back-link { float:left; }
+	button.button { float:right; }
+	p.required { margin:0 0 5px; }
+}
+.buttons-set-order {}
+p.required { 
+	font-size:10px; 
+	text-align:right; 
+	color:#f00;
+}
+
+/* 
+## Form Validation 
+
+On valid input appends `.validation-passed` to the input element.
+
+On invalid input appends class `.validation-failed` to the input element and adds `.validation-advice` containing the validation message.
+
+```
+	<ul class="form-list">
+		<li class="fields">
+			<div class="field">
+		        <label class="required"><em>*</em>Failed Validation</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text required-entry validation-failed" value="">
+		            <div class="validation-advice">This is a required field.</div>
+		        </div>
+			</div>
+			<div class="field">
+		        <label class="required"><em>*</em>Failed Validation</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text required-entry validation-failed" value="">
+		            <div class="validation-advice">This is a required field.</div>
+		        </div>
+		    </div>
+	    </li>
+	</ul>
+```
+
+*/
+.validation-failed { 
+	border:1px dashed #f00 !important; 
+	background:#faebe7 !important; 
+}
+.validation-passed {}
+.validation-advice {
+	clear:both;
+	min-height:13px;
+	margin:3px 0 0;
+	padding-left:17px;
+	font-size:10px;
+	line-height:13px;
+	background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat;
+	color:#f00;
+}
+
+/* Expiration date and CVV number validation fix */
+.v-fix { 
+	float:left;
+	.validation-advice { 
+		display:block; 
+		width:12em; 
+		margin-right:-12em; 
+		position:relative;
+	}
+}

@@ -1,0 +1,73 @@
+/* 
+# Mini Products List 
+
+```
+	<ol class="mini-products-list">
+		<li class="item odd">
+            <a class="product-image" href="#">
+            	<img width="50" height="50" src="http://placekitten.com/50/50">
+            </a>
+        	<div class="product-details">
+                <p class="product-name">
+                	<a href="#">Product Name</a>
+                </p>
+        		<strong>1</strong> x <span class="price">£22.00</span>
+        		<div class="truncated">
+          			<div class="truncated_full_value">
+            			<dl class="item-options">
+                            <dt>Size</dt>
+                			<dd>Large</dd>
+                        </dl>
+          			</div>
+        			<a class="details" onclick="return false;" href="#">Details</a>
+        		</div>
+            </div>
+		</li>
+		<li class="item even last">
+            <a class="product-image" href="#">
+            	<img width="50" height="50" src="http://placekitten.com/50/50">
+            </a>
+        	<div class="product-details">
+                <p class="product-name">
+                	<a href="#">Product Name</a>
+                </p>
+        		<strong>1</strong> x <span class="price">£22.00</span>
+        		<div class="truncated">
+          			<div class="truncated_full_value">
+            			<dl class="item-options">
+                            <dt>Size</dt>
+                			<dd>Large</dd>
+                        </dl>
+          			</div>
+        			<a class="details" onclick="return false;" href="#">Details</a>
+        		</div>
+            </div>
+		</li>
+	</ol>
+```
+
+*/
+
+.mini-products-list {
+	li { padding:5px 0; }
+	.product-image { 
+		float:left; 
+		width:50px; 
+		padding:5px; 
+		border:1px solid #ddd; 
+	}
+	.product-details { 
+		margin-left:75px;
+		h4 { 
+			font-size:1em; 
+			font-weight:bold; 
+			margin:0;
+		}
+	}	
+	.block-cart & {
+		.product-details {
+			.product-name, .nobr small { word-wrap:break-word; }
+			.nobr { white-space:normal !important; }
+		}
+	}
+}

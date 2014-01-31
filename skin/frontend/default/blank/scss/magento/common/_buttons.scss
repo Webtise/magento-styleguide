@@ -1,0 +1,52 @@
+/*
+# Button
+
+```
+	<button class="button" type="button"><span><span>Button</span></span></button>
+	<!-- Disabled -->
+	<button class="button disabled" type="button"><span><span>Disabled</span></span></button>
+	<!-- Add to Cart button -->
+	<button class="button btn-cart" type="button"><span><span>Add to Cart</span></span></button>
+	<!-- Place order button -->
+	<button class="button btn-checkout" type="submit"><span><span>Place Order</span></span></button>
+	<!-- Proceed to checkout button -->
+	<button class="button btn-proceed-checkout btn-checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+```
+
+*/
+
+button { 
+	font:12px Arial, Helvetica, sans-serif;
+	vertical-align:middle;
+	color:#000;
+	&.button { 
+		overflow:visible;
+		width:auto;
+		border:0;
+		padding:0;
+		margin:0;
+		background:transparent;
+		cursor:pointer;
+		span { 
+			float:left;
+			height:21px;
+			background:transparent url(../images/bkg_button.gif) 0 0 no-repeat;
+			padding:0 0 0 8px;
+			font:bold 12px/21px Arial, Helvetica, sans-serif;
+			text-align:center;
+			white-space:nowrap;
+			color:#fff;
+			span { 
+				background-position:100% 0;
+				padding:0 12px 0 4px;
+			}
+		}
+	}
+	&.disabled {
+		span {}
+	}
+	.btn-checkout {
+		&.no-checkout {}
+		span {}
+	}
+}

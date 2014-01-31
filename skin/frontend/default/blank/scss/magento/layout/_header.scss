@@ -1,0 +1,93 @@
+/*
+
+# Header
+
+```
+	<div class="header-container">
+	    <div class="header">
+	        <h1 class="logo"><strong>Magento Commerce</strong><a class="logo" title="Magento Commerce" href=""><img alt="Magento Commerce" src="/stylesheet/assets/images/logo.gif"></a></h1>
+	        <div class="quick-access">
+	            <form method="get" action="" id="search_mini_form">
+	                <div class="form-search">
+	                    <label for="search">Search:</label>
+	                    <input type="text" maxlength="128" class="input-text" value="" name="q" id="search" autocomplete="off">
+	                    <button class="button" title="Search" type="submit"><span><span>Search</span></span></button>
+	                    <div class="search-autocomplete" id="search_autocomplete">
+	                        <ul>
+	                            <li class="odd first selected"><span class="amount">10</span>Term</li>
+	                            <li class="even last"><span class="amount">10</span>Term</li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </form>
+	            <p class="welcome-msg">Welcome, Customer Name!</p>
+	            <ul class="links">
+	                <li class="first"><a title="My Account" href="">My Account</a></li>
+	                <li><a title="My Wishlist" href="">My Wishlist</a></li>
+	                <li><a class="top-link-cart" title="My Cart (2 items)" href="">My Cart (2 items)</a></li>
+	                <li><a class="top-link-checkout" title="Checkout" href="">Checkout</a></li>
+	                <li class=" last"><a title="Log Out" href="">Log Out</a></li>
+	            </ul>
+	            <div class="form-language">
+	                <label for="select-language">Your Language:</label>
+	                <select title="Your Language" id="select-language">
+	                    <option selected="selected" value="">English</option>
+	                    <option value="">French</option>
+	                    <option value="">German</option>
+	                </select>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+
+.logo { float:left; }
+.header-container {
+	.top-container { clear:both; text-align:right; }
+}
+.header { 
+	padding:10px; 
+	border:1px solid #ddd;
+	.logo { 
+		float:left; 
+		text-decoration:none !important;
+		& h1 {
+			margin: 0;
+			padding: 0;
+		}
+		strong { 
+			position:absolute; 
+			top:-999em; 
+			left:-999em; 
+			width:0; 
+			height:0; 
+			font-size:0; 
+			line-height:0; 
+			text-indent:-999em; 
+			overflow:hidden;
+		}
+	}
+	.welcome-msg { 
+		font-weight:bold; 
+		text-align:right;
+		a {}
+	}
+	.links { float:right; }
+	.form-search { 
+		text-align:right;
+		.search-autocomplete { 
+			z-index:999;
+			ul { border:1px solid #ddd; background-color:#fff; }
+			li { 
+				padding:3px; 
+				border-bottom:1px solid #ddd; 
+				cursor:pointer;
+				&.selected {}
+				.amount { float:right; font-weight:bold; }
+			}
+		}
+	}
+	.form-language { clear:both; text-align:right; }
+}

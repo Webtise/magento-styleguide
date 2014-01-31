@@ -1,0 +1,77 @@
+/*
+
+# Content
+
+Elements to control the layout which can be used within user entered data (typically via WYSIWYG editor) or used in custom blocks. 
+
+*/
+
+/*
+
+## 2 Column Set
+
+```
+	<div class="col2-set">
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+	</div>
+```
+
+```
+	<div class="col2-set">
+		<div class="col-1 col-narrow">Column 1</div>
+		<div class="col-2 col-wide">Column 2</div>
+	</div>
+```
+
+*/
+.col2-set {
+	.col-1 { float:left; width:49%; }
+	.col-2 { float:right; width:49%; }
+	.col-narrow { width:33%; }
+	.col-wide { width:65%; }
+}
+
+/*
+
+## 3 Column Set
+
+Three equally spaced columns.
+
+```
+	<div class="col3-set">
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-3">Column 3</div>
+	</div>
+```
+
+*/
+.col3-set {
+	.col-1 { float:left; width:32%; }
+	.col-2 { float:left; width:32%; margin-left:2%; }
+	.col-3 { float:right; width:32%; }
+}
+
+/*
+
+## 4 Column Set
+
+Four equally spaced columns.
+
+```
+	<div class="col4-set">
+		<div class="col-1">Column 1</div>
+		<div class="col-2">Column 2</div>
+		<div class="col-3">Column 3</div>
+		<div class="col-4">Column 4</div>
+	</div>
+```
+
+*/
+.col4-set {
+	.col-1 { float:left; width:23.5%; }
+	.col-2 { float:left; width:23.5%; margin:0 2%; }
+	.col-3 { float:left; width:23.5%; }
+	.col-4 { float:right; width:23.5%; }
+}

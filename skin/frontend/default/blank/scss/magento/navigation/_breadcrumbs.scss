@@ -1,0 +1,35 @@
+/*
+
+# Breadcrumbs
+
+```
+	<div class="breadcrumbs">
+		<ul>
+			<li class="home">
+				<a title="Go to Home Page" href="#">Home</a>
+				<span>/ </span>
+			</li>
+			<li class="category">
+				<a title="" href="#">Sublink</a>
+				<span>/ </span>
+			</li>
+			<li class="category">
+				<a title="" href="#">Sublink</a>
+				<span>/ </span>
+			</li>
+			<li class="product">
+				<strong>Active</strong>
+			</li>
+		</ul>
+	</div>
+```
+
+*/
+.breadcrumbs { 
+	padding:10px;
+	margin:0 0 10px; 
+	border:1px solid #ddd;
+	li { 
+		display:inline; 
+	}
+}

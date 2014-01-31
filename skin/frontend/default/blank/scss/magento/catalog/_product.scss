@@ -1,0 +1,1036 @@
+/*
+
+# Product View
+
+*/
+
+/* 
+## Ratings 
+
+### No Rating
+
+```	
+	<p class="no-rating">
+		<a href="#">Be the first to review this product</a>
+	</p>
+```
+*/
+.no-rating { margin:0; }
+
+/*
+
+### Rated
+
+```
+	<div class="ratings">
+        <div class="rating-box">
+            <div style="width:73%" class="rating"></div>
+        </div>
+        <p class="rating-links">
+            <a href="#">2 Review(s)</a>
+            <span class="separator">|</span>
+            <a href="#">Add Your Review</a>
+        </p>
+    </div>
+```
+
+*/
+.ratings { 
+	font-size:11px; 
+	line-height:1.25; 
+	margin:7px 0; 
+	strong { 
+		float:left; 
+		margin:1px 3px 0 0;
+	}
+	dt {}
+	dd {}
+	.rating-links { 
+		margin:0; 
+		.separator { margin:0 2px; }
+	}
+	.rating-box { 
+		float:left; 
+		margin-right:3px;
+	}
+	.amount {}
+}
+
+.rating-box { 
+	width:69px; 
+	height:13px;
+	font-size:0;
+	line-height:0;
+	background:url(../images/bkg_rating.gif) 0 0 repeat-x;
+	text-indent:-999em;
+	overflow:hidden;
+	.rating { 
+		float:left;
+		height:13px;
+		background:url(../images/bkg_rating.gif) 0 100% repeat-x;
+	}
+} 
+
+/*
+
+### Ratings Table
+
+Table to show ratings for each point (found on product review list page)
+
+```
+	<table class="ratings-table">
+	        <colgroup>
+	        	<col width="1">
+	        	<col>
+	        </colgroup>
+	        <tbody>
+		        <tr>
+		            <th>Quality</th>
+		            <td>
+		                <div class="rating-box">
+		                    <div style="width:40%;" class="rating"></div>
+		                </div>
+		            </td>
+		        </tr>
+		        <tr>
+		            <th>Price</th>
+		            <td>
+		                <div class="rating-box">
+		                    <div style="width:20%;" class="rating"></div>
+		                </div>
+		            </td>
+		        </tr>
+		        <tr>
+		            <th>Value</th>
+		            <td>
+		                <div class="rating-box">
+		                    <div style="width:60%;" class="rating"></div>
+		                </div>
+		            </td>
+		        </tr>
+	        </tbody>
+	</table>
+```
+
+*/
+
+.ratings-table {
+	th, td { font-size:11px; line-height:1.15; padding:3px 0; } 
+	th { font-weight:bold; padding-right:8px; }
+}
+
+/* 
+
+## Availability 
+
+Shows current stock status for product.
+
+```
+	<p class="availability in-stock">Availability: <span>In stock</span></p>
+
+	<p class="availability out-of-stock">Availability: <span>Out of stock</span></p>
+```
+
+*/
+.availability { 
+	margin:0; 
+	span { font-weight:bold; }
+	&.in-stock {
+		span {}
+	}
+	&.out-of-stock { 
+		span { color:#d83820; } 
+	}
+}
+
+/*
+### Availability Only
+
+When Configuration->Inventory->Stock Options->Only X left Threshold is set
+
+```
+	<p class="availability-only">
+        <span title="Only 2 left">Only <strong>2</strong> left</span>
+    </p>
+```
+*/
+.availability-only { 
+	margin:0 0 7px; 
+	a { 
+		background:url(../images/i_availability_only_arrow.gif) 100% 0 no-repeat; 
+		cursor:pointer; 
+		padding-right:15px; 
+	}
+	strong { }
+	.expanded { background-position:100% -15px; }
+}
+/*
+Show stock levels for individual products on a configurable/bundle product
+
+```
+	<p class="availability-only">
+        <a title="Only 1749 left" href="#" class="expanded">Only <strong>1749</strong> left</a>
+    </p>
+	<table class="availability-only-details">
+	    <colgroup><col>
+	    <col width="1">
+	    </colgroup><thead>
+	        <tr class="first last">
+	            <th>Product Name</th>
+	            <th class="a-center">Qty</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	<tr class="first odd">
+	            <td>Product Name</td>
+	            <td class="a-center last">2</td>
+	        </tr>
+			<tr class="even">
+	            <td>Product Name</td>
+	            <td class="a-center last">998</td>
+	        </tr>
+			<tr class="last odd">
+	            <td>Product Name</td>
+	            <td class="a-center last">749</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.availability-only-details { 
+	margin:0 0 7px; 
+	th { background:#f2f2f2; font-size:10px; padding:0 8px; }
+	td { border-bottom:1px solid #ddd; font-size:11px; padding:2px 8px 1px; }
+	tr.odd td.last {}
+}
+
+/* 
+## Email to a Friend 
+```
+	<p class="email-friend"><a href="#">Email to a Friend</a></p>
+```
+*/
+.email-friend {}
+/* 
+### Send a Friend
+
+Located on separate page after clicking 'Email to a Friend' link.
+
+Uses common elements, `.page-title`, `.fieldset`, `.buttons-set` and `.form-list`.
+
+*/
+.send-friend {}
+
+/* 
+## Alerts 
+*/
+
+/*
+### Price Alert
+```
+	<p class="alert-price link-price-alert">
+    	<a title="Sign up for price alert" href="#">Sign up for price alert</a>
+	</p>
+```
+*/
+.alert-price {}
+
+/*
+### Stock Alert
+```
+	<p class="alert-stock link-stock-alert">
+	    <a title="Sign up to get notified when this product is back in stock" href="#">Sign up to get notified when this product is back in stock</a>
+	</p>
+```
+*/
+.alert-stock {}
+
+/*
+## Pricing
+
+Each price type commonly wrapped with:
+
+```
+	<div class="price-box">
+		<span class="[PRICE_TYPE]">
+			<span class="price">Pricing HTML</span>
+		</span>
+	</div>
+```
+
+*/
+.price { white-space:nowrap !important; }
+
+.price-box {
+	.price { font-weight:bold; }
+}
+
+/* 
+### Regular price 
+
+```
+	<span class="regular-price">
+		<span class="price">£15.00</span>
+	</span>
+```
+
+*/
+.regular-price {
+	.price { font-weight:bold; }
+}
+
+/* ### Old price */
+.old-price {
+	.price-label { white-space:nowrap; }
+	.price { font-weight:bold; text-decoration:line-through; }
+}
+
+/* ### Special price */
+.special-price {
+	.price-label { font-weight:bold; white-space:nowrap; }
+	.price { font-weight:bold; }
+}
+
+/* 
+### Minimal price 
+
+Grouped product:
+
+```
+	<p class="minimal-price">
+		<span class="price-label">Starting at:</span>
+		<span id="product-minimal-price-54" class="price">£129.99</span>
+	</p>
+```
+
+*/
+.minimal-price {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}
+
+/*
+Configurable product (List/Grid view)
+
+```
+    <a class="minimal-price-link" href="#">
+        <span class="label">As low as:</span>
+        <span class="price">£449.00</span>
+    </a>
+```
+
+*/
+.minimal-price-link { 
+	display:block;
+	.label {}
+	.price { font-weight:normal; }
+}
+
+/*
+
+### Incl tax & Excl tax
+
+```
+	<div class="price-box">
+		<span class="price-excluding-tax">
+			<span class="label">Excl. Tax:</span>
+			<span id="price-excluding-tax-41" class="price">£399.99</span>
+		</span>
+		<span class="price-including-tax">
+			<span class="label">Incl. Tax:</span>
+			<span id="price-including-tax-41" class="price">£399.99</span>
+		</span>
+	</div>
+```
+
+*/
+.price-excluding-tax { 
+	display:block;
+	.label { white-space:nowrap; }
+	.price { font-weight:normal; }
+}
+.price-including-tax { 
+	display:block; 
+	.label { white-space:nowrap; }
+	.price { font-weight:bold; }
+}
+
+
+/* 
+### Configured price 
+
+```
+	<p class="price-as-configured">
+    	<span class="price-label">Price as configured:</span>
+        <span class="full-product-price">
+            <span class="price">£5,074.95</span>
+        </span>
+    </p>
+```
+
+*/
+.configured-price {
+	.price-label { font-weight:bold; white-space:nowrap; }
+	.price { font-weight:bold; }
+}
+
+/* ### FPT */
+.weee { 
+	display:block; 
+	font-size:11px; 
+	color:#444;
+	.price { 
+		font-size:11px; 
+		font-weight:normal;
+	}
+}
+
+/* ### Excl tax (for order tables) */
+.price-excl-tax  { 
+	display:block;
+	.label { display:block; white-space:nowrap; }
+	.price { display:block; }
+}
+
+/* ### Incl tax (for order tables) */
+.price-incl-tax { 
+	display:block;
+	.label { display:block; white-space:nowrap; }
+	.price { display:block; font-weight:bold; }
+}
+
+/* 
+### Price range 
+
+Bundle Products:
+
+```
+	<p class="price-from">
+		<span class="price-label">From:</span>
+		<span class="price">£447.98</span>
+	</p>
+	<p class="price-to">
+		<span class="price-label">To:</span>
+		<span class="price">£4,477.92</span>
+	</p>                    
+```
+
+*/
+.price-from {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}
+.price-to {
+	.price-label { font-weight:bold; white-space:nowrap; }
+} 
+
+/* 
+### Price notice 
+
+Next to the options on a configurable product.
+
+```
+	<div class="input-box">
+		Product Option Name &nbsp; 
+		<span class="price-notice">
+			+<span class="price">£0.00</span>
+		</span>
+	</div>
+```
+
+*/
+.price-notice { 
+	padding-left:10px;
+	.price { font-weight:bold; }
+}
+
+/* ### Price as configured */
+.price-as-configured {
+	.price-label { font-weight:bold; white-space:nowrap; }
+}
+
+.price-box-bundle {}
+
+/* 
+
+### Tier Pricing
+
+Offers discounts on higher quantity of single item purchases
+
+```
+	<ul class="tier-prices product-pricing">	
+		<li class="tier-price tier-0">
+			Buy 5 for <span class="price">£12.50</span> each and&nbsp;
+			<strong class="benefit">save&nbsp;<span class="percent tier-0">8</span>%</strong>
+	        <span class="msrp-price-hide-message"></span>
+	    </li>
+		<li class="tier-price tier-1">
+			Buy 10 for <span class="price">£11.50</span> each and&nbsp;
+			<strong class="benefit">save&nbsp;<span class="percent tier-1">15</span>%</strong>
+	        <span class="msrp-price-hide-message"></span>
+	    </li>
+		<li class="tier-price tier-2">
+			Buy 20 for <span class="price">£9.50</span> each and&nbsp;
+			<strong class="benefit">save&nbsp;<span class="percent tier-2">30</span>%</strong>
+	        <span class="msrp-price-hide-message"></span>
+		</li>
+	</ul>
+```
+
+*/
+.tier-prices {
+	.price { font-weight:bold; }
+	.benefit {}
+}
+.tier-prices-grouped {}
+
+
+/* 
+## Add to
+
+### Cart 
+
+```
+	<div class="add-to-cart">
+		<label for="qty">Qty:</label>
+		<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+		<button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+	</div>
+```
+*/
+.add-to-cart {
+	label { float:left; margin-right:5px; }
+	.qty { float:left; }
+	button.button { float:left; margin-left:5px; }
+	.paypal-logo { 
+		clear:left; 
+		text-align:right;
+		.paypal-or { 
+			clear:both; 
+			display:block; 
+			margin:5px 60px 5px 0; 
+		}
+	}
+}
+.product-view .add-to-cart .paypal-logo { margin:0; }
+
+/* 
+### Links 
+
+```
+	<ul class="add-to-links">
+	    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	</ul>
+```
+
+*/
+.add-to-links {
+	.separator { display:none; }
+}
+
+/* 
+### Links & Cart 
+
+```
+	<div class="add-to-box">
+		<div class="add-to-cart">
+			<label for="qty">Qty:</label>
+			<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+			<button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		</div>
+		<span class="or">OR</span>
+		<ul class="add-to-links">
+		    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		</ul>
+	</div>
+```
+
+*/
+.add-to-box {
+	.add-to-cart { float:left; }
+	.or { float:left; margin:0 10px; }
+	.add-to-links { float:left; }
+}
+
+.product-view {}
+
+.product-essential {}
+
+.product-collateral .box-collateral { margin:0 0 15px; }
+
+/* 
+## Product Images 
+
+### Zoom Enabled
+
+```
+	<div class="product-img-box">
+	    <p class="product-image product-image-zoom">
+	        <img title="Product Name" alt="Product Name" src="http://placekitten.com/265/265" id="image" style="left: 0px; top: 0px;">
+	    </p>
+	    <p id="track_hint" class="zoom-notice">Double click on above image to view full picture</p>
+	    <div class="zoom">
+	        <img class="btn-zoom-out" title="Zoom Out" alt="Zoom Out" src="http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_out.gif" id="zoom_out">
+	        <div id="track">
+	            <div id="handle" class="selected" style="left: 0px;"></div>
+	        </div>
+	        <img class="btn-zoom-in" title="Zoom In" alt="Zoom In" src="http://magebase.local/skin/frontend/webtise/default/images/slider_btn_zoom_in.gif" id="zoom_in">
+	    </div>
+	    <div class="more-views">
+	        <h2>More Views</h2>
+	        <ul>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	        </ul>
+	    </div>
+	</div>
+```
+
+### Zoom disabled
+
+```
+	<div class="product-img-box">
+	    <p class="product-image">
+	        <img title="Product Name" alt="Product Name" src="http://placekitten.com/265/265" id="image" style="left: 0px; top: 0px;">
+	    </p>
+	    <div class="more-views">
+	        <h2>More Views</h2>
+	        <ul>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	            <li><a title="" href="#"><img width="56" height="56" alt="" src="http://placekitten.com/56/56"></a></li>
+	        </ul>
+	    </div>
+	</div>
+```
+
+*/
+
+.product-img-box { 
+	float:left; 
+	width:267px;
+	.col3-layout & { 
+		float:none; 
+		margin:0 auto; 
+	}
+	.product-image { border:1px solid #ddd; }
+	.product-image-zoom { 
+		position:relative; 
+		width:265px; 
+		height:265px; 
+		overflow:hidden; 
+		z-index:9; 
+		img { 
+			position:absolute; 
+			left:0; 
+			top:0; 
+			cursor:move; 
+		}
+	}
+	.zoom-notice { text-align:center; }
+	.zoom { 
+		position:relative; 
+		z-index:9; 
+		height:18px;
+		margin:0 auto 13px;
+		padding:0 28px;
+		background:url(../images/slider_bg.gif) 50% 50% no-repeat;
+		cursor:pointer;
+		&.disabled { 
+			-moz-opacity:.3;
+			-webkit-opacity:.3;
+			-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; // IE8
+			opacity:.3;
+		}
+		#track { 
+			position:relative; 
+			height:18px;
+		}
+		#handle { 
+			position:absolute;
+			left:0;
+			top:-1px;
+			width:9px;
+			height:22px;
+			background:url(../images/magnifier_handle.gif) 0 0 no-repeat;
+		}
+		.btn-zoom-out { 
+			position:absolute;
+			left:2px;
+			top:0;
+		}
+		.btn-zoom-in { 
+			position:absolute;
+			right:2px;
+			top:0;
+		}
+	}
+	.more-views {
+		ul { margin-left:-4px }
+		li { 
+			float:left; 
+			padding:1px; 
+			background-color:#ddd; 
+			margin:0 0 8px 4px ;
+		}
+	} 
+}
+
+/*
+
+### Product Image Popup
+
+Popup when a product thumbnail is clicked from product page image thumbnails.
+
+```
+	<div class="product-image-popup">
+	    <div class="buttons-set">
+	        <a class="button" href="#"><span>Close Window</span></a>
+	    </div>
+	    <div class="nav">
+	        <a class="prev" href="#">« Prev</a>
+	    </div>
+	    <img class="image" id="product-gallery-image" title="" alt="" src="http://placekitten.com/600/600">
+	    <div class="buttons-set">
+	        <a class="button" href="#"><span>Close Window</span></a>
+	    </div>
+	    <div class="nav">
+	        <a class="prev" href="#">« Prev</a>
+	    </div>
+	</div>
+```
+
+*/
+
+.product-image-popup { 
+	margin:0 auto;
+	.buttons-set { 
+		float:right; 
+		clear:none; 
+		border:0; 
+		margin:0; 
+		padding:0;
+	}
+	.nav { 
+		margin:0 100px; 
+		text-align:center;
+	}
+	.image { display:block; }
+	.image-label {}
+}
+
+/* 
+## Product Shop 
+
+Contains vital product information, name, reviews, add to cart and short description.
+
+```
+	<div class="product-view">
+		<div class="product-shop">
+			<div class="product-name">
+				<h1>Product Name</h1>
+			</div>
+			<div class="short-description">
+                <h2>Quick Overview</h2>
+                <div class="std">
+					[ADMIN_CONTENT]
+                </div>
+            </div>
+		</div>
+	</div>
+```
+
+*/
+.product-view {
+	.product-shop { float:right; width:445px; }
+	.col1-layout & {
+		.product-shop { float:right; width:700px; }
+	}
+	.col3-layout & {
+		.product-shop { float:none; width:auto; }
+	}
+	.product-name {}
+	.short-description {}
+}
+
+/* 
+
+## Product Options 
+
+```
+	<div id="product-options-wrapper" class="product-options">
+    	<dl class="last">
+            <dt><label class="required"><em>*</em>Size</label></dt>
+	        <dd>
+	            <div class="input-box">
+	                <select class="required-entry super-attribute-select validation-failed">
+	                    <option value="">Choose an Option...</option>
+	                    <option value="100" price="0">Small</option>
+	                    <option value="99" price="0">Medium</option>
+	                    <option value="98" price="0">Large</option>
+	                </select>
+	                <div class="validation-advice">This is a required field.</div>
+	            </div>
+	        </dd>
+            <dt><label class="required"><em>*</em>Color</label></dt>
+	        <dd class="last">
+	            <div class="input-box">
+	                <select class="required-entry super-attribute-select" disabled="">
+	                    <option>Choose an Option...</option>
+	                </select>
+	            </div>
+	        </dd>
+        </dl>
+        <p class="required">* Required Fields</p>
+    </div>
+```
+
+*/
+.product-options { 
+	padding:10px; 
+	margin:10px 0 0; 
+	border:1px solid #ddd; 
+	background-color:#f6f6f6;
+	dt {
+		label { font-weight:bold; }
+		.qty-holder { 
+			float:right; 
+			label { vertical-align:middle; }
+		}
+		.qty-disabled { 
+			background:none; 
+			border:0; 
+			padding:3px; 
+			color:#000; 
+		}
+	}
+	dd { 
+		margin:10px 0; 
+		input {
+			.input-text { width:98%; }
+			.datetime-picker { width:150px; }
+		}
+		textarea { width:98%; height:8em; }
+		select { width:100%; }
+		.time-picker { 
+			display:-moz-inline-box; 
+			display:inline-block; 
+			padding:2px 0; 
+			vertical-align:middle; 
+		}
+	}
+	dl.last dd.last {}
+	.options-list {
+		input {
+			.radio { float:left; margin:3px -18px 0 0; }
+			.checkbox { float:left; margin:3px -20px 0 0; }
+		}
+		.label { display:block; margin-left:20px; }
+	}
+	ul.validation-failed { padding:0 7px; }
+	p.required { padding:15px 0 0; }
+}
+
+.product-options-bottom { 
+	padding:10px; 
+	border:1px solid #ddd; 
+	border-top:0; 
+	.price-box { margin:10px 0; }
+}
+
+/* Grouped Product */
+.product-view {
+	.grouped-items-table {}
+}
+
+/* 
+## Block: Description
+
+Contains product data from the "description" attribute. See Normalize->Base for `.std` definitions.
+
+```
+	<div class="box-collateral box-description">
+		<h2>Details</h2>
+		<div class="std">
+			[ADMIN_CONTENT]
+		</div>
+	</div>
+```
+
+*/
+.product-view {
+	.box-description {}
+}
+
+/* 
+## Block: Additional
+
+Contains table of attributes set to 'Show on Product View Page'
+
+```
+	<div class="box-collateral box-additional">
+	    <h2>Additional Information</h2>
+	    <table id="product-attribute-specs-table" class="data-table">
+	        <colgroup>
+	            <col width="25%">
+	            <col>
+	        </colgroup>
+	        <tbody>
+	            <tr class="first odd">
+	                <th class="label">Attribute Label</th>
+	                <td class="data last">Attribute Value</td>
+	            </tr>
+	            <tr class="last even">
+	                <th class="label">Attribute Label</th>
+	                <td class="data last">Attribute Value</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+```
+
+*/
+.product-view {
+	.box-additional {}
+}
+
+/* 
+## Block: Upsell
+
+```
+	<div class="box-collateral box-up-sell">
+	    <h2>You may also be interested in the following product(s)</h2>
+	    <table id="upsell-product-table" class="products-grid">
+	        <tbody>
+	            <tr class="first last odd">
+	                <td>
+	                    <a class="product-image" title="Product Name" href="#">
+	                        <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	                    </a>
+	                    <h3 class="product-name"><a title="Product Name" href="#">Product Name</a></h3>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£1,799.99</span>
+	                        </span>
+	                    </div>    
+	                    <div class="ratings">
+	                        <div class="rating-box">
+	                            <div style="width:64%" class="rating"></div>
+	                        </div>
+	                        <p class="rating-links">
+	                            <a href="#">6 Review(s)</a>
+	                            <span class="separator">|</span>
+	                            <a href="#">Add Your Review</a>
+	                        </p>
+	                    </div>
+	                </td>
+	                <td>
+	                    <a class="product-image" title="Product Name" href="#">
+	                        <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	                    </a>
+	                    <h3 class="product-name"><a title="Product Name" href="#">Product Name</a></h3>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£1,799.99</span>
+	                        </span>
+	                    </div>    
+	                    <div class="ratings">
+	                        <div class="rating-box">
+	                            <div style="width:64%" class="rating"></div>
+	                        </div>
+	                        <p class="rating-links">
+	                            <a href="#">6 Review(s)</a>
+	                            <span class="separator">|</span>
+	                            <a href="#">Add Your Review</a>
+	                        </p>
+	                    </div>
+	                </td>
+	                <td class="empty">&nbsp;</td>
+	                <td class="empty last">&nbsp;</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+```
+
+*/
+.product-view {
+	.box-up-sell {
+		.products-grid {
+			td { width:25%; }
+		}
+	}
+} 
+
+
+/* 
+## Block: Tags 
+
+```
+	<div class="product-view">
+		<div class="box-collateral box-tags">
+		    <h2>Product Tags</h2>
+		    <h3>Other people marked this product with these tags:</h3>
+		    <ul class="product-tags">
+		        <li class="first"><a href="#">young</a> (4)</li> 
+		        <li><a href="#">hip</a> (4)</li> 
+		        <li class="last"><a href="#">cool t-shirt</a> (4)</li>    
+		    </ul>
+		    <form method="get" action="#" id="addTagForm">
+		        <div class="form-add">
+		            <label for="productTagName">Add Your Tags:</label>
+		            <div class="input-box">
+		                <input type="text" id="productTagName" name="productTagName" class="input-text required-entry">
+		            </div>
+		            <button class="button" title="Add Tags" type="button">
+		                <span>
+		                    <span>Add Tags</span>
+		                </span>
+		            </button>
+		        </div>
+		    </form>
+		    <p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
+		</div>
+	</div>
+```
+
+*/
+.product-view { 
+	.box-tags {
+		.form-add {
+			label { float:left; }
+			.input-box { float:left; width:260px; margin:0 5px; }
+			input.input-text { width:254px; }
+			p { clear:both; }
+		}
+	}
+}
+
+/* 
+## Block: Reviews
+
+```
+	<div id="customer-reviews" class="box-collateral box-reviews">
+	    <h2>Customer Reviews</h2>
+	    <dl>
+	        <dt>
+	            <a href="#">Review Title</a> Review by <span>Review Name</span>
+	        </dt>
+	        <dd>
+	            <table class="ratings-table">
+	                [RATINGS_TABLE]
+	            </table>
+	            Review Text
+	            <small class="date">(Posted on 31/08/2007)</small>
+	        </dd>
+	    </dl>
+	</div>
+```
+
+*/
+.product-view {
+	.box-reviews {
+		.form-add {}
+	}
+}
+

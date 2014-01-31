@@ -1,0 +1,668 @@
+/* 
+
+# Sidebar Blocks
+
+## Generic
+
+```
+	<div class="block">
+	    <div class="block-title">
+	        <strong><span>Block Title</span></strong>
+	    </div>
+	    <div class="block-content">
+	    	<p class="block-subtitle">Block Subtitle</p>
+	        <ul>
+	            <li class="item odd"></li>
+	            <li class="item even"></li>
+	            <li class="item odd"></li>
+	        </ul>
+	    </div>
+	</div>
+```
+
+*/
+.block { 
+	border:1px solid #ddd; 
+	margin:0 0 10px; 
+	.block-title { 
+		border-bottom:1px solid #ddd; 
+		padding:3px 10px; 
+		a { text-decoration:none !important; }
+		strong { 
+			font-size:14px; 
+			font-weight:bold;
+			span {}
+		}
+	}
+	.block-subtitle { 
+		font-size:13px; 
+		font-weight:bold; 
+	}
+	.block-content { 
+		padding:10px; 
+	}
+	.btn-remove,
+	.btn-edit { float:right;}
+	.actions { 
+		text-align:right;
+		a { float:left; }
+	}
+	.empty {}
+	li { 
+		&.item { padding:5px 0; } 
+		&.odd {}
+		&.even { background-color:#f6f6f6; }
+	}
+}
+
+/* 
+
+## Block: Account 
+
+```
+	<div class="block block-account">
+	    <div class="block-title">
+	        <strong><span>My Account</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ul>
+				<li class="current"><strong>Account Dashboard</strong></li>
+				<li><a href="">Account Information</a></li>
+				<li><a href="">Address Book</a></li>
+				<li><a href="">My Orders</a></li>
+				<li><a href="">Billing Agreements</a></li>
+				<li><a href="">Recurring Profiles</a></li>
+				<li><a href="">My Product Reviews</a></li>
+				<li><a href="">My Tags</a></li>
+				<li><a href="">My Wishlist</a></li>
+				<li><a href="">My Applications</a></li>
+				<li><a href="">Newsletter Subscriptions</a></li>
+				<li class="last"><a href="">My Downloadable Products</a></li>
+			</ul>
+	    </div>
+	</div>
+```
+
+*/
+.block-account {}
+
+/* 
+
+## Block: Currency Switcher 
+
+```
+	<div class="block block-currency">
+	    <div class="block-title">
+	        <strong><span>Select Your Currency</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <select title="Select Your Currency" name="currency">
+	            <option selected="selected" value="">British Pound Sterling - GBP</option>
+	            <option value="">Euro - EUR</option>
+	        </select>
+	    </div>
+	</div>
+```
+
+*/
+.block-currency {
+	select { width:100%; border:1px solid #888; }
+}
+
+/* 
+
+## Block: Layered Navigation 
+
+```
+	<div class="block block-layered-nav">
+	    <div class="block-title">
+	        <strong><span>Shop By</span></strong>
+	    </div>
+	    <div class="block-content">
+			<p class="block-subtitle">Shopping Options</p>
+			<dl id="narrow-by-list">
+				<dt class="odd">Category</dt>
+				<dd class="odd">
+					<ol>
+						<li><a href="">Category</a> (4)</li>
+						<li><a href="">Category</a> (2)</li>
+					</ol>
+				</dd>
+				<dt class="even">Price</dt>
+				<dd class="even">
+					<ol>
+						<li><a href=""><span class="price">£0.00</span> - <span class="price">£999.99</span></a> (5)</li>
+						<li><a href=""><span class="price">£2,000.00</span> and above</a> (1)</li>
+					</ol>
+				</dd>
+				<dt class="last odd">Color</dt>
+				<dd class="last odd">
+					<ol>
+					<li><a href="">Color</a>(2)</li>
+					<li><a href="">Color</a>(4)</li></ol>
+				</dd>
+			</dl>
+		</div>
+	</div>
+```
+
+*/
+.block-layered-nav {
+	dt { font-weight:bold; }
+	.currently {}
+	.btn-remove { 
+		float:left; 
+		margin:2px 3px 0 0; 
+	}
+}
+
+/* 
+
+## Block: Cart 
+
+```
+	<div class="block block-cart">
+	        <div class="block-title">
+	        <strong><span>My Cart</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <div class="summary">
+	            <p class="amount">There are <a href="">2 items</a> in your cart.</p>
+	            <p class="subtotal">
+	                 <span class="label">Cart Subtotal:</span>
+	                 <span class="price">£161.94</span><br>
+	                 (<span class="price">£161.94</span> Incl. Tax)
+	            </p>
+	        </div>
+	        <div class="actions">
+	            <p class="paypal-logo">
+	                <a href=""><img title="Checkout with PayPal" alt="Checkout with PayPal" src="https://fpdbs.paypal.com/dynamicimageweb?cmd=_dynamic-image&amp;buttontype=ecshortcut&amp;locale=en_GB"></a>
+	                <span class="paypal-or">-OR-</span>
+	            </p>
+	            <buttonclass="button" title="Checkout" type="button"><span><span>Checkout</span></span></button>
+	        </div>
+	        <p class="block-subtitle">Recently added item(s)</p>
+	        <ol class="mini-products-list" id="cart-sidebar">
+	            <li class="item odd">
+	                <a class="product-image" title="Product Name" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <a class="btn-edit" title="Edit item" href="">Edit item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <strong>1</strong> x
+	                    Excl. Tax: <span class="price">£2,699.99</span><br>
+	                    Incl. Tax: <span class="price">£2,699.99</span>
+	                </div>
+	            </li>
+	            <li class="item even last">
+	                <a class="product-image" title="Product Name" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <a class="btn-edit" title="Edit item" href="">Edit item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <strong>1</strong> x
+	                    Excl. Tax: <span class="price">£2,699.99</span><br>
+	                    Incl. Tax: <span class="price">£2,699.99</span>
+	                </div>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.block-cart {
+	.summary {}
+	.amount {}
+	.subtotal { text-align:center; }
+	.actions {
+		.paypal-logo { 
+			float:left; 
+			width:100%; 
+			margin:3px 0 0; 
+			text-align:right; 
+			.paypal-or { 
+				clear:both; 
+				display:block; 
+				padding:0 55px 5px 0; 
+			}
+		}
+	}
+}
+
+/* 
+
+## Block: Wishlist 
+
+```
+	<div class="block block-wishlist">
+	    <div class="block-title">
+	        <strong><span>My Wishlist <small>(2)</small></span></strong>
+	    </div>
+	    <div class="block-content">
+	        <p class="block-subtitle">Last Added Items</p>
+	        <ol id="wishlist-sidebar" class="mini-products-list">
+	            <li class="item odd">
+	                <a class="product-image" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£599.99</span>
+	                        </span>
+	                    </div>
+	                    <a class="link-cart" href="">Add to Cart</a>
+	                </div>
+	            </li>
+	            <li class="item even last">
+	                <a class="product-image" href="">
+	                    <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                </a>
+	                <div class="product-details">
+	                    <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                    <div class="price-box">
+	                        <span class="regular-price">
+	                            <span class="price">£599.99</span>
+	                        </span>
+	                    </div>
+	                    <a class="link-cart" href="">Add to Cart</a>
+	                </div>
+	            </li>
+	        </ol>
+	        <div class="actions">
+	            <a href="">Go to Wishlist</a>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.block-wishlist {}
+
+/* 
+
+## Block: Related 
+
+```
+	<div class="block block-related">
+	    <div class="block-title">
+	        <strong><span>Related Products</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <p class="block-subtitle">Check items to add to the cart or&nbsp;<a href="#">select all</a></p>
+	        <ol id="block-related" class="mini-products-list">
+	            <li class="item odd">
+	                <input type="checkbox" value="51" name="related_products[]" class="checkbox related-checkbox">
+	                <div class="product">
+	                    <a class="product-image" title="Product Name" href="">
+	                        <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                    </a>
+	                    <div class="product-details">
+	                        <p class="product-name"><a href="">Product Name</a></p>
+	                        <div class="price-box">
+	                            <span class="regular-price">
+	                                <span class="price">£299.99</span>
+	                            </span>
+	                        </div>
+	                        <a class="link-wishlist" href="">Add to Wishlist</a>
+	                    </div>
+	                </div>
+	            </li>
+	            <li class="item even last">
+	                <input type="checkbox" value="51" name="related_products[]" class="checkbox related-checkbox">
+	                <div class="product">
+	                    <a class="product-image" title="Product Name" href="">
+	                        <img width="50" height="50" alt="Product Name" src="http://placekitten.com/50/50">
+	                    </a>
+	                    <div class="product-details">
+	                        <p class="product-name"><a href="">Product Name</a></p>
+	                        <div class="price-box">
+	                            <span class="regular-price">
+	                                <span class="price">£299.99</span>
+	                            </span>
+	                        </div>
+	                        <a class="link-wishlist" href="">Add to Wishlist</a>
+	                    </div>
+	                </div>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.block-related {
+	li { padding:5px 0; }
+	input { 
+		&.checkbox { float:left; margin-right:-20px; }
+	}
+	.product { 
+		margin-left:20px;
+		.product-image { float:left; margin-right:-65px; }
+		.product-details { margin-left:65px; }
+	}
+}
+
+/* 
+
+## Block: Compare Products 
+
+```
+	<div class="block block-list block-compare">
+	    <div class="block-title">
+	        <strong><span>Compare Products <small>(2)</small></span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ol id="compare-items">
+	            <li class="item odd">
+	                <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item last even">
+	                <a class="btn-remove" title="Remove This Item" href="">Remove This Item</a>
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	        </ol>
+	        <div class="actions">
+	            <a href="">Clear All</a>
+	            <button class="button" title="Compare" type="button"><span><span>Compare</span></span></button>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.block-compare {
+	li { padding:5px 0; }
+}
+
+/* 
+
+## Block: Recently Viewed 
+
+```
+	<div class="block block-list block-viewed">
+	    <div class="block-title">
+	        <strong><span>Recently Viewed Products</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ol id="recently-viewed-items">
+	            <li class="item odd">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item even">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item odd last">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.block-viewed {}
+
+/* 
+
+## Block: Recently Compared 
+
+```
+	<div class="block block-list block-compared">
+	    <div class="block-title">
+	        <strong><span>Recently Compared Products</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ol id="recently-compared-items">
+	            <li class="item odd">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	            <li class="item even last">
+	                <p class="product-name"><a href="">Product Name</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.block-compared {}
+
+/* 
+
+## Block: Poll 
+
+```
+	<div class="block block-poll">
+	    <div class="block-title">
+	        <strong><span>Community Poll</span></strong>
+	    </div>
+	    <form method="post" action="" id="pollForm">
+	        <div class="block-content">
+	            <p class="block-subtitle">Question?</p>
+	            <ul id="poll-answers">
+	                <li class="odd">
+	                    <input type="radio" value="5" id="vote_5" class="radio poll_vote" name="vote">
+	                    <span class="label"><label for="vote_5">Option 1</label></span>
+	                </li>
+	                <li class="last even">
+	                    <input type="radio" value="8" id="vote_8" class="radio poll_vote" name="vote">
+	                    <span class="label"><label for="vote_8">Option 2</label></span>
+	                </li>
+	            </ul>
+	            <div class="actions">
+	                <button class="button" title="Vote" type="submit"><span><span>Vote</span></span></button>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-poll {
+	label {}
+	input {
+		&.radio { 
+			float:left; 
+			margin:1px -18px 0 0; 
+		}
+	}
+	.label { 
+		display:block; 
+		margin-left:18px; 
+	}
+	li { padding:3px 9px; }
+	.actions { 
+		margin:5px 0 0; 
+	}
+	.answer { 
+		font-weight:bold;
+	}
+	.votes { 
+		float:right; 
+		margin-left:10px; 
+	}
+}
+
+/* 
+
+## Block: Tags 
+
+```
+	<div class="block block-tags">
+	    <div class="block-title">
+	        <strong><span>Popular Tags</span></strong>
+	    </div>
+	    <div class="block-content">
+	        <ul class="tags-list">
+	            <li><a style="font-size:95%;" href="">tag</a></li>
+	            <li><a style="font-size:85%;" href="">tag</a></li>
+	            <li><a style="font-size:145%;" href="">tag</a></li>
+	            <li><a style="font-size:115%;" href="">tag</a></li>
+	            <li><a style="font-size:95%;" href="">tag</a></li>
+	        </ul>
+	        <div class="actions">
+	            <a href="">View All Tags</a>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.block-tags {
+	ul, li { display:inline; }
+}
+
+/* 
+
+## Block: Subscribe 
+
+```
+	<div class="block block-subscribe">
+	    <div class="block-title">
+	        <strong><span>Newsletter</span></strong>
+	    </div>
+	    <form id="newsletter-validate-detail" method="post" action="">
+	        <div class="block-content">
+	            <div class="form-subscribe-header">
+	                <label for="newsletter">Sign Up for Our Newsletter:</label>
+	            </div>
+	            <div class="input-box">
+	               <input type="text" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+	            </div>
+	            <div class="actions">
+	                <button class="button" title="Subscribe" type="submit"><span><span>Subscribe</span></span></button>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-subscribe {}
+
+/* 
+
+## Block: Reorder 
+
+```
+	<div class="block block-reorder">
+	    <div class="block-title">
+	        <strong><span>My Orders</span></strong>
+	    </div>
+	    <form id="reorder-validate-detail" action="http://magebase.local/checkout/cart/addgroup/" method="post">
+	        <div class="block-content">
+	            <p class="block-subtitle">Last Ordered Items</p>
+	            <ol id="cart-sidebar-reorder">
+	                <li class="item odd">
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                </li>
+	                <li class="item even last">
+	                    <p class="product-name"><a href="">Product Name</a></p>
+	                </li>
+	            </ol>
+	            <div class="actions">
+	                <button class="button btn-cart" title="Add to Cart" type="submit"><span><span>Add to Cart</span></span></button>
+	                <a href="">View All</a>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-reorder {
+	li { padding:5px 0; }
+	input.checkbox { float:left; margin:3px -20px 0 0; }
+	.product-name { margin-left:20px; }
+}
+
+/* 
+
+## Block: Banner 
+
+```
+	<div class="block block-banner">
+	    <div class="block-content">
+			<a href="">
+				<img src="http://placekitten.com/125/125">
+			</a>
+	    </div>
+	</div>
+```
+
+*/
+.block-banner {
+	.block-content { text-align:center; }
+}
+
+/* 
+
+## Block: Login 
+
+```
+	<div class="block block-login">
+	    <div class="block-title">
+	        <strong><span>Login</span></strong>
+	    </div>
+	    <form action="" method="post">
+	        <div class="block-content">
+	            <label for="mini-login">Email:</label>
+	            <input type="text" name="login[username]" id="mini-login" class="input-text" />
+	            <label for="mini-password">Password:</label>
+	            <input type="password" name="login[password]" id="mini-password" class="input-text" />
+	            <div class="actions">
+	                <button type="submit" class="button"><span><span>Login</span></span></button>
+	            </div>
+	        </div>
+	    </form>
+	</div>
+```
+
+*/
+.block-login {
+	label { 
+		font-weight:bold; 
+		color:#666;
+	}
+	input {
+		&.input-text { 
+			display:block; 
+			width:167px; 
+			margin:3px 0; 
+		}
+	}
+}
+
+/* 
+
+## Paypal 
+
+```
+	<div class="sidebar">
+		<div class="paypal-logo">
+		    <a title="Additional Options" href="#">
+		    	<img title="Additional Options" alt="Additional Options" src="https://www.paypalobjects.com/en_GB/i/bnr/bnr_nowAccepting_150x60.gif">
+		    </a>
+		</div>
+	</div>
+```
+
+*/
+.sidebar {
+	.paypal-logo {
+		display:block; 
+		margin:10px 0; 
+		text-align:center;
+		a { float:none; }
+	}
+}

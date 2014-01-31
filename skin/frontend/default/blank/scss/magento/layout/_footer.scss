@@ -1,0 +1,38 @@
+/*
+
+# Footer
+
+```
+    <div class="footer-container">
+        <div class="footer">
+        	<ul>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Customer Service</a></li>
+				<li class="last privacy"><a href="">Privacy Policy</a></li>
+			</ul>
+			<ul class="links">
+                <li class="first"><a title="Site Map" href="">Site Map</a></li>
+				<li><a title="Search Terms" href="h">Search Terms</a></li>
+				<li><a title="Advanced Search" href="">Advanced Search</a></li>
+                <li><a title="Contact Us" href="">Contact Us</a></li>
+				<li class=" last"><a class="link-rss" title="RSS" href="">RSS</a></li>
+            </ul>
+        	<p class="bugs">Help Us to Keep Magento Healthy - <a href=""><strong>Report All Bugs</strong></a> (ver. 1.8.1.0)</p>
+        	<address>&copy; 2013 Magento Demo Store. All Rights Reserved.</address>
+    	</div>
+    </div>
+```
+
+*/
+.footer-container {
+	.bottom-container { text-align:center; }
+}
+.footer { 
+	border:1px solid #ddd; 
+	padding:10px;
+	p { text-align:right; }
+	address { text-align:right; }
+	ul {
+		li { display:inline; }
+	}
+}

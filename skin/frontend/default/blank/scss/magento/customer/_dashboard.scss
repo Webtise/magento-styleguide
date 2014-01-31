@@ -1,0 +1,663 @@
+/* 
+
+# Dashboard 
+
+## Welcome Message
+
+```
+	<div class="dashboard">
+		<div class="welcome-msg">
+		    <p class="hello"><strong>Hello, Adam Johnson!</strong></p>
+		    <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
+		</div>
+	</div>
+```
+
+*/
+.dashboard {
+	.welcome-msg {}
+}
+/*
+
+## Recent Orders
+
+```
+	<div class="dashboard">
+		<div class="box-account box-recent">
+		    <div class="box-head">
+		        <h2>Recent Orders</h2>
+		        <a href="#">View All</a>
+		    </div>
+		        <table id="my-orders-table" class="data-table">
+		        <colgroup>
+		            <col width="1">
+		            <col width="1">
+		            <col>
+		            <col width="1">
+		            <col width="1">
+		            <col width="1">
+		        </colgroup>
+		        <thead>
+		            <tr class="first last">
+		                <th>Order #</th>
+		                <th>Date</th>
+		                <th>Ship To</th>
+		                <th><span class="nobr">Order Total</span></th>
+		                <th>Status</th>
+		                <th>&nbsp;</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr class="first last odd">
+		                <td>100000001</td>
+		                <td><span class="nobr">01/01/1970</span></td>
+		                <td>Adam Johnson</td>
+		                <td><span class="price">£1,091.97</span></td>
+		                <td><em>Order Status</em></td>
+		                <td class="a-center last">
+		                    <span class="nobr">
+		                        <a href="">View Order</a>
+		                        <span class="separator">|</span> 
+		                        <a class="link-reorder" href="">Reorder</a>
+		                    </span>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</div>
+	</div>
+```
+
+*/
+
+.dashboard {
+	.box-recent { margin:10px 0; }
+}
+
+/*
+
+## Account Information
+
+```
+	<div class="box-account box-info">
+	    <div class="box-head">
+	        <h2>Account Information</h2>
+	    </div>
+	    <div class="col2-set">
+	        <div class="col-1">
+	            <div class="box">
+	                <div class="box-title">
+	                    <h3>Contact Information</h3>
+	                    <a href="">Edit</a>
+	                </div>
+	                <div class="box-content">
+	                    <p>Customer Name<br>customer@email.com<br><a href="">Change Password</a></p>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-2">
+	            <div class="box">
+	                <div class="box-title">
+	                    <h3>Newsletters</h3>
+	                    <a href="">Edit</a>
+	                </div>
+	                <div class="box-content">
+	                    <p>You are currently not subscribed to any newsletter.</p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col2-set">
+	        <div class="box">
+	            <div class="box-title">
+	                <h3>Address Book</h3>
+	                <a href="#">Manage Addresses</a>
+	            </div>
+	            <div class="box-content">
+	                <div class="col-1">
+	                    <h4>Default Billing Address</h4>
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>
+	                </div>
+	                <div class="col-2">
+	                    <h4>Default Shipping Address</h4>
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+```
+
+*/
+.dashboard {
+	.box-info {}
+}
+
+/*
+
+## Reviews
+
+```
+	<div class="box-account box-reviews">
+	    <div class="box-head">
+	        <h2>My Recent Reviews</h2>
+	        <a href="">View All Reviews</a>
+	    </div>
+	    <ol id="my_recent_reviews">
+	        <li class="item last odd">
+	            <span class="number">1</span>
+	            <div class="details">
+	                <h3 class="product-name"><a href="">Product Name</a></h3>
+	                <div class="ratings">
+	                    <strong>Rating:</strong>
+	                    <div class="rating-box">
+	                        <div style="width:60%;" class="rating"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	    </ol>
+	</div>
+```
+
+*/
+.dashboard {
+	.box-reviews {
+		.number { 
+			float:left; 
+			font-size:10px; 
+			font-weight:bold; 
+			line-height:1; 
+			color:#fff; 
+			margin:3px -20px 0 0; 
+			padding:2px 3px; 
+			background:#ddd;
+		}
+		.details { margin-left:20px; }
+	}
+}
+
+/*
+
+## Tags
+
+```
+    <div class="box-account box-tags">
+        <div class="box-head">
+            <h2>My Recent Tags</h2>
+            <a href="">View All Tags</a>
+        </div>
+        <ol id="my_recent_tags">
+            <li class="item last odd">
+                <span class="number">1</span>
+                <div class="details">
+                    <h3 class="product-name"><a href="">Product Name</a></h3>
+                    <div class="tags">
+                        <strong>Tags:</strong>
+                            <ul>
+                                <li><a href="">Tag</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+```
+
+*/
+.dashboard {
+	.box-tags {
+		.number { 
+			float:left; 
+			font-size:10px; 
+			font-weight:bold; 
+			line-height:1; 
+			color:#fff;
+			margin:3px -20px 0 0; 
+			padding:2px 3px; 
+			background:#ddd;
+		}
+		.details { margin-left:20px; }
+	}
+}
+
+
+/* 
+
+## Address Book 
+
+```
+	<div class="col2-set addresses-list">
+	    <div class="col-1 addresses-primary">
+	        <h2>Default Addresses</h2>
+	        <ol>
+	            <li class="item">
+	                <h3>Default Billing Address</h3>
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                <p><a href="">Change Billing Address</a></p>
+	           </li>
+	            <li class="item">
+	                <h3>Default Shipping Address</h3>
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                <p><a href="">Change Shipping Address</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	    <div class="col-2 addresses-additional">
+	        <h2>Additional Address Entries</h2>
+	        <ol>
+	            <li class="item empty">
+	                <p>You have no additional address entries in your address book.</p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+```
+
+*/
+.addresses-list {}
+.addresses-list-additional {
+	li.item {}
+}
+
+/* 
+
+## Order View 
+
+```
+	<dl class="order-info">
+	    <dt>About This Order:</dt>
+	    <dd>    
+	    	<ul id="order-info-tabs">
+		        <li class="current first">Order Information</li>
+		        <li><a href="">Invoices</a></li>
+		        <li><a href="">Shipments</a></li>
+		        <li class="last"><a href="">Refunds</a></li>
+			</ul>
+	    </dd>
+	</dl>
+	<p class="order-date">Order Date: 27 January 2014</p>
+	<div class="col2-set order-info-box">
+	    <div class="col-1">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Shipping Address</h2>
+	            </div>
+	            <div class="box-content">
+					<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-2">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Shipping Method</h2>
+	            </div>
+	            <div class="box-content">
+					Flat Rate - Fixed
+				</div>
+	        </div>
+	    </div>
+	</div>
+	<div class="col2-set order-info-box">
+	    <div class="col-1">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Billing Address</h2>
+	            </div>
+	            <div class="box-content">
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-2">
+	        <div class="box box-payment">
+	            <div class="box-title">
+	                <h2>Payment Method</h2>
+	            </div>
+	            <div class="box-content">
+	                <p>Check / Money order</p>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="order-items order-details">
+	    <h2 class="table-caption">
+	    	Items Ordered                    
+	    	<span class="separator">|</span> 
+	    	<a title="Track your order" href="#">Track your order</a>
+        </h2>
+        <!-- OR -->
+        <p class="order-links">
+			<a class="link-print" href="">Print All Invoices</a>
+		</p>
+		<h2 class="sub-title">
+			Invoice #100000002 
+			<span class="separator">|</span> 
+			<a class="link-print" href="">Print Invoice</a>
+		</h2>
+		<h3 class="table-caption">Items Invoiced</h3>
+	    <table summary="Items Ordered" id="my-orders-table" class="data-table">
+	        <colgroup>
+	            <col>
+	            <col width="1">
+	            <col width="1">
+	            <col width="1">
+	            <col width="1">
+	        </colgroup>
+	        <thead>
+	            <tr class="first last">
+	                <th>Product Name</th>
+	                <th>SKU</th>
+	                <th class="a-right">Price</th>
+	                <th class="a-center">Qty</th>
+	                <th class="a-right">Subtotal</th>
+	            </tr>
+	        </thead>
+	        <tfoot>
+	            <tr class="subtotal first">
+	                <td class="a-right" colspan="4">Subtotal</td>
+	                <td class="last a-right"><span class="price">£1,066.97</span></td>
+	            </tr>
+	            <tr class="shipping">
+	                <td class="a-right" colspan="4">Shipping &amp; Handling</td>
+	                <td class="last a-right"><span class="price">£25.00</span></td>
+	            </tr>
+	            <tr class="grand_total last">
+	                <td class="a-right" colspan="4"><strong>Grand Total</strong></td>
+	                <td class="last a-right"><strong><span class="price">£1,091.97</span></strong></td>
+	            </tr>
+	        </tfoot>
+	        <tbody class="odd">
+	            <tr id="order-item-row-1" class="border first">
+	                <td>
+	                	<h3 class="product-name">Product Name</h3>
+	                	<a class="gift-message-link expanded" id="order-item-gift-message-link-7" href="#">Gift Message</a>
+	                </td>
+	                <td>prod_sku</td>
+	                <td class="a-right">
+	                    <span class="price-excl-tax">
+	                        <span class="cart-price">
+	                            <span class="price">£15.00</span>                    
+	                        </span>
+	                    </span>
+	                    <br>
+	                </td>
+	                <td class="a-right">
+	                    <span class="nobr">
+	                        Ordered: <strong>1</strong><br>
+	                        Shipped: <strong>1</strong><br>
+	                        Refunded: <strong>1</strong><br>
+	                    </span>
+	                </td>
+	                <td class="a-right last">
+	                    <span class="price-excl-tax">
+	                        <span class="cart-price">
+	                            <span class="price">£15.00</span>                    
+	                        </span>
+	                    </span>
+	                    <br>
+	                </td>
+	            </tr>
+				<tr class="border last">
+					<td colspan="7" class="gift-message-row last">
+	                    <a class="btn-close" title="Close" href="#">Close</a>
+	                    <dl class="gift-message">
+	                        <dt><strong>From:</strong> From name</dt>
+	                        <dt><strong>To:</strong> To Name</dt>
+	                        <dd>Gift message text</dd>
+	                    </dl>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+	<div class="order-additional order-gift-message">
+        <h2 class="sub-title">Gift Message for This Order</h2>
+        <dl class="gift-message">
+            <dt><strong>From:</strong> From Name</dt>
+            <dt><strong>To:</strong> To Name</dt>
+            <dd>Gift message text</dd>
+        </dl>
+    </div>
+	<div class="order-additional order-comments">
+        <h2 class="sub-title">About Your Order</h2>
+        <dl class="order-about">
+            <dt>27 Jan 2014 10:34:25</dt>
+            <dd>Comment</dd>
+        </dl>
+    </div>
+```
+
+*/
+.order-info { 
+	border:1px solid #ddd; 
+	padding:5px;
+	dt, dd,
+	ul, li { display:inline; }
+	dt { font-weight:bold; }
+}
+.order-date { margin:10px 0; }
+.order-info-box {}
+.order-items { width:100%; overflow-x:auto; }
+.order-additional { margin:15px 0; }
+/* Order Gift Message */
+.gift-message {
+	dt strong { color:#666; }
+	dd { font-size:13px; margin:5px 0 0; }
+} 
+/* Order Comments */
+.order-about {
+	dt { font-weight:bold; }
+	dd { font-size:13px; margin:0 0 7px; }
+}
+
+
+/*
+
+## Order Tracking
+
+### Tracking Table
+
+```
+	<table id="my-tracking-table-2" class="data-table tracking-table">
+	    <tbody>
+	        <tr class="first odd">
+	            <td colspan="2" class="last">
+	                <a title="Track this shipment" href="#">Track this shipment</a>
+	            </td>
+	        </tr>
+	        <tr class="last even">
+	            <th class="label">Tracking Number(s):</th>
+	            <td class="last">&nbsp;Tracking Number</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.tracking-table { 
+	margin:0 0 15px;
+	th { font-weight:bold; white-space:nowrap; }
+}
+
+/*
+
+### Tracking Popup
+
+```
+	<table id="tracking-table-popup-0" class="tracking-table-popup data-table">
+	    <colgroup>
+	    	<col width="15%">
+	        <col>
+	    </colgroup>
+		<tbody>
+			<tr class="first last odd">
+				<th class="label">Tracking Title:</th>
+				<td class="value last">Tracking Number</td>
+			</tr>
+	    </tbody>
+	</table>
+```
+
+*/
+
+.tracking-table-popup { 
+	width:100%;
+	th, td {
+		padding: 1px 8px;
+	}
+	th { 
+		font-weight:bold;
+		white-space:nowrap;
+	}
+}
+
+/*
+
+## Order Print Pages
+
+```
+	<div class="print-head">
+        <img alt="" class="logo" src="http://placekitten.com/167/47">
+    </div>
+```
+
+*/
+
+.page-print {
+	.print-head {
+		img { float:left; }
+		address { float:left; margin-left:15px; }
+	}
+	.gift-message-link { display:none; }
+	.price-excl-tax, .price-incl-tax { 
+		display:block; 
+		white-space:nowrap;
+		&.label, &.price {
+			display: inline;
+		}
+	}
+	.cart-price { display:inline; }
+}
+
+/* 
+
+## My Reviews
+
+```
+	<div class="product-review">
+	    <div class="page-title">
+	        <h1>Review Details</h1>
+	    </div>
+	    <div class="product-img-box">
+	        <a class="product-image" title="Coalesce: Functioning On Impatience T-Shirt" href="">
+	            <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	        </a>
+	        <p class="label">Average Customer Rating:</p>
+	        <div class="ratings">
+	            <div class="rating-box">
+	                <div style="width:69%" class="rating"></div>
+	            </div>
+	            <p class="rating-links">
+	                <a href="">3 Review(s)</a>
+	                <span class="separator">|</span>
+	                <a href="">Add Your Review</a>
+	            </p>
+	        </div>
+	    </div>
+	    <div class="product-details">
+	        <h2 class="product-name">Product name</h2>
+	        <h3>Your Rating:</h3>
+	        <table class="ratings-table">
+	            <tbody>
+	                <tr>
+	                    <th>Quality</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:40%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>Price</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:60%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>Value</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:80%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <dl>
+	            <dt>Your Review (submitted on 27 January 2014):</dt>
+	            <dd>Review Text</dd>
+	        </dl>
+	    </div>
+	</div>
+```
+
+*/
+.product-review {
+	h3 {}
+	dt { 
+		font-weight:bold;
+	}
+	dd { 
+		font-size:13px; 
+		margin:5px 0 0;
+	}
+	.product-img-box { 
+		float:left; 
+		width:140px;
+		.product-image { 
+			display:block; 
+			width:125px; 
+			height:125px;
+		}
+		.label { 
+			font-size:11px; 
+			margin:0 0 3px;
+		}
+		.ratings {
+			.rating-box { 
+				float:none; 
+				display:block; 
+				margin:0 0 3px;
+			}
+		}
+	}
+	.product-details { 
+		margin-left:150px;
+	}
+	.product-name { 
+		font-size:16px; 
+		font-weight:bold; 
+		margin:0 0 10px;
+	}
+	.ratings-table { 
+		margin:0 0 10px;
+	}
+}
+
+/*
+
+## Misc
+
+*/
+.my-account {
+	.title-buttons {
+		.link-rss { 
+			float:none; 
+			margin:0;
+		}
+	}
+}

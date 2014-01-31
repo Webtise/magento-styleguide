@@ -1,0 +1,68 @@
+/* 
+
+# Sitemap 
+
+## Tree
+
+```
+	<div class="page-sitemap">
+		<ul class="sitemap">
+		    <li class="level-0"><a href="">Category Name</a></li>
+		    <li style="padding-left:20px;" class="level-1"><a href="">Category Name</a></li>
+		    <li style="padding-left:40px;" class="level-2"><a href="">Category Name</a></li>
+		</ul>
+	</div>
+```
+
+## Non-tree
+
+```
+	<div class="page-sitemap">
+		<ul class="sitemap">
+		    <li><a href="">Category Name</a></li>
+		    <li><a href="">Category Name</a></li>
+		    <li><a href="">Category Name</a></li>
+		</ul>
+	</div>
+
+```
+
+*/
+.page-sitemap {
+	.sitemap { 
+		margin:12px; 
+		a {}
+		li { 
+			margin:3px 0;
+			&.level-0 { 
+				margin:10px 0 0; 
+				font-weight:bold;
+				a {}
+			}
+		}
+	}
+}
+
+/*
+
+## Sitemap Links
+
+<div class="page-sitemap">
+    <ul class="links">
+    	<li class="first last"><a title="Products Sitemap" href="">Products Sitemap</a></li>
+    </ul>
+</div>
+
+*/
+
+.page-sitemap {
+	.links { 
+		text-align:right; 
+		margin:0 8px -22px 0; 
+		a { 
+			text-decoration:none; 
+			position:relative; 
+			&:hover { text-decoration:underline; }
+		}
+	}
+}

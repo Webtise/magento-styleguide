@@ -1,0 +1,9 @@
+{
+  "name": "MagentoStyleguide",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-sass": "~0.10.0",
+    "sassdown": "~0.2.3"
+  }
+}

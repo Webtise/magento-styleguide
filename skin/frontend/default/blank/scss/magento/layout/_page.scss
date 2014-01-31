@@ -1,0 +1,134 @@
+/*
+
+# Pages
+
+Top level page layout for Magento's standard options, 1column, 2columns-left, 2-columns-right and 3columns.
+
+*/
+
+/*
+
+## Common Page Styling
+
+*/
+.wrapper {}
+.page { width:1000px; margin:0 auto; padding:10px 0; text-align:left; }
+.page-print { background:#fff; padding:20px; text-align:left; }
+.page-empty { background:#fff; padding:20px; text-align:left; }
+.page-popup { padding:20px; text-align:left; }
+.main-container {}
+.main { margin:10px 0; }
+
+/*
+
+## Base Column Sizes
+
+*/
+.col-left { float:left; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
+.col-main { float:left; width:736px; border:1px solid #ddd; padding:5px; }
+.col-right { float:right; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
+
+/*
+
+## 1 Column
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col1-layout">
+                <div class="main">
+                    <div class="col-main">
+                        Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col1-layout .col-main { float:none; width:auto; }
+
+
+/* 
+
+## 2 Columns (Left)
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col2-left-layout">
+                <div class="main">
+                    <div class="col-main">
+                        Content
+                    </div>
+                    <div class="col-left sidebar">Left Column</div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col2-left-layout {
+    .col-main { float:right; }
+}
+
+/*
+
+## 2 Columns (Right)
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col2-right-layout">
+                <div class="main">
+                    <div class="col-main">
+                        Content
+                    </div>
+                    <div class="col-right sidebar">Right</div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col2-right-layout { 
+    .col-main {}
+}
+
+/*
+
+## 3 Columns
+
+```
+    <div class="wrapper">
+        <div class="page">
+            <div class="main-container col3-layout">
+                <div class="main">
+                    <div class="col-wrapper">
+                        <div class="col-main">
+                            Content
+                        </div>
+                        <div class="col-left sidebar">Left Column</div>
+                    </div>
+                    <div class="col-right sidebar">Right Column</div>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+*/
+.col3-layout {
+    .col-main { 
+        width:484px; 
+        margin-left:10px; 
+    }
+    .col-wrapper { 
+        float:left; 
+        width:748px; 
+        .col-main { float:right; }
+    }
+}

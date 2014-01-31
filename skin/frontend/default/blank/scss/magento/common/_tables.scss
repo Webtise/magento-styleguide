@@ -1,0 +1,136 @@
+/* 
+# Data Table 
+## Horizontal Labels
+
+```
+	<table class="data-table">
+	    <thead>
+	        <tr class="first last">
+	            <th>Label</th>
+	            <th>Label</th>
+	            <th>Label</th>
+	            <th>Label</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr class="first odd">
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td class="last">Value</td>
+	        </tr>
+	        <tr class="even">
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td class="last">Value</td>
+	        </tr>
+	        <tr class="last odd">
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td>Value</td>
+	            <td class="last">Value</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+## Vertical Labels
+
+```
+	<table class="data-table">
+	    <colgroup>
+	        <col width="25%">
+	        <col>
+	    </colgroup>
+	    <tbody>
+	        <tr class="first odd">
+	            <th class="label">Label</th>
+	            <td class="data last">Value</td>
+	        </tr>
+	        <tr class="first even">
+	            <th class="label">Label</th>
+	            <td class="data last">Value</td>
+	        </tr>
+	        <tr class="last odd">
+	            <th class="label">Label</th>
+	            <td class="data last">Value</td>
+	        </tr>
+	    </tbody>
+	</table>
+```
+
+*/
+.data-table { 
+	width:100%; 
+
+	thead { background-color:#f2f2f2; }
+	tbody {
+		&.odd {
+			td & { border-width:0 1px; }
+		}
+		&.even { 
+			background-color:#f6f6f6; 
+			td { border-width:0 1px; }
+		}
+		&.odd, &.even {
+			tr {
+				&.border {
+					td {
+						border-bottom-width:1px;
+					}
+				}
+			}
+		}
+	}
+	tfoot {}
+
+	tr {
+		&.first {}
+		&.last {}
+		&.odd {}
+		&.even { background-color:#f6f6f6; }
+	}
+
+	th { 
+		padding:5px; 
+		border:1px solid #ddd; 
+		font-weight:bold;
+		white-space:nowrap;
+		.tax-flag {
+			white-space:nowrap; 
+			font-weight:normal;
+		}
+	}
+	td { 
+		padding:5px; 
+		border:1px solid #ddd;
+		.value {}
+	}
+
+	td, th { 
+		&.label {
+			font-weight:bold; 
+			background-color:#f6f6f6;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

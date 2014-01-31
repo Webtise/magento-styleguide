@@ -1,0 +1,121 @@
+/* 
+# Toolbar
+*/
+
+/* 
+
+## Pager
+
+```
+	<div class="pager">
+        <p class="amount">
+			<p class="amount">Items 10 to 20 of 22 total</p>
+        </p>
+        <div class="limiter">
+            <label>Show</label>
+            <select>
+                <option selected="selected" value="#">9</option>
+                <option value="#">15</option>
+                <option value="#">30</option>
+			</select> per page
+		</div>
+		<div class="pages">
+        	<strong>Page:</strong>
+        	<ol>
+	        	<li>
+	                <a title="Previous" href="#" class="previous i-previous">
+	                    <img class="v-middle" alt="Previous" src="http://magebase.local/skin/frontend/webtise/default/images/pager_arrow_left.gif">
+	                </a>
+	            </li>
+                <li>
+                	<a href="#">1</a>
+                </li>
+        		<li class="current">2</li>
+                <li>
+                	<a href="#">3</a>
+                </li>
+				<li>
+					<a title="Next" href="http://magebase.local/apparel.html?p=2" class="next i-next">
+						<img class="v-middle" alt="Next" src="http://magebase.local/skin/frontend/webtise/default/images/pager_arrow_right.gif">
+                    </a>
+            	</li>
+            </ol>
+    	</div>
+	</div>
+```
+
+*/
+.pager { 
+	border: 1px solid #ddd; 
+	margin: 5px 0; 
+	padding: 5px; 
+	text-align: center;
+	.amount { float: left; }
+	.limiter { float: right; }
+	.pages { 
+		margin: 0 135px; 
+		ol { display: inline; }
+		li { display: inline; }
+		.current {}
+	}
+}
+
+/* 
+
+## Sorter
+
+```
+	<div class="sorter">
+		<p class="view-mode">
+			<label>View as:</label>
+			<a class="grid" title="Grid" href="#">Grid</a>&nbsp;
+			<strong class="list" title="List">List</strong>&nbsp;
+		</p>
+		<div class="sort-by">
+	        <label>Sort By</label>
+	        <select>
+				<option selected="selected" value="#">Position</option>
+				<option value="#">Name</option>
+				<option value="#">Price</option>
+			</select>
+			<a title="Set Descending Direction" href="#">
+				<img class="v-middle" alt="Set Descending Direction" src="http://magebase.local/skin/frontend/webtise/default/images/i_asc_arrow.gif">
+			</a>
+		</div>
+	</div>
+```
+
+*/
+.sorter { 
+	border: 1px solid #ddd; 
+	margin: 5px 0;
+	padding: 5px;  
+	.view-mode { float: left; }
+	.sort-by { float: right; }
+	.link-feed {}
+}
+
+/* 
+
+## Toolbar 
+
+```
+	<div class="toolbar">
+		<div class="pager">Pager</div>
+		<div class="sorter">Sorter</div>
+	</div>
+
+	<div class="toolbar-bottom">
+		<div class="toolbar">
+			<div class="pager">Pager</div>
+			<div class="sorter">Sorter</div>
+		</div>
+	</div>
+```
+	
+*/
+.toolbar {
+	.pager {}
+	.sorter {}
+}
+.toolbar-bottom {}
