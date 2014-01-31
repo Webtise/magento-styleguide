@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'skin/frontend/default/blank/scss/magento',
                     src: ['**/*.scss'],
-                    dest: '.'
+                    dest: './'
                 }]
             }
         }
