@@ -14,3 +14,7 @@ For further reference see:
 
 - [grunt-sass](https://github.com/sindresorhus/grunt-sass) - used to compile Scss/Sass.
 - [sassdown](https://github.com/nopr/sassdown) - used to generate styleguide.
+
+## Demo
+
+A demo for the styleguide can be seen [here](http://webtise.github.io/magento-styleguide).

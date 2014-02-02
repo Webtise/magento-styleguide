@@ -22,8 +22,13 @@ Contains the category title, description and image as well as the list and/or gr
 
 */
 .category-title { border:0; margin:0 0 7px; }
-.category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
-.category-image img {}
+.category-image { 
+	width:100%; 
+	overflow:hidden; 
+	margin:0 0 10px; 
+	text-align:center;
+	img {}
+}
 .category-description { margin:0 0 10px; }
 
 /*
