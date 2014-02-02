@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         sassdown: {
             styleguide: {
                 options: {
-                    assets: 'styleguide/assets/css/styles.css',
+                    assets: ['assets/css/styles.css'],
                     baseUrl: '/'
                 },
                 files: [{
