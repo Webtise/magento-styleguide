@@ -1,162 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dashboard &middot; Styleguide</title>
-    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
-    <script>/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- * MIT license http://www.opensource.org/licenses/mit-license.php/
- * @author Lea Verou http://lea.verou.me
- */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
-Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
-Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
-Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
-Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
-;
-Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
-;
-Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
-;
-</script>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
 </head>
 <body>
+<div class="gutter">
 
-    <div class="navigation">
-        <div class="gutter">
-            <div class="group ">
-                <a href="/">Home</a>
-            </div>
+    <div id="nav">
+        <h1><a href="../">Styleguide</a></h1>
+        
             
-            <div class="group ">
-                <span>.</span>
-                <ul>
-                    
-                    <li><a class="" href="_inbox.html">_inbox</a></li>
-                    
-                    <li><a class="" href="_mixins.html">_mixins</a></li>
-                    
-                    <li><a class="" href="_variables.html">_variables</a></li>
-                    
+                <a href="../_inbox.html">Inbox</a>
+            
+        
+            
+                <a href="../_mixins.html">Mixins</a>
+            
+        
+            
+                <a href="../_variables.html">Variables</a>
+            
+        
+            
+                <h2 class="heading">catalog</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../catalog/_category.html">Category Page</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../catalog/_product.html">Product View</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>catalog</span>
-                <ul>
-                    
-                    <li><a class="" href="catalog/_category.html">Category Page</a></li>
-                    
-                    <li><a class="" href="catalog/_product.html">Product View</a></li>
-                    
+        
+            
+                <h2 class="heading">checkout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../checkout/_cart.html">Shopping Cart</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../checkout/_checkout.html">One Page Checkout</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>checkout</span>
-                <ul>
-                    
-                    <li><a class="" href="checkout/_cart.html">Shopping Cart</a></li>
-                    
-                    <li><a class="" href="checkout/_checkout.html">One Page Checkout</a></li>
-                    
+        
+            
+                <h2 class="heading">cms</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../cms/_homepage.html">Homepage</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../cms/_sitemap.html">Sitemap</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>cms</span>
-                <ul>
-                    
-                    <li><a class="" href="cms/_homepage.html">Homepage</a></li>
-                    
-                    <li><a class="" href="cms/_sitemap.html">Sitemap</a></li>
-                    
+        
+            
+                <h2 class="heading">common</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../common/_buttons.html">Button</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_forms.html">Form Elements</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_headings.html">Page Heading</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_messages.html">Messages</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_misc.html">Misc</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_tables.html">Data Table</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>common</span>
-                <ul>
-                    
-                    <li><a class="" href="common/_buttons.html">Button</a></li>
-                    
-                    <li><a class="" href="common/_forms.html">Form Elements</a></li>
-                    
-                    <li><a class="" href="common/_headings.html">Page Heading</a></li>
-                    
-                    <li><a class="" href="common/_messages.html">Messages</a></li>
-                    
-                    <li><a class="" href="common/_misc.html">Misc</a></li>
-                    
-                    <li><a class="" href="common/_tables.html">Data Table</a></li>
-                    
+        
+            
+                <h2 class="heading">customer</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../customer/_dashboard.html">Dashboard</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../customer/_login.html">Login/Create Account</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>customer</span>
-                <ul>
-                    
-                    <li><a class="" href="customer/_dashboard.html">Dashboard</a></li>
-                    
-                    <li><a class="" href="customer/_login.html">Login/Create Account</a></li>
-                    
+        
+            
+                <h2 class="heading">layout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../layout/_content.html">Content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_footer.html">Footer</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_header.html">Header</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_page.html">Pages</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>layout</span>
-                <ul>
-                    
-                    <li><a class="" href="layout/_content.html">Content</a></li>
-                    
-                    <li><a class="" href="layout/_footer.html">Footer</a></li>
-                    
-                    <li><a class="" href="layout/_header.html">Header</a></li>
-                    
-                    <li><a class="" href="layout/_page.html">Pages</a></li>
-                    
+        
+            
+                <h2 class="heading">navigation</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../navigation/_breadcrumbs.html">Breadcrumbs</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_navbar.html">Nav Bar</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_toolbar.html">Toolbar</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>navigation</span>
-                <ul>
-                    
-                    <li><a class="" href="navigation/_breadcrumbs.html">Breadcrumbs</a></li>
-                    
-                    <li><a class="" href="navigation/_navbar.html">Nav Bar</a></li>
-                    
-                    <li><a class="" href="navigation/_toolbar.html">Toolbar</a></li>
-                    
+        
+            
+                <h2 class="heading">normalize</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../normalize/_base.html">Admin controlled content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../normalize/_reset.html">Reset</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>normalize</span>
-                <ul>
-                    
-                    <li><a class="" href="normalize/_base.html">Admin controlled content</a></li>
-                    
-                    <li><a class="" href="normalize/_reset.html">Reset</a></li>
-                    
+        
+            
+                <h2 class="heading">sidebar</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../sidebar/_blocks.html">Sidebar Blocks</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../sidebar/_miniproductlist.html">Mini Products List</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>sidebar</span>
-                <ul>
-                    
-                    <li><a class="" href="sidebar/_blocks.html">Sidebar Blocks</a></li>
-                    
-                    <li><a class="" href="sidebar/_miniproductlist.html">Mini Products List</a></li>
-                    
-                </ul>
-            </div>
-            
-        </div>
+        
     </div>
 
-    <div class="gutter">
+    <div id="content">
         
             <div class="section">
                 
@@ -166,41 +247,53 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_aahq2" height="0" src="about:blank"></iframe>
-                        <script id="script_aahq2">
-                            var iframe  = document.getElementById('iframe_aahq2');
+                        <iframe id="iframe_gt11o" height="0" src="about:blank"></iframe>
+                        <script id="result_gt11o" type="text/html">
+	<div class="dashboard">
+		<div class="welcome-msg">
+		    <p class="hello"><strong>Hello, Adam Johnson!</strong></p>
+		    <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
+		</div>
+	</div>
+</script>
+                        <script id="script_gt11o">
+                            var iframe  = document.getElementById('iframe_gt11o');
+                            var script  = document.getElementById('script_gt11o');
+                            var result  = document.getElementById('result_gt11o');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_aahq2');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="dashboard">		<div class="welcome-msg">		<p class="hello"><strong>Hello, Adam Johnson!</strong></p>		<p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>		</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;dashboard&quot;&gt;
-        &lt;div class=&quot;welcome-msg&quot;&gt;
-            &lt;p class=&quot;hello&quot;&gt;&lt;strong&gt;Hello, Adam Johnson!&lt;/strong&gt;&lt;/p&gt;
-            &lt;p&gt;From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dashboard"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"welcome-msg"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hello"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Hello, Adam Johnson!<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.dashboard {
-	.welcome-msg {}
-}</code></pre></div>
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.dashboard</span> {
+	<span class="hljs-class">.welcome-msg</span> {}
+}
+</code></pre></div>
                 
-
             </div>
         
             <div class="section">
@@ -210,79 +303,131 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_afib3" height="0" src="about:blank"></iframe>
-                        <script id="script_afib3">
-                            var iframe  = document.getElementById('iframe_afib3');
+                        <iframe id="iframe_t11iy" height="0" src="about:blank"></iframe>
+                        <script id="result_t11iy" type="text/html">
+	<div class="dashboard">
+		<div class="box-account box-recent">
+		    <div class="box-head">
+		        <h2>Recent Orders</h2>
+		        <a href="#">View All</a>
+		    </div>
+		        <table id="my-orders-table" class="data-table">
+		        <colgroup>
+		            <col width="1">
+		            <col width="1">
+		            <col>
+		            <col width="1">
+		            <col width="1">
+		            <col width="1">
+		        </colgroup>
+		        <thead>
+		            <tr class="first last">
+		                <th>Order #</th>
+		                <th>Date</th>
+		                <th>Ship To</th>
+		                <th><span class="nobr">Order Total</span></th>
+		                <th>Status</th>
+		                <th>&nbsp;</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr class="first last odd">
+		                <td>100000001</td>
+		                <td><span class="nobr">01/01/1970</span></td>
+		                <td>Adam Johnson</td>
+		                <td><span class="price">£1,091.97</span></td>
+		                <td><em>Order Status</em></td>
+		                <td class="a-center last">
+		                    <span class="nobr">
+		                        <a href="">View Order</a>
+		                        <span class="separator">|</span> 
+		                        <a class="link-reorder" href="">Reorder</a>
+		                    </span>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</div>
+	</div>
+</script>
+                        <script id="script_t11iy">
+                            var iframe  = document.getElementById('iframe_t11iy');
+                            var script  = document.getElementById('script_t11iy');
+                            var result  = document.getElementById('result_t11iy');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_afib3');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="dashboard">		<div class="box-account box-recent">		<div class="box-head">		   <h2>Recent Orders</h2>		   <a href="#">View All</a>		</div>		   <table id="my-orders-table" class="data-table">		   <colgroup>		  <col width="1">		  <col width="1">		  <col>		  <col width="1">		  <col width="1">		  <col width="1">		   </colgroup>		   <thead>		  <tr class="first last">		 <th>Order #</th>		 <th>Date</th>		 <th>Ship To</th>		 <th><span class="nobr">Order Total</span></th>		 <th>Status</th>		 <th>&nbsp;</th>		  </tr>		   </thead>		   <tbody>		  <tr class="first last odd">		 <td>100000001</td>		 <td><span class="nobr">01/01/1970</span></td>		 <td>Adam Johnson</td>		 <td><span class="price">£1,091.97</span></td>		 <td><em>Order Status</em></td>		 <td class="a-center last">		<span class="nobr">		<a href="">View Order</a>		<span class="separator">|</span> 		<a class="link-reorder" href="">Reorder</a>		</span>		 </td>		  </tr>		   </tbody>		</table>		</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;dashboard&quot;&gt;
-        &lt;div class=&quot;box-account box-recent&quot;&gt;
-            &lt;div class=&quot;box-head&quot;&gt;
-                &lt;h2&gt;Recent Orders&lt;/h2&gt;
-                &lt;a href=&quot;#&quot;&gt;View All&lt;/a&gt;
-            &lt;/div&gt;
-                &lt;table id=&quot;my-orders-table&quot; class=&quot;data-table&quot;&gt;
-                &lt;colgroup&gt;
-                    &lt;col width=&quot;1&quot;&gt;
-                    &lt;col width=&quot;1&quot;&gt;
-                    &lt;col&gt;
-                    &lt;col width=&quot;1&quot;&gt;
-                    &lt;col width=&quot;1&quot;&gt;
-                    &lt;col width=&quot;1&quot;&gt;
-                &lt;/colgroup&gt;
-                &lt;thead&gt;
-                    &lt;tr class=&quot;first last&quot;&gt;
-                        &lt;th&gt;Order #&lt;/th&gt;
-                        &lt;th&gt;Date&lt;/th&gt;
-                        &lt;th&gt;Ship To&lt;/th&gt;
-                        &lt;th&gt;&lt;span class=&quot;nobr&quot;&gt;Order Total&lt;/span&gt;&lt;/th&gt;
-                        &lt;th&gt;Status&lt;/th&gt;
-                        &lt;th&gt;&amp;nbsp;&lt;/th&gt;
-                    &lt;/tr&gt;
-                &lt;/thead&gt;
-                &lt;tbody&gt;
-                    &lt;tr class=&quot;first last odd&quot;&gt;
-                        &lt;td&gt;100000001&lt;/td&gt;
-                        &lt;td&gt;&lt;span class=&quot;nobr&quot;&gt;01/01/1970&lt;/span&gt;&lt;/td&gt;
-                        &lt;td&gt;Adam Johnson&lt;/td&gt;
-                        &lt;td&gt;&lt;span class=&quot;price&quot;&gt;£1,091.97&lt;/span&gt;&lt;/td&gt;
-                        &lt;td&gt;&lt;em&gt;Order Status&lt;/em&gt;&lt;/td&gt;
-                        &lt;td class=&quot;a-center last&quot;&gt;
-                            &lt;span class=&quot;nobr&quot;&gt;
-                                &lt;a href=&quot;&quot;&gt;View Order&lt;/a&gt;
-                                &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; 
-                                &lt;a class=&quot;link-reorder&quot; href=&quot;&quot;&gt;Reorder&lt;/a&gt;
-                            &lt;/span&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
-                &lt;/tbody&gt;
-            &lt;/table&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dashboard"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-account box-recent"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-head"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Recent Orders<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>View All<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-orders-table"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"data-table"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">col</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first last"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Order #<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Date<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ship To<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nobr"</span>&gt;</span>Order Total<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Status<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>&amp;nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first last odd"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>100000001<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nobr"</span>&gt;</span>01/01/1970<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Adam Johnson<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£1,091.97<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>Order Status<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center last"</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nobr"</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>View Order<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> 
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-reorder"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Reorder<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+		                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.dashboard {
-	.box-recent { margin:10px 0; }
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
 
+<span class="hljs-class">.dashboard</span> {
+	<span class="hljs-class">.box-recent</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">10</span>px <span class="hljs-number">0</span>;</span> }
+}
+
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -292,82 +437,136 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_kuwt5" height="0" src="about:blank"></iframe>
-                        <script id="script_kuwt5">
-                            var iframe  = document.getElementById('iframe_kuwt5');
+                        <iframe id="iframe_r91kg" height="0" src="about:blank"></iframe>
+                        <script id="result_r91kg" type="text/html">
+	<div class="box-account box-info">
+	    <div class="box-head">
+	        <h2>Account Information</h2>
+	    </div>
+	    <div class="col2-set">
+	        <div class="col-1">
+	            <div class="box">
+	                <div class="box-title">
+	                    <h3>Contact Information</h3>
+	                    <a href="">Edit</a>
+	                </div>
+	                <div class="box-content">
+	                    <p>Customer Name<br>customer@email.com<br><a href="">Change Password</a></p>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-2">
+	            <div class="box">
+	                <div class="box-title">
+	                    <h3>Newsletters</h3>
+	                    <a href="">Edit</a>
+	                </div>
+	                <div class="box-content">
+	                    <p>You are currently not subscribed to any newsletter.</p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col2-set">
+	        <div class="box">
+	            <div class="box-title">
+	                <h3>Address Book</h3>
+	                <a href="#">Manage Addresses</a>
+	            </div>
+	            <div class="box-content">
+	                <div class="col-1">
+	                    <h4>Default Billing Address</h4>
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>
+	                </div>
+	                <div class="col-2">
+	                    <h4>Default Shipping Address</h4>
+	                    <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</script>
+                        <script id="script_r91kg">
+                            var iframe  = document.getElementById('iframe_r91kg');
+                            var script  = document.getElementById('script_r91kg');
+                            var result  = document.getElementById('result_r91kg');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_kuwt5');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="box-account box-info">	<div class="box-head">	   <h2>Account Information</h2>	</div>	<div class="col2-set">	   <div class="col-1">	  <div class="box">	 <div class="box-title">	<h3>Contact Information</h3>	<a href="">Edit</a>	 </div>	 <div class="box-content">	<p>Customer Name<br>customer@email.com<br><a href="">Change Password</a></p>	 </div>	  </div>	   </div>	   <div class="col-2">	  <div class="box">	 <div class="box-title">	<h3>Newsletters</h3>	<a href="">Edit</a>	 </div>	 <div class="box-content">	<p>You are currently not subscribed to any newsletter.</p>	 </div>	  </div>	   </div>	</div>	<div class="col2-set">	   <div class="box">	  <div class="box-title">	 <h3>Address Book</h3>	 <a href="#">Manage Addresses</a>	  </div>	  <div class="box-content">	 <div class="col-1">	<h4>Default Billing Address</h4>	<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>	 </div>	 <div class="col-2">	<h4>Default Shipping Address</h4>	<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone<br><a href="">Edit Address</a></address>	 </div>	  </div>	   </div>	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;box-account box-info&quot;&gt;
-        &lt;div class=&quot;box-head&quot;&gt;
-            &lt;h2&gt;Account Information&lt;/h2&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col2-set&quot;&gt;
-            &lt;div class=&quot;col-1&quot;&gt;
-                &lt;div class=&quot;box&quot;&gt;
-                    &lt;div class=&quot;box-title&quot;&gt;
-                        &lt;h3&gt;Contact Information&lt;/h3&gt;
-                        &lt;a href=&quot;&quot;&gt;Edit&lt;/a&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;box-content&quot;&gt;
-                        &lt;p&gt;Customer Name&lt;br&gt;customer@email.com&lt;br&gt;&lt;a href=&quot;&quot;&gt;Change Password&lt;/a&gt;&lt;/p&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;col-2&quot;&gt;
-                &lt;div class=&quot;box&quot;&gt;
-                    &lt;div class=&quot;box-title&quot;&gt;
-                        &lt;h3&gt;Newsletters&lt;/h3&gt;
-                        &lt;a href=&quot;&quot;&gt;Edit&lt;/a&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;box-content&quot;&gt;
-                        &lt;p&gt;You are currently not subscribed to any newsletter.&lt;/p&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col2-set&quot;&gt;
-            &lt;div class=&quot;box&quot;&gt;
-                &lt;div class=&quot;box-title&quot;&gt;
-                    &lt;h3&gt;Address Book&lt;/h3&gt;
-                    &lt;a href=&quot;#&quot;&gt;Manage Addresses&lt;/a&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;box-content&quot;&gt;
-                    &lt;div class=&quot;col-1&quot;&gt;
-                        &lt;h4&gt;Default Billing Address&lt;/h4&gt;
-                        &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;br&gt;&lt;a href=&quot;&quot;&gt;Edit Address&lt;/a&gt;&lt;/address&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;col-2&quot;&gt;
-                        &lt;h4&gt;Default Shipping Address&lt;/h4&gt;
-                        &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;br&gt;&lt;a href=&quot;&quot;&gt;Edit Address&lt;/a&gt;&lt;/address&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-account box-info"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-head"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Account Information<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Contact Information<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Edit<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>customer@email.com<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Change Password<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Newsletters<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Edit<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>You are currently not subscribed to any newsletter.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Address Book<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Manage Addresses<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Default Billing Address<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">address</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 1<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 2<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>City,  State, Zip<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Country<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>T: Telephone<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Edit Address<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">address</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Default Shipping Address<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">address</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 1<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 2<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>City,  State, Zip<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Country<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>T: Telephone<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Edit Address<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">address</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.dashboard {
-	.box-info {}
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.dashboard</span> {
+	<span class="hljs-class">.box-info</span> {}
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -377,67 +576,94 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_ba4lh" height="0" src="about:blank"></iframe>
-                        <script id="script_ba4lh">
-                            var iframe  = document.getElementById('iframe_ba4lh');
+                        <iframe id="iframe_t6wty" height="0" src="about:blank"></iframe>
+                        <script id="result_t6wty" type="text/html">
+	<div class="box-account box-reviews">
+	    <div class="box-head">
+	        <h2>My Recent Reviews</h2>
+	        <a href="">View All Reviews</a>
+	    </div>
+	    <ol id="my_recent_reviews">
+	        <li class="item last odd">
+	            <span class="number">1</span>
+	            <div class="details">
+	                <h3 class="product-name"><a href="">Product Name</a></h3>
+	                <div class="ratings">
+	                    <strong>Rating:</strong>
+	                    <div class="rating-box">
+	                        <div style="width:60%;" class="rating"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	    </ol>
+	</div>
+</script>
+                        <script id="script_t6wty">
+                            var iframe  = document.getElementById('iframe_t6wty');
+                            var script  = document.getElementById('script_t6wty');
+                            var result  = document.getElementById('result_t6wty');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_ba4lh');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="box-account box-reviews">	<div class="box-head">	   <h2>My Recent Reviews</h2>	   <a href="">View All Reviews</a>	</div>	<ol id="my_recent_reviews">	   <li class="item last odd">	  <span class="number">1</span>	  <div class="details">	 <h3 class="product-name"><a href="">Product Name</a></h3>	 <div class="ratings">	<strong>Rating:</strong>	<div class="rating-box">	<div style="width:60%;" class="rating"></div>	</div>	 </div>	  </div>	   </li>	</ol>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;box-account box-reviews&quot;&gt;
-        &lt;div class=&quot;box-head&quot;&gt;
-            &lt;h2&gt;My Recent Reviews&lt;/h2&gt;
-            &lt;a href=&quot;&quot;&gt;View All Reviews&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;ol id=&quot;my_recent_reviews&quot;&gt;
-            &lt;li class=&quot;item last odd&quot;&gt;
-                &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
-                &lt;div class=&quot;details&quot;&gt;
-                    &lt;h3 class=&quot;product-name&quot;&gt;&lt;a href=&quot;&quot;&gt;Product Name&lt;/a&gt;&lt;/h3&gt;
-                    &lt;div class=&quot;ratings&quot;&gt;
-                        &lt;strong&gt;Rating:&lt;/strong&gt;
-                        &lt;div class=&quot;rating-box&quot;&gt;
-                            &lt;div style=&quot;width:60%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-account box-reviews"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-head"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>My Recent Reviews<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>View All Reviews<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my_recent_reviews"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item last odd"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"number"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"details"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Rating:<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:60%;"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.dashboard {
-	.box-reviews {
-		.number { 
-			float:left; 
-			font-size:10px; 
-			font-weight:bold; 
-			line-height:1; 
-			color:#fff; 
-			margin:3px -20px 0 0; 
-			padding:2px 3px; 
-			background:#ddd;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.dashboard</span> {
+	<span class="hljs-class">.box-reviews</span> {
+		<span class="hljs-class">.number</span> { 
+			<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+			<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span> 
+			<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> 
+			<span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">1</span>;</span> 
+			<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#fff</span>;</span> 
+			<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">3</span>px -<span class="hljs-number">20</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span> 
+			<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">2</span>px <span class="hljs-number">3</span>px;</span> 
+			<span class="hljs-attribute">background</span><span class="hljs-value">:<span class="hljs-hexcolor">#ddd</span>;</span>
 		}
-		.details { margin-left:20px; }
+		<span class="hljs-class">.details</span> { <span class="hljs-attribute">margin-left</span><span class="hljs-value">:<span class="hljs-number">20</span>px;</span> }
 	}
-}</code></pre></div>
-                
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -447,67 +673,95 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_f49yf" height="0" src="about:blank"></iframe>
-                        <script id="script_f49yf">
-                            var iframe  = document.getElementById('iframe_f49yf');
+                        <iframe id="iframe_39rss" height="0" src="about:blank"></iframe>
+                        <script id="result_39rss" type="text/html">
+    <div class="box-account box-tags">
+        <div class="box-head">
+            <h2>My Recent Tags</h2>
+            <a href="">View All Tags</a>
+        </div>
+        <ol id="my_recent_tags">
+            <li class="item last odd">
+                <span class="number">1</span>
+                <div class="details">
+                    <h3 class="product-name"><a href="">Product Name</a></h3>
+                    <div class="tags">
+                        <strong>Tags:</strong>
+                            <ul>
+                                <li><a href="">Tag</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+</script>
+                        <script id="script_39rss">
+                            var iframe  = document.getElementById('iframe_39rss');
+                            var script  = document.getElementById('script_39rss');
+                            var result  = document.getElementById('result_39rss');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_f49yf');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        <div class="box-account box-tags">   <div class="box-head">  <h2>My Recent Tags</h2>  <a href="">View All Tags</a>   </div>   <ol id="my_recent_tags">  <li class="item last odd"> <span class="number">1</span> <div class="details"><h3 class="product-name"><a href="">Product Name</a></h3><div class="tags"><strong>Tags:</strong>   <ul>  <li><a href="">Tag</a></li>   </ul></div> </div>  </li>   </ol></div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;box-account box-tags&quot;&gt;
-        &lt;div class=&quot;box-head&quot;&gt;
-            &lt;h2&gt;My Recent Tags&lt;/h2&gt;
-            &lt;a href=&quot;&quot;&gt;View All Tags&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;ol id=&quot;my_recent_tags&quot;&gt;
-            &lt;li class=&quot;item last odd&quot;&gt;
-                &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;
-                &lt;div class=&quot;details&quot;&gt;
-                    &lt;h3 class=&quot;product-name&quot;&gt;&lt;a href=&quot;&quot;&gt;Product Name&lt;/a&gt;&lt;/h3&gt;
-                    &lt;div class=&quot;tags&quot;&gt;
-                        &lt;strong&gt;Tags:&lt;/strong&gt;
-                            &lt;ul&gt;
-                                &lt;li&gt;&lt;a href=&quot;&quot;&gt;Tag&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-account box-tags"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-head"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>My Recent Tags<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>View All Tags<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my_recent_tags"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item last odd"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"number"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"details"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tags"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Tags:<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Tag<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.dashboard {
-	.box-tags {
-		.number { 
-			float:left; 
-			font-size:10px; 
-			font-weight:bold; 
-			line-height:1; 
-			color:#fff;
-			margin:3px -20px 0 0; 
-			padding:2px 3px; 
-			background:#ddd;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.dashboard</span> {
+	<span class="hljs-class">.box-tags</span> {
+		<span class="hljs-class">.number</span> { 
+			<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+			<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span> 
+			<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> 
+			<span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">1</span>;</span> 
+			<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#fff</span>;</span>
+			<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">3</span>px -<span class="hljs-number">20</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span> 
+			<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">2</span>px <span class="hljs-number">3</span>px;</span> 
+			<span class="hljs-attribute">background</span><span class="hljs-value">:<span class="hljs-hexcolor">#ddd</span>;</span>
 		}
-		.details { margin-left:20px; }
+		<span class="hljs-class">.details</span> { <span class="hljs-attribute">margin-left</span><span class="hljs-value">:<span class="hljs-number">20</span>px;</span> }
 	}
-}</code></pre></div>
-                
+}
 
+
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -517,61 +771,93 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_cju3c" height="0" src="about:blank"></iframe>
-                        <script id="script_cju3c">
-                            var iframe  = document.getElementById('iframe_cju3c');
+                        <iframe id="iframe_hdlne" height="0" src="about:blank"></iframe>
+                        <script id="result_hdlne" type="text/html">
+	<div class="col2-set addresses-list">
+	    <div class="col-1 addresses-primary">
+	        <h2>Default Addresses</h2>
+	        <ol>
+	            <li class="item">
+	                <h3>Default Billing Address</h3>
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                <p><a href="">Change Billing Address</a></p>
+	           </li>
+	            <li class="item">
+	                <h3>Default Shipping Address</h3>
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	                <p><a href="">Change Shipping Address</a></p>
+	            </li>
+	        </ol>
+	    </div>
+	    <div class="col-2 addresses-additional">
+	        <h2>Additional Address Entries</h2>
+	        <ol>
+	            <li class="item empty">
+	                <p>You have no additional address entries in your address book.</p>
+	            </li>
+	        </ol>
+	    </div>
+	</div>
+</script>
+                        <script id="script_hdlne">
+                            var iframe  = document.getElementById('iframe_hdlne');
+                            var script  = document.getElementById('script_hdlne');
+                            var result  = document.getElementById('result_hdlne');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_cju3c');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="col2-set addresses-list">	<div class="col-1 addresses-primary">	   <h2>Default Addresses</h2>	   <ol>	  <li class="item">	 <h3>Default Billing Address</h3>	 <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>	 <p><a href="">Change Billing Address</a></p>	 </li>	  <li class="item">	 <h3>Default Shipping Address</h3>	 <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>	 <p><a href="">Change Shipping Address</a></p>	  </li>	   </ol>	</div>	<div class="col-2 addresses-additional">	   <h2>Additional Address Entries</h2>	   <ol>	  <li class="item empty">	 <p>You have no additional address entries in your address book.</p>	  </li>	   </ol>	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;col2-set addresses-list&quot;&gt;
-        &lt;div class=&quot;col-1 addresses-primary&quot;&gt;
-            &lt;h2&gt;Default Addresses&lt;/h2&gt;
-            &lt;ol&gt;
-                &lt;li class=&quot;item&quot;&gt;
-                    &lt;h3&gt;Default Billing Address&lt;/h3&gt;
-                    &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;/address&gt;
-                    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Change Billing Address&lt;/a&gt;&lt;/p&gt;
-               &lt;/li&gt;
-                &lt;li class=&quot;item&quot;&gt;
-                    &lt;h3&gt;Default Shipping Address&lt;/h3&gt;
-                    &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;/address&gt;
-                    &lt;p&gt;&lt;a href=&quot;&quot;&gt;Change Shipping Address&lt;/a&gt;&lt;/p&gt;
-                &lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-2 addresses-additional&quot;&gt;
-            &lt;h2&gt;Additional Address Entries&lt;/h2&gt;
-            &lt;ol&gt;
-                &lt;li class=&quot;item empty&quot;&gt;
-                    &lt;p&gt;You have no additional address entries in your address book.&lt;/p&gt;
-                &lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set addresses-list"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1 addresses-primary"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Default Addresses<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Default Billing Address<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">address</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 1<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 2<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>City,  State, Zip<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Country<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>T: Telephone<span class="hljs-tag">&lt;/<span class="hljs-title">address</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Change Billing Address<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	           <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Default Shipping Address<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">address</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 1<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 2<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>City,  State, Zip<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Country<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>T: Telephone<span class="hljs-tag">&lt;/<span class="hljs-title">address</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Change Shipping Address<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2 addresses-additional"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Additional Address Entries<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item empty"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>You have no additional address entries in your address book.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.addresses-list {}
-.addresses-list-additional {
-	li.item {}
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.addresses-list</span> {}
+<span class="hljs-class">.addresses-list-additional</span> {
+	<span class="hljs-tag">li</span><span class="hljs-class">.item</span> {}
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -581,215 +867,393 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_y2qp3" height="0" src="about:blank"></iframe>
-                        <script id="script_y2qp3">
-                            var iframe  = document.getElementById('iframe_y2qp3');
+                        <iframe id="iframe_fr7c0" height="0" src="about:blank"></iframe>
+                        <script id="result_fr7c0" type="text/html">
+	<dl class="order-info">
+	    <dt>About This Order:</dt>
+	    <dd>    
+	    	<ul id="order-info-tabs">
+		        <li class="current first">Order Information</li>
+		        <li><a href="">Invoices</a></li>
+		        <li><a href="">Shipments</a></li>
+		        <li class="last"><a href="">Refunds</a></li>
+			</ul>
+	    </dd>
+	</dl>
+	<p class="order-date">Order Date: 27 January 2014</p>
+	<div class="col2-set order-info-box">
+	    <div class="col-1">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Shipping Address</h2>
+	            </div>
+	            <div class="box-content">
+					<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-2">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Shipping Method</h2>
+	            </div>
+	            <div class="box-content">
+					Flat Rate - Fixed
+				</div>
+	        </div>
+	    </div>
+	</div>
+	<div class="col2-set order-info-box">
+	    <div class="col-1">
+	        <div class="box">
+	            <div class="box-title">
+	                <h2>Billing Address</h2>
+	            </div>
+	            <div class="box-content">
+	                <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-2">
+	        <div class="box box-payment">
+	            <div class="box-title">
+	                <h2>Payment Method</h2>
+	            </div>
+	            <div class="box-content">
+	                <p>Check / Money order</p>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="order-items order-details">
+	    <h2 class="table-caption">
+	    	Items Ordered                    
+	    	<span class="separator">|</span> 
+	    	<a title="Track your order" href="#">Track your order</a>
+        </h2>
+        <!-- OR -->
+        <p class="order-links">
+			<a class="link-print" href="">Print All Invoices</a>
+		</p>
+		<h2 class="sub-title">
+			Invoice #100000002 
+			<span class="separator">|</span> 
+			<a class="link-print" href="">Print Invoice</a>
+		</h2>
+		<h3 class="table-caption">Items Invoiced</h3>
+	    <table summary="Items Ordered" id="my-orders-table" class="data-table">
+	        <colgroup>
+	            <col>
+	            <col width="1">
+	            <col width="1">
+	            <col width="1">
+	            <col width="1">
+	        </colgroup>
+	        <thead>
+	            <tr class="first last">
+	                <th>Product Name</th>
+	                <th>SKU</th>
+	                <th class="a-right">Price</th>
+	                <th class="a-center">Qty</th>
+	                <th class="a-right">Subtotal</th>
+	            </tr>
+	        </thead>
+	        <tfoot>
+	            <tr class="subtotal first">
+	                <td class="a-right" colspan="4">Subtotal</td>
+	                <td class="last a-right"><span class="price">£1,066.97</span></td>
+	            </tr>
+	            <tr class="shipping">
+	                <td class="a-right" colspan="4">Shipping &amp; Handling</td>
+	                <td class="last a-right"><span class="price">£25.00</span></td>
+	            </tr>
+	            <tr class="grand_total last">
+	                <td class="a-right" colspan="4"><strong>Grand Total</strong></td>
+	                <td class="last a-right"><strong><span class="price">£1,091.97</span></strong></td>
+	            </tr>
+	        </tfoot>
+	        <tbody class="odd">
+	            <tr id="order-item-row-1" class="border first">
+	                <td>
+	                	<h3 class="product-name">Product Name</h3>
+	                	<a class="gift-message-link expanded" id="order-item-gift-message-link-7" href="#">Gift Message</a>
+	                </td>
+	                <td>prod_sku</td>
+	                <td class="a-right">
+	                    <span class="price-excl-tax">
+	                        <span class="cart-price">
+	                            <span class="price">£15.00</span>                    
+	                        </span>
+	                    </span>
+	                    <br>
+	                </td>
+	                <td class="a-right">
+	                    <span class="nobr">
+	                        Ordered: <strong>1</strong><br>
+	                        Shipped: <strong>1</strong><br>
+	                        Refunded: <strong>1</strong><br>
+	                    </span>
+	                </td>
+	                <td class="a-right last">
+	                    <span class="price-excl-tax">
+	                        <span class="cart-price">
+	                            <span class="price">£15.00</span>                    
+	                        </span>
+	                    </span>
+	                    <br>
+	                </td>
+	            </tr>
+				<tr class="border last">
+					<td colspan="7" class="gift-message-row last">
+	                    <a class="btn-close" title="Close" href="#">Close</a>
+	                    <dl class="gift-message">
+	                        <dt><strong>From:</strong> From name</dt>
+	                        <dt><strong>To:</strong> To Name</dt>
+	                        <dd>Gift message text</dd>
+	                    </dl>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</div>
+	<div class="order-additional order-gift-message">
+        <h2 class="sub-title">Gift Message for This Order</h2>
+        <dl class="gift-message">
+            <dt><strong>From:</strong> From Name</dt>
+            <dt><strong>To:</strong> To Name</dt>
+            <dd>Gift message text</dd>
+        </dl>
+    </div>
+	<div class="order-additional order-comments">
+        <h2 class="sub-title">About Your Order</h2>
+        <dl class="order-about">
+            <dt>27 Jan 2014 10:34:25</dt>
+            <dd>Comment</dd>
+        </dl>
+    </div>
+</script>
+                        <script id="script_fr7c0">
+                            var iframe  = document.getElementById('iframe_fr7c0');
+                            var script  = document.getElementById('script_fr7c0');
+                            var result  = document.getElementById('result_fr7c0');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_y2qp3');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<dl class="order-info">	<dt>About This Order:</dt>	<dd>		<ul id="order-info-tabs">		   <li class="current first">Order Information</li>		   <li><a href="">Invoices</a></li>		   <li><a href="">Shipments</a></li>		   <li class="last"><a href="">Refunds</a></li>			</ul>	</dd>	</dl>	<p class="order-date">Order Date: 27 January 2014</p>	<div class="col2-set order-info-box">	<div class="col-1">	   <div class="box">	  <div class="box-title">	 <h2>Shipping Address</h2>	  </div>	  <div class="box-content">					<address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>	  </div>	   </div>	</div>	<div class="col-2">	   <div class="box">	  <div class="box-title">	 <h2>Shipping Method</h2>	  </div>	  <div class="box-content">					Flat Rate - Fixed				</div>	   </div>	</div>	</div>	<div class="col2-set order-info-box">	<div class="col-1">	   <div class="box">	  <div class="box-title">	 <h2>Billing Address</h2>	  </div>	  <div class="box-content">	 <address>Customer Name<br>Address Line 1<br>Address Line 2<br>City,  State, Zip<br>Country<br>T: Telephone</address>	  </div>	   </div>	</div>	<div class="col-2">	   <div class="box box-payment">	  <div class="box-title">	 <h2>Payment Method</h2>	  </div>	  <div class="box-content">	 <p>Check / Money order</p>	  </div>	   </div>	</div>	</div>	<div class="order-items order-details">	<h2 class="table-caption">		Items Ordered		<span class="separator">|</span> 		<a title="Track your order" href="#">Track your order</a>   </h2>   <!-- OR -->   <p class="order-links">			<a class="link-print" href="">Print All Invoices</a>		</p>		<h2 class="sub-title">			Invoice #100000002 			<span class="separator">|</span> 			<a class="link-print" href="">Print Invoice</a>		</h2>		<h3 class="table-caption">Items Invoiced</h3>	<table summary="Items Ordered" id="my-orders-table" class="data-table">	   <colgroup>	  <col>	  <col width="1">	  <col width="1">	  <col width="1">	  <col width="1">	   </colgroup>	   <thead>	  <tr class="first last">	 <th>Product Name</th>	 <th>SKU</th>	 <th class="a-right">Price</th>	 <th class="a-center">Qty</th>	 <th class="a-right">Subtotal</th>	  </tr>	   </thead>	   <tfoot>	  <tr class="subtotal first">	 <td class="a-right" colspan="4">Subtotal</td>	 <td class="last a-right"><span class="price">£1,066.97</span></td>	  </tr>	  <tr class="shipping">	 <td class="a-right" colspan="4">Shipping &amp; Handling</td>	 <td class="last a-right"><span class="price">£25.00</span></td>	  </tr>	  <tr class="grand_total last">	 <td class="a-right" colspan="4"><strong>Grand Total</strong></td>	 <td class="last a-right"><strong><span class="price">£1,091.97</span></strong></td>	  </tr>	   </tfoot>	   <tbody class="odd">	  <tr id="order-item-row-1" class="border first">	 <td>	 	<h3 class="product-name">Product Name</h3>	 	<a class="gift-message-link expanded" id="order-item-gift-message-link-7" href="#">Gift Message</a>	 </td>	 <td>prod_sku</td>	 <td class="a-right">	<span class="price-excl-tax">	<span class="cart-price">	   <span class="price">£15.00</span>	</span>	</span>	<br>	 </td>	 <td class="a-right">	<span class="nobr">	Ordered: <strong>1</strong><br>	Shipped: <strong>1</strong><br>	Refunded: <strong>1</strong><br>	</span>	 </td>	 <td class="a-right last">	<span class="price-excl-tax">	<span class="cart-price">	   <span class="price">£15.00</span>	</span>	</span>	<br>	 </td>	  </tr>				<tr class="border last">					<td colspan="7" class="gift-message-row last">	<a class="btn-close" title="Close" href="#">Close</a>	<dl class="gift-message">	<dt><strong>From:</strong> From name</dt>	<dt><strong>To:</strong> To Name</dt>	<dd>Gift message text</dd>	</dl>	 </td>	  </tr>	   </tbody>	</table>	</div>	<div class="order-additional order-gift-message">   <h2 class="sub-title">Gift Message for This Order</h2>   <dl class="gift-message">  <dt><strong>From:</strong> From Name</dt>  <dt><strong>To:</strong> To Name</dt>  <dd>Gift message text</dd>   </dl></div>	<div class="order-additional order-comments">   <h2 class="sub-title">About Your Order</h2>   <dl class="order-about">  <dt>27 Jan 2014 10:34:25</dt>  <dd>Comment</dd>   </dl></div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;dl class=&quot;order-info&quot;&gt;
-        &lt;dt&gt;About This Order:&lt;/dt&gt;
-        &lt;dd&gt;    
-            &lt;ul id=&quot;order-info-tabs&quot;&gt;
-                &lt;li class=&quot;current first&quot;&gt;Order Information&lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;&quot;&gt;Invoices&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;&quot;&gt;Shipments&lt;/a&gt;&lt;/li&gt;
-                &lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;&quot;&gt;Refunds&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/dd&gt;
-    &lt;/dl&gt;
-    &lt;p class=&quot;order-date&quot;&gt;Order Date: 27 January 2014&lt;/p&gt;
-    &lt;div class=&quot;col2-set order-info-box&quot;&gt;
-        &lt;div class=&quot;col-1&quot;&gt;
-            &lt;div class=&quot;box&quot;&gt;
-                &lt;div class=&quot;box-title&quot;&gt;
-                    &lt;h2&gt;Shipping Address&lt;/h2&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;box-content&quot;&gt;
-                    &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;/address&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-2&quot;&gt;
-            &lt;div class=&quot;box&quot;&gt;
-                &lt;div class=&quot;box-title&quot;&gt;
-                    &lt;h2&gt;Shipping Method&lt;/h2&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;box-content&quot;&gt;
-                    Flat Rate - Fixed
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col2-set order-info-box&quot;&gt;
-        &lt;div class=&quot;col-1&quot;&gt;
-            &lt;div class=&quot;box&quot;&gt;
-                &lt;div class=&quot;box-title&quot;&gt;
-                    &lt;h2&gt;Billing Address&lt;/h2&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;box-content&quot;&gt;
-                    &lt;address&gt;Customer Name&lt;br&gt;Address Line 1&lt;br&gt;Address Line 2&lt;br&gt;City,  State, Zip&lt;br&gt;Country&lt;br&gt;T: Telephone&lt;/address&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-2&quot;&gt;
-            &lt;div class=&quot;box box-payment&quot;&gt;
-                &lt;div class=&quot;box-title&quot;&gt;
-                    &lt;h2&gt;Payment Method&lt;/h2&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;box-content&quot;&gt;
-                    &lt;p&gt;Check / Money order&lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;order-items order-details&quot;&gt;
-        &lt;h2 class=&quot;table-caption&quot;&gt;
-            Items Ordered                    
-            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; 
-            &lt;a title=&quot;Track your order&quot; href=&quot;#&quot;&gt;Track your order&lt;/a&gt;
-        &lt;/h2&gt;
-        &lt;!-- OR --&gt;
-        &lt;p class=&quot;order-links&quot;&gt;
-            &lt;a class=&quot;link-print&quot; href=&quot;&quot;&gt;Print All Invoices&lt;/a&gt;
-        &lt;/p&gt;
-        &lt;h2 class=&quot;sub-title&quot;&gt;
-            Invoice #100000002 
-            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; 
-            &lt;a class=&quot;link-print&quot; href=&quot;&quot;&gt;Print Invoice&lt;/a&gt;
-        &lt;/h2&gt;
-        &lt;h3 class=&quot;table-caption&quot;&gt;Items Invoiced&lt;/h3&gt;
-        &lt;table summary=&quot;Items Ordered&quot; id=&quot;my-orders-table&quot; class=&quot;data-table&quot;&gt;
-            &lt;colgroup&gt;
-                &lt;col&gt;
-                &lt;col width=&quot;1&quot;&gt;
-                &lt;col width=&quot;1&quot;&gt;
-                &lt;col width=&quot;1&quot;&gt;
-                &lt;col width=&quot;1&quot;&gt;
-            &lt;/colgroup&gt;
-            &lt;thead&gt;
-                &lt;tr class=&quot;first last&quot;&gt;
-                    &lt;th&gt;Product Name&lt;/th&gt;
-                    &lt;th&gt;SKU&lt;/th&gt;
-                    &lt;th class=&quot;a-right&quot;&gt;Price&lt;/th&gt;
-                    &lt;th class=&quot;a-center&quot;&gt;Qty&lt;/th&gt;
-                    &lt;th class=&quot;a-right&quot;&gt;Subtotal&lt;/th&gt;
-                &lt;/tr&gt;
-            &lt;/thead&gt;
-            &lt;tfoot&gt;
-                &lt;tr class=&quot;subtotal first&quot;&gt;
-                    &lt;td class=&quot;a-right&quot; colspan=&quot;4&quot;&gt;Subtotal&lt;/td&gt;
-                    &lt;td class=&quot;last a-right&quot;&gt;&lt;span class=&quot;price&quot;&gt;£1,066.97&lt;/span&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr class=&quot;shipping&quot;&gt;
-                    &lt;td class=&quot;a-right&quot; colspan=&quot;4&quot;&gt;Shipping &amp;amp; Handling&lt;/td&gt;
-                    &lt;td class=&quot;last a-right&quot;&gt;&lt;span class=&quot;price&quot;&gt;£25.00&lt;/span&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr class=&quot;grand_total last&quot;&gt;
-                    &lt;td class=&quot;a-right&quot; colspan=&quot;4&quot;&gt;&lt;strong&gt;Grand Total&lt;/strong&gt;&lt;/td&gt;
-                    &lt;td class=&quot;last a-right&quot;&gt;&lt;strong&gt;&lt;span class=&quot;price&quot;&gt;£1,091.97&lt;/span&gt;&lt;/strong&gt;&lt;/td&gt;
-                &lt;/tr&gt;
-            &lt;/tfoot&gt;
-            &lt;tbody class=&quot;odd&quot;&gt;
-                &lt;tr id=&quot;order-item-row-1&quot; class=&quot;border first&quot;&gt;
-                    &lt;td&gt;
-                        &lt;h3 class=&quot;product-name&quot;&gt;Product Name&lt;/h3&gt;
-                        &lt;a class=&quot;gift-message-link expanded&quot; id=&quot;order-item-gift-message-link-7&quot; href=&quot;#&quot;&gt;Gift Message&lt;/a&gt;
-                    &lt;/td&gt;
-                    &lt;td&gt;prod_sku&lt;/td&gt;
-                    &lt;td class=&quot;a-right&quot;&gt;
-                        &lt;span class=&quot;price-excl-tax&quot;&gt;
-                            &lt;span class=&quot;cart-price&quot;&gt;
-                                &lt;span class=&quot;price&quot;&gt;£15.00&lt;/span&gt;                    
-                            &lt;/span&gt;
-                        &lt;/span&gt;
-                        &lt;br&gt;
-                    &lt;/td&gt;
-                    &lt;td class=&quot;a-right&quot;&gt;
-                        &lt;span class=&quot;nobr&quot;&gt;
-                            Ordered: &lt;strong&gt;1&lt;/strong&gt;&lt;br&gt;
-                            Shipped: &lt;strong&gt;1&lt;/strong&gt;&lt;br&gt;
-                            Refunded: &lt;strong&gt;1&lt;/strong&gt;&lt;br&gt;
-                        &lt;/span&gt;
-                    &lt;/td&gt;
-                    &lt;td class=&quot;a-right last&quot;&gt;
-                        &lt;span class=&quot;price-excl-tax&quot;&gt;
-                            &lt;span class=&quot;cart-price&quot;&gt;
-                                &lt;span class=&quot;price&quot;&gt;£15.00&lt;/span&gt;                    
-                            &lt;/span&gt;
-                        &lt;/span&gt;
-                        &lt;br&gt;
-                    &lt;/td&gt;
-                &lt;/tr&gt;
-                &lt;tr class=&quot;border last&quot;&gt;
-                    &lt;td colspan=&quot;7&quot; class=&quot;gift-message-row last&quot;&gt;
-                        &lt;a class=&quot;btn-close&quot; title=&quot;Close&quot; href=&quot;#&quot;&gt;Close&lt;/a&gt;
-                        &lt;dl class=&quot;gift-message&quot;&gt;
-                            &lt;dt&gt;&lt;strong&gt;From:&lt;/strong&gt; From name&lt;/dt&gt;
-                            &lt;dt&gt;&lt;strong&gt;To:&lt;/strong&gt; To Name&lt;/dt&gt;
-                            &lt;dd&gt;Gift message text&lt;/dd&gt;
-                        &lt;/dl&gt;
-                    &lt;/td&gt;
-                &lt;/tr&gt;
-            &lt;/tbody&gt;
-        &lt;/table&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;order-additional order-gift-message&quot;&gt;
-        &lt;h2 class=&quot;sub-title&quot;&gt;Gift Message for This Order&lt;/h2&gt;
-        &lt;dl class=&quot;gift-message&quot;&gt;
-            &lt;dt&gt;&lt;strong&gt;From:&lt;/strong&gt; From Name&lt;/dt&gt;
-            &lt;dt&gt;&lt;strong&gt;To:&lt;/strong&gt; To Name&lt;/dt&gt;
-            &lt;dd&gt;Gift message text&lt;/dd&gt;
-        &lt;/dl&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;order-additional order-comments&quot;&gt;
-        &lt;h2 class=&quot;sub-title&quot;&gt;About Your Order&lt;/h2&gt;
-        &lt;dl class=&quot;order-about&quot;&gt;
-            &lt;dt&gt;27 Jan 2014 10:34:25&lt;/dt&gt;
-            &lt;dd&gt;Comment&lt;/dd&gt;
-        &lt;/dl&gt;
-    &lt;/div&gt;</code></pre>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-info"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>About This Order:<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>    
+	    	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"order-info-tabs"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"current first"</span>&gt;</span>Order Information<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Invoices<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Shipments<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Refunds<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-date"</span>&gt;</span>Order Date: 27 January 2014<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set order-info-box"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Shipping Address<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">address</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 1<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 2<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>City,  State, Zip<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Country<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>T: Telephone<span class="hljs-tag">&lt;/<span class="hljs-title">address</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Shipping Method<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+					Flat Rate - Fixed
+				<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set order-info-box"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Billing Address<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">address</span>&gt;</span>Customer Name<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 1<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Address Line 2<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>City,  State, Zip<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>Country<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>T: Telephone<span class="hljs-tag">&lt;/<span class="hljs-title">address</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-payment"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-title"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Payment Method<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box-content"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Check / Money order<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-items order-details"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table-caption"</span>&gt;</span>
+	    	Items Ordered                    
+	    	<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> 
+	    	<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Track your order"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Track your order<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- OR --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-links"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-print"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Print All Invoices<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sub-title"</span>&gt;</span>
+			Invoice #100000002 
+			<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> 
+			<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-print"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Print Invoice<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table-caption"</span>&gt;</span>Items Invoiced<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">summary</span>=<span class="hljs-value">"Items Ordered"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-orders-table"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"data-table"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">col</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first last"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>SKU<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>Price<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span>&gt;</span>Qty<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>Subtotal<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"subtotal first"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"4"</span>&gt;</span>Subtotal<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last a-right"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£1,066.97<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"shipping"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"4"</span>&gt;</span>Shipping &amp;amp; Handling<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last a-right"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£25.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"grand_total last"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Grand Total<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last a-right"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£1,091.97<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"odd"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"order-item-row-1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"border first"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                	<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	                	<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gift-message-link expanded"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"order-item-gift-message-link-7"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Gift Message<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>prod_sku<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-excl-tax"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-price"</span>&gt;</span>
+	                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>                    
+	                        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nobr"</span>&gt;</span>
+	                        Ordered: <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+	                        Shipped: <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+	                        Refunded: <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right last"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-excl-tax"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-price"</span>&gt;</span>
+	                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>                    
+	                        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"border last"</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"7"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gift-message-row last"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn-close"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Close"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gift-message"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> From name<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>To:<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> To Name<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Gift message text<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-additional order-gift-message"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sub-title"</span>&gt;</span>Gift Message for This Order<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gift-message"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> From Name<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>To:<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> To Name<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Gift message text<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-additional order-comments"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sub-title"</span>&gt;</span>About Your Order<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"order-about"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>27 Jan 2014 10:34:25<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Comment<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
+                
+                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.order-info</span> { 
+	<span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span> 
+	<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">5</span>px;</span>
+	<span class="hljs-tag">dt</span>, <span class="hljs-tag">dd</span>,
+	<span class="hljs-tag">ul</span>, <span class="hljs-tag">li</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:inline;</span> }
+	<span class="hljs-tag">dt</span> { <span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> }
+}
+<span class="hljs-class">.order-date</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">10</span>px <span class="hljs-number">0</span>;</span> }
+<span class="hljs-class">.order-info-box</span> {}
+<span class="hljs-class">.order-items</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">100</span>%;</span> <span class="hljs-attribute">overflow-x</span><span class="hljs-value">:auto;</span> }
+<span class="hljs-class">.order-additional</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">15</span>px <span class="hljs-number">0</span>;</span> }
+</code></pre></div>
+                
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><p>Order Gift Message</p>
 </div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.order-info { 
-	border:1px solid #ddd; 
-	padding:5px;
-	dt, dd,
-	ul, li { display:inline; }
-	dt { font-weight:bold; }
-}
-.order-date { margin:10px 0; }
-.order-info-box {}
-.order-items { width:100%; overflow-x:auto; }
-.order-additional { margin:15px 0; }
-// Order Gift Message 
-.gift-message {
-	dt strong { color:#666; }
-	dd { font-size:13px; margin:5px 0 0; }
-} 
-// Order Comments 
-.order-about {
-	dt { font-weight:bold; }
-	dd { font-size:13px; margin:0 0 7px; }
-}</code></pre></div>
                 
-
+                
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><p>Order Comments</p>
+</div>
+                
+                
+                
+                
             </div>
         
             <div class="section">
@@ -800,49 +1264,69 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_7ixn8" height="0" src="about:blank"></iframe>
-                        <script id="script_7ixn8">
-                            var iframe  = document.getElementById('iframe_7ixn8');
+                        <iframe id="iframe_dqj5l" height="0" src="about:blank"></iframe>
+                        <script id="result_dqj5l" type="text/html">
+	<table id="my-tracking-table-2" class="data-table tracking-table">
+	    <tbody>
+	        <tr class="first odd">
+	            <td colspan="2" class="last">
+	                <a title="Track this shipment" href="#">Track this shipment</a>
+	            </td>
+	        </tr>
+	        <tr class="last even">
+	            <th class="label">Tracking Number(s):</th>
+	            <td class="last">&nbsp;Tracking Number</td>
+	        </tr>
+	    </tbody>
+	</table>
+</script>
+                        <script id="script_dqj5l">
+                            var iframe  = document.getElementById('iframe_dqj5l');
+                            var script  = document.getElementById('script_dqj5l');
+                            var result  = document.getElementById('result_dqj5l');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_7ixn8');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<table id="my-tracking-table-2" class="data-table tracking-table">	<tbody>	   <tr class="first odd">	  <td colspan="2" class="last">	 <a title="Track this shipment" href="#">Track this shipment</a>	  </td>	   </tr>	   <tr class="last even">	  <th class="label">Tracking Number(s):</th>	  <td class="last">&nbsp;Tracking Number</td>	   </tr>	</tbody>	</table>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;table id=&quot;my-tracking-table-2&quot; class=&quot;data-table tracking-table&quot;&gt;
-        &lt;tbody&gt;
-            &lt;tr class=&quot;first odd&quot;&gt;
-                &lt;td colspan=&quot;2&quot; class=&quot;last&quot;&gt;
-                    &lt;a title=&quot;Track this shipment&quot; href=&quot;#&quot;&gt;Track this shipment&lt;/a&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr class=&quot;last even&quot;&gt;
-                &lt;th class=&quot;label&quot;&gt;Tracking Number(s):&lt;/th&gt;
-                &lt;td class=&quot;last&quot;&gt;&amp;nbsp;Tracking Number&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-tracking-table-2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"data-table tracking-table"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first odd"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Track this shipment"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Track this shipment<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last even"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"label"</span>&gt;</span>Tracking Number(s):<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last"</span>&gt;</span>&amp;nbsp;Tracking Number<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.tracking-table { 
-	margin:0 0 15px;
-	th { font-weight:bold; white-space:nowrap; }
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.tracking-table</span> { 
+	<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">15</span>px;</span>
+	<span class="hljs-tag">th</span> { <span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> <span class="hljs-attribute">white-space</span><span class="hljs-value">:nowrap;</span> }
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -852,54 +1336,74 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_8sy2l" height="0" src="about:blank"></iframe>
-                        <script id="script_8sy2l">
-                            var iframe  = document.getElementById('iframe_8sy2l');
+                        <iframe id="iframe_xzm34" height="0" src="about:blank"></iframe>
+                        <script id="result_xzm34" type="text/html">
+	<table id="tracking-table-popup-0" class="tracking-table-popup data-table">
+	    <colgroup>
+	    	<col width="15%">
+	        <col>
+	    </colgroup>
+		<tbody>
+			<tr class="first last odd">
+				<th class="label">Tracking Title:</th>
+				<td class="value last">Tracking Number</td>
+			</tr>
+	    </tbody>
+	</table>
+</script>
+                        <script id="script_xzm34">
+                            var iframe  = document.getElementById('iframe_xzm34');
+                            var script  = document.getElementById('script_xzm34');
+                            var result  = document.getElementById('result_xzm34');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_8sy2l');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<table id="tracking-table-popup-0" class="tracking-table-popup data-table">	<colgroup>		<col width="15%">	   <col>	</colgroup>		<tbody>			<tr class="first last odd">				<th class="label">Tracking Title:</th>				<td class="value last">Tracking Number</td>			</tr>	</tbody>	</table>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;table id=&quot;tracking-table-popup-0&quot; class=&quot;tracking-table-popup data-table&quot;&gt;
-        &lt;colgroup&gt;
-            &lt;col width=&quot;15%&quot;&gt;
-            &lt;col&gt;
-        &lt;/colgroup&gt;
-        &lt;tbody&gt;
-            &lt;tr class=&quot;first last odd&quot;&gt;
-                &lt;th class=&quot;label&quot;&gt;Tracking Title:&lt;/th&gt;
-                &lt;td class=&quot;value last&quot;&gt;Tracking Number&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tracking-table-popup-0"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tracking-table-popup data-table"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+	    	<span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"15%"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first last odd"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"label"</span>&gt;</span>Tracking Title:<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"value last"</span>&gt;</span>Tracking Number<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.tracking-table-popup { 
-	width:100%;
-	th, td {
-		padding: 1px 8px;
-	}
-	th { 
-		font-weight:bold;
-		white-space:nowrap;
-	}
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
 
+<span class="hljs-class">.tracking-table-popup</span> { 
+	<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">100</span>%;</span>
+	<span class="hljs-tag">th</span>, <span class="hljs-tag">td</span> {
+		<span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">1</span>px <span class="hljs-number">8</span>px;</span>
+	}
+	<span class="hljs-tag">th</span> { 
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span>
+		<span class="hljs-attribute">white-space</span><span class="hljs-value">:nowrap;</span>
+	}
+}
+
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -909,50 +1413,61 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_2k5fw" height="0" src="about:blank"></iframe>
-                        <script id="script_2k5fw">
-                            var iframe  = document.getElementById('iframe_2k5fw');
+                        <iframe id="iframe_vv8wg" height="0" src="about:blank"></iframe>
+                        <script id="result_vv8wg" type="text/html">
+	<div class="print-head">
+        <img alt="" class="logo" src="http://placekitten.com/167/47">
+    </div>
+</script>
+                        <script id="script_vv8wg">
+                            var iframe  = document.getElementById('iframe_vv8wg');
+                            var script  = document.getElementById('script_vv8wg');
+                            var result  = document.getElementById('result_vv8wg');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_2k5fw');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="print-head">   <img alt="" class="logo" src="http://placekitten.com/167/47"></div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;print-head&quot;&gt;
-        &lt;img alt=&quot;&quot; class=&quot;logo&quot; src=&quot;http://placekitten.com/167/47&quot;&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"print-head"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"logo"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/167/47"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.page-print {
-	.print-head {
-		img { float:left; }
-		address { float:left; margin-left:15px; }
+                    <div class="styles"><pre class="hljs"><code>
+
+<span class="hljs-class">.page-print</span> {
+	<span class="hljs-class">.print-head</span> {
+		<span class="hljs-tag">img</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; }
+		<span class="hljs-tag">address</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; <span class="hljs-attribute">margin-left</span><span class="hljs-value">:<span class="hljs-number">15</span>px;</span> }
 	}
-	.gift-message-link { display:none; }
-	.price-excl-tax, .price-incl-tax { 
-		display:block; 
-		white-space:nowrap;
-		&.label, &.price {
-			display: inline;
+	<span class="hljs-class">.gift-message-link</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:none;</span> }
+	<span class="hljs-class">.price-excl-tax</span>, <span class="hljs-class">.price-incl-tax</span> { 
+		<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> 
+		<span class="hljs-attribute">white-space</span><span class="hljs-value">:nowrap;</span>
+		&amp;<span class="hljs-class">.label</span>, &amp;<span class="hljs-class">.price</span> {
+			<span class="hljs-attribute">display</span><span class="hljs-value">: inline;</span>
 		}
 	}
-	.cart-price { display:inline; }
-}</code></pre></div>
-                
+	<span class="hljs-class">.cart-price</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:inline;</span> }
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -962,130 +1477,194 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_8xcxl" height="0" src="about:blank"></iframe>
-                        <script id="script_8xcxl">
-                            var iframe  = document.getElementById('iframe_8xcxl');
+                        <iframe id="iframe_kmic2" height="0" src="about:blank"></iframe>
+                        <script id="result_kmic2" type="text/html">
+	<div class="product-review">
+	    <div class="page-title">
+	        <h1>Review Details</h1>
+	    </div>
+	    <div class="product-img-box">
+	        <a class="product-image" title="Coalesce: Functioning On Impatience T-Shirt" href="">
+	            <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">
+	        </a>
+	        <p class="label">Average Customer Rating:</p>
+	        <div class="ratings">
+	            <div class="rating-box">
+	                <div style="width:69%" class="rating"></div>
+	            </div>
+	            <p class="rating-links">
+	                <a href="">3 Review(s)</a>
+	                <span class="separator">|</span>
+	                <a href="">Add Your Review</a>
+	            </p>
+	        </div>
+	    </div>
+	    <div class="product-details">
+	        <h2 class="product-name">Product name</h2>
+	        <h3>Your Rating:</h3>
+	        <table class="ratings-table">
+	            <tbody>
+	                <tr>
+	                    <th>Quality</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:40%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>Price</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:60%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <th>Value</th>
+	                    <td>
+	                        <div class="rating-box">
+	                            <div style="width:80%;" class="rating"></div>
+	                        </div>
+	                    </td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <dl>
+	            <dt>Your Review (submitted on 27 January 2014):</dt>
+	            <dd>Review Text</dd>
+	        </dl>
+	    </div>
+	</div>
+</script>
+                        <script id="script_kmic2">
+                            var iframe  = document.getElementById('iframe_kmic2');
+                            var script  = document.getElementById('script_kmic2');
+                            var result  = document.getElementById('result_kmic2');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_8xcxl');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="product-review">	<div class="page-title">	   <h1>Review Details</h1>	</div>	<div class="product-img-box">	   <a class="product-image" title="Coalesce: Functioning On Impatience T-Shirt" href="">	  <img width="125" height="125" alt="Product Name" src="http://placekitten.com/125/125">	   </a>	   <p class="label">Average Customer Rating:</p>	   <div class="ratings">	  <div class="rating-box">	 <div style="width:69%" class="rating"></div>	  </div>	  <p class="rating-links">	 <a href="">3 Review(s)</a>	 <span class="separator">|</span>	 <a href="">Add Your Review</a>	  </p>	   </div>	</div>	<div class="product-details">	   <h2 class="product-name">Product name</h2>	   <h3>Your Rating:</h3>	   <table class="ratings-table">	  <tbody>	 <tr>	<th>Quality</th>	<td>	<div class="rating-box">	   <div style="width:40%;" class="rating"></div>	</div>	</td>	 </tr>	 <tr>	<th>Price</th>	<td>	<div class="rating-box">	   <div style="width:60%;" class="rating"></div>	</div>	</td>	 </tr>	 <tr>	<th>Value</th>	<td>	<div class="rating-box">	   <div style="width:80%;" class="rating"></div>	</div>	</td>	 </tr>	  </tbody>	   </table>	   <dl>	  <dt>Your Review (submitted on 27 January 2014):</dt>	  <dd>Review Text</dd>	   </dl>	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;product-review&quot;&gt;
-        &lt;div class=&quot;page-title&quot;&gt;
-            &lt;h1&gt;Review Details&lt;/h1&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;product-img-box&quot;&gt;
-            &lt;a class=&quot;product-image&quot; title=&quot;Coalesce: Functioning On Impatience T-Shirt&quot; href=&quot;&quot;&gt;
-                &lt;img width=&quot;125&quot; height=&quot;125&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/125/125&quot;&gt;
-            &lt;/a&gt;
-            &lt;p class=&quot;label&quot;&gt;Average Customer Rating:&lt;/p&gt;
-            &lt;div class=&quot;ratings&quot;&gt;
-                &lt;div class=&quot;rating-box&quot;&gt;
-                    &lt;div style=&quot;width:69%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;p class=&quot;rating-links&quot;&gt;
-                    &lt;a href=&quot;&quot;&gt;3 Review(s)&lt;/a&gt;
-                    &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
-                    &lt;a href=&quot;&quot;&gt;Add Your Review&lt;/a&gt;
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;product-details&quot;&gt;
-            &lt;h2 class=&quot;product-name&quot;&gt;Product name&lt;/h2&gt;
-            &lt;h3&gt;Your Rating:&lt;/h3&gt;
-            &lt;table class=&quot;ratings-table&quot;&gt;
-                &lt;tbody&gt;
-                    &lt;tr&gt;
-                        &lt;th&gt;Quality&lt;/th&gt;
-                        &lt;td&gt;
-                            &lt;div class=&quot;rating-box&quot;&gt;
-                                &lt;div style=&quot;width:40%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                        &lt;th&gt;Price&lt;/th&gt;
-                        &lt;td&gt;
-                            &lt;div class=&quot;rating-box&quot;&gt;
-                                &lt;div style=&quot;width:60%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                        &lt;th&gt;Value&lt;/th&gt;
-                        &lt;td&gt;
-                            &lt;div class=&quot;rating-box&quot;&gt;
-                                &lt;div style=&quot;width:80%;&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                            &lt;/div&gt;
-                        &lt;/td&gt;
-                    &lt;/tr&gt;
-                &lt;/tbody&gt;
-            &lt;/table&gt;
-            &lt;dl&gt;
-                &lt;dt&gt;Your Review (submitted on 27 January 2014):&lt;/dt&gt;
-                &lt;dd&gt;Review Text&lt;/dd&gt;
-            &lt;/dl&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-review"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"page-title"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Review Details<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-img-box"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Coalesce: Functioning On Impatience T-Shirt"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"125"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"125"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/125/125"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"label"</span>&gt;</span>Average Customer Rating:<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:69%"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-links"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>3 Review(s)<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Add Your Review<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-details"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span>Product name<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Your Rating:<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings-table"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Quality<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:40%;"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Price<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:60%;"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:80%;"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">dl</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Your Review (submitted on 27 January 2014):<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Review Text<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.product-review {
-	h3 {}
-	dt { 
-		font-weight:bold;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.product-review</span> {
+	<span class="hljs-tag">h3</span> {}
+	<span class="hljs-tag">dt</span> { 
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span>
 	}
-	dd { 
-		font-size:13px; 
-		margin:5px 0 0;
+	<span class="hljs-tag">dd</span> { 
+		<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">5</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span>
 	}
-	.product-img-box { 
-		float:left; 
-		width:140px;
-		.product-image { 
-			display:block; 
-			width:125px; 
-			height:125px;
+	<span class="hljs-class">.product-img-box</span> { 
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">140</span>px;</span>
+		<span class="hljs-class">.product-image</span> { 
+			<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> 
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">125</span>px;</span> 
+			<span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">125</span>px;</span>
 		}
-		.label { 
-			font-size:11px; 
-			margin:0 0 3px;
+		<span class="hljs-class">.label</span> { 
+			<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">11</span>px;</span> 
+			<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span>px;</span>
 		}
-		.ratings {
-			.rating-box { 
-				float:none; 
-				display:block; 
-				margin:0 0 3px;
+		<span class="hljs-class">.ratings</span> {
+			<span class="hljs-class">.rating-box</span> { 
+				<span class="hljs-attribute">float</span><span class="hljs-value">:none;</span> 
+				<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> 
+				<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span>px;</span>
 			}
 		}
 	}
-	.product-details { 
-		margin-left:150px;
+	<span class="hljs-class">.product-details</span> { 
+		<span class="hljs-attribute">margin-left</span><span class="hljs-value">:<span class="hljs-number">150</span>px;</span>
 	}
-	.product-name { 
-		font-size:16px; 
-		font-weight:bold; 
-		margin:0 0 10px;
+	<span class="hljs-class">.product-name</span> { 
+		<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">16</span>px;</span> 
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span>
 	}
-	.ratings-table { 
-		margin:0 0 10px;
+	<span class="hljs-class">.ratings-table</span> { 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span>
 	}
-}</code></pre></div>
-                
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -1096,29 +1675,30 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.my-account {
-	.title-buttons {
-		.link-rss { 
-			float:none; 
-			margin:0;
-		}
-	}
-}</code></pre></div>
-                
-
             </div>
         
     </div>
 
+</div>
+
     <script>
-        // Resize all iframes to exactly fit content within
         window.onload = function() {
             var iframes = document.querySelectorAll('iframe');
             for ( var i = 0; i < iframes.length; i++ ){
                 iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
             }
         };
+        var headings = document.querySelectorAll('#nav .heading');
+        for ( var i = 0; i < headings.length; i++ ){
+            headings[i].addEventListener('click', function () {
+                this.classList.toggle('is-open');
+                this.nextElementSibling.classList.toggle('is-open');
+            });
+        }
     </script>
+
+    <style>*{margin:0;padding:0;border:0;font-size:inherit}html{background:#e2e5dc}html,body{font-size:100%}body{font:14px/25px 'Calibri',Arial,sans-serif;color:black;padding:2em}a{text-decoration:none;color:black}h1,h2,h3,h4,ul,ol,dl,p,blockquote{margin-bottom:15px}h1,h2,h3,h4,dt{font-weight:bold}h1{font-size:25px}h2{font-size:21px}h3{font-size:17px}h4{font-size:14px}ul,ol{margin-left:1em;list-style:outside}.gutter{width:100%;max-width:960px;overflow:hidden;margin:0 auto}#nav{float:left;width:20%;min-width:150px;margin-right:25px}#content{overflow:hidden;min-width:400px}#nav{margin-bottom:25px}#nav ul,#nav li,#nav a{display:block}#nav ul{list-style:none;margin:0 0 1em}#nav h1{border-bottom:1px solid #d0d5c5;font-size:14px;padding-bottom:10px;margin:20px 0 10px}#nav .heading{margin-top:1em;text-transform:uppercase;font-size:12px;margin:0;padding:2px 5px;cursor:pointer;position:relative;border-radius:4px}#nav .heading:hover{background:#d0d5c5}#nav .heading:after{content:"+";position:absolute;top:2px;right:5px}#nav .heading.is-open:after{content:"-"}#nav ul ul,#nav ul .heading{margin-left:20px}#nav a{padding:2px 5px;border-radius:4px}#nav a:hover,#nav a:focus{background:#d0d5c5}#nav ul{display:none}#nav ul.is-open{display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px 20px 5px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .markup,.section .styles{border-top:1px solid #ddd;background:#f7f7f7;position:relative;overflow-y:auto;max-height:500px}.section .markup pre,.section .styles pre{padding:0 20px 20px}.section .markup:before,.section .styles:before{display:block;background:#eee;color:#ccc;padding:0 20px;position:absolute;top:0;right:0;border-radius:0 0 0 4px}.section .markup:before{content:"Markup"}.section .styles:before{content:"Styles"}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code,pre{font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}</style>
+    <style>.hljs{display:block;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}</style>
 
 </body>
 </html>

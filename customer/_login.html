@@ -1,162 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login/Create Account &middot; Styleguide</title>
-    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
-    <script>/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- * MIT license http://www.opensource.org/licenses/mit-license.php/
- * @author Lea Verou http://lea.verou.me
- */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
-Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
-Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
-Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
-Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
-;
-Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
-;
-Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
-;
-</script>
+    <meta charset="utf-8" />
+    <title>Login/Create Account</title>
 </head>
 <body>
+<div class="gutter">
 
-    <div class="navigation">
-        <div class="gutter">
-            <div class="group ">
-                <a href="/">Home</a>
-            </div>
+    <div id="nav">
+        <h1><a href="../">Styleguide</a></h1>
+        
             
-            <div class="group ">
-                <span>.</span>
-                <ul>
-                    
-                    <li><a class="" href="_inbox.html">_inbox</a></li>
-                    
-                    <li><a class="" href="_mixins.html">_mixins</a></li>
-                    
-                    <li><a class="" href="_variables.html">_variables</a></li>
-                    
+                <a href="../_inbox.html">Inbox</a>
+            
+        
+            
+                <a href="../_mixins.html">Mixins</a>
+            
+        
+            
+                <a href="../_variables.html">Variables</a>
+            
+        
+            
+                <h2 class="heading">catalog</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../catalog/_category.html">Category Page</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../catalog/_product.html">Product View</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>catalog</span>
-                <ul>
-                    
-                    <li><a class="" href="catalog/_category.html">Category Page</a></li>
-                    
-                    <li><a class="" href="catalog/_product.html">Product View</a></li>
-                    
+        
+            
+                <h2 class="heading">checkout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../checkout/_cart.html">Shopping Cart</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../checkout/_checkout.html">One Page Checkout</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>checkout</span>
-                <ul>
-                    
-                    <li><a class="" href="checkout/_cart.html">Shopping Cart</a></li>
-                    
-                    <li><a class="" href="checkout/_checkout.html">One Page Checkout</a></li>
-                    
+        
+            
+                <h2 class="heading">cms</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../cms/_homepage.html">Homepage</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../cms/_sitemap.html">Sitemap</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>cms</span>
-                <ul>
-                    
-                    <li><a class="" href="cms/_homepage.html">Homepage</a></li>
-                    
-                    <li><a class="" href="cms/_sitemap.html">Sitemap</a></li>
-                    
+        
+            
+                <h2 class="heading">common</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../common/_buttons.html">Button</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_forms.html">Form Elements</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_headings.html">Page Heading</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_messages.html">Messages</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_misc.html">Misc</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_tables.html">Data Table</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>common</span>
-                <ul>
-                    
-                    <li><a class="" href="common/_buttons.html">Button</a></li>
-                    
-                    <li><a class="" href="common/_forms.html">Form Elements</a></li>
-                    
-                    <li><a class="" href="common/_headings.html">Page Heading</a></li>
-                    
-                    <li><a class="" href="common/_messages.html">Messages</a></li>
-                    
-                    <li><a class="" href="common/_misc.html">Misc</a></li>
-                    
-                    <li><a class="" href="common/_tables.html">Data Table</a></li>
-                    
+        
+            
+                <h2 class="heading">customer</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../customer/_dashboard.html">Dashboard</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../customer/_login.html">Login/Create Account</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>customer</span>
-                <ul>
-                    
-                    <li><a class="" href="customer/_dashboard.html">Dashboard</a></li>
-                    
-                    <li><a class="" href="customer/_login.html">Login/Create Account</a></li>
-                    
+        
+            
+                <h2 class="heading">layout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../layout/_content.html">Content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_footer.html">Footer</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_header.html">Header</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_page.html">Pages</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>layout</span>
-                <ul>
-                    
-                    <li><a class="" href="layout/_content.html">Content</a></li>
-                    
-                    <li><a class="" href="layout/_footer.html">Footer</a></li>
-                    
-                    <li><a class="" href="layout/_header.html">Header</a></li>
-                    
-                    <li><a class="" href="layout/_page.html">Pages</a></li>
-                    
+        
+            
+                <h2 class="heading">navigation</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../navigation/_breadcrumbs.html">Breadcrumbs</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_navbar.html">Nav Bar</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_toolbar.html">Toolbar</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>navigation</span>
-                <ul>
-                    
-                    <li><a class="" href="navigation/_breadcrumbs.html">Breadcrumbs</a></li>
-                    
-                    <li><a class="" href="navigation/_navbar.html">Nav Bar</a></li>
-                    
-                    <li><a class="" href="navigation/_toolbar.html">Toolbar</a></li>
-                    
+        
+            
+                <h2 class="heading">normalize</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../normalize/_base.html">Admin controlled content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../normalize/_reset.html">Reset</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>normalize</span>
-                <ul>
-                    
-                    <li><a class="" href="normalize/_base.html">Admin controlled content</a></li>
-                    
-                    <li><a class="" href="normalize/_reset.html">Reset</a></li>
-                    
+        
+            
+                <h2 class="heading">sidebar</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../sidebar/_blocks.html">Sidebar Blocks</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../sidebar/_miniproductlist.html">Mini Products List</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>sidebar</span>
-                <ul>
-                    
-                    <li><a class="" href="sidebar/_blocks.html">Sidebar Blocks</a></li>
-                    
-                    <li><a class="" href="sidebar/_miniproductlist.html">Mini Products List</a></li>
-                    
-                </ul>
-            </div>
-            
-        </div>
+        
     </div>
 
-    <div class="gutter">
+    <div id="content">
         
             <div class="section">
                 
@@ -166,80 +247,129 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_7kpj9" height="0" src="about:blank"></iframe>
-                        <script id="script_7kpj9">
-                            var iframe  = document.getElementById('iframe_7kpj9');
+                        <iframe id="iframe_9rasv" height="0" src="about:blank"></iframe>
+                        <script id="result_9rasv" type="text/html">
+	<div class="col2-set">
+	    <div class="col-1 new-users">
+	        <div class="content">
+	            <h2>New Customers</h2>
+	            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+	        </div>
+	    </div>
+	    <div class="col-2 registered-users">
+	        <div class="content">
+	            <h2>Registered Customers</h2>
+	            <p>If you have an account with us, please log in.</p>
+	            <ul class="form-list">
+	                <li>
+	                    <label class="required" for="email"><em>*</em>Email Address</label>
+	                    <div class="input-box">
+	                        <input type="text" title="Email Address" class="input-text required-entry validate-email" id="email" value="" name="login[username]">
+	                    </div>
+	                </li>
+	                <li>
+	                    <label class="required" for="pass"><em>*</em>Password</label>
+	                    <div class="input-box">
+	                        <input type="password" title="Password" id="pass" class="input-text required-entry validate-password" name="login[password]">
+	                    </div>
+	                </li>
+				</ul>
+	            <p class="required">* Required Fields</p>
+	        </div>
+	    </div>
+	</div>
+	<div class="col2-set">
+	    <div class="col-1 new-users">
+	        <div class="buttons-set">
+	            <button class="button" title="Create an Account" type="button"><span><span>Create an Account</span></span></button>
+	        </div>
+	    </div>
+	    <div class="col-2 registered-users">
+	        <div class="buttons-set">
+	            <a class="f-left" href="#">Forgot Your Password?</a>
+	            <button id="send2" name="send" title="Login" class="button" type="submit"><span><span>Login</span></span></button>
+	        </div>
+	    </div>
+	</div>
+</script>
+                        <script id="script_9rasv">
+                            var iframe  = document.getElementById('iframe_9rasv');
+                            var script  = document.getElementById('script_9rasv');
+                            var result  = document.getElementById('result_9rasv');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_7kpj9');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="col2-set">	<div class="col-1 new-users">	   <div class="content">	  <h2>New Customers</h2>	  <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>	   </div>	</div>	<div class="col-2 registered-users">	   <div class="content">	  <h2>Registered Customers</h2>	  <p>If you have an account with us, please log in.</p>	  <ul class="form-list">	 <li>	<label class="required" for="email"><em>*</em>Email Address</label>	<div class="input-box">	<input type="text" title="Email Address" class="input-text required-entry validate-email" id="email" value="" name="login[username]">	</div>	 </li>	 <li>	<label class="required" for="pass"><em>*</em>Password</label>	<div class="input-box">	<input type="password" title="Password" id="pass" class="input-text required-entry validate-password" name="login[password]">	</div>	 </li>				</ul>	  <p class="required">* Required Fields</p>	   </div>	</div>	</div>	<div class="col2-set">	<div class="col-1 new-users">	   <div class="buttons-set">	  <button class="button" title="Create an Account" type="button"><span><span>Create an Account</span></span></button>	   </div>	</div>	<div class="col-2 registered-users">	   <div class="buttons-set">	  <a class="f-left" href="#">Forgot Your Password?</a>	  <button id="send2" name="send" title="Login" class="button" type="submit"><span><span>Login</span></span></button>	   </div>	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;col2-set&quot;&gt;
-        &lt;div class=&quot;col-1 new-users&quot;&gt;
-            &lt;div class=&quot;content&quot;&gt;
-                &lt;h2&gt;New Customers&lt;/h2&gt;
-                &lt;p&gt;By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-2 registered-users&quot;&gt;
-            &lt;div class=&quot;content&quot;&gt;
-                &lt;h2&gt;Registered Customers&lt;/h2&gt;
-                &lt;p&gt;If you have an account with us, please log in.&lt;/p&gt;
-                &lt;ul class=&quot;form-list&quot;&gt;
-                    &lt;li&gt;
-                        &lt;label class=&quot;required&quot; for=&quot;email&quot;&gt;&lt;em&gt;*&lt;/em&gt;Email Address&lt;/label&gt;
-                        &lt;div class=&quot;input-box&quot;&gt;
-                            &lt;input type=&quot;text&quot; title=&quot;Email Address&quot; class=&quot;input-text required-entry validate-email&quot; id=&quot;email&quot; value=&quot;&quot; name=&quot;login[username]&quot;&gt;
-                        &lt;/div&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;
-                        &lt;label class=&quot;required&quot; for=&quot;pass&quot;&gt;&lt;em&gt;*&lt;/em&gt;Password&lt;/label&gt;
-                        &lt;div class=&quot;input-box&quot;&gt;
-                            &lt;input type=&quot;password&quot; title=&quot;Password&quot; id=&quot;pass&quot; class=&quot;input-text required-entry validate-password&quot; name=&quot;login[password]&quot;&gt;
-                        &lt;/div&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-                &lt;p class=&quot;required&quot;&gt;* Required Fields&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;col2-set&quot;&gt;
-        &lt;div class=&quot;col-1 new-users&quot;&gt;
-            &lt;div class=&quot;buttons-set&quot;&gt;
-                &lt;button class=&quot;button&quot; title=&quot;Create an Account&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Create an Account&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;col-2 registered-users&quot;&gt;
-            &lt;div class=&quot;buttons-set&quot;&gt;
-                &lt;a class=&quot;f-left&quot; href=&quot;#&quot;&gt;Forgot Your Password?&lt;/a&gt;
-                &lt;button id=&quot;send2&quot; name=&quot;send&quot; title=&quot;Login&quot; class=&quot;button&quot; type=&quot;submit&quot;&gt;&lt;span&gt;&lt;span&gt;Login&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1 new-users"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"content"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>New Customers<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2 registered-users"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"content"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Registered Customers<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>If you have an account with us, please log in.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"email"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Email Address<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Email Address"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry validate-email"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"login[username]"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"pass"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Password<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Password"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"pass"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry validate-password"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"login[password]"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span>* Required Fields<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1 new-users"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"buttons-set"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Create an Account"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Create an Account<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2 registered-users"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"buttons-set"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"f-left"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Forgot Your Password?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"send2"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"send"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Login"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.account-login {
-	.new-users {}
-	.registered-users {}
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.account-login</span> {
+	<span class="hljs-class">.new-users</span> {}
+	<span class="hljs-class">.registered-users</span> {}
 }
 
-.account-create {}</code></pre></div>
-                
+<span class="hljs-class">.account-create</span> {}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -250,71 +380,89 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_2o4yi" height="0" src="about:blank"></iframe>
-                        <script id="script_2o4yi">
-                            var iframe  = document.getElementById('iframe_2o4yi');
+                        <iframe id="iframe_0a106" height="0" src="about:blank"></iframe>
+                        <script id="result_0a106" type="text/html">
+	<ul class="form-list">
+	    <li>
+	        <div id="captcha-image-box-user_login" class="captcha-image">
+	            <img alt="Reload captcha" src="http://placehold.it/24x24&text=Reload" class="captcha-reload" id="captcha-reload">
+	            <img height="50" src="http://placekitten.com/200/50" class="captcha-img" id="user_login">
+	            <div class="captcha-note">
+	                <strong>Attention</strong>: Captcha is case sensitive.
+	            </div>
+	        </div>
+	    </li>
+	</ul>
+</script>
+                        <script id="script_0a106">
+                            var iframe  = document.getElementById('iframe_0a106');
+                            var script  = document.getElementById('script_0a106');
+                            var result  = document.getElementById('result_0a106');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_2o4yi');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<ul class="form-list">	<li>	   <div id="captcha-image-box-user_login" class="captcha-image">	  <img alt="Reload captcha" src="http://placehold.it/24x24&text=Reload" class="captcha-reload" id="captcha-reload">	  <img height="50" src="http://placekitten.com/200/50" class="captcha-img" id="user_login">	  <div class="captcha-note">	 <strong>Attention</strong>: Captcha is case sensitive.	  </div>	   </div>	</li>	</ul>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;form-list&quot;&gt;
-        &lt;li&gt;
-            &lt;div id=&quot;captcha-image-box-user_login&quot; class=&quot;captcha-image&quot;&gt;
-                &lt;img alt=&quot;Reload captcha&quot; src=&quot;http://placehold.it/24x24&amp;text=Reload&quot; class=&quot;captcha-reload&quot; id=&quot;captcha-reload&quot;&gt;
-                &lt;img height=&quot;50&quot; src=&quot;http://placekitten.com/200/50&quot; class=&quot;captcha-img&quot; id=&quot;user_login&quot;&gt;
-                &lt;div class=&quot;captcha-note&quot;&gt;
-                    &lt;strong&gt;Attention&lt;/strong&gt;: Captcha is case sensitive.
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"captcha-image-box-user_login"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"captcha-image"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Reload captcha"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/24x24&amp;text=Reload"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"captcha-reload"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"captcha-reload"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"50"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/200/50"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"captcha-img"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"user_login"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"captcha-note"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Attention<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>: Captcha is case sensitive.
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.captcha-note  {}
-.captcha-image { float:left; position:relative; }
-.captcha-img { border:1px solid #ccc; }
-.registered-users .captcha-image    {}
-#checkout-step-login .captcha-image {}
-.captcha-reload { 
-	position:absolute; 
-	top:2px; 
-	right:2px;
-	&.refreshing { 
-		animation:rotate 1.5s infinite linear; 
-		-webkit-animation:rotate 1.5s infinite linear; 
-		-moz-animation:rotate 1.5s infinite linear; 
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.captcha-note</span>  {}
+<span class="hljs-class">.captcha-image</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; <span class="hljs-attribute">position</span><span class="hljs-value">:relative;</span> }
+<span class="hljs-class">.captcha-img</span> { <span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ccc</span>;</span> }
+<span class="hljs-class">.registered-users</span> <span class="hljs-class">.captcha-image</span>    {}
+<span class="hljs-id">#checkout-step-login</span> <span class="hljs-class">.captcha-image</span> {}
+<span class="hljs-class">.captcha-reload</span> { 
+	<span class="hljs-attribute">position</span><span class="hljs-value">:absolute;</span> 
+	<span class="hljs-attribute">top</span><span class="hljs-value">:<span class="hljs-number">2</span>px;</span> 
+	<span class="hljs-attribute">right</span><span class="hljs-value">:<span class="hljs-number">2</span>px;</span>
+	&amp;<span class="hljs-class">.refreshing</span> { 
+		<span class="hljs-attribute">animation</span><span class="hljs-value">:rotate <span class="hljs-number">1.5</span>s infinite linear;</span> 
+		-webkit-<span class="hljs-attribute">animation</span><span class="hljs-value">:rotate <span class="hljs-number">1.5</span>s infinite linear;</span> 
+		-moz-<span class="hljs-attribute">animation</span><span class="hljs-value">:rotate <span class="hljs-number">1.5</span>s infinite linear;</span> 
 	}
 }
 
-@-webkit-keyframes rotate {
-    0% { -webkit-transform:rotate(0); }
-    0% { -webkit-transform:rotate(-360deg); }
+<span class="hljs-at_rule">@-webkit-keyframes<span class="hljs-preprocessor"> rotate</span> {</span>
+    0% { -webkit-<span class="hljs-attribute">transform</span><span class="hljs-value">:rotate(<span class="hljs-number">0</span>);</span> }
+    0% { -webkit-<span class="hljs-attribute">transform</span><span class="hljs-value">:rotate(-<span class="hljs-number">360</span>deg);</span> }
 }
-@-moz-keyframes rotate {
-    0% { -moz-transform:rotate(0); }
-    0% { -moz-transform:rotate(-360deg); }
+<span class="hljs-at_rule">@-moz-keyframes<span class="hljs-preprocessor"> rotate</span> {</span>
+    0% { -moz-<span class="hljs-attribute">transform</span><span class="hljs-value">:rotate(<span class="hljs-number">0</span>);</span> }
+    0% { -moz-<span class="hljs-attribute">transform</span><span class="hljs-value">:rotate(-<span class="hljs-number">360</span>deg);</span> }
 }
-@keyframes rotate {
-    0% { transform:rotate(0); }
-    0% { transform:rotate(-360deg); }
-}</code></pre></div>
-                
+<span class="hljs-at_rule">@keyframes<span class="hljs-preprocessor"> rotate</span> {</span>
+    0% { <span class="hljs-attribute">transform</span><span class="hljs-value">:rotate(<span class="hljs-number">0</span>);</span> }
+    0% { <span class="hljs-attribute">transform</span><span class="hljs-value">:rotate(-<span class="hljs-number">360</span>deg);</span> }
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -324,80 +472,112 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_a5h2c" height="0" src="about:blank"></iframe>
-                        <script id="script_a5h2c">
-                            var iframe  = document.getElementById('iframe_a5h2c');
+                        <iframe id="iframe_5ry9p" height="0" src="about:blank"></iframe>
+                        <script id="result_5ry9p" type="text/html">
+	<div style="height: 745px;" class="window-overlay" id="window-overlay"></div>
+	<div style="" class="remember-me-popup" id="remember-me-popup">
+	    <div class="remember-me-popup-head">
+	        <h3>What's this?</h3>
+	        <a title="Close" class="remember-me-popup-close" href="#">Close</a>
+	    </div>
+	    <div class="remember-me-popup-body">
+	        <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>
+	        <div class="remember-me-popup-close-button a-right">
+	            <a title="Close" class="remember-me-popup-close button" href="#"><span>Close</span></a>
+	        </div>
+	    </div>
+	</div>
+</script>
+                        <script id="script_5ry9p">
+                            var iframe  = document.getElementById('iframe_5ry9p');
+                            var script  = document.getElementById('script_5ry9p');
+                            var result  = document.getElementById('result_5ry9p');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_a5h2c');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div style="height: 745px;" class="window-overlay" id="window-overlay"></div>	<div style="" class="remember-me-popup" id="remember-me-popup">	<div class="remember-me-popup-head">	   <h3>What's this?</h3>	   <a title="Close" class="remember-me-popup-close" href="#">Close</a>	</div>	<div class="remember-me-popup-body">	   <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>	   <div class="remember-me-popup-close-button a-right">	  <a title="Close" class="remember-me-popup-close button" href="#"><span>Close</span></a>	   </div>	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div style=&quot;height: 745px;&quot; class=&quot;window-overlay&quot; id=&quot;window-overlay&quot;&gt;&lt;/div&gt;
-    &lt;div style=&quot;&quot; class=&quot;remember-me-popup&quot; id=&quot;remember-me-popup&quot;&gt;
-        &lt;div class=&quot;remember-me-popup-head&quot;&gt;
-            &lt;h3&gt;What&#39;s this?&lt;/h3&gt;
-            &lt;a title=&quot;Close&quot; class=&quot;remember-me-popup-close&quot; href=&quot;#&quot;&gt;Close&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;remember-me-popup-body&quot;&gt;
-            &lt;p&gt;Checking &quot;Remember Me&quot; will let you access your shopping cart on this computer when you are logged out&lt;/p&gt;
-            &lt;div class=&quot;remember-me-popup-close-button a-right&quot;&gt;
-                &lt;a title=&quot;Close&quot; class=&quot;remember-me-popup-close button&quot; href=&quot;#&quot;&gt;&lt;span&gt;Close&lt;/span&gt;&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"height: 745px;"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"window-overlay"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"window-overlay"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"remember-me-popup"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"remember-me-popup"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"remember-me-popup-head"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>What's this?<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Close"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"remember-me-popup-close"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"remember-me-popup-body"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"remember-me-popup-close-button a-right"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Close"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"remember-me-popup-close button"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.window-overlay { 
-	background:url(../images/window_overlay.png) repeat; background:rgba(0, 0, 0, 0.35); 
-	position:absolute; 
-	top:0; 
-	left:0; 
-	height:100%; 
-	width:100%; 
-	z-index:990;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.window-overlay</span> { 
+	<span class="hljs-attribute">background</span><span class="hljs-value">:url(../images/window_overlay.png) repeat;</span> <span class="hljs-attribute">background</span><span class="hljs-value">:rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.35</span>);</span> 
+	<span class="hljs-attribute">position</span><span class="hljs-value">:absolute;</span> 
+	<span class="hljs-attribute">top</span><span class="hljs-value">:<span class="hljs-number">0</span>;</span> 
+	<span class="hljs-attribute">left</span><span class="hljs-value">:<span class="hljs-number">0</span>;</span> 
+	<span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">100</span>%;</span> 
+	<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">100</span>%;</span> 
+	<span class="hljs-attribute">z-index</span><span class="hljs-value">:<span class="hljs-number">990</span>;</span>
 }
 
-.remember-me {
-	label {}
+<span class="hljs-class">.remember-me</span> {
+	<span class="hljs-tag">label</span> {}
 }
-.remember-me-popup {
-	h3 {}
-	.remember-me-popup-head {
-		.remember-me-popup-close {}
+<span class="hljs-class">.remember-me-popup</span> {
+	<span class="hljs-tag">h3</span> {}
+	<span class="hljs-class">.remember-me-popup-head</span> {
+		<span class="hljs-class">.remember-me-popup-close</span> {}
 	}
-	.remember-me-popup-body {
-		a {}
+	<span class="hljs-class">.remember-me-popup-body</span> {
+		<span class="hljs-tag">a</span> {}
 	}
-}</code></pre></div>
-                
+}
 
+
+</code></pre></div>
+                
             </div>
         
     </div>
 
+</div>
+
     <script>
-        // Resize all iframes to exactly fit content within
         window.onload = function() {
             var iframes = document.querySelectorAll('iframe');
             for ( var i = 0; i < iframes.length; i++ ){
                 iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
             }
         };
+        var headings = document.querySelectorAll('#nav .heading');
+        for ( var i = 0; i < headings.length; i++ ){
+            headings[i].addEventListener('click', function () {
+                this.classList.toggle('is-open');
+                this.nextElementSibling.classList.toggle('is-open');
+            });
+        }
     </script>
+
+    <style>*{margin:0;padding:0;border:0;font-size:inherit}html{background:#e2e5dc}html,body{font-size:100%}body{font:14px/25px 'Calibri',Arial,sans-serif;color:black;padding:2em}a{text-decoration:none;color:black}h1,h2,h3,h4,ul,ol,dl,p,blockquote{margin-bottom:15px}h1,h2,h3,h4,dt{font-weight:bold}h1{font-size:25px}h2{font-size:21px}h3{font-size:17px}h4{font-size:14px}ul,ol{margin-left:1em;list-style:outside}.gutter{width:100%;max-width:960px;overflow:hidden;margin:0 auto}#nav{float:left;width:20%;min-width:150px;margin-right:25px}#content{overflow:hidden;min-width:400px}#nav{margin-bottom:25px}#nav ul,#nav li,#nav a{display:block}#nav ul{list-style:none;margin:0 0 1em}#nav h1{border-bottom:1px solid #d0d5c5;font-size:14px;padding-bottom:10px;margin:20px 0 10px}#nav .heading{margin-top:1em;text-transform:uppercase;font-size:12px;margin:0;padding:2px 5px;cursor:pointer;position:relative;border-radius:4px}#nav .heading:hover{background:#d0d5c5}#nav .heading:after{content:"+";position:absolute;top:2px;right:5px}#nav .heading.is-open:after{content:"-"}#nav ul ul,#nav ul .heading{margin-left:20px}#nav a{padding:2px 5px;border-radius:4px}#nav a:hover,#nav a:focus{background:#d0d5c5}#nav ul{display:none}#nav ul.is-open{display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px 20px 5px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .markup,.section .styles{border-top:1px solid #ddd;background:#f7f7f7;position:relative;overflow-y:auto;max-height:500px}.section .markup pre,.section .styles pre{padding:0 20px 20px}.section .markup:before,.section .styles:before{display:block;background:#eee;color:#ccc;padding:0 20px;position:absolute;top:0;right:0;border-radius:0 0 0 4px}.section .markup:before{content:"Markup"}.section .styles:before{content:"Styles"}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code,pre{font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}</style>
+    <style>.hljs{display:block;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}</style>
 
 </body>
 </html>

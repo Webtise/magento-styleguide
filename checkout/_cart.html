@@ -1,162 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shopping Cart &middot; Styleguide</title>
-    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
-    <script>/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- * MIT license http://www.opensource.org/licenses/mit-license.php/
- * @author Lea Verou http://lea.verou.me
- */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
-Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
-Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
-Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
-Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
-;
-Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
-;
-Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
-;
-</script>
+    <meta charset="utf-8" />
+    <title>Shopping Cart</title>
 </head>
 <body>
+<div class="gutter">
 
-    <div class="navigation">
-        <div class="gutter">
-            <div class="group ">
-                <a href="/">Home</a>
-            </div>
+    <div id="nav">
+        <h1><a href="../">Styleguide</a></h1>
+        
             
-            <div class="group ">
-                <span>.</span>
-                <ul>
-                    
-                    <li><a class="" href="_inbox.html">_inbox</a></li>
-                    
-                    <li><a class="" href="_mixins.html">_mixins</a></li>
-                    
-                    <li><a class="" href="_variables.html">_variables</a></li>
-                    
+                <a href="../_inbox.html">Inbox</a>
+            
+        
+            
+                <a href="../_mixins.html">Mixins</a>
+            
+        
+            
+                <a href="../_variables.html">Variables</a>
+            
+        
+            
+                <h2 class="heading">catalog</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../catalog/_category.html">Category Page</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../catalog/_product.html">Product View</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>catalog</span>
-                <ul>
-                    
-                    <li><a class="" href="catalog/_category.html">Category Page</a></li>
-                    
-                    <li><a class="" href="catalog/_product.html">Product View</a></li>
-                    
+        
+            
+                <h2 class="heading">checkout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../checkout/_cart.html">Shopping Cart</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../checkout/_checkout.html">One Page Checkout</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>checkout</span>
-                <ul>
-                    
-                    <li><a class="" href="checkout/_cart.html">Shopping Cart</a></li>
-                    
-                    <li><a class="" href="checkout/_checkout.html">One Page Checkout</a></li>
-                    
+        
+            
+                <h2 class="heading">cms</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../cms/_homepage.html">Homepage</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../cms/_sitemap.html">Sitemap</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>cms</span>
-                <ul>
-                    
-                    <li><a class="" href="cms/_homepage.html">Homepage</a></li>
-                    
-                    <li><a class="" href="cms/_sitemap.html">Sitemap</a></li>
-                    
+        
+            
+                <h2 class="heading">common</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../common/_buttons.html">Button</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_forms.html">Form Elements</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_headings.html">Page Heading</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_messages.html">Messages</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_misc.html">Misc</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_tables.html">Data Table</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>common</span>
-                <ul>
-                    
-                    <li><a class="" href="common/_buttons.html">Button</a></li>
-                    
-                    <li><a class="" href="common/_forms.html">Form Elements</a></li>
-                    
-                    <li><a class="" href="common/_headings.html">Page Heading</a></li>
-                    
-                    <li><a class="" href="common/_messages.html">Messages</a></li>
-                    
-                    <li><a class="" href="common/_misc.html">Misc</a></li>
-                    
-                    <li><a class="" href="common/_tables.html">Data Table</a></li>
-                    
+        
+            
+                <h2 class="heading">customer</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../customer/_dashboard.html">Dashboard</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../customer/_login.html">Login/Create Account</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>customer</span>
-                <ul>
-                    
-                    <li><a class="" href="customer/_dashboard.html">Dashboard</a></li>
-                    
-                    <li><a class="" href="customer/_login.html">Login/Create Account</a></li>
-                    
+        
+            
+                <h2 class="heading">layout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../layout/_content.html">Content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_footer.html">Footer</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_header.html">Header</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_page.html">Pages</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>layout</span>
-                <ul>
-                    
-                    <li><a class="" href="layout/_content.html">Content</a></li>
-                    
-                    <li><a class="" href="layout/_footer.html">Footer</a></li>
-                    
-                    <li><a class="" href="layout/_header.html">Header</a></li>
-                    
-                    <li><a class="" href="layout/_page.html">Pages</a></li>
-                    
+        
+            
+                <h2 class="heading">navigation</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../navigation/_breadcrumbs.html">Breadcrumbs</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_navbar.html">Nav Bar</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_toolbar.html">Toolbar</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>navigation</span>
-                <ul>
-                    
-                    <li><a class="" href="navigation/_breadcrumbs.html">Breadcrumbs</a></li>
-                    
-                    <li><a class="" href="navigation/_navbar.html">Nav Bar</a></li>
-                    
-                    <li><a class="" href="navigation/_toolbar.html">Toolbar</a></li>
-                    
+        
+            
+                <h2 class="heading">normalize</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../normalize/_base.html">Admin controlled content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../normalize/_reset.html">Reset</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>normalize</span>
-                <ul>
-                    
-                    <li><a class="" href="normalize/_base.html">Admin controlled content</a></li>
-                    
-                    <li><a class="" href="normalize/_reset.html">Reset</a></li>
-                    
+        
+            
+                <h2 class="heading">sidebar</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../sidebar/_blocks.html">Sidebar Blocks</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../sidebar/_miniproductlist.html">Mini Products List</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>sidebar</span>
-                <ul>
-                    
-                    <li><a class="" href="sidebar/_blocks.html">Sidebar Blocks</a></li>
-                    
-                    <li><a class="" href="sidebar/_miniproductlist.html">Mini Products List</a></li>
-                    
-                </ul>
-            </div>
-            
-        </div>
+        
     </div>
 
-    <div class="gutter">
+    <div id="content">
         
             <div class="section">
                 
@@ -166,99 +247,144 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_weay8" height="0" src="about:blank"></iframe>
-                        <script id="script_weay8">
-                            var iframe  = document.getElementById('iframe_weay8');
+                        <iframe id="iframe_52dvg" height="0" src="about:blank"></iframe>
+                        <script id="result_52dvg" type="text/html">
+	<div class="cart">
+		<!-- Checkout types in pagetitle -->
+		<div class="page-title title-buttons">
+        	<h1>Shopping Cart</h1>
+            <ul class="checkout-types">
+                <li>
+                	<p class="paypal-logo">
+                		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7">
+                			<img title="Checkout with PayPal" alt="Checkout with PayPal" src="">
+                		</a>
+    					<span class="paypal-or">-OR-</span>
+    				</p>
+				</li>
+                <li>
+                	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+				</li>
+            </ul>
+        </div>
+        <!-- Checkout types below cart table -->
+		<div class="totals">
+		    <ul class="checkout-types">
+		        <li>
+                	<p class="paypal-logo">
+                		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7">
+                			<img title="Checkout with PayPal" alt="Checkout with PayPal" src="">
+                		</a>
+    					<span class="paypal-or">-OR-</span>
+    				</p>
+		        </li>
+		        <li>
+		        	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>
+		        </li>
+		        <li>
+		        	<a title="Checkout with Multiple Addresses" href="">Checkout with Multiple Addresses</a>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+</script>
+                        <script id="script_52dvg">
+                            var iframe  = document.getElementById('iframe_52dvg');
+                            var script  = document.getElementById('script_52dvg');
+                            var result  = document.getElementById('result_52dvg');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_weay8');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart">		<!-- Checkout types in pagetitle -->		<div class="page-title title-buttons">   	<h1>Shopping Cart</h1>  <ul class="checkout-types"> <li> 	<p class="paypal-logo"> 		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7"> 			<img title="Checkout with PayPal" alt="Checkout with PayPal" src=""> 		</a>					<span class="paypal-or">-OR-</span>				</p>				</li> <li> 	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>				</li>  </ul>   </div>   <!-- Checkout types below cart table -->		<div class="totals">		<ul class="checkout-types">		   <li> 	<p class="paypal-logo"> 		<a href="http://magebase.local/paypal/express/start/" id="ec_shortcut_553438c10b27be900a831963d0a1aca7"> 			<img title="Checkout with PayPal" alt="Checkout with PayPal" src=""> 		</a>					<span class="paypal-or">-OR-</span>				</p>		   </li>		   <li>		   	<button class="button btn-proceed-checkout btn-checkout" title="Proceed to Checkout" type="button"><span><span>Proceed to Checkout</span></span></button>		   </li>		   <li>		   	<a title="Checkout with Multiple Addresses" href="">Checkout with Multiple Addresses</a>		   </li>		</ul>		</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart&quot;&gt;
-        &lt;!-- Checkout types in pagetitle --&gt;
-        &lt;div class=&quot;page-title title-buttons&quot;&gt;
-            &lt;h1&gt;Shopping Cart&lt;/h1&gt;
-            &lt;ul class=&quot;checkout-types&quot;&gt;
-                &lt;li&gt;
-                    &lt;p class=&quot;paypal-logo&quot;&gt;
-                        &lt;a href=&quot;http://magebase.local/paypal/express/start/&quot; id=&quot;ec_shortcut_553438c10b27be900a831963d0a1aca7&quot;&gt;
-                            &lt;img title=&quot;Checkout with PayPal&quot; alt=&quot;Checkout with PayPal&quot; src=&quot;&quot;&gt;
-                        &lt;/a&gt;
-                        &lt;span class=&quot;paypal-or&quot;&gt;-OR-&lt;/span&gt;
-                    &lt;/p&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;button class=&quot;button btn-proceed-checkout btn-checkout&quot; title=&quot;Proceed to Checkout&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Proceed to Checkout&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-        &lt;!-- Checkout types below cart table --&gt;
-        &lt;div class=&quot;totals&quot;&gt;
-            &lt;ul class=&quot;checkout-types&quot;&gt;
-                &lt;li&gt;
-                    &lt;p class=&quot;paypal-logo&quot;&gt;
-                        &lt;a href=&quot;http://magebase.local/paypal/express/start/&quot; id=&quot;ec_shortcut_553438c10b27be900a831963d0a1aca7&quot;&gt;
-                            &lt;img title=&quot;Checkout with PayPal&quot; alt=&quot;Checkout with PayPal&quot; src=&quot;&quot;&gt;
-                        &lt;/a&gt;
-                        &lt;span class=&quot;paypal-or&quot;&gt;-OR-&lt;/span&gt;
-                    &lt;/p&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;button class=&quot;button btn-proceed-checkout btn-checkout&quot; title=&quot;Proceed to Checkout&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Proceed to Checkout&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;a title=&quot;Checkout with Multiple Addresses&quot; href=&quot;&quot;&gt;Checkout with Multiple Addresses&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- Checkout types in pagetitle --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"page-title title-buttons"</span>&gt;</span>
+        	<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Shopping Cart<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkout-types"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+                	<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"paypal-logo"</span>&gt;</span>
+                		<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://magebase.local/paypal/express/start/"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ec_shortcut_553438c10b27be900a831963d0a1aca7"</span>&gt;</span>
+                			<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Checkout with PayPal"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Checkout with PayPal"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">""</span>&gt;</span>
+                		<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    					<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"paypal-or"</span>&gt;</span>-OR-<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    				<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+                	<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-proceed-checkout btn-checkout"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Proceed to Checkout"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Proceed to Checkout<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Checkout types below cart table --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"totals"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkout-types"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+                	<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"paypal-logo"</span>&gt;</span>
+                		<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://magebase.local/paypal/express/start/"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ec_shortcut_553438c10b27be900a831963d0a1aca7"</span>&gt;</span>
+                			<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Checkout with PayPal"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Checkout with PayPal"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">""</span>&gt;</span>
+                		<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    					<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"paypal-or"</span>&gt;</span>-OR-<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    				<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+		        	<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-proceed-checkout btn-checkout"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Proceed to Checkout"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Proceed to Checkout<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+		        	<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Checkout with Multiple Addresses"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Checkout with Multiple Addresses<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart {
-	.title-buttons {
-		.checkout-types { 
-			li { 
-				float:left; 
-				margin:0 0 5px 5px; 
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart</span> {
+	<span class="hljs-class">.title-buttons</span> {
+		<span class="hljs-class">.checkout-types</span> { 
+			<span class="hljs-tag">li</span> { 
+				<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+				<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span>px <span class="hljs-number">5</span>px;</span> 
 			}
 		}
 	}
-	.checkout-types { 
-		float:right; 
-		text-align:right;
-		.paypal-or { 
-			margin:0 8px; 
-			line-height:2.3;
+	<span class="hljs-class">.checkout-types</span> { 
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:right</span>; 
+		<span class="hljs-attribute">text-align</span><span class="hljs-pseudo">:right</span>;
+		<span class="hljs-class">.paypal-or</span> { 
+			<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">8</span>px;</span> 
+			<span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">2.3</span>;</span>
 		}
 	}
-	.totals {
-		.checkout-types {
-			.paypal-or { 
-				clear:both; 
-				display:block; 
-				padding:3px 55px 8px 0; 
-				line-height:1.0; 
-				font-size:11px;
+	<span class="hljs-class">.totals</span> {
+		<span class="hljs-class">.checkout-types</span> {
+			<span class="hljs-class">.paypal-or</span> { 
+				<span class="hljs-attribute">clear</span><span class="hljs-value">:both;</span> 
+				<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> 
+				<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">3</span>px <span class="hljs-number">55</span>px <span class="hljs-number">8</span>px <span class="hljs-number">0</span>;</span> 
+				<span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">1.0</span>;</span> 
+				<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">11</span>px;</span>
 			}
 		}
 	}
-}</code></pre></div>
-                
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -268,54 +394,75 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_zsvxq" height="0" src="about:blank"></iframe>
-                        <script id="script_zsvxq">
-                            var iframe  = document.getElementById('iframe_zsvxq');
+                        <iframe id="iframe_w2elg" height="0" src="about:blank"></iframe>
+                        <script id="result_w2elg" type="text/html">
+	<div class="cart">
+		<div class="cart-collaterals">
+	        <div class="col2-set">
+	            <div class="col-1">
+	            	[CROSSSELLS]
+	            </div>
+	            <div class="col-2">
+					[DISCOUNT]
+					[SHIPPING]
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</script>
+                        <script id="script_w2elg">
+                            var iframe  = document.getElementById('iframe_w2elg');
+                            var script  = document.getElementById('script_w2elg');
+                            var result  = document.getElementById('result_w2elg');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_zsvxq');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart">		<div class="cart-collaterals">	   <div class="col2-set">	  <div class="col-1">	  	[CROSSSELLS]	  </div>	  <div class="col-2">					[DISCOUNT]					[SHIPPING]	  </div>	   </div>	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart&quot;&gt;
-        &lt;div class=&quot;cart-collaterals&quot;&gt;
-            &lt;div class=&quot;col2-set&quot;&gt;
-                &lt;div class=&quot;col-1&quot;&gt;
-                    [CROSSSELLS]
-                &lt;/div&gt;
-                &lt;div class=&quot;col-2&quot;&gt;
-                    [DISCOUNT]
-                    [SHIPPING]
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-collaterals"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col2-set"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-1"</span>&gt;</span>
+	            	[CROSSSELLS]
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"col-2"</span>&gt;</span>
+					[DISCOUNT]
+					[SHIPPING]
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart {
-	.cart-collaterals { 
-		padding:25px 0 0;
-		.col2-set { 
-			float:left; 
-			width:700px; 
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart</span> {
+	<span class="hljs-class">.cart-collaterals</span> { 
+		<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">25</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span>
+		<span class="hljs-class">.col2-set</span> { 
+			<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">700</span>px;</span> 
 		}
 	}
-}</code></pre></div>
-                
+}
 
+
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -325,75 +472,107 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_cvebw" height="0" src="about:blank"></iframe>
-                        <script id="script_cvebw">
-                            var iframe  = document.getElementById('iframe_cvebw');
+                        <iframe id="iframe_v4vbe" height="0" src="about:blank"></iframe>
+                        <script id="result_v4vbe" type="text/html">
+	<div class="cart">
+		<div class="crosssell">
+		    <h2>Based on your selection, you may be interested in the following items:</h2>
+		    <ul id="crosssell-products-list">
+		        <li class="item odd">
+		            <a title="Product Name" href="" class="product-image">
+		                <img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75">
+		            </a>
+		            <div class="product-details">
+		                <h3 class="product-name"><a href="">Product Name</a></h3>
+		                <div class="price-box">
+		                    <span id="product-price-25" class="regular-price">
+		                        <span class="price">£2,299.99</span>
+		                    </span>
+		                </div>
+		                <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		                <ul class="add-to-links">
+		                    <li><a class="link-wishlist" href="">Add to Wishlist</a></li>
+		                    <li><span class="separator">|</span> <a class="link-compare" href="">Add to Compare</a></li>
+		                </ul>
+		            </div>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+</script>
+                        <script id="script_v4vbe">
+                            var iframe  = document.getElementById('iframe_v4vbe');
+                            var script  = document.getElementById('script_v4vbe');
+                            var result  = document.getElementById('result_v4vbe');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_cvebw');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart">		<div class="crosssell">		<h2>Based on your selection, you may be interested in the following items:</h2>		<ul id="crosssell-products-list">		   <li class="item odd">		  <a title="Product Name" href="" class="product-image">		 <img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75">		  </a>		  <div class="product-details">		 <h3 class="product-name"><a href="">Product Name</a></h3>		 <div class="price-box">		<span id="product-price-25" class="regular-price">		<span class="price">£2,299.99</span>		</span>		 </div>		 <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>		 <ul class="add-to-links">		<li><a class="link-wishlist" href="">Add to Wishlist</a></li>		<li><span class="separator">|</span> <a class="link-compare" href="">Add to Compare</a></li>		 </ul>		  </div>		   </li>		</ul>		</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart&quot;&gt;
-        &lt;div class=&quot;crosssell&quot;&gt;
-            &lt;h2&gt;Based on your selection, you may be interested in the following items:&lt;/h2&gt;
-            &lt;ul id=&quot;crosssell-products-list&quot;&gt;
-                &lt;li class=&quot;item odd&quot;&gt;
-                    &lt;a title=&quot;Product Name&quot; href=&quot;&quot; class=&quot;product-image&quot;&gt;
-                        &lt;img width=&quot;75&quot; height=&quot;75&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/75/75&quot;&gt;
-                    &lt;/a&gt;
-                    &lt;div class=&quot;product-details&quot;&gt;
-                        &lt;h3 class=&quot;product-name&quot;&gt;&lt;a href=&quot;&quot;&gt;Product Name&lt;/a&gt;&lt;/h3&gt;
-                        &lt;div class=&quot;price-box&quot;&gt;
-                            &lt;span id=&quot;product-price-25&quot; class=&quot;regular-price&quot;&gt;
-                                &lt;span class=&quot;price&quot;&gt;£2,299.99&lt;/span&gt;
-                            &lt;/span&gt;
-                        &lt;/div&gt;
-                        &lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                        &lt;ul class=&quot;add-to-links&quot;&gt;
-                            &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;/div&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"crosssell"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Based on your selection, you may be interested in the following items:<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"crosssell-products-list"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item odd"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"75"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"75"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/75/75"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-details"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-box"</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"product-price-25"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular-price"</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£2,299.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+		                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-cart"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Add to Cart"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Add to Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"add-to-links"</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-wishlist"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Add to Wishlist<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-compare"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Add to Compare<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart {	
-	.crosssell {
-		h2 { 
-			font-size:13px; 
-			font-weight:bold;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart</span> {	
+	<span class="hljs-class">.crosssell</span> {
+		<span class="hljs-tag">h2</span> { 
+			<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span> 
+			<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span>
 		}
-		.product-image { 
-			float:left; 
-			width:75px; 
-			height:75px; 
-			border:1px solid #ddd;
+		<span class="hljs-class">.product-image</span> { 
+			<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">75</span>px;</span> 
+			<span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">75</span>px;</span> 
+			<span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span>
 		}
-		.product-details { margin-left:90px; }
-		li {
-			.item { margin:12px 0; }
+		<span class="hljs-class">.product-details</span> { <span class="hljs-attribute">margin-left</span><span class="hljs-value">:<span class="hljs-number">90</span>px;</span> }
+		<span class="hljs-tag">li</span> {
+			<span class="hljs-class">.item</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">12</span>px <span class="hljs-number">0</span>;</span> }
 		}
 	}
-}</code></pre></div>
-                
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -403,49 +582,70 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_fefdp" height="0" src="about:blank"></iframe>
-                        <script id="script_fefdp">
-                            var iframe  = document.getElementById('iframe_fefdp');
+                        <iframe id="iframe_qvc4l" height="0" src="about:blank"></iframe>
+                        <script id="result_qvc4l" type="text/html">
+	<div class="cart">
+		<div class="discount">
+		    <h2>Discount Codes</h2>
+		    <div class="discount-form">
+		        <label for="coupon_code">Enter your coupon code if you have one.</label>
+		        <div class="input-box">
+		            <input value="" name="coupon_code" id="coupon_code" class="input-text">
+		        </div>
+		        <div class="buttons-set">
+		            <button value="Apply Coupon" onclick="discountForm.submit(false)" class="button" title="Apply Coupon" type="button"><span><span>Apply Coupon</span></span></button>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</script>
+                        <script id="script_qvc4l">
+                            var iframe  = document.getElementById('iframe_qvc4l');
+                            var script  = document.getElementById('script_qvc4l');
+                            var result  = document.getElementById('result_qvc4l');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_fefdp');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart">		<div class="discount">		<h2>Discount Codes</h2>		<div class="discount-form">		   <label for="coupon_code">Enter your coupon code if you have one.</label>		   <div class="input-box">		  <input value="" name="coupon_code" id="coupon_code" class="input-text">		   </div>		   <div class="buttons-set">		  <button value="Apply Coupon" onclick="discountForm.submit(false)" class="button" title="Apply Coupon" type="button"><span><span>Apply Coupon</span></span></button>		   </div>		</div>		</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart&quot;&gt;
-        &lt;div class=&quot;discount&quot;&gt;
-            &lt;h2&gt;Discount Codes&lt;/h2&gt;
-            &lt;div class=&quot;discount-form&quot;&gt;
-                &lt;label for=&quot;coupon_code&quot;&gt;Enter your coupon code if you have one.&lt;/label&gt;
-                &lt;div class=&quot;input-box&quot;&gt;
-                    &lt;input value=&quot;&quot; name=&quot;coupon_code&quot; id=&quot;coupon_code&quot; class=&quot;input-text&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;buttons-set&quot;&gt;
-                    &lt;button value=&quot;Apply Coupon&quot; onclick=&quot;discountForm.submit(false)&quot; class=&quot;button&quot; title=&quot;Apply Coupon&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Apply Coupon&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"discount"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Discount Codes<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"discount-form"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"coupon_code"</span>&gt;</span>Enter your coupon code if you have one.<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"coupon_code"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"coupon_code"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"buttons-set"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Apply Coupon"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"discountForm.submit(false)"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Apply Coupon"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Apply Coupon<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart {
-	.discount {}
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart</span> {
+	<span class="hljs-class">.discount</span> {}
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -455,91 +655,154 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_vvoyp" height="0" src="about:blank"></iframe>
-                        <script id="script_vvoyp">
-                            var iframe  = document.getElementById('iframe_vvoyp');
+                        <iframe id="iframe_uojea" height="0" src="about:blank"></iframe>
+                        <script id="result_uojea" type="text/html">
+	<div class="cart">
+		<div class="shipping">
+		    <h2>Estimate Shipping and Tax</h2>
+		    <div class="shipping-form">
+		       <form id="shipping-zip-form" method="post" action="http://magebase.local/checkout/cart/estimatePost/">
+		            <p>Enter your destination to get a shipping estimate.</p>
+		            <ul class="form-list">
+		                <li>
+		                    <label class="required" for="country"><em>*</em>Country</label>
+		                    <div class="input-box">
+		                        <select title="Country" class="validate-select" id="country" name="country_id">
+		                        	<option value=""> </option>
+									<option selected="selected" value="US">United States</option>
+		                        </select>
+		                    </div>
+		                </li>
+		                <li>
+		                    <label for="region_id">State/Province</label>
+		                    <div class="input-box">
+		                        <select title="State/Province" name="region_id" id="region_id" class="required-entry validate-select">
+		                            <option value="">Please select region, state or province</option>
+		                        	<option value="1" title="Alabama">Alabama</option>
+		                        </select>
+		                       <input type="text" style="display:none;" class="input-text required-entry" title="State/Province" value="" name="region" id="region">
+		                   </div>
+		                </li>
+		                <li>
+		                    <label for="postcode">Zip/Postal Code</label>
+		                    <div class="input-box">
+		                        <input type="text" value="" name="estimate_postcode" id="postcode" class="input-text validate-postcode">
+		                    </div>
+		                </li>
+		            </ul>
+		            <div class="buttons-set">
+		                <button class="button" onclick="coShippingMethodForm.submit()" title="Get a Quote" type="button"><span><span>Get a Quote</span></span></button>
+		            </div>
+		        </form>
+				<form action="" id="co-shipping-method-form">
+				    <dl class="sp-methods">
+				        <dt>Flat Rate</dt>
+				        <dd>
+				            <ul>
+				                <li>
+				                    <input type="radio" class="radio" name="estimate_method">
+				                    <label>Fixed <span class="price">£10.00</span></label>
+				                </li>
+				            </ul>
+				        </dd>
+				    </dl>
+				    <div class="buttons-set">
+				        <button value="Update Total" name="do" class="button" title="Update Total" type="submit"><span><span>Update Total</span></span></button>
+				    </div>
+				</form>
+		    </div>
+		</div>
+	</div>
+</script>
+                        <script id="script_uojea">
+                            var iframe  = document.getElementById('iframe_uojea');
+                            var script  = document.getElementById('script_uojea');
+                            var result  = document.getElementById('result_uojea');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_vvoyp');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart">		<div class="shipping">		<h2>Estimate Shipping and Tax</h2>		<div class="shipping-form">		  <form id="shipping-zip-form" method="post" action="http://magebase.local/checkout/cart/estimatePost/">		  <p>Enter your destination to get a shipping estimate.</p>		  <ul class="form-list">		 <li>		<label class="required" for="country"><em>*</em>Country</label>		<div class="input-box">		<select title="Country" class="validate-select" id="country" name="country_id">			<option value=""> </option>									<option selected="selected" value="US">United States</option>		</select>		</div>		 </li>		 <li>		<label for="region_id">State/Province</label>		<div class="input-box">		<select title="State/Province" name="region_id" id="region_id" class="required-entry validate-select">		   <option value="">Please select region, state or province</option>			<option value="1" title="Alabama">Alabama</option>		</select>		   <input type="text" style="display:none;" class="input-text required-entry" title="State/Province" value="" name="region" id="region">		</div>		 </li>		 <li>		<label for="postcode">Zip/Postal Code</label>		<div class="input-box">		<input type="text" value="" name="estimate_postcode" id="postcode" class="input-text validate-postcode">		</div>		 </li>		  </ul>		  <div class="buttons-set">		 <button class="button" onclick="coShippingMethodForm.submit()" title="Get a Quote" type="button"><span><span>Get a Quote</span></span></button>		  </div>		   </form>				<form action="" id="co-shipping-method-form">				<dl class="sp-methods">				   <dt>Flat Rate</dt>				   <dd>				  <ul>				 <li>				<input type="radio" class="radio" name="estimate_method">				<label>Fixed <span class="price">£10.00</span></label>				 </li>				  </ul>				   </dd>				</dl>				<div class="buttons-set">				   <button value="Update Total" name="do" class="button" title="Update Total" type="submit"><span><span>Update Total</span></span></button>				</div>				</form>		</div>		</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart&quot;&gt;
-        &lt;div class=&quot;shipping&quot;&gt;
-            &lt;h2&gt;Estimate Shipping and Tax&lt;/h2&gt;
-            &lt;div class=&quot;shipping-form&quot;&gt;
-               &lt;form id=&quot;shipping-zip-form&quot; method=&quot;post&quot; action=&quot;http://magebase.local/checkout/cart/estimatePost/&quot;&gt;
-                    &lt;p&gt;Enter your destination to get a shipping estimate.&lt;/p&gt;
-                    &lt;ul class=&quot;form-list&quot;&gt;
-                        &lt;li&gt;
-                            &lt;label class=&quot;required&quot; for=&quot;country&quot;&gt;&lt;em&gt;*&lt;/em&gt;Country&lt;/label&gt;
-                            &lt;div class=&quot;input-box&quot;&gt;
-                                &lt;select title=&quot;Country&quot; class=&quot;validate-select&quot; id=&quot;country&quot; name=&quot;country_id&quot;&gt;
-                                    &lt;option value=&quot;&quot;&gt; &lt;/option&gt;
-                                    &lt;option selected=&quot;selected&quot; value=&quot;US&quot;&gt;United States&lt;/option&gt;
-                                &lt;/select&gt;
-                            &lt;/div&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                            &lt;label for=&quot;region_id&quot;&gt;State/Province&lt;/label&gt;
-                            &lt;div class=&quot;input-box&quot;&gt;
-                                &lt;select title=&quot;State/Province&quot; name=&quot;region_id&quot; id=&quot;region_id&quot; class=&quot;required-entry validate-select&quot;&gt;
-                                    &lt;option value=&quot;&quot;&gt;Please select region, state or province&lt;/option&gt;
-                                    &lt;option value=&quot;1&quot; title=&quot;Alabama&quot;&gt;Alabama&lt;/option&gt;
-                                &lt;/select&gt;
-                               &lt;input type=&quot;text&quot; style=&quot;display:none;&quot; class=&quot;input-text required-entry&quot; title=&quot;State/Province&quot; value=&quot;&quot; name=&quot;region&quot; id=&quot;region&quot;&gt;
-                           &lt;/div&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                            &lt;label for=&quot;postcode&quot;&gt;Zip/Postal Code&lt;/label&gt;
-                            &lt;div class=&quot;input-box&quot;&gt;
-                                &lt;input type=&quot;text&quot; value=&quot;&quot; name=&quot;estimate_postcode&quot; id=&quot;postcode&quot; class=&quot;input-text validate-postcode&quot;&gt;
-                            &lt;/div&gt;
-                        &lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;div class=&quot;buttons-set&quot;&gt;
-                        &lt;button class=&quot;button&quot; onclick=&quot;coShippingMethodForm.submit()&quot; title=&quot;Get a Quote&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Get a Quote&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;/div&gt;
-                &lt;/form&gt;
-                &lt;form action=&quot;&quot; id=&quot;co-shipping-method-form&quot;&gt;
-                    &lt;dl class=&quot;sp-methods&quot;&gt;
-                        &lt;dt&gt;Flat Rate&lt;/dt&gt;
-                        &lt;dd&gt;
-                            &lt;ul&gt;
-                                &lt;li&gt;
-                                    &lt;input type=&quot;radio&quot; class=&quot;radio&quot; name=&quot;estimate_method&quot;&gt;
-                                    &lt;label&gt;Fixed &lt;span class=&quot;price&quot;&gt;£10.00&lt;/span&gt;&lt;/label&gt;
-                                &lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/dd&gt;
-                    &lt;/dl&gt;
-                    &lt;div class=&quot;buttons-set&quot;&gt;
-                        &lt;button value=&quot;Update Total&quot; name=&quot;do&quot; class=&quot;button&quot; title=&quot;Update Total&quot; type=&quot;submit&quot;&gt;&lt;span&gt;&lt;span&gt;Update Total&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;/div&gt;
-                &lt;/form&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"shipping"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Estimate Shipping and Tax<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"shipping-form"</span>&gt;</span>
+		       <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"shipping-zip-form"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"http://magebase.local/checkout/cart/estimatePost/"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Enter your destination to get a shipping estimate.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"country"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Country<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Country"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"validate-select"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"country"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"country_id"</span>&gt;</span>
+		                        	<span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+									<span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">selected</span>=<span class="hljs-value">"selected"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"US"</span>&gt;</span>United States<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		                <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"region_id"</span>&gt;</span>State/Province<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"State/Province"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"region_id"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"region_id"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required-entry validate-select"</span>&gt;</span>
+		                            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>Please select region, state or province<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+		                        	<span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Alabama"</span>&gt;</span>Alabama<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+		                       <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"display:none;"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"State/Province"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"region"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"region"</span>&gt;</span>
+		                   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		                <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"postcode"</span>&gt;</span>Zip/Postal Code<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+		                        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"estimate_postcode"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"postcode"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text validate-postcode"</span>&gt;</span>
+		                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		                <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"buttons-set"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"coShippingMethodForm.submit()"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Get a Quote"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Get a Quote<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"co-shipping-method-form"</span>&gt;</span>
+				    <span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sp-methods"</span>&gt;</span>
+				        <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Flat Rate<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+				        <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>
+				            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+				                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+				                    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"estimate_method"</span>&gt;</span>
+				                    <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Fixed <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£10.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+				                <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+				            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+				        <span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+				    <span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+				    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"buttons-set"</span>&gt;</span>
+				        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Update Total"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"do"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Update Total"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Update Total<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+				    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart {
-	.shipping {}
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart</span> {
+	<span class="hljs-class">.shipping</span> {}
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -549,106 +812,144 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_cqppt" height="0" src="about:blank"></iframe>
-                        <script id="script_cqppt">
-                            var iframe  = document.getElementById('iframe_cqppt');
+                        <iframe id="iframe_9anok" height="0" src="about:blank"></iframe>
+                        <script id="result_9anok" type="text/html">
+	<div class="cart">
+	    <div class="totals">
+	        <table id="shopping-cart-totals-table">
+	            <colgroup>
+	                <col>
+	                <col width="1">
+	            </colgroup>
+	            <tfoot>
+					<tr class="summary-details-1 summary-details summary-details-first">
+            			<td colspan="1" style="" class="a-right">Tax Zone (8.25%)<br></td>
+                        <td rowspan="1" class="a-right" style=""><span class="price">£248.65</span></td>
+                    </tr>
+					<tr class="summary-total show-details">
+					    <td colspan="1" class="a-right" style=""><div class="summary-collapse">Tax</div></td>
+					    <td class="a-right" style=""><span class="price">£248.65</span></td>
+					</tr>
+	                <tr>
+	                    <td colspan="1" class="a-right" style=""><strong>Grand Total</strong></td>
+	                    <td class="a-right" style=""><strong><span class="price">£414.99</span></strong></td>
+	                </tr>
+	            </tfoot>
+	            <tbody>
+	                <tr>
+	                    <td colspan="1" class="a-right" style="">Subtotal</td>
+	                    <td class="a-right" style=""><span class="price">£414.99</span></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        [CHECKOUT_TYPES]
+	    </div>
+	</div>
+</script>
+                        <script id="script_9anok">
+                            var iframe  = document.getElementById('iframe_9anok');
+                            var script  = document.getElementById('script_9anok');
+                            var result  = document.getElementById('result_9anok');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_cqppt');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart">	<div class="totals">	   <table id="shopping-cart-totals-table">	  <colgroup>	 <col>	 <col width="1">	  </colgroup>	  <tfoot>					<tr class="summary-details-1 summary-details summary-details-first">  			<td colspan="1" style="" class="a-right">Tax Zone (8.25%)<br></td><td rowspan="1" class="a-right" style=""><span class="price">£248.65</span></td></tr>					<tr class="summary-total show-details">					<td colspan="1" class="a-right" style=""><div class="summary-collapse">Tax</div></td>					<td class="a-right" style=""><span class="price">£248.65</span></td>					</tr>	 <tr>	<td colspan="1" class="a-right" style=""><strong>Grand Total</strong></td>	<td class="a-right" style=""><strong><span class="price">£414.99</span></strong></td>	 </tr>	  </tfoot>	  <tbody>	 <tr>	<td colspan="1" class="a-right" style="">Subtotal</td>	<td class="a-right" style=""><span class="price">£414.99</span></td>	 </tr>	  </tbody>	   </table>	   [CHECKOUT_TYPES]	</div>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart&quot;&gt;
-        &lt;div class=&quot;totals&quot;&gt;
-            &lt;table id=&quot;shopping-cart-totals-table&quot;&gt;
-                &lt;colgroup&gt;
-                    &lt;col&gt;
-                    &lt;col width=&quot;1&quot;&gt;
-                &lt;/colgroup&gt;
-                &lt;tfoot&gt;
-                    &lt;tr class=&quot;summary-details-1 summary-details summary-details-first&quot;&gt;
-                        &lt;td colspan=&quot;1&quot; style=&quot;&quot; class=&quot;a-right&quot;&gt;Tax Zone (8.25%)&lt;br&gt;&lt;/td&gt;
-                        &lt;td rowspan=&quot;1&quot; class=&quot;a-right&quot; style=&quot;&quot;&gt;&lt;span class=&quot;price&quot;&gt;£248.65&lt;/span&gt;&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr class=&quot;summary-total show-details&quot;&gt;
-                        &lt;td colspan=&quot;1&quot; class=&quot;a-right&quot; style=&quot;&quot;&gt;&lt;div class=&quot;summary-collapse&quot;&gt;Tax&lt;/div&gt;&lt;/td&gt;
-                        &lt;td class=&quot;a-right&quot; style=&quot;&quot;&gt;&lt;span class=&quot;price&quot;&gt;£248.65&lt;/span&gt;&lt;/td&gt;
-                    &lt;/tr&gt;
-                    &lt;tr&gt;
-                        &lt;td colspan=&quot;1&quot; class=&quot;a-right&quot; style=&quot;&quot;&gt;&lt;strong&gt;Grand Total&lt;/strong&gt;&lt;/td&gt;
-                        &lt;td class=&quot;a-right&quot; style=&quot;&quot;&gt;&lt;strong&gt;&lt;span class=&quot;price&quot;&gt;£414.99&lt;/span&gt;&lt;/strong&gt;&lt;/td&gt;
-                    &lt;/tr&gt;
-                &lt;/tfoot&gt;
-                &lt;tbody&gt;
-                    &lt;tr&gt;
-                        &lt;td colspan=&quot;1&quot; class=&quot;a-right&quot; style=&quot;&quot;&gt;Subtotal&lt;/td&gt;
-                        &lt;td class=&quot;a-right&quot; style=&quot;&quot;&gt;&lt;span class=&quot;price&quot;&gt;£414.99&lt;/span&gt;&lt;/td&gt;
-                    &lt;/tr&gt;
-                &lt;/tbody&gt;
-            &lt;/table&gt;
-            [CHECKOUT_TYPES]
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"totals"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"shopping-cart-totals-table"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">col</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"summary-details-1 summary-details summary-details-first"</span>&gt;</span>
+            			<span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>Tax Zone (8.25%)<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£248.65<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"summary-total show-details"</span>&gt;</span>
+					    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"summary-collapse"</span>&gt;</span>Tax<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+					    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£248.65<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Grand Total<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£414.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span>Subtotal<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£414.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+	        [CHECKOUT_TYPES]
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart {
-	.totals {
-		float:right;
-		table { 
-			width:100%;
-			th, td { padding:5px; }
-			th { font-weight:bold; }
-			tfoot {
-				th {}
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart</span> {
+	<span class="hljs-class">.totals</span> {
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:right</span>;
+		<span class="hljs-tag">table</span> { 
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">100</span>%;</span>
+			<span class="hljs-tag">th</span>, <span class="hljs-tag">td</span> { <span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">5</span>px;</span> }
+			<span class="hljs-tag">th</span> { <span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> }
+			<span class="hljs-tag">tfoot</span> {
+				<span class="hljs-tag">th</span> {}
 			}
 		}
 	}
 
 }
-// Shopping cart total summary row expandable to details
-tr {
-	&.summary-total { 
-		cursor:pointer;
-		td {}
-		.summary-collapse { 
-			float:right; 
-			text-align:right; 
-			padding-left:20px; 
-			background:url(../images/bkg_collapse.gif) 0 4px no-repeat; 
-			cursor:pointer;
+<span class="hljs-comment">// Shopping cart total summary row expandable to details</span>
+<span class="hljs-tag">tr</span> {
+	&amp;<span class="hljs-class">.summary-total</span> { 
+		<span class="hljs-attribute">cursor</span><span class="hljs-value">:pointer;</span>
+		<span class="hljs-tag">td</span> {}
+		<span class="hljs-class">.summary-collapse</span> { 
+			<span class="hljs-attribute">float</span><span class="hljs-pseudo">:right</span>; 
+			<span class="hljs-attribute">text-align</span><span class="hljs-pseudo">:right</span>; 
+			<span class="hljs-attribute">padding-left</span><span class="hljs-value">:<span class="hljs-number">20</span>px;</span> 
+			<span class="hljs-attribute">background</span><span class="hljs-value">:url(../images/bkg_collapse.gif) <span class="hljs-number">0</span> <span class="hljs-number">4</span>px no-repeat;</span> 
+			<span class="hljs-attribute">cursor</span><span class="hljs-value">:pointer;</span>
 		}
 	}
-	&.show-details {
-		.summary-collapse { background-position:0 -53px; }
-		td {}
+	&amp;<span class="hljs-class">.show-details</span> {
+		<span class="hljs-class">.summary-collapse</span> { <span class="hljs-attribute">background-position</span><span class="hljs-value">:<span class="hljs-number">0</span> -<span class="hljs-number">53</span>px;</span> }
+		<span class="hljs-tag">td</span> {}
 	}
-	&.summary-details {
-		td { 
-			font-size:11px; 
-			background-color:#dae1e4; 
-			color:#626465;
+	&amp;<span class="hljs-class">.summary-details</span> {
+		<span class="hljs-tag">td</span> { 
+			<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">11</span>px;</span> 
+			<span class="hljs-attribute">background-color</span><span class="hljs-value">:<span class="hljs-hexcolor">#dae1e4</span>;</span> 
+			<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#626465</span>;</span>
 		}
 	}
-	&.summary-details-first {
-		td { border-top:1px solid #d2d8db; }
+	&amp;<span class="hljs-class">.summary-details-first</span> {
+		<span class="hljs-tag">td</span> { <span class="hljs-attribute">border-top</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#d2d8db</span>;</span> }
 	}
-	&.summary-details-excluded { font-style:italic; }
-}</code></pre></div>
-                
+	&amp;<span class="hljs-class">.summary-details-excluded</span> { <span class="hljs-attribute">font-style</span><span class="hljs-value">:italic;</span> }
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -659,110 +960,192 @@ tr {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_tte97" height="0" src="about:blank"></iframe>
-                        <script id="script_tte97">
-                            var iframe  = document.getElementById('iframe_tte97');
+                        <iframe id="iframe_1ad4j" height="0" src="about:blank"></iframe>
+                        <script id="result_1ad4j" type="text/html">
+	<table class="data-table cart-table" id="shopping-cart-table">
+	    <colgroup>
+	        <col width="1">
+	        <col>
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	        <col width="1">
+	    </colgroup>
+	    <thead>
+	        <tr class="first">
+	            <th rowspan="2">&nbsp;</th>
+	            <th rowspan="2"><span class="nobr">Product Name</span></th>
+	            <th rowspan="2"></th>
+	            <th colspan="2" class="a-center"><span class="nobr">Unit Price</span></th>
+	            <th class="a-center" rowspan="2">Qty</th>
+	            <th colspan="2" class="a-center">Subtotal</th>
+	            <th class="a-center" rowspan="2">&nbsp;</th>
+	        </tr>
+	        <tr class="last">
+	            <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>
+	            <th> <span class="tax-flag">(Incl. Tax)</span></th>
+	            <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>
+	            <th> <span class="tax-flag">(Incl. Tax)</span></th>
+	        </tr>
+	    </thead>
+	    <tfoot>
+	        <tr class="first last">
+	            <td class="a-right last" colspan="50">
+	                <button class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
+	                <button class="button btn-update" title="Update Shopping Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Shopping Cart</span></span></button>
+	                <button id="empty_cart_button" class="button btn-empty" title="Clear Shopping Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Shopping Cart</span></span></button>
+	            </td>
+	        </tr>
+	    </tfoot>
+	    <tbody>
+	        <tr class="first odd">
+	            <td><a class="product-image" title="Product Name" href=""><img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75"></a></td>
+	            <td>
+	                <h2 class="product-name"><a href="">Product Name</a></h2>
+	                <dl class="item-options">
+	                    <dt>Option</dt>
+	                    <dd>Value</dd>
+	                </dl>
+	                <p class="item-msg error">* The requested quantity for "Product Name" is not available.</p>
+	            </td>
+	            <td class="a-center">
+	                <a title="Edit item parameters" href="">Edit</a>
+	            </td>
+	            <td class="a-right">
+	                <span class="cart-price"><span class="price">£15.00</span></span>
+	            </td>
+	            <!-- inclusive price starts here -->
+	            <td>
+	                <span class="cart-price"><span class="price">£16.24</span></span>
+	            </td>
+	            <td class="a-center">
+	                <input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15][qty]">
+	            </td>
+	            <!--Sub total starts here -->
+	            <td class="a-right">
+	                <span class="cart-price"><span class="price">£15.00</span></span>
+	            </td>
+	            <td>
+	                <span class="cart-price"><span class="price">£16.24</span></span>
+	            </td>
+	            <td class="a-center last">
+	                <a class="btn-remove btn-remove2" title="Remove item" href="">Remove item</a>
+	            </td>
+	        </tr>
+	    </tbody>
+	</table>
+</script>
+                        <script id="script_1ad4j">
+                            var iframe  = document.getElementById('iframe_1ad4j');
+                            var script  = document.getElementById('script_1ad4j');
+                            var result  = document.getElementById('result_1ad4j');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_tte97');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<table class="data-table cart-table" id="shopping-cart-table">	<colgroup>	   <col width="1">	   <col>	   <col width="1">	   <col width="1">	   <col width="1">	   <col width="1">	   <col width="1">	   <col width="1">	   <col width="1">	</colgroup>	<thead>	   <tr class="first">	  <th rowspan="2">&nbsp;</th>	  <th rowspan="2"><span class="nobr">Product Name</span></th>	  <th rowspan="2"></th>	  <th colspan="2" class="a-center"><span class="nobr">Unit Price</span></th>	  <th class="a-center" rowspan="2">Qty</th>	  <th colspan="2" class="a-center">Subtotal</th>	  <th class="a-center" rowspan="2">&nbsp;</th>	   </tr>	   <tr class="last">	  <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>	  <th> <span class="tax-flag">(Incl. Tax)</span></th>	  <th class="a-right"> <span class="tax-flag">(Excl. Tax)</span></th>	  <th> <span class="tax-flag">(Incl. Tax)</span></th>	   </tr>	</thead>	<tfoot>	   <tr class="first last">	  <td class="a-right last" colspan="50">	 <button class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>	 <button class="button btn-update" title="Update Shopping Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Shopping Cart</span></span></button>	 <button id="empty_cart_button" class="button btn-empty" title="Clear Shopping Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Shopping Cart</span></span></button>	  </td>	   </tr>	</tfoot>	<tbody>	   <tr class="first odd">	  <td><a class="product-image" title="Product Name" href=""><img width="75" height="75" alt="Product Name" src="http://placekitten.com/75/75"></a></td>	  <td>	 <h2 class="product-name"><a href="">Product Name</a></h2>	 <dl class="item-options">	<dt>Option</dt>	<dd>Value</dd>	 </dl>	 <p class="item-msg error">* The requested quantity for "Product Name" is not available.</p>	  </td>	  <td class="a-center">	 <a title="Edit item parameters" href="">Edit</a>	  </td>	  <td class="a-right">	 <span class="cart-price"><span class="price">£15.00</span></span>	  </td>	  <!-- inclusive price starts here -->	  <td>	 <span class="cart-price"><span class="price">£16.24</span></span>	  </td>	  <td class="a-center">	 <input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15][qty]">	  </td>	  <!--Sub total starts here -->	  <td class="a-right">	 <span class="cart-price"><span class="price">£15.00</span></span>	  </td>	  <td>	 <span class="cart-price"><span class="price">£16.24</span></span>	  </td>	  <td class="a-center last">	 <a class="btn-remove btn-remove2" title="Remove item" href="">Remove item</a>	  </td>	   </tr>	</tbody>	</table>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;table class=&quot;data-table cart-table&quot; id=&quot;shopping-cart-table&quot;&gt;
-        &lt;colgroup&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col width=&quot;1&quot;&gt;
-            &lt;col width=&quot;1&quot;&gt;
-        &lt;/colgroup&gt;
-        &lt;thead&gt;
-            &lt;tr class=&quot;first&quot;&gt;
-                &lt;th rowspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/th&gt;
-                &lt;th rowspan=&quot;2&quot;&gt;&lt;span class=&quot;nobr&quot;&gt;Product Name&lt;/span&gt;&lt;/th&gt;
-                &lt;th rowspan=&quot;2&quot;&gt;&lt;/th&gt;
-                &lt;th colspan=&quot;2&quot; class=&quot;a-center&quot;&gt;&lt;span class=&quot;nobr&quot;&gt;Unit Price&lt;/span&gt;&lt;/th&gt;
-                &lt;th class=&quot;a-center&quot; rowspan=&quot;2&quot;&gt;Qty&lt;/th&gt;
-                &lt;th colspan=&quot;2&quot; class=&quot;a-center&quot;&gt;Subtotal&lt;/th&gt;
-                &lt;th class=&quot;a-center&quot; rowspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr class=&quot;last&quot;&gt;
-                &lt;th class=&quot;a-right&quot;&gt; &lt;span class=&quot;tax-flag&quot;&gt;(Excl. Tax)&lt;/span&gt;&lt;/th&gt;
-                &lt;th&gt; &lt;span class=&quot;tax-flag&quot;&gt;(Incl. Tax)&lt;/span&gt;&lt;/th&gt;
-                &lt;th class=&quot;a-right&quot;&gt; &lt;span class=&quot;tax-flag&quot;&gt;(Excl. Tax)&lt;/span&gt;&lt;/th&gt;
-                &lt;th&gt; &lt;span class=&quot;tax-flag&quot;&gt;(Incl. Tax)&lt;/span&gt;&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tfoot&gt;
-            &lt;tr class=&quot;first last&quot;&gt;
-                &lt;td class=&quot;a-right last&quot; colspan=&quot;50&quot;&gt;
-                    &lt;button class=&quot;button btn-continue&quot; title=&quot;Continue Shopping&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Continue Shopping&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;button class=&quot;button btn-update&quot; title=&quot;Update Shopping Cart&quot; value=&quot;update_qty&quot; name=&quot;update_cart_action&quot; type=&quot;submit&quot;&gt;&lt;span&gt;&lt;span&gt;Update Shopping Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;button id=&quot;empty_cart_button&quot; class=&quot;button btn-empty&quot; title=&quot;Clear Shopping Cart&quot; value=&quot;empty_cart&quot; name=&quot;update_cart_action&quot; type=&quot;submit&quot;&gt;&lt;span&gt;&lt;span&gt;Clear Shopping Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tfoot&gt;
-        &lt;tbody&gt;
-            &lt;tr class=&quot;first odd&quot;&gt;
-                &lt;td&gt;&lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;&quot;&gt;&lt;img width=&quot;75&quot; height=&quot;75&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/75/75&quot;&gt;&lt;/a&gt;&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;h2 class=&quot;product-name&quot;&gt;&lt;a href=&quot;&quot;&gt;Product Name&lt;/a&gt;&lt;/h2&gt;
-                    &lt;dl class=&quot;item-options&quot;&gt;
-                        &lt;dt&gt;Option&lt;/dt&gt;
-                        &lt;dd&gt;Value&lt;/dd&gt;
-                    &lt;/dl&gt;
-                    &lt;p class=&quot;item-msg error&quot;&gt;* The requested quantity for &quot;Product Name&quot; is not available.&lt;/p&gt;
-                &lt;/td&gt;
-                &lt;td class=&quot;a-center&quot;&gt;
-                    &lt;a title=&quot;Edit item parameters&quot; href=&quot;&quot;&gt;Edit&lt;/a&gt;
-                &lt;/td&gt;
-                &lt;td class=&quot;a-right&quot;&gt;
-                    &lt;span class=&quot;cart-price&quot;&gt;&lt;span class=&quot;price&quot;&gt;£15.00&lt;/span&gt;&lt;/span&gt;
-                &lt;/td&gt;
-                &lt;!-- inclusive price starts here --&gt;
-                &lt;td&gt;
-                    &lt;span class=&quot;cart-price&quot;&gt;&lt;span class=&quot;price&quot;&gt;£16.24&lt;/span&gt;&lt;/span&gt;
-                &lt;/td&gt;
-                &lt;td class=&quot;a-center&quot;&gt;
-                    &lt;input maxlength=&quot;12&quot; class=&quot;input-text qty&quot; title=&quot;Qty&quot; size=&quot;4&quot; value=&quot;1&quot; name=&quot;cart[15][qty]&quot;&gt;
-                &lt;/td&gt;
-                &lt;!--Sub total starts here --&gt;
-                &lt;td class=&quot;a-right&quot;&gt;
-                    &lt;span class=&quot;cart-price&quot;&gt;&lt;span class=&quot;price&quot;&gt;£15.00&lt;/span&gt;&lt;/span&gt;
-                &lt;/td&gt;
-                &lt;td&gt;
-                    &lt;span class=&quot;cart-price&quot;&gt;&lt;span class=&quot;price&quot;&gt;£16.24&lt;/span&gt;&lt;/span&gt;
-                &lt;/td&gt;
-                &lt;td class=&quot;a-center last&quot;&gt;
-                    &lt;a class=&quot;btn-remove btn-remove2&quot; title=&quot;Remove item&quot; href=&quot;&quot;&gt;Remove item&lt;/a&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"data-table cart-table"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"shopping-cart-table"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">colgroup</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">col</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"1"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">colgroup</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span>&amp;nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nobr"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nobr"</span>&gt;</span>Unit Price<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span>Qty<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span>&gt;</span>Subtotal<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span> <span class="hljs-attribute">rowspan</span>=<span class="hljs-value">"2"</span>&gt;</span>&amp;nbsp;<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"last"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tax-flag"</span>&gt;</span>(Excl. Tax)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tax-flag"</span>&gt;</span>(Incl. Tax)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tax-flag"</span>&gt;</span>(Excl. Tax)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tax-flag"</span>&gt;</span>(Incl. Tax)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first last"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right last"</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">"50"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-continue"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Continue Shopping"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Continue Shopping<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-update"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Update Shopping Cart"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"update_qty"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"update_cart_action"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Update Shopping Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"empty_cart_button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-empty"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Clear Shopping Cart"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"empty_cart"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"update_cart_action"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Clear Shopping Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"first odd"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"75"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"75"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/75/75"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item-options"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item-msg error"</span>&gt;</span>* The requested quantity for "Product Name" is not available.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Edit item parameters"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Edit<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-price"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-comment">&lt;!-- inclusive price starts here --&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-price"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£16.24<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">"12"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text qty"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Qty"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"4"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"cart[15][qty]"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-comment">&lt;!--Sub total starts here --&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-right"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-price"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-price"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£16.24<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"a-center last"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn-remove btn-remove2"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Remove item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Remove item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart-table { 
-	.item-msg { font-size:10px; } 
-}</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.cart-table</span> { 
+	<span class="hljs-class">.item-msg</span> { <span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span> } 
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -773,49 +1156,64 @@ tr {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_clb1c" height="0" src="about:blank"></iframe>
-                        <script id="script_clb1c">
-                            var iframe  = document.getElementById('iframe_clb1c');
+                        <iframe id="iframe_2sdwd" height="0" src="about:blank"></iframe>
+                        <script id="result_2sdwd" type="text/html">
+	<dl class="item-options">
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	    <dt>Option</dt>
+	    <dd>Value</dd>
+	</dl>
+</script>
+                        <script id="script_2sdwd">
+                            var iframe  = document.getElementById('iframe_2sdwd');
+                            var script  = document.getElementById('script_2sdwd');
+                            var result  = document.getElementById('result_2sdwd');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_clb1c');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<dl class="item-options">	<dt>Option</dt>	<dd>Value</dd>	<dt>Option</dt>	<dd>Value</dd>	<dt>Option</dt>	<dd>Value</dd>	</dl>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;dl class=&quot;item-options&quot;&gt;
-        &lt;dt&gt;Option&lt;/dt&gt;
-        &lt;dd&gt;Value&lt;/dd&gt;
-        &lt;dt&gt;Option&lt;/dt&gt;
-        &lt;dd&gt;Value&lt;/dd&gt;
-        &lt;dt&gt;Option&lt;/dt&gt;
-        &lt;dd&gt;Value&lt;/dd&gt;
-    &lt;/dl&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item-options"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.item-options {
-	dt {
-		font-weight: bold;
-		font-style: italic;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.item-options</span> {
+	<span class="hljs-tag">dt</span> {
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">: bold;</span>
+		<span class="hljs-attribute">font-style</span><span class="hljs-value">: italic;</span>
 	}
-	dd {
-		padding-left: 10px;
+	<span class="hljs-tag">dd</span> {
+		<span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
 	}
-}</code></pre></div>
-                
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -825,86 +1223,106 @@ tr {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_oymgu" height="0" src="about:blank"></iframe>
-                        <script id="script_oymgu">
-                            var iframe  = document.getElementById('iframe_oymgu');
+                        <iframe id="iframe_e0w93" height="0" src="about:blank"></iframe>
+                        <script id="result_e0w93" type="text/html">
+<div class="truncated">
+	<div class="truncated_full_value show">
+		<dl class="item-options">
+			<dt>Option</dt>
+			<dd>Value</dd>
+			<dt>Option</dt>
+			<dd>Value</dd>
+			<dt>Option</dt>
+			<dd>Value</dd>
+		</dl>
+	</div>
+	<a class="details" href="">Details</a>
+</div>
+</script>
+                        <script id="script_e0w93">
+                            var iframe  = document.getElementById('iframe_e0w93');
+                            var script  = document.getElementById('script_e0w93');
+                            var result  = document.getElementById('result_e0w93');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_oymgu');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        <div class="truncated">	<div class="truncated_full_value show">		<dl class="item-options">			<dt>Option</dt>			<dd>Value</dd>			<dt>Option</dt>			<dd>Value</dd>			<dt>Option</dt>			<dd>Value</dd>		</dl>	</div>	<a class="details" href="">Details</a></div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>&lt;div class=&quot;truncated&quot;&gt;
-    &lt;div class=&quot;truncated_full_value show&quot;&gt;
-        &lt;dl class=&quot;item-options&quot;&gt;
-            &lt;dt&gt;Option&lt;/dt&gt;
-            &lt;dd&gt;Value&lt;/dd&gt;
-            &lt;dt&gt;Option&lt;/dt&gt;
-            &lt;dd&gt;Value&lt;/dd&gt;
-            &lt;dt&gt;Option&lt;/dt&gt;
-            &lt;dd&gt;Value&lt;/dd&gt;
-        &lt;/dl&gt;
-    &lt;/div&gt;
-    &lt;a class=&quot;details&quot; href=&quot;&quot;&gt;Details&lt;/a&gt;
-&lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"truncated"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"truncated_full_value show"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">dl</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item-options"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Value<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"details"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>Details<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.truncated {
-	cursor: help;
-	a {
-		&.dots, &.details {
-			cursor: help;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.truncated</span> {
+	<span class="hljs-attribute">cursor</span><span class="hljs-value">: help;</span>
+	<span class="hljs-tag">a</span> {
+		&amp;<span class="hljs-class">.dots</span>, &amp;<span class="hljs-class">.details</span> {
+			<span class="hljs-attribute">cursor</span><span class="hljs-value">: help;</span>
 		}
 	}
-	.truncated_full_value {
-		position: relative;
-		z-index: 999;
-		&.show {
-			.item-options {
-				top: -20px;
-				left: 50%;
+	<span class="hljs-class">.truncated_full_value</span> {
+		<span class="hljs-attribute">position</span><span class="hljs-value">: relative;</span>
+		<span class="hljs-attribute">z-index</span><span class="hljs-value">: <span class="hljs-number">999</span>;</span>
+		&amp;<span class="hljs-class">.show</span> {
+			<span class="hljs-class">.item-options</span> {
+				<span class="hljs-attribute">top</span><span class="hljs-value">: -<span class="hljs-number">20</span>px;</span>
+				<span class="hljs-attribute">left</span><span class="hljs-value">: <span class="hljs-number">50</span>%;</span>
 			}
 		}
-		.item-options {
-			position: absolute;
-			top: -99999em;
-			left: -99999em;
-			z-index: 999;
-			width: 250px;
-			padding: 8px;
-			border: 1px solid #ddd;
-			background-color: #f6f6f6;
-			> p {
-				font-weight: bold;
-				text-transform: uppercase;
+		<span class="hljs-class">.item-options</span> {
+			<span class="hljs-attribute">position</span><span class="hljs-value">: absolute;</span>
+			<span class="hljs-attribute">top</span><span class="hljs-value">: -<span class="hljs-number">99999</span>em;</span>
+			<span class="hljs-attribute">left</span><span class="hljs-value">: -<span class="hljs-number">99999</span>em;</span>
+			<span class="hljs-attribute">z-index</span><span class="hljs-value">: <span class="hljs-number">999</span>;</span>
+			<span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">250</span>px;</span>
+			<span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">8</span>px;</span>
+			<span class="hljs-attribute">border</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span>
+			<span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#f6f6f6</span>;</span>
+			&gt; <span class="hljs-tag">p</span> {
+				<span class="hljs-attribute">font-weight</span><span class="hljs-value">: bold;</span>
+				<span class="hljs-attribute">text-transform</span><span class="hljs-value">: uppercase;</span>
 			}
 		}
 	}
 }
-.col-left .truncated .show .item-options {
-	left: 30px;
-	top: 7px;
+<span class="hljs-class">.col-left</span> <span class="hljs-class">.truncated</span> <span class="hljs-class">.show</span> <span class="hljs-class">.item-options</span> {
+	<span class="hljs-attribute">left</span><span class="hljs-value">: <span class="hljs-number">30</span>px;</span>
+	<span class="hljs-attribute">top</span><span class="hljs-value">: <span class="hljs-number">7</span>px;</span>
 }
 
-.col-right .truncated .show .item-options {
-	left: -240px;
-	top: 7px;
-}</code></pre></div>
-                
+<span class="hljs-class">.col-right</span> <span class="hljs-class">.truncated</span> <span class="hljs-class">.show</span> <span class="hljs-class">.item-options</span> {
+	<span class="hljs-attribute">left</span><span class="hljs-value">: -<span class="hljs-number">240</span>px;</span>
+	<span class="hljs-attribute">top</span><span class="hljs-value">: <span class="hljs-number">7</span>px;</span>
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -914,73 +1332,97 @@ tr {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_snawb" height="0" src="about:blank"></iframe>
-                        <script id="script_snawb">
-                            var iframe  = document.getElementById('iframe_snawb');
+                        <iframe id="iframe_xocz9" height="0" src="about:blank"></iframe>
+                        <script id="result_xocz9" type="text/html">
+	<div class="cart-tax-info">
+		<span class="weee">Tax Label: <span class="price">£0.20</span></span>
+	</div>
+	<div class="cart-tax-total cart-tax-total-expanded">
+        <span class="weee">Total incl. tax: <span class="price">£812.07</span></span>
+    </div>
+</script>
+                        <script id="script_xocz9">
+                            var iframe  = document.getElementById('iframe_xocz9');
+                            var script  = document.getElementById('script_xocz9');
+                            var result  = document.getElementById('result_xocz9');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_snawb');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="cart-tax-info">		<span class="weee">Tax Label: <span class="price">£0.20</span></span>	</div>	<div class="cart-tax-total cart-tax-total-expanded">   <span class="weee">Total incl. tax: <span class="price">£812.07</span></span></div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;cart-tax-info&quot;&gt;
-        &lt;span class=&quot;weee&quot;&gt;Tax Label: &lt;span class=&quot;price&quot;&gt;£0.20&lt;/span&gt;&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;cart-tax-total cart-tax-total-expanded&quot;&gt;
-        &lt;span class=&quot;weee&quot;&gt;Total incl. tax: &lt;span class=&quot;price&quot;&gt;£812.07&lt;/span&gt;&lt;/span&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-tax-info"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"weee"</span>&gt;</span>Tax Label: <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£0.20<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cart-tax-total cart-tax-total-expanded"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"weee"</span>&gt;</span>Total incl. tax: <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£812.07<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.cart-tax-info { 
-	display:block;
-	padding-right: 20px;
-	.cart-price {
-		padding-right: 20px;
+                    <div class="styles"><pre class="hljs"><code> 
+
+<span class="hljs-class">.cart-tax-info</span> { 
+	<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span>
+	<span class="hljs-attribute">padding-right</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
+	<span class="hljs-class">.cart-price</span> {
+		<span class="hljs-attribute">padding-right</span><span class="hljs-value">: <span class="hljs-number">20</span>px;</span>
 	}
-	.price {
-		display:inline !important;
-		font-weight:normal !important;
+	<span class="hljs-class">.price</span> {
+		<span class="hljs-attribute">display</span><span class="hljs-value">:inline <span class="hljs-important">!important</span>;</span>
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:normal <span class="hljs-important">!important</span>;</span>
 	}
 }
-.cart-tax-total { 
-	display:block; 
-	padding-right:20px; 
-	background:url(../images/bkg_collapse.gif) 100% 4px no-repeat; 
-	cursor:pointer;
-	&.cart-tax-total-expanded { background-position:100% -53px; }
-	.price {
-		display: inline !important;
-		font-weight: normal !important;
+<span class="hljs-class">.cart-tax-total</span> { 
+	<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> 
+	<span class="hljs-attribute">padding-right</span><span class="hljs-value">:<span class="hljs-number">20</span>px;</span> 
+	<span class="hljs-attribute">background</span><span class="hljs-value">:url(../images/bkg_collapse.gif) <span class="hljs-number">100</span>% <span class="hljs-number">4</span>px no-repeat;</span> 
+	<span class="hljs-attribute">cursor</span><span class="hljs-value">:pointer;</span>
+	&amp;<span class="hljs-class">.cart-tax-total-expanded</span> { <span class="hljs-attribute">background-position</span><span class="hljs-value">:<span class="hljs-number">100</span>% -<span class="hljs-number">53</span>px;</span> }
+	<span class="hljs-class">.price</span> {
+		<span class="hljs-attribute">display</span><span class="hljs-value">: inline <span class="hljs-important">!important</span>;</span>
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">: normal <span class="hljs-important">!important</span>;</span>
 	}
-}</code></pre></div>
+}
+</code></pre></div>
                 
-
             </div>
         
     </div>
 
+</div>
+
     <script>
-        // Resize all iframes to exactly fit content within
         window.onload = function() {
             var iframes = document.querySelectorAll('iframe');
             for ( var i = 0; i < iframes.length; i++ ){
                 iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
             }
         };
+        var headings = document.querySelectorAll('#nav .heading');
+        for ( var i = 0; i < headings.length; i++ ){
+            headings[i].addEventListener('click', function () {
+                this.classList.toggle('is-open');
+                this.nextElementSibling.classList.toggle('is-open');
+            });
+        }
     </script>
+
+    <style>*{margin:0;padding:0;border:0;font-size:inherit}html{background:#e2e5dc}html,body{font-size:100%}body{font:14px/25px 'Calibri',Arial,sans-serif;color:black;padding:2em}a{text-decoration:none;color:black}h1,h2,h3,h4,ul,ol,dl,p,blockquote{margin-bottom:15px}h1,h2,h3,h4,dt{font-weight:bold}h1{font-size:25px}h2{font-size:21px}h3{font-size:17px}h4{font-size:14px}ul,ol{margin-left:1em;list-style:outside}.gutter{width:100%;max-width:960px;overflow:hidden;margin:0 auto}#nav{float:left;width:20%;min-width:150px;margin-right:25px}#content{overflow:hidden;min-width:400px}#nav{margin-bottom:25px}#nav ul,#nav li,#nav a{display:block}#nav ul{list-style:none;margin:0 0 1em}#nav h1{border-bottom:1px solid #d0d5c5;font-size:14px;padding-bottom:10px;margin:20px 0 10px}#nav .heading{margin-top:1em;text-transform:uppercase;font-size:12px;margin:0;padding:2px 5px;cursor:pointer;position:relative;border-radius:4px}#nav .heading:hover{background:#d0d5c5}#nav .heading:after{content:"+";position:absolute;top:2px;right:5px}#nav .heading.is-open:after{content:"-"}#nav ul ul,#nav ul .heading{margin-left:20px}#nav a{padding:2px 5px;border-radius:4px}#nav a:hover,#nav a:focus{background:#d0d5c5}#nav ul{display:none}#nav ul.is-open{display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px 20px 5px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .markup,.section .styles{border-top:1px solid #ddd;background:#f7f7f7;position:relative;overflow-y:auto;max-height:500px}.section .markup pre,.section .styles pre{padding:0 20px 20px}.section .markup:before,.section .styles:before{display:block;background:#eee;color:#ccc;padding:0 20px;position:absolute;top:0;right:0;border-radius:0 0 0 4px}.section .markup:before{content:"Markup"}.section .styles:before{content:"Styles"}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code,pre{font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}</style>
+    <style>.hljs{display:block;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}</style>
 
 </body>
 </html>

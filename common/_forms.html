@@ -1,162 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Form Elements &middot; Styleguide</title>
-    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
-    <script>/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- * MIT license http://www.opensource.org/licenses/mit-license.php/
- * @author Lea Verou http://lea.verou.me
- */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
-Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
-Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
-Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
-Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
-;
-Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
-;
-Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
-;
-</script>
+    <meta charset="utf-8" />
+    <title>Form Elements</title>
 </head>
 <body>
+<div class="gutter">
 
-    <div class="navigation">
-        <div class="gutter">
-            <div class="group ">
-                <a href="/">Home</a>
-            </div>
+    <div id="nav">
+        <h1><a href="../">Styleguide</a></h1>
+        
             
-            <div class="group ">
-                <span>.</span>
-                <ul>
-                    
-                    <li><a class="" href="_inbox.html">_inbox</a></li>
-                    
-                    <li><a class="" href="_mixins.html">_mixins</a></li>
-                    
-                    <li><a class="" href="_variables.html">_variables</a></li>
-                    
+                <a href="../_inbox.html">Inbox</a>
+            
+        
+            
+                <a href="../_mixins.html">Mixins</a>
+            
+        
+            
+                <a href="../_variables.html">Variables</a>
+            
+        
+            
+                <h2 class="heading">catalog</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../catalog/_category.html">Category Page</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../catalog/_product.html">Product View</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>catalog</span>
-                <ul>
-                    
-                    <li><a class="" href="catalog/_category.html">Category Page</a></li>
-                    
-                    <li><a class="" href="catalog/_product.html">Product View</a></li>
-                    
+        
+            
+                <h2 class="heading">checkout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../checkout/_cart.html">Shopping Cart</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../checkout/_checkout.html">One Page Checkout</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>checkout</span>
-                <ul>
-                    
-                    <li><a class="" href="checkout/_cart.html">Shopping Cart</a></li>
-                    
-                    <li><a class="" href="checkout/_checkout.html">One Page Checkout</a></li>
-                    
+        
+            
+                <h2 class="heading">cms</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../cms/_homepage.html">Homepage</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../cms/_sitemap.html">Sitemap</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>cms</span>
-                <ul>
-                    
-                    <li><a class="" href="cms/_homepage.html">Homepage</a></li>
-                    
-                    <li><a class="" href="cms/_sitemap.html">Sitemap</a></li>
-                    
+        
+            
+                <h2 class="heading">common</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../common/_buttons.html">Button</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_forms.html">Form Elements</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_headings.html">Page Heading</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_messages.html">Messages</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_misc.html">Misc</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_tables.html">Data Table</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>common</span>
-                <ul>
-                    
-                    <li><a class="" href="common/_buttons.html">Button</a></li>
-                    
-                    <li><a class="" href="common/_forms.html">Form Elements</a></li>
-                    
-                    <li><a class="" href="common/_headings.html">Page Heading</a></li>
-                    
-                    <li><a class="" href="common/_messages.html">Messages</a></li>
-                    
-                    <li><a class="" href="common/_misc.html">Misc</a></li>
-                    
-                    <li><a class="" href="common/_tables.html">Data Table</a></li>
-                    
+        
+            
+                <h2 class="heading">customer</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../customer/_dashboard.html">Dashboard</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../customer/_login.html">Login/Create Account</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>customer</span>
-                <ul>
-                    
-                    <li><a class="" href="customer/_dashboard.html">Dashboard</a></li>
-                    
-                    <li><a class="" href="customer/_login.html">Login/Create Account</a></li>
-                    
+        
+            
+                <h2 class="heading">layout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../layout/_content.html">Content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_footer.html">Footer</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_header.html">Header</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_page.html">Pages</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>layout</span>
-                <ul>
-                    
-                    <li><a class="" href="layout/_content.html">Content</a></li>
-                    
-                    <li><a class="" href="layout/_footer.html">Footer</a></li>
-                    
-                    <li><a class="" href="layout/_header.html">Header</a></li>
-                    
-                    <li><a class="" href="layout/_page.html">Pages</a></li>
-                    
+        
+            
+                <h2 class="heading">navigation</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../navigation/_breadcrumbs.html">Breadcrumbs</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_navbar.html">Nav Bar</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_toolbar.html">Toolbar</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>navigation</span>
-                <ul>
-                    
-                    <li><a class="" href="navigation/_breadcrumbs.html">Breadcrumbs</a></li>
-                    
-                    <li><a class="" href="navigation/_navbar.html">Nav Bar</a></li>
-                    
-                    <li><a class="" href="navigation/_toolbar.html">Toolbar</a></li>
-                    
+        
+            
+                <h2 class="heading">normalize</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../normalize/_base.html">Admin controlled content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../normalize/_reset.html">Reset</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>normalize</span>
-                <ul>
-                    
-                    <li><a class="" href="normalize/_base.html">Admin controlled content</a></li>
-                    
-                    <li><a class="" href="normalize/_reset.html">Reset</a></li>
-                    
+        
+            
+                <h2 class="heading">sidebar</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../sidebar/_blocks.html">Sidebar Blocks</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../sidebar/_miniproductlist.html">Mini Products List</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>sidebar</span>
-                <ul>
-                    
-                    <li><a class="" href="sidebar/_blocks.html">Sidebar Blocks</a></li>
-                    
-                    <li><a class="" href="sidebar/_miniproductlist.html">Mini Products List</a></li>
-                    
-                </ul>
-            </div>
-            
-        </div>
+        
     </div>
 
-    <div class="gutter">
+    <div id="content">
         
             <div class="section">
                 
@@ -167,40 +248,6 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>input, select, textarea { 
-	font:12px Arial, Helvetica, sans-serif; 
-	vertical-align:middle; 
-	color:#000;
-}
-input.input-text, select, textarea { 
-	background:#fff; 
-	border:1px solid #ddd;
-}
-input.input-text, textarea { padding:2px; }
-select { 
-	padding:1px; 
-	option { padding-right:10px; }
-	&.multiselect {
-		option { 
-			border-bottom:1px solid #ddd; 
-			padding:2px 5px; 
-			&:last-child { border-bottom: 0; }
-		}
-	}
-}
-textarea { overflow:auto; }
-
-input {
-	&.qty { width:2.5em !important; }
-	&.radio, &.checkbox { margin-right:3px;  }
-}
-
-p.control input.radio, 
-p.control input.checkbox {
-	margin-right: 6px;
-}</code></pre></div>
-                
-
             </div>
         
             <div class="section">
@@ -211,58 +258,75 @@ p.control input.checkbox {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_bw22n" height="0" src="about:blank"></iframe>
-                        <script id="script_bw22n">
-                            var iframe  = document.getElementById('iframe_bw22n');
+                        <iframe id="iframe_630tk" height="0" src="about:blank"></iframe>
+                        <script id="result_630tk" type="text/html">	
+    <div class="fieldset">
+        <h2 class="legend">Personal Information</h2>
+        [FORM_LIST]
+    </div>
+    <div class="fieldset">
+        <h2 class="legend">Login Information</h2>
+        [FORM_LIST]
+        [BUTTON_SET]
+    </div>
+</script>
+                        <script id="script_630tk">
+                            var iframe  = document.getElementById('iframe_630tk');
+                            var script  = document.getElementById('script_630tk');
+                            var result  = document.getElementById('result_630tk');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_bw22n');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="fieldset">   <h2 class="legend">Personal Information</h2>   [FORM_LIST]</div><div class="fieldset">   <h2 class="legend">Login Information</h2>   [FORM_LIST]   [BUTTON_SET]</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;fieldset&quot;&gt;
-        &lt;h2 class=&quot;legend&quot;&gt;Personal Information&lt;/h2&gt;
+                    <div class="markup"><pre class="hljs"><code>	
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fieldset"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"legend"</span>&gt;</span>Personal Information<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
         [FORM_LIST]
-    &lt;/div&gt;
-    &lt;div class=&quot;fieldset&quot;&gt;
-        &lt;h2 class=&quot;legend&quot;&gt;Login Information&lt;/h2&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fieldset"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"legend"</span>&gt;</span>Login Information<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
         [FORM_LIST]
         [BUTTON_SET]
-    &lt;/div&gt;</code></pre>
-</div>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.fieldset { 
-	border:1px solid #ddd; 
-	background:#fefefe; 
-	padding:22px 25px 12px 33px; 
-	margin:28px 0; 
-	.legend { 
-		float:left;
-		font-weight:bold;
-		font-size:13px;
-		border:1px solid #fefefe;
-		background:#dedede;
-		color:#333;
-		margin:-33px 0 0 -10px;
-		padding:0 8px;
-		position:relative;
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.fieldset</span> { 
+	<span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span> 
+	<span class="hljs-attribute">background</span><span class="hljs-value">:<span class="hljs-hexcolor">#fefefe</span>;</span> 
+	<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">22</span>px <span class="hljs-number">25</span>px <span class="hljs-number">12</span>px <span class="hljs-number">33</span>px;</span> 
+	<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">28</span>px <span class="hljs-number">0</span>;</span> 
+	<span class="hljs-class">.legend</span> { 
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>;
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span>
+		<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span>
+		<span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#fefefe</span>;</span>
+		<span class="hljs-attribute">background</span><span class="hljs-value">:<span class="hljs-hexcolor">#dedede</span>;</span>
+		<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#333</span>;</span>
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:-<span class="hljs-number">33</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">10</span>px;</span>
+		<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">8</span>px;</span>
+		<span class="hljs-attribute">position</span><span class="hljs-value">:relative;</span>
 	}
-}</code></pre></div>
-                
+}
 
+
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -273,182 +337,278 @@ p.control input.checkbox {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_l70i9" height="0" src="about:blank"></iframe>
-                        <script id="script_l70i9">
-                            var iframe  = document.getElementById('iframe_l70i9');
+                        <iframe id="iframe_3t6ip" height="0" src="about:blank"></iframe>
+                        <script id="result_3t6ip" type="text/html">
+	<ul class="form-list">
+	    <li>
+	        <label>Text Input</label>
+	        <div class="input-box">
+	            <input type="text" class="input-text" value="">
+	        </div>
+	    </li>
+		<li>
+            <label>Select</label>
+			<div class="input-box">
+				<select>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+				</select>
+			</div>
+		</li>
+		<li>
+            <label>Multiselect</label>
+			<div class="input-box">
+				<select size="4" multiple="multiple" class="multiselect">
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+					<option>Option</option>
+				</select>
+			</div>
+		</li>
+		<li>
+            <label>Textarea</label>
+			<div class="input-box">
+				<textarea class="input-text"></textarea>
+			</div>
+		</li>
+		<li>
+			<label>Range</label>
+			<div class="input-range">
+				<input type="text" maxlength="128" class="input-text" id="price" value="">
+				<span class="separator">-</span>
+				<input type="text" maxlength="128" class="input-text" value="">
+				<small>(Unit/Currency)</small>
+			</div>
+        </li>
+	    <li class="fields">
+	        <div class="field">
+	            <label class="required"><em>*</em>Split Text Field</label>
+	            <div class="input-box">
+	                <input type="text" class="input-text required-entry" value="">
+	            </div>
+	        </div>
+	        <div class="field">
+	            <label class="required"><em>*</em>Split Text Field</label>
+	            <div class="input-box">
+	                <input type="text" class="input-text required-entry" value="">
+	            </div>
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label>Wide Input</label>
+	        <div class="input-box">
+	            <input type="text" class="input-text" value="">
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label>Wide Select</label>
+	        <div class="input-box">
+	            <select>
+					<option>Option</option>
+					<option>Option</option>
+	            </select>
+	        </div>
+	    </li>
+	    <li class="wide">
+	        <label class="required"><em>*</em>Wide Texarea</label>
+	        <div class="input-box">
+	            <textarea rows="3" cols="5" class="required-entry input-text"></textarea>
+	        </div>
+	    </li>
+	    <li class="control">
+	    	<input class="checkbox" type="checkbox" checked="checked" value="">
+			<label>Check box</label>
+	    </li>
+	    <li class="control">
+			<input class="radio" type="radio" value="value">
+			<label>Radio box</label>
+	    </li> 
+	</ul>
+</script>
+                        <script id="script_3t6ip">
+                            var iframe  = document.getElementById('iframe_3t6ip');
+                            var script  = document.getElementById('script_3t6ip');
+                            var result  = document.getElementById('result_3t6ip');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_l70i9');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<ul class="form-list">	<li>	   <label>Text Input</label>	   <div class="input-box">	  <input type="text" class="input-text" value="">	   </div>	</li>		<li>  <label>Select</label>			<div class="input-box">				<select>					<option>Option</option>					<option>Option</option>					<option>Option</option>					<option>Option</option>				</select>			</div>		</li>		<li>  <label>Multiselect</label>			<div class="input-box">				<select size="4" multiple="multiple" class="multiselect">					<option>Option</option>					<option>Option</option>					<option>Option</option>					<option>Option</option>				</select>			</div>		</li>		<li>  <label>Textarea</label>			<div class="input-box">				<textarea class="input-text"></textarea>			</div>		</li>		<li>			<label>Range</label>			<div class="input-range">				<input type="text" maxlength="128" class="input-text" id="price" value="">				<span class="separator">-</span>				<input type="text" maxlength="128" class="input-text" value="">				<small>(Unit/Currency)</small>			</div>   </li>	<li class="fields">	   <div class="field">	  <label class="required"><em>*</em>Split Text Field</label>	  <div class="input-box">	 <input type="text" class="input-text required-entry" value="">	  </div>	   </div>	   <div class="field">	  <label class="required"><em>*</em>Split Text Field</label>	  <div class="input-box">	 <input type="text" class="input-text required-entry" value="">	  </div>	   </div>	</li>	<li class="wide">	   <label>Wide Input</label>	   <div class="input-box">	  <input type="text" class="input-text" value="">	   </div>	</li>	<li class="wide">	   <label>Wide Select</label>	   <div class="input-box">	  <select>					<option>Option</option>					<option>Option</option>	  </select>	   </div>	</li>	<li class="wide">	   <label class="required"><em>*</em>Wide Texarea</label>	   <div class="input-box">	  <textarea rows="3" cols="5" class="required-entry input-text"></textarea>	   </div>	</li>	<li class="control">		<input class="checkbox" type="checkbox" checked="checked" value="">			<label>Check box</label>	</li>	<li class="control">			<input class="radio" type="radio" value="value">			<label>Radio box</label>	</li> 	</ul>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;form-list&quot;&gt;
-        &lt;li&gt;
-            &lt;label&gt;Text Input&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label&gt;Select&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;select&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                &lt;/select&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label&gt;Multiselect&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;select size=&quot;4&quot; multiple=&quot;multiple&quot; class=&quot;multiselect&quot;&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                &lt;/select&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label&gt;Textarea&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;textarea class=&quot;input-text&quot;&gt;&lt;/textarea&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;label&gt;Range&lt;/label&gt;
-            &lt;div class=&quot;input-range&quot;&gt;
-                &lt;input type=&quot;text&quot; maxlength=&quot;128&quot; class=&quot;input-text&quot; id=&quot;price&quot; value=&quot;&quot;&gt;
-                &lt;span class=&quot;separator&quot;&gt;-&lt;/span&gt;
-                &lt;input type=&quot;text&quot; maxlength=&quot;128&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                &lt;small&gt;(Unit/Currency)&lt;/small&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;fields&quot;&gt;
-            &lt;div class=&quot;field&quot;&gt;
-                &lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Split Text Field&lt;/label&gt;
-                &lt;div class=&quot;input-box&quot;&gt;
-                    &lt;input type=&quot;text&quot; class=&quot;input-text required-entry&quot; value=&quot;&quot;&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;field&quot;&gt;
-                &lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Split Text Field&lt;/label&gt;
-                &lt;div class=&quot;input-box&quot;&gt;
-                    &lt;input type=&quot;text&quot; class=&quot;input-text required-entry&quot; value=&quot;&quot;&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;wide&quot;&gt;
-            &lt;label&gt;Wide Input&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;wide&quot;&gt;
-            &lt;label&gt;Wide Select&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;select&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                    &lt;option&gt;Option&lt;/option&gt;
-                &lt;/select&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;wide&quot;&gt;
-            &lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Wide Texarea&lt;/label&gt;
-            &lt;div class=&quot;input-box&quot;&gt;
-                &lt;textarea rows=&quot;3&quot; cols=&quot;5&quot; class=&quot;required-entry input-text&quot;&gt;&lt;/textarea&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;control&quot;&gt;
-            &lt;input class=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=&quot;checked&quot; value=&quot;&quot;&gt;
-            &lt;label&gt;Check box&lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;control&quot;&gt;
-            &lt;input class=&quot;radio&quot; type=&quot;radio&quot; value=&quot;value&quot;&gt;
-            &lt;label&gt;Radio box&lt;/label&gt;
-        &lt;/li&gt; 
-    &lt;/ul&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Text Input<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Select<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Multiselect<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"4"</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">"multiple"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"multiselect"</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Textarea<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Range<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-range"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">"128"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"price"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">maxlength</span>=<span class="hljs-value">"128"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>(Unit/Currency)<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fields"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Split Text Field<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Split Text Field<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wide"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Wide Input<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wide"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Wide Select<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wide"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Wide Texarea<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">cols</span>=<span class="hljs-value">"5"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required-entry input-text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"control"</span>&gt;</span>
+	    	<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">checked</span>=<span class="hljs-value">"checked"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Check box<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"control"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"value"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Radio box<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span> 
+	<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.form-list {
+                    <div class="styles"><pre class="hljs"><code>
 
-	li { 
-		margin:0 0 8px; 
-		&.control {
-			label { float:none; }
-			input { 
-				&.radio, &.checkbox { margin-right:6px; }
-			}
-			.input-box { 
-				clear:none; 
-				display:inline; 
-				width:auto; 
-			}
-		}
-		&.wide {
-			.input-box { width:535px; }
-			input { 
-				&.input-text { width:529px; } 
-			}
-			textarea { width:529px; }
-			select { width:535px; }
-		}
-		&.additional-row { 
-			border-top:1px solid #ccc; 
-			margin-top:10px; 
-			padding-top:7px; 
-			.btn-remove { float:right; margin:5px 0 0; }
-		}
-	}
+<span class="hljs-class">.form-list</span> {
 
-	label {
-		float:left; 
-		color:#111; 
-		font-weight:bold; 
-		position:relative; 
-		z-index:0; 
-		&.required {
-			em {
-				float:right; 
-				font-style:normal; 
-				color:#eb340a; 
-				position:absolute; 
-				top:0; 
-				right:-8px;
+	<span class="hljs-tag">li</span> { 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span>px;</span> 
+		&amp;<span class="hljs-class">.control</span> {
+			<span class="hljs-tag">label</span> { <span class="hljs-attribute">float</span><span class="hljs-value">:none;</span> }
+			<span class="hljs-tag">input</span> { 
+				&amp;<span class="hljs-class">.radio</span>, &amp;<span class="hljs-class">.checkbox</span> { <span class="hljs-attribute">margin-right</span><span class="hljs-value">:<span class="hljs-number">6</span>px;</span> }
 			}
+			<span class="hljs-class">.input-box</span> { 
+				<span class="hljs-attribute">clear</span><span class="hljs-value">:none;</span> 
+				<span class="hljs-attribute">display</span><span class="hljs-value">:inline;</span> 
+				<span class="hljs-attribute">width</span><span class="hljs-value">:auto;</span> 
+			}
+		}
+		&amp;<span class="hljs-class">.wide</span> {
+			<span class="hljs-class">.input-box</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">535</span>px;</span> }
+			<span class="hljs-tag">input</span> { 
+				&amp;<span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">529</span>px;</span> } 
+			}
+			<span class="hljs-tag">textarea</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">529</span>px;</span> }
+			<span class="hljs-tag">select</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">535</span>px;</span> }
+		}
+		&amp;<span class="hljs-class">.additional-row</span> { 
+			<span class="hljs-attribute">border-top</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ccc</span>;</span> 
+			<span class="hljs-attribute">margin-top</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span> 
+			<span class="hljs-attribute">padding-top</span><span class="hljs-value">:<span class="hljs-number">7</span>px;</span> 
+			<span class="hljs-class">.btn-remove</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:right</span>; <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">5</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span> }
 		}
 	}
 
-	input {
-		&.input-text { width:254px; }
+	<span class="hljs-tag">label</span> {
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+		<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#111</span>;</span> 
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> 
+		<span class="hljs-attribute">position</span><span class="hljs-value">:relative;</span> 
+		<span class="hljs-attribute">z-index</span><span class="hljs-value">:<span class="hljs-number">0</span>;</span> 
+		&amp;<span class="hljs-class">.required</span> {
+			<span class="hljs-tag">em</span> {
+				<span class="hljs-attribute">float</span><span class="hljs-pseudo">:right</span>; 
+				<span class="hljs-attribute">font-style</span><span class="hljs-value">:normal;</span> 
+				<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#eb340a</span>;</span> 
+				<span class="hljs-attribute">position</span><span class="hljs-value">:absolute;</span> 
+				<span class="hljs-attribute">top</span><span class="hljs-value">:<span class="hljs-number">0</span>;</span> 
+				<span class="hljs-attribute">right</span><span class="hljs-value">:-<span class="hljs-number">8</span>px;</span>
+			}
+		}
 	}
-	textarea { width:254px; height:10em; }
-	select { width:260px; }
 
-	.field { float:left; width:275px; }
-	.input-box { display:block; clear:both; width:260px; }
-	.input-range { 
-		input.input-text { width:74px; }
+	<span class="hljs-tag">input</span> {
+		&amp;<span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">254</span>px;</span> }
+	}
+	<span class="hljs-tag">textarea</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">254</span>px;</span> <span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">10</span>em;</span> }
+	<span class="hljs-tag">select</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">260</span>px;</span> }
+
+	<span class="hljs-class">.field</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">275</span>px;</span> }
+	<span class="hljs-class">.input-box</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> <span class="hljs-attribute">clear</span><span class="hljs-value">:both;</span> <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">260</span>px;</span> }
+	<span class="hljs-class">.input-range</span> { 
+		<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">74</span>px;</span> }
 	}	
 	
-}</code></pre></div>
-                
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -468,135 +628,183 @@ p.control input.checkbox {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_3r48q" height="0" src="about:blank"></iframe>
-                        <script id="script_3r48q">
-                            var iframe  = document.getElementById('iframe_3r48q');
+                        <iframe id="iframe_we0cp" height="0" src="about:blank"></iframe>
+                        <script id="result_we0cp" type="text/html">
+	<ul class="form-list">
+		<li class="fields">
+			<div class="customer-name-prefix-middlename-suffix">
+			    <div class="field name-prefix">
+			        <label for="prefix">Prefix</label>
+			        <div class="input-box">
+                    	<select>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option selected="selected" value=""></option>
+                        </select>
+                    </div>
+			    </div>
+			    <div class="field name-firstname">
+			        <label>First Name</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-middlename">
+			        <label>Middle Name/Initial</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-lastname">
+			        <label>Last Name</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			    <div class="field name-suffix">
+			        <label>Suffix</label>
+			        <div class="input-box">
+			            <input type="text" class="input-text" value="">
+			        </div>
+			    </div>
+			</div>
+		</li>
+	</ul>
+</script>
+                        <script id="script_we0cp">
+                            var iframe  = document.getElementById('iframe_we0cp');
+                            var script  = document.getElementById('script_we0cp');
+                            var result  = document.getElementById('result_we0cp');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_3r48q');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<ul class="form-list">		<li class="fields">			<div class="customer-name-prefix-middlename-suffix">			<div class="field name-prefix">			   <label for="prefix">Prefix</label>			   <div class="input-box">	<select>   <option value="Mr.">Mr.</option>   <option value="Mrs.">Mrs.</option>   <option selected="selected" value=""></option></select></div>			</div>			<div class="field name-firstname">			   <label>First Name</label>			   <div class="input-box">			  <input type="text" class="input-text" value="">			   </div>			</div>			<div class="field name-middlename">			   <label>Middle Name/Initial</label>			   <div class="input-box">			  <input type="text" class="input-text" value="">			   </div>			</div>			<div class="field name-lastname">			   <label>Last Name</label>			   <div class="input-box">			  <input type="text" class="input-text" value="">			   </div>			</div>			<div class="field name-suffix">			   <label>Suffix</label>			   <div class="input-box">			  <input type="text" class="input-text" value="">			   </div>			</div>			</div>		</li>	</ul>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;form-list&quot;&gt;
-        &lt;li class=&quot;fields&quot;&gt;
-            &lt;div class=&quot;customer-name-prefix-middlename-suffix&quot;&gt;
-                &lt;div class=&quot;field name-prefix&quot;&gt;
-                    &lt;label for=&quot;prefix&quot;&gt;Prefix&lt;/label&gt;
-                    &lt;div class=&quot;input-box&quot;&gt;
-                        &lt;select&gt;
-                            &lt;option value=&quot;Mr.&quot;&gt;Mr.&lt;/option&gt;
-                            &lt;option value=&quot;Mrs.&quot;&gt;Mrs.&lt;/option&gt;
-                            &lt;option selected=&quot;selected&quot; value=&quot;&quot;&gt;&lt;/option&gt;
-                        &lt;/select&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;field name-firstname&quot;&gt;
-                    &lt;label&gt;First Name&lt;/label&gt;
-                    &lt;div class=&quot;input-box&quot;&gt;
-                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;field name-middlename&quot;&gt;
-                    &lt;label&gt;Middle Name/Initial&lt;/label&gt;
-                    &lt;div class=&quot;input-box&quot;&gt;
-                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;field name-lastname&quot;&gt;
-                    &lt;label&gt;Last Name&lt;/label&gt;
-                    &lt;div class=&quot;input-box&quot;&gt;
-                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;field name-suffix&quot;&gt;
-                    &lt;label&gt;Suffix&lt;/label&gt;
-                    &lt;div class=&quot;input-box&quot;&gt;
-                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fields"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"customer-name-prefix-middlename-suffix"</span>&gt;</span>
+			    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field name-prefix"</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"prefix"</span>&gt;</span>Prefix<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+                    	<span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Mr."</span>&gt;</span>Mr.<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Mrs."</span>&gt;</span>Mrs.<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">selected</span>=<span class="hljs-value">"selected"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field name-firstname"</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>First Name<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+			            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+			        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field name-middlename"</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Middle Name/Initial<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+			            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+			        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field name-lastname"</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Last Name<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+			            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+			        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field name-suffix"</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>Suffix<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+			            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+			        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.form-list {
-	.customer-name-prefix .input-box,
-	.customer-name-suffix .input-box,
-	.customer-name-prefix-suffix .input-box,
-	.customer-name-prefix-middlename .input-box,
-	.customer-name-middlename-suffix .input-box,
-	.customer-name-prefix-middlename-suffix .input-box { width:auto; }
+                    <div class="styles"><pre class="hljs"><code>
 
-	.name-prefix { 
-		width:65px;
-		select { width:55px; }
-		input.input-text { width:49px; }
+<span class="hljs-class">.form-list</span> {
+	<span class="hljs-class">.customer-name-prefix</span> <span class="hljs-class">.input-box</span>,
+	<span class="hljs-class">.customer-name-suffix</span> <span class="hljs-class">.input-box</span>,
+	<span class="hljs-class">.customer-name-prefix-suffix</span> <span class="hljs-class">.input-box</span>,
+	<span class="hljs-class">.customer-name-prefix-middlename</span> <span class="hljs-class">.input-box</span>,
+	<span class="hljs-class">.customer-name-middlename-suffix</span> <span class="hljs-class">.input-box</span>,
+	<span class="hljs-class">.customer-name-prefix-middlename-suffix</span> <span class="hljs-class">.input-box</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:auto;</span> }
+
+	<span class="hljs-class">.name-prefix</span> { 
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">65</span>px;</span>
+		<span class="hljs-tag">select</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">55</span>px;</span> }
+		<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">49</span>px;</span> }
 	}
 	
-	.name-suffix { 
-		width:65px;
-		select { width:55px; }
-		input.input-text { width:49px; }
+	<span class="hljs-class">.name-suffix</span> { 
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">65</span>px;</span>
+		<span class="hljs-tag">select</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">55</span>px;</span> }
+		<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">49</span>px;</span> }
 	}
 
-	.name-middlename { 
-		width:70px;
-		input.input-text { width:49px; }
+	<span class="hljs-class">.name-middlename</span> { 
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">70</span>px;</span>
+		<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">49</span>px;</span> }
 	}
 
-	.customer-name-prefix-middlename,
-	.customer-name-prefix-middlename-suffix {
-		.name-firstname { 
-			width:140px;
-			input.input-text { width:124px; }
+	<span class="hljs-class">.customer-name-prefix-middlename</span>,
+	<span class="hljs-class">.customer-name-prefix-middlename-suffix</span> {
+		<span class="hljs-class">.name-firstname</span> { 
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">140</span>px;</span>
+			<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">124</span>px;</span> }
 		}
 	}
 
-	.customer-name-prefix-middlename-suffix {
-		.name-lastname { 
-			width:205px;
-			input.input-text { width:189px; }
+	<span class="hljs-class">.customer-name-prefix-middlename-suffix</span> {
+		<span class="hljs-class">.name-lastname</span> { 
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">205</span>px;</span>
+			<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">189</span>px;</span> }
 		}
 	}
 
-	.customer-name-prefix-suffix {
-		.name-firstname { width:210px; }
-		.name-lastname { width:205px; }
-		.name-firstname, .name-lastname {
-			input.input-text { width:189px; }
+	<span class="hljs-class">.customer-name-prefix-suffix</span> {
+		<span class="hljs-class">.name-firstname</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">210</span>px;</span> }
+		<span class="hljs-class">.name-lastname</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">205</span>px;</span> }
+		<span class="hljs-class">.name-firstname</span>, <span class="hljs-class">.name-lastname</span> {
+			<span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">189</span>px;</span> }
 		}
 	}
 
-	.customer-name-prefix, .customer-name-middlename {
-		.name-firstname { width:210px; }
+	<span class="hljs-class">.customer-name-prefix</span>, <span class="hljs-class">.customer-name-middlename</span> {
+		<span class="hljs-class">.name-firstname</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">210</span>px;</span> }
 	}
 
-	.customer-name-middlename .name-firstname,
-	.customer-name-middlename-suffix .name-firstname,
-	.customer-name-suffix .name-lastname,
-	.customer-name-middlename-suffix .name-lastname { width:205px; }
+	<span class="hljs-class">.customer-name-middlename</span> <span class="hljs-class">.name-firstname</span>,
+	<span class="hljs-class">.customer-name-middlename-suffix</span> <span class="hljs-class">.name-firstname</span>,
+	<span class="hljs-class">.customer-name-suffix</span> <span class="hljs-class">.name-lastname</span>,
+	<span class="hljs-class">.customer-name-middlename-suffix</span> <span class="hljs-class">.name-lastname</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">205</span>px;</span> }
 
-	.customer-name-prefix .name-firstname input.input-text,
-	.customer-name-middlename .name-firstname input.input-text,
-	.customer-name-middlename-suffix .name-firstname input.input-text,
-	.customer-name-suffix .name-lastname input.input-text,
-	.customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
-}</code></pre></div>
+	<span class="hljs-class">.customer-name-prefix</span> <span class="hljs-class">.name-firstname</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span>,
+	<span class="hljs-class">.customer-name-middlename</span> <span class="hljs-class">.name-firstname</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span>,
+	<span class="hljs-class">.customer-name-middlename-suffix</span> <span class="hljs-class">.name-firstname</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span>,
+	<span class="hljs-class">.customer-name-suffix</span> <span class="hljs-class">.name-lastname</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span>,
+	<span class="hljs-class">.customer-name-middlename-suffix</span> <span class="hljs-class">.name-lastname</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">189</span>px;</span> }
+}
+
+</code></pre></div>
                 
-
             </div>
         
             <div class="section">
@@ -606,62 +814,89 @@ p.control input.checkbox {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_36z5n" height="0" src="about:blank"></iframe>
-                        <script id="script_36z5n">
-                            var iframe  = document.getElementById('iframe_36z5n');
+                        <iframe id="iframe_dvg9p" height="0" src="about:blank"></iframe>
+                        <script id="result_dvg9p" type="text/html">
+	<ul class="form-list">
+		<li>
+			<label for="month">Date of Birth</label>
+			<div class="input-box customer-dob">
+		    	<div class="dob-day">
+		             <input type="text" class="input-text" value="">
+		             <label>DD</label>
+		        </div>
+		        <div class="dob-month">
+		             <input type="text" class="input-text" value="">
+		             <label>MM</label>
+		        </div>
+		        <div class="dob-year">
+		             <input type="text" class="input-text" value="">
+		             <label>YYYY</label>
+		        </div>    			    
+			</div>
+		</li>
+	</ul>
+</script>
+                        <script id="script_dvg9p">
+                            var iframe  = document.getElementById('iframe_dvg9p');
+                            var script  = document.getElementById('script_dvg9p');
+                            var result  = document.getElementById('result_dvg9p');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_36z5n');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<ul class="form-list">		<li>			<label for="month">Date of Birth</label>			<div class="input-box customer-dob">			<div class="dob-day">		   <input type="text" class="input-text" value="">		   <label>DD</label>		   </div>		   <div class="dob-month">		   <input type="text" class="input-text" value="">		   <label>MM</label>		   </div>		   <div class="dob-year">		   <input type="text" class="input-text" value="">		   <label>YYYY</label>		   </div>						</div>		</li>	</ul>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;form-list&quot;&gt;
-        &lt;li&gt;
-            &lt;label for=&quot;month&quot;&gt;Date of Birth&lt;/label&gt;
-            &lt;div class=&quot;input-box customer-dob&quot;&gt;
-                &lt;div class=&quot;dob-day&quot;&gt;
-                     &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                     &lt;label&gt;DD&lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;dob-month&quot;&gt;
-                     &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                     &lt;label&gt;MM&lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;dob-year&quot;&gt;
-                     &lt;input type=&quot;text&quot; class=&quot;input-text&quot; value=&quot;&quot;&gt;
-                     &lt;label&gt;YYYY&lt;/label&gt;
-                &lt;/div&gt;                    
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"month"</span>&gt;</span>Date of Birth<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box customer-dob"</span>&gt;</span>
+		    	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dob-day"</span>&gt;</span>
+		             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+		             <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>DD<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dob-month"</span>&gt;</span>
+		             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+		             <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>MM<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dob-year"</span>&gt;</span>
+		             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+		             <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>YYYY<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>    			    
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.form-list .customer-dob .dob-month,
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-year { float:left; width:85px; }
-.form-list .customer-dob input.input-text { display:block; width:74px; }
-.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-month { width:60px; }
-.form-list .customer-dob .dob-day input.input-text,
-.form-list .customer-dob .dob-month input.input-text { width:46px; }
-.form-list .customer-dob .dob-year { width:140px; }
-.form-list .customer-dob .dob-year input.input-text { width:134px; }</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
 
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-month</span>,
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-day</span>,
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-year</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">85</span>px;</span> }
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">74</span>px;</span> }
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-tag">label</span> { <span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span> <span class="hljs-attribute">font-weight</span><span class="hljs-value">:normal;</span> <span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#888</span>;</span> }
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-day</span>,
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-month</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">60</span>px;</span> }
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-day</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span>,
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-month</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">46</span>px;</span> }
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-year</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">140</span>px;</span> }
+<span class="hljs-class">.form-list</span> <span class="hljs-class">.customer-dob</span> <span class="hljs-class">.dob-year</span> <span class="hljs-tag">input</span><span class="hljs-class">.input-text</span> { <span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">134</span>px;</span> }
+
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -672,50 +907,63 @@ p.control input.checkbox {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_yz4zh" height="0" src="about:blank"></iframe>
-                        <script id="script_yz4zh">
-                            var iframe  = document.getElementById('iframe_yz4zh');
+                        <iframe id="iframe_sh9bp" height="0" src="about:blank"></iframe>
+                        <script id="result_sh9bp" type="text/html">
+	<div class="buttons-set">
+		<p class="required">* Required Fields</p>
+		<p class="back-link"><a href="#"><small>« </small>Back</a></p>
+		<button type="button" class="button"><span><span>Action</span></span></button>
+		<button type="submit" class="button"><span><span>Submit</span></span></button>
+	</div>
+</script>
+                        <script id="script_sh9bp">
+                            var iframe  = document.getElementById('iframe_sh9bp');
+                            var script  = document.getElementById('script_sh9bp');
+                            var result  = document.getElementById('result_sh9bp');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_yz4zh');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="buttons-set">		<p class="required">* Required Fields</p>		<p class="back-link"><a href="#"><small>« </small>Back</a></p>		<button type="button" class="button"><span><span>Action</span></span></button>		<button type="submit" class="button"><span><span>Submit</span></span></button>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;buttons-set&quot;&gt;
-        &lt;p class=&quot;required&quot;&gt;* Required Fields&lt;/p&gt;
-        &lt;p class=&quot;back-link&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;small&gt;« &lt;/small&gt;Back&lt;/a&gt;&lt;/p&gt;
-        &lt;button type=&quot;button&quot; class=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Action&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-        &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Submit&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"buttons-set"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span>* Required Fields<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"back-link"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>« <span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.buttons-set { 
-	clear:both; margin:5px 0 0; padding:5px; border:1px solid #ddd; 
-	.back-link { float:left; }
-	button.button { float:right; }
-	p.required { margin:0 0 5px; }
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.buttons-set</span> { 
+	<span class="hljs-attribute">clear</span><span class="hljs-value">:both;</span> <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">5</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span> <span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">5</span>px;</span> <span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span> 
+	<span class="hljs-class">.back-link</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; }
+	<span class="hljs-tag">button</span><span class="hljs-class">.button</span> { <span class="hljs-attribute">float</span><span class="hljs-pseudo">:right</span>; }
+	<span class="hljs-tag">p</span><span class="hljs-class">.required</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span>px;</span> }
 }
-.buttons-set-order {}
-p.required { 
-	font-size:10px; 
-	text-align:right; 
-	color:#f00;
-}</code></pre></div>
-                
+<span class="hljs-class">.buttons-set-order</span> {}
+<span class="hljs-tag">p</span><span class="hljs-class">.required</span> { 
+	<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span> 
+	<span class="hljs-attribute">text-align</span><span class="hljs-pseudo">:right</span>; 
+	<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#f00</span>;</span>
+}
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -727,89 +975,124 @@ p.required {
                 
                 
                     <div class="result">
-                        <iframe id="iframe_4myw2" height="0" src="about:blank"></iframe>
-                        <script id="script_4myw2">
-                            var iframe  = document.getElementById('iframe_4myw2');
+                        <iframe id="iframe_a6u0d" height="0" src="about:blank"></iframe>
+                        <script id="result_a6u0d" type="text/html">
+	<ul class="form-list">
+		<li class="fields">
+			<div class="field">
+		        <label class="required"><em>*</em>Failed Validation</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text required-entry validation-failed" value="">
+		            <div class="validation-advice">This is a required field.</div>
+		        </div>
+			</div>
+			<div class="field">
+		        <label class="required"><em>*</em>Failed Validation</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text required-entry validation-failed" value="">
+		            <div class="validation-advice">This is a required field.</div>
+		        </div>
+		    </div>
+	    </li>
+	</ul>
+</script>
+                        <script id="script_a6u0d">
+                            var iframe  = document.getElementById('iframe_a6u0d');
+                            var script  = document.getElementById('script_a6u0d');
+                            var result  = document.getElementById('result_a6u0d');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_4myw2');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<ul class="form-list">		<li class="fields">			<div class="field">		   <label class="required"><em>*</em>Failed Validation</label>		   <div class="input-box">		  <input type="text" class="input-text required-entry validation-failed" value="">		  <div class="validation-advice">This is a required field.</div>		   </div>			</div>			<div class="field">		   <label class="required"><em>*</em>Failed Validation</label>		   <div class="input-box">		  <input type="text" class="input-text required-entry validation-failed" value="">		  <div class="validation-advice">This is a required field.</div>		   </div>		</div>	</li>	</ul>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ul class=&quot;form-list&quot;&gt;
-        &lt;li class=&quot;fields&quot;&gt;
-            &lt;div class=&quot;field&quot;&gt;
-                &lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Failed Validation&lt;/label&gt;
-                &lt;div class=&quot;input-box&quot;&gt;
-                    &lt;input type=&quot;text&quot; class=&quot;input-text required-entry validation-failed&quot; value=&quot;&quot;&gt;
-                    &lt;div class=&quot;validation-advice&quot;&gt;This is a required field.&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;field&quot;&gt;
-                &lt;label class=&quot;required&quot;&gt;&lt;em&gt;*&lt;/em&gt;Failed Validation&lt;/label&gt;
-                &lt;div class=&quot;input-box&quot;&gt;
-                    &lt;input type=&quot;text&quot; class=&quot;input-text required-entry validation-failed&quot; value=&quot;&quot;&gt;
-                    &lt;div class=&quot;validation-advice&quot;&gt;This is a required field.&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;</code></pre>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-list"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fields"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Failed Validation<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry validation-failed"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"validation-advice"</span>&gt;</span>This is a required field.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span>Failed Validation<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-box"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"input-text required-entry validation-failed"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"validation-advice"</span>&gt;</span>This is a required field.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre></div>
+                
+                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.validation-failed</span> { 
+	<span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">1</span>px dashed <span class="hljs-hexcolor">#f00</span> <span class="hljs-important">!important</span>;</span> 
+	<span class="hljs-attribute">background</span><span class="hljs-value">:<span class="hljs-hexcolor">#faebe7</span> <span class="hljs-important">!important</span>;</span> 
+}
+<span class="hljs-class">.validation-passed</span> {}
+<span class="hljs-class">.validation-advice</span> {
+	<span class="hljs-attribute">clear</span><span class="hljs-value">:both;</span>
+	<span class="hljs-attribute">min-height</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span>
+	<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">3</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span>
+	<span class="hljs-attribute">padding-left</span><span class="hljs-value">:<span class="hljs-number">17</span>px;</span>
+	<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">10</span>px;</span>
+	<span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span>
+	<span class="hljs-attribute">background</span><span class="hljs-value">:url(../images/validation_advice_bg.gif) <span class="hljs-number">2</span>px <span class="hljs-number">1</span>px no-repeat;</span>
+	<span class="hljs-attribute">color</span><span class="hljs-value">:<span class="hljs-hexcolor">#f00</span>;</span>
+}
+
+</code></pre></div>
+                
+            </div>
+        
+            <div class="section">
+                
+                    <div class="comment"><p>Expiration date and CVV number validation fix</p>
 </div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.validation-failed { 
-	border:1px dashed #f00 !important; 
-	background:#faebe7 !important; 
-}
-.validation-passed {}
-.validation-advice {
-	clear:both;
-	min-height:13px;
-	margin:3px 0 0;
-	padding-left:17px;
-	font-size:10px;
-	line-height:13px;
-	background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat;
-	color:#f00;
-}
-
-// Expiration date and CVV number validation fix 
-.v-fix { 
-	float:left;
-	.validation-advice { 
-		display:block; 
-		width:12em; 
-		margin-right:-12em; 
-		position:relative;
-	}
-}</code></pre></div>
                 
-
+                
             </div>
         
     </div>
 
+</div>
+
     <script>
-        // Resize all iframes to exactly fit content within
         window.onload = function() {
             var iframes = document.querySelectorAll('iframe');
             for ( var i = 0; i < iframes.length; i++ ){
                 iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
             }
         };
+        var headings = document.querySelectorAll('#nav .heading');
+        for ( var i = 0; i < headings.length; i++ ){
+            headings[i].addEventListener('click', function () {
+                this.classList.toggle('is-open');
+                this.nextElementSibling.classList.toggle('is-open');
+            });
+        }
     </script>
+
+    <style>*{margin:0;padding:0;border:0;font-size:inherit}html{background:#e2e5dc}html,body{font-size:100%}body{font:14px/25px 'Calibri',Arial,sans-serif;color:black;padding:2em}a{text-decoration:none;color:black}h1,h2,h3,h4,ul,ol,dl,p,blockquote{margin-bottom:15px}h1,h2,h3,h4,dt{font-weight:bold}h1{font-size:25px}h2{font-size:21px}h3{font-size:17px}h4{font-size:14px}ul,ol{margin-left:1em;list-style:outside}.gutter{width:100%;max-width:960px;overflow:hidden;margin:0 auto}#nav{float:left;width:20%;min-width:150px;margin-right:25px}#content{overflow:hidden;min-width:400px}#nav{margin-bottom:25px}#nav ul,#nav li,#nav a{display:block}#nav ul{list-style:none;margin:0 0 1em}#nav h1{border-bottom:1px solid #d0d5c5;font-size:14px;padding-bottom:10px;margin:20px 0 10px}#nav .heading{margin-top:1em;text-transform:uppercase;font-size:12px;margin:0;padding:2px 5px;cursor:pointer;position:relative;border-radius:4px}#nav .heading:hover{background:#d0d5c5}#nav .heading:after{content:"+";position:absolute;top:2px;right:5px}#nav .heading.is-open:after{content:"-"}#nav ul ul,#nav ul .heading{margin-left:20px}#nav a{padding:2px 5px;border-radius:4px}#nav a:hover,#nav a:focus{background:#d0d5c5}#nav ul{display:none}#nav ul.is-open{display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px 20px 5px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .markup,.section .styles{border-top:1px solid #ddd;background:#f7f7f7;position:relative;overflow-y:auto;max-height:500px}.section .markup pre,.section .styles pre{padding:0 20px 20px}.section .markup:before,.section .styles:before{display:block;background:#eee;color:#ccc;padding:0 20px;position:absolute;top:0;right:0;border-radius:0 0 0 4px}.section .markup:before{content:"Markup"}.section .styles:before{content:"Styles"}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code,pre{font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}</style>
+    <style>.hljs{display:block;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}</style>
 
 </body>
 </html>

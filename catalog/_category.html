@@ -1,162 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Category Page &middot; Styleguide</title>
-    <style>html{background:#e2e5dc}*{margin:0;padding:0;border:0;font-size:inherit}html,body{font-size:100%}body{font:14px/25px Arial,sans-serif;padding:90px 20px 0}a{color:#000;text-decoration:none}.gutter{width:100%;max-width:900px;margin:0 auto}.navigation{box-shadow:inset 0 -1px 0 0 #2eab9a,0 0 20px 12px #e2e5dc;border-bottom:1px solid #fff;background:#3fbead;position:fixed;z-index:1000;height:50px;width:100%;left:0;top:0}.navigation span,.navigation ul,.navigation li,.navigation a{display:block}.navigation .group{float:left;position:relative}.navigation .group>a,.navigation .group>span{color:#1c655b;font:bold 11px/50px Arial,sans-serif;text-transform:uppercase;padding:0 20px;overflow:hidden}.navigation .group>span{cursor:default}.navigation ul{display:none;position:absolute;z-index:999;box-shadow:0 2px 3px rgba(0,0,0,0.2);border-radius:0 5px 5px 5px;top:45px;left:0}.navigation li a{min-width:10em;line-height:30px;padding:0 20px;font-size:13px;border-bottom:1px solid #eee;color:#3fbead}.navigation li a.is-active{color:#1c655b}.navigation li:last-child a{border:0}.navigation li a:hover{color:#1c655b}.navigation .group.is-active>span,.navigation .group.is-active>a{color:#fff}.navigation .group:hover>span,.navigation .group:hover>a,.navigation .group:hover ul{background:white;color:#1c655b;display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .source{border-top:1px solid #ddd;background:#f7f7f7;padding:20px}.section .source[class*="language-"]{position:relative}.section .source[class*="language-"]:after{content:attr(data-source-type);position:absolute;top:0;right:0;padding:7px 7px;background:#3fbead;color:#fff;line-height:1;text-transform:uppercase;display:inline-block;-webkit-border-bottom-left-radius:6px;-moz-border-bottom-left-radius:6px;border-bottom-left-radius:6px;font-weight:bold;font-size:11px}.section .comment h1,.section .comment p:first-child{font-size:25px;font-weight:bold;margin-bottom:25px}.section .comment h2{font-size:16px}.section .comment p{margin-bottom:25px}.section .comment :last-child{margin-bottom:0}.section .comment ul,.section .comment ol{margin-left:3em}pre[class*="language-"]{overflow-y:auto;max-height:500px}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code[class*="language-"],pre[class*="language-"]{color:black;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{position:relative}code[class*="language"]{display:block}.token.comment{padding:0}.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#7d8b99}.token.punctuation{color:#5f6364}.token.property,.token.tag,.token.boolean,.token.number,.token.function-name,.token.constant,.token.symbol{color:#c92c2c}.token.selector,.token.attr-name,.token.string,.token.function,.token.builtin{color:#2f9c0a}.token.operator,.token.entity,.token.url,.token.variable{color:#a67f59;background:rgba(255,255,255,0.5)}.token.atrule,.token.attr-value,.token.keyword,.token.class-name{color:#1990b8}.token.regex,.token.important{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:rgba(255,255,255,0.5)}.token.important{font-weight:normal}.token.entity{cursor:help}.namespace{opacity:.7}.token.tab:not(:empty):before,.token.cr:before,.token.lf:before{color:#e0d7d1}</style>
-    <script>/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- * MIT license http://www.opensource.org/licenses/mit-license.php/
- * @author Lea Verou http://lea.verou.me
- */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
-Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
-Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
-Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/g,"pseudo-class":/:[-\w]+(?:\(.*\))?/g,"class":/\.[-:\.\w]+/g,id:/#[-:\.\w]+/g}};Prism.languages.insertBefore("css","ignore",{hexcode:/#[\da-f]{3,6}/gi,entity:/\\[\da-f]{1,8}/gi,number:/[\d%\.]+/g,"function":/(attr|calc|cross-fade|cycle|element|hsla?|image|lang|linear-gradient|matrix3d|matrix|perspective|radial-gradient|repeating-linear-gradient|repeating-radial-gradient|rgba?|rotatex|rotatey|rotatez|rotate3d|rotate|scalex|scaley|scalez|scale3d|scale|skewx|skewy|skew|steps|translatex|translatey|translatez|translate3d|translate|url|var)/ig});;
-Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};
-;
-Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|throw|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});
-;
-Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
-;
-</script>
+    <meta charset="utf-8" />
+    <title>Category Page</title>
 </head>
 <body>
+<div class="gutter">
 
-    <div class="navigation">
-        <div class="gutter">
-            <div class="group ">
-                <a href="/">Home</a>
-            </div>
+    <div id="nav">
+        <h1><a href="../">Styleguide</a></h1>
+        
             
-            <div class="group ">
-                <span>.</span>
-                <ul>
-                    
-                    <li><a class="" href="_inbox.html">_inbox</a></li>
-                    
-                    <li><a class="" href="_mixins.html">_mixins</a></li>
-                    
-                    <li><a class="" href="_variables.html">_variables</a></li>
-                    
+                <a href="../_inbox.html">Inbox</a>
+            
+        
+            
+                <a href="../_mixins.html">Mixins</a>
+            
+        
+            
+                <a href="../_variables.html">Variables</a>
+            
+        
+            
+                <h2 class="heading">catalog</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../catalog/_category.html">Category Page</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../catalog/_product.html">Product View</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>catalog</span>
-                <ul>
-                    
-                    <li><a class="" href="catalog/_category.html">Category Page</a></li>
-                    
-                    <li><a class="" href="catalog/_product.html">Product View</a></li>
-                    
+        
+            
+                <h2 class="heading">checkout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../checkout/_cart.html">Shopping Cart</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../checkout/_checkout.html">One Page Checkout</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>checkout</span>
-                <ul>
-                    
-                    <li><a class="" href="checkout/_cart.html">Shopping Cart</a></li>
-                    
-                    <li><a class="" href="checkout/_checkout.html">One Page Checkout</a></li>
-                    
+        
+            
+                <h2 class="heading">cms</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../cms/_homepage.html">Homepage</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../cms/_sitemap.html">Sitemap</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>cms</span>
-                <ul>
-                    
-                    <li><a class="" href="cms/_homepage.html">Homepage</a></li>
-                    
-                    <li><a class="" href="cms/_sitemap.html">Sitemap</a></li>
-                    
+        
+            
+                <h2 class="heading">common</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../common/_buttons.html">Button</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_forms.html">Form Elements</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_headings.html">Page Heading</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_messages.html">Messages</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_misc.html">Misc</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../common/_tables.html">Data Table</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>common</span>
-                <ul>
-                    
-                    <li><a class="" href="common/_buttons.html">Button</a></li>
-                    
-                    <li><a class="" href="common/_forms.html">Form Elements</a></li>
-                    
-                    <li><a class="" href="common/_headings.html">Page Heading</a></li>
-                    
-                    <li><a class="" href="common/_messages.html">Messages</a></li>
-                    
-                    <li><a class="" href="common/_misc.html">Misc</a></li>
-                    
-                    <li><a class="" href="common/_tables.html">Data Table</a></li>
-                    
+        
+            
+                <h2 class="heading">customer</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../customer/_dashboard.html">Dashboard</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../customer/_login.html">Login/Create Account</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>customer</span>
-                <ul>
-                    
-                    <li><a class="" href="customer/_dashboard.html">Dashboard</a></li>
-                    
-                    <li><a class="" href="customer/_login.html">Login/Create Account</a></li>
-                    
+        
+            
+                <h2 class="heading">layout</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../layout/_content.html">Content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_footer.html">Footer</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_header.html">Header</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../layout/_page.html">Pages</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>layout</span>
-                <ul>
-                    
-                    <li><a class="" href="layout/_content.html">Content</a></li>
-                    
-                    <li><a class="" href="layout/_footer.html">Footer</a></li>
-                    
-                    <li><a class="" href="layout/_header.html">Header</a></li>
-                    
-                    <li><a class="" href="layout/_page.html">Pages</a></li>
-                    
+        
+            
+                <h2 class="heading">navigation</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../navigation/_breadcrumbs.html">Breadcrumbs</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_navbar.html">Nav Bar</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../navigation/_toolbar.html">Toolbar</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>navigation</span>
-                <ul>
-                    
-                    <li><a class="" href="navigation/_breadcrumbs.html">Breadcrumbs</a></li>
-                    
-                    <li><a class="" href="navigation/_navbar.html">Nav Bar</a></li>
-                    
-                    <li><a class="" href="navigation/_toolbar.html">Toolbar</a></li>
-                    
+        
+            
+                <h2 class="heading">normalize</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../normalize/_base.html">Admin controlled content</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../normalize/_reset.html">Reset</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>normalize</span>
-                <ul>
-                    
-                    <li><a class="" href="normalize/_base.html">Admin controlled content</a></li>
-                    
-                    <li><a class="" href="normalize/_reset.html">Reset</a></li>
-                    
+        
+            
+                <h2 class="heading">sidebar</h2>
+                <ul class="group">
+                
+                    <li>
+                        
+                            <a href="../sidebar/_blocks.html">Sidebar Blocks</a>
+                        
+                    </li>
+                
+                    <li>
+                        
+                            <a href="../sidebar/_miniproductlist.html">Mini Products List</a>
+                        
+                    </li>
+                
                 </ul>
-            </div>
             
-            <div class="group ">
-                <span>sidebar</span>
-                <ul>
-                    
-                    <li><a class="" href="sidebar/_blocks.html">Sidebar Blocks</a></li>
-                    
-                    <li><a class="" href="sidebar/_miniproductlist.html">Mini Products List</a></li>
-                    
-                </ul>
-            </div>
-            
-        </div>
+        
     </div>
 
-    <div class="gutter">
+    <div id="content">
         
             <div class="section">
                 
@@ -167,7 +248,6 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                 
-
             </div>
         
             <div class="section">
@@ -177,43 +257,62 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_f1hbj" height="0" src="about:blank"></iframe>
-                        <script id="script_f1hbj">
-                            var iframe  = document.getElementById('iframe_f1hbj');
+                        <iframe id="iframe_t6orj" height="0" src="about:blank"></iframe>
+                        <script id="result_t6orj" type="text/html">
+	<div class="page-title category-title">
+    	<h1>Category Title</h1>
+	</div>
+	<p class="category-image"><img title="Category Image" alt="Category Image" src="http://placekitten.com/475/215"></p>
+	<div class="category-description std">
+		Category Description
+    </div>
+</script>
+                        <script id="script_t6orj">
+                            var iframe  = document.getElementById('iframe_t6orj');
+                            var script  = document.getElementById('script_t6orj');
+                            var result  = document.getElementById('result_t6orj');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_f1hbj');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="page-title category-title">	<h1>Category Title</h1>	</div>	<p class="category-image"><img title="Category Image" alt="Category Image" src="http://placekitten.com/475/215"></p>	<div class="category-description std">		Category Description</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;page-title category-title&quot;&gt;
-        &lt;h1&gt;Category Title&lt;/h1&gt;
-    &lt;/div&gt;
-    &lt;p class=&quot;category-image&quot;&gt;&lt;img title=&quot;Category Image&quot; alt=&quot;Category Image&quot; src=&quot;http://placekitten.com/475/215&quot;&gt;&lt;/p&gt;
-    &lt;div class=&quot;category-description std&quot;&gt;
-        Category Description
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"page-title category-title"</span>&gt;</span>
+    	<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Category Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"category-image"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Category Image"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Category Image"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/475/215"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"category-description std"</span>&gt;</span>
+		Category Description
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.category-title { border:0; margin:0 0 7px; }
-.category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
-.category-image img {}
-.category-description { margin:0 0 10px; }</code></pre></div>
-                
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.category-title</span> { <span class="hljs-attribute">border</span><span class="hljs-value">:<span class="hljs-number">0</span>;</span> <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span>px;</span> }
+<span class="hljs-class">.category-image</span> { 
+	<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">100</span>%;</span> 
+	<span class="hljs-attribute">overflow</span><span class="hljs-value">:hidden;</span> 
+	<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span> 
+	<span class="hljs-attribute">text-align</span><span class="hljs-value">:center;</span>
+	<span class="hljs-tag">img</span> {}
+}
+<span class="hljs-class">.category-description</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span> }
 
+</code></pre></div>
+                
             </div>
         
             <div class="section">
@@ -224,149 +323,232 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_2ese4" height="0" src="about:blank"></iframe>
-                        <script id="script_2ese4">
-                            var iframe  = document.getElementById('iframe_2ese4');
+                        <iframe id="iframe_hchko" height="0" src="about:blank"></iframe>
+                        <script id="result_hchko" type="text/html">
+	<div class="category-products">
+		<ul class="products-grid first last odd">
+		    <li class="item first">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		    <li class="item">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		    <li class="item last">
+		        <a class="product-image" title="Product Name" href="#">
+		            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+		        </a>
+		        <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+		        <div class="ratings">
+		            <div class="rating-box">
+		                <div style="width:62%" class="rating"></div>
+		            </div>
+		            <span class="amount"><a href="#">3 Review(s)</a></span>
+		        </div>
+		        <div class="price-box">
+		            <span id="product-price-83" class="regular-price">
+		                <span class="price">£15.99</span>                                    
+		            </span>     
+		        </div>
+		        <div class="actions">
+		            <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+		            <ul class="add-to-links">
+		                <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+		                <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+		            </ul>
+		        </div>
+		    </li>
+		</ul>
+	</div>
+</script>
+                        <script id="script_hchko">
+                            var iframe  = document.getElementById('iframe_hchko');
+                            var script  = document.getElementById('script_hchko');
+                            var result  = document.getElementById('result_hchko');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_2ese4');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<div class="category-products">		<ul class="products-grid first last odd">		<li class="item first">		   <a class="product-image" title="Product Name" href="#">		  <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">		   </a>		   <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>		   <div class="ratings">		  <div class="rating-box">		 <div style="width:62%" class="rating"></div>		  </div>		  <span class="amount"><a href="#">3 Review(s)</a></span>		   </div>		   <div class="price-box">		  <span id="product-price-83" class="regular-price">		 <span class="price">£15.99</span> 		  </span>		   </div>		   <div class="actions">		  <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>		  <ul class="add-to-links">		 <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>		 <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>		  </ul>		   </div>		</li>		<li class="item">		   <a class="product-image" title="Product Name" href="#">		  <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">		   </a>		   <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>		   <div class="ratings">		  <div class="rating-box">		 <div style="width:62%" class="rating"></div>		  </div>		  <span class="amount"><a href="#">3 Review(s)</a></span>		   </div>		   <div class="price-box">		  <span id="product-price-83" class="regular-price">		 <span class="price">£15.99</span> 		  </span>		   </div>		   <div class="actions">		  <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>		  <ul class="add-to-links">		 <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>		 <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>		  </ul>		   </div>		</li>		<li class="item last">		   <a class="product-image" title="Product Name" href="#">		  <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">		   </a>		   <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>		   <div class="ratings">		  <div class="rating-box">		 <div style="width:62%" class="rating"></div>		  </div>		  <span class="amount"><a href="#">3 Review(s)</a></span>		   </div>		   <div class="price-box">		  <span id="product-price-83" class="regular-price">		 <span class="price">£15.99</span> 		  </span>		   </div>		   <div class="actions">		  <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>		  <ul class="add-to-links">		 <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>		 <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>		  </ul>		   </div>		</li>		</ul>	</div>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;div class=&quot;category-products&quot;&gt;
-        &lt;ul class=&quot;products-grid first last odd&quot;&gt;
-            &lt;li class=&quot;item first&quot;&gt;
-                &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
-                    &lt;img width=&quot;135&quot; height=&quot;135&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/135/135&quot;&gt;
-                &lt;/a&gt;
-                &lt;h2 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h2&gt;
-                &lt;div class=&quot;ratings&quot;&gt;
-                    &lt;div class=&quot;rating-box&quot;&gt;
-                        &lt;div style=&quot;width:62%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;span class=&quot;amount&quot;&gt;&lt;a href=&quot;#&quot;&gt;3 Review(s)&lt;/a&gt;&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;price-box&quot;&gt;
-                    &lt;span id=&quot;product-price-83&quot; class=&quot;regular-price&quot;&gt;
-                        &lt;span class=&quot;price&quot;&gt;£15.99&lt;/span&gt;                                    
-                    &lt;/span&gt;     
-                &lt;/div&gt;
-                &lt;div class=&quot;actions&quot;&gt;
-                    &lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;ul class=&quot;add-to-links&quot;&gt;
-                        &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;item&quot;&gt;
-                &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
-                    &lt;img width=&quot;135&quot; height=&quot;135&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/135/135&quot;&gt;
-                &lt;/a&gt;
-                &lt;h2 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h2&gt;
-                &lt;div class=&quot;ratings&quot;&gt;
-                    &lt;div class=&quot;rating-box&quot;&gt;
-                        &lt;div style=&quot;width:62%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;span class=&quot;amount&quot;&gt;&lt;a href=&quot;#&quot;&gt;3 Review(s)&lt;/a&gt;&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;price-box&quot;&gt;
-                    &lt;span id=&quot;product-price-83&quot; class=&quot;regular-price&quot;&gt;
-                        &lt;span class=&quot;price&quot;&gt;£15.99&lt;/span&gt;                                    
-                    &lt;/span&gt;     
-                &lt;/div&gt;
-                &lt;div class=&quot;actions&quot;&gt;
-                    &lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;ul class=&quot;add-to-links&quot;&gt;
-                        &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;item last&quot;&gt;
-                &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
-                    &lt;img width=&quot;135&quot; height=&quot;135&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/135/135&quot;&gt;
-                &lt;/a&gt;
-                &lt;h2 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h2&gt;
-                &lt;div class=&quot;ratings&quot;&gt;
-                    &lt;div class=&quot;rating-box&quot;&gt;
-                        &lt;div style=&quot;width:62%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                    &lt;span class=&quot;amount&quot;&gt;&lt;a href=&quot;#&quot;&gt;3 Review(s)&lt;/a&gt;&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;price-box&quot;&gt;
-                    &lt;span id=&quot;product-price-83&quot; class=&quot;regular-price&quot;&gt;
-                        &lt;span class=&quot;price&quot;&gt;£15.99&lt;/span&gt;                                    
-                    &lt;/span&gt;     
-                &lt;/div&gt;
-                &lt;div class=&quot;actions&quot;&gt;
-                    &lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
-                    &lt;ul class=&quot;add-to-links&quot;&gt;
-                        &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"category-products"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"products-grid first last odd"</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item first"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/135/135"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:62%"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"amount"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3 Review(s)<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-box"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"product-price-83"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular-price"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>                                    
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>     
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"actions"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-cart"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Add to Cart"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Add to Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"add-to-links"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-wishlist"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Wishlist<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-compare"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Compare<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/135/135"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:62%"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"amount"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3 Review(s)<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-box"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"product-price-83"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular-price"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>                                    
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>     
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"actions"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-cart"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Add to Cart"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Add to Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"add-to-links"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-wishlist"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Wishlist<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-compare"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Compare<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item last"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/135/135"</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:62%"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"amount"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3 Review(s)<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-box"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"product-price-83"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular-price"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>                                    
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>     
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"actions"</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-cart"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Add to Cart"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Add to Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+		            <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"add-to-links"</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-wishlist"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Wishlist<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		                <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-compare"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Compare<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		            <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+		        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.category-products {}
-.products-grid { 
-	border-bottom:1px solid #ddd; 
-	position:relative; 
-	&.last { border-bottom: 0; }
-	li {
-		&.item {
-			float:left; 
-			padding:12px 10px 80px;
-			width:138px; 
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.category-products</span> {}
+<span class="hljs-class">.products-grid</span> { 
+	<span class="hljs-attribute">border-bottom</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span> 
+	<span class="hljs-attribute">position</span><span class="hljs-value">:relative;</span> 
+	&amp;<span class="hljs-class">.last</span> { <span class="hljs-attribute">border-bottom</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span> }
+	<span class="hljs-tag">li</span> {
+		&amp;<span class="hljs-class">.item</span> {
+			<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+			<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">12</span>px <span class="hljs-number">10</span>px <span class="hljs-number">80</span>px;</span>
+			<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">138</span>px;</span> 
 		}
 	}
-	.product-image { 
-		display:block; 
-		width:135px; 
-		height:135px; 
-		margin:0 0 10px; 
+	<span class="hljs-class">.product-image</span> { 
+		<span class="hljs-attribute">display</span><span class="hljs-value">:block;</span> 
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">135</span>px;</span> 
+		<span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">135</span>px;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span> 
 	}
-	.product-name { 
-		margin:0 0 5px; 
-		font-weight:bold; 
-		font-size:13px; 
-		a {}
+	<span class="hljs-class">.product-name</span> { 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span>px;</span> 
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> 
+		<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span> 
+		<span class="hljs-tag">a</span> {}
 	}
-	.price-box { margin:5px 0; }
-	.availability { line-height:21px; }
-	.actions { 
-		position:absolute; 
-		bottom:12px; 
+	<span class="hljs-class">.price-box</span> { <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">5</span>px <span class="hljs-number">0</span>;</span> }
+	<span class="hljs-class">.availability</span> { <span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">21</span>px;</span> }
+	<span class="hljs-class">.actions</span> { 
+		<span class="hljs-attribute">position</span><span class="hljs-value">:absolute;</span> 
+		<span class="hljs-attribute">bottom</span><span class="hljs-value">:<span class="hljs-number">12</span>px;</span> 
 	}
 
-	.col2-left-layout &,
-	.col2-right-layout & {
-		width:632px; 
-		margin:0 auto;
+	<span class="hljs-class">.col2-left-layout</span> &amp;,
+	<span class="hljs-class">.col2-right-layout</span> &amp; {
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">632</span>px;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> auto;</span>
 	}
-	.col1-layout & {
-		width:790px; 
-		margin:0 auto;
+	<span class="hljs-class">.col1-layout</span> &amp; {
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">790</span>px;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> auto;</span>
 	}
-}</code></pre></div>
+}
+
+</code></pre></div>
                 
-
             </div>
         
             <div class="section">
@@ -376,157 +558,243 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
                 
                 
                     <div class="result">
-                        <iframe id="iframe_ny74l" height="0" src="about:blank"></iframe>
-                        <script id="script_ny74l">
-                            var iframe  = document.getElementById('iframe_ny74l');
+                        <iframe id="iframe_z8a93" height="0" src="about:blank"></iframe>
+                        <script id="result_z8a93" type="text/html">
+	<ol id="products-list" class="products-list">
+	    <li class="item odd">
+	        <a class="product-image" title="Product Name" href="#">
+	            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+	        </a>
+	        <div class="product-shop">
+	            <div class="f-fix">
+	                <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+	                <div class="ratings">
+	                    <div class="rating-box">
+	                        <div style="width:62%" class="rating"></div>
+	                    </div>
+	                    <p class="rating-links">
+	                        <a href="#">3 Review(s)</a>
+	                        <span class="separator">|</span>
+	                        <a href="#">Add Your Review</a>
+	                    </p>
+	                </div>
+	                <div class="price-box">
+	                    <span id="product-price-83" class="regular-price">
+	                        <span class="price">£15.99</span>
+	                    </span>
+	                </div>
+	                <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>
+	                <div class="desc std">
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <a class="link-learn" title="Product Name" href="#">Learn More</a>
+	                </div>
+	                <ul class="add-to-links">
+	                    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	                    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </li>
+	    <li class="item last even">
+	        <a class="product-image" title="Product Name" href="#">
+	            <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">
+	        </a>
+	        <div class="product-shop">
+	            <div class="f-fix">
+	                <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>
+	                <div class="ratings">
+	                    <div class="rating-box">
+	                        <div style="width:62%" class="rating"></div>
+	                    </div>
+	                    <p class="rating-links">
+	                        <a href="#">3 Review(s)</a>
+	                        <span class="separator">|</span>
+	                        <a href="#">Add Your Review</a>
+	                    </p>
+	                </div>
+	                <div class="price-box">
+	                    <span id="product-price-83" class="regular-price">
+	                        <span class="price">£15.99</span>
+	                    </span>
+	                </div>
+	                <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>
+	                <div class="desc std">
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <a class="link-learn" title="Product Name" href="#">Learn More</a>
+	                </div>
+	                <ul class="add-to-links">
+	                    <li><a class="link-wishlist" href="#">Add to Wishlist</a></li>
+	                    <li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </li>
+	</ol>
+</script>
+                        <script id="script_z8a93">
+                            var iframe  = document.getElementById('iframe_z8a93');
+                            var script  = document.getElementById('script_z8a93');
+                            var result  = document.getElementById('result_z8a93');
                             var context = iframe.contentWindow.document;
-                            var script  = document.getElementById('script_ny74l');
-                            context.open();
-                            context.write('<!doctype html>'
-                                +'<html>'
-                                +'    <head>'
-                                +'        '
-                                +'    </head>'
-                                +'    <body>'
-                                +'        	<ol id="products-list" class="products-list">	<li class="item odd">	   <a class="product-image" title="Product Name" href="#">	  <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">	   </a>	   <div class="product-shop">	  <div class="f-fix">	 <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>	 <div class="ratings">	<div class="rating-box">	<div style="width:62%" class="rating"></div>	</div>	<p class="rating-links">	<a href="#">3 Review(s)</a>	<span class="separator">|</span>	<a href="#">Add Your Review</a>	</p>	 </div>	 <div class="price-box">	<span id="product-price-83" class="regular-price">	<span class="price">£15.99</span>	</span>	 </div>	 <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>	 <div class="desc std">	Comfortable and fun to wear these clogs are the latest trend in fashion footwear	<a class="link-learn" title="Product Name" href="#">Learn More</a>	 </div>	 <ul class="add-to-links">	<li><a class="link-wishlist" href="#">Add to Wishlist</a></li>	<li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>	 </ul>	  </div>	   </div>	</li>	<li class="item last even">	   <a class="product-image" title="Product Name" href="#">	  <img width="135" height="135" alt="Product Name" src="http://placekitten.com/135/135">	   </a>	   <div class="product-shop">	  <div class="f-fix">	 <h2 class="product-name"><a title="Product Name" href="#">Product Name</a></h2>	 <div class="ratings">	<div class="rating-box">	<div style="width:62%" class="rating"></div>	</div>	<p class="rating-links">	<a href="#">3 Review(s)</a>	<span class="separator">|</span>	<a href="#">Add Your Review</a>	</p>	 </div>	 <div class="price-box">	<span id="product-price-83" class="regular-price">	<span class="price">£15.99</span>	</span>	 </div>	 <p><button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></p>	 <div class="desc std">	Comfortable and fun to wear these clogs are the latest trend in fashion footwear	<a class="link-learn" title="Product Name" href="#">Learn More</a>	 </div>	 <ul class="add-to-links">	<li><a class="link-wishlist" href="#">Add to Wishlist</a></li>	<li><span class="separator">|</span> <a class="link-compare" href="#">Add to Compare</a></li>	 </ul>	  </div>	   </div>	</li>	</ol>'
-                                +'    </body>'
-                                +'</html>');
-                            context.close();
+                                context.open();
+                                context.write('<!DOCTYPE html>');
+                                context.write('<'+'html>');
+                                context.write('    <'+'head>');
+                                context.write('        <link rel="stylesheet" href="../assets/css/styles.css" />');
+                                context.write('    <'+'/'+'head>');
+                                context.write('    <'+'body>');
+                                context.write(result.innerHTML);
+                                context.write('    <'+'/'+'body>');
+                                context.write('<'+'/'+'html>');
+                                context.close();
+                            result.parentNode.removeChild(result);
                             script.parentNode.removeChild(script);
                         </script>
                     </div>
                 
                 
-                    <div class="source language-markup" data-source-type="html"><pre><code>    &lt;ol id=&quot;products-list&quot; class=&quot;products-list&quot;&gt;
-        &lt;li class=&quot;item odd&quot;&gt;
-            &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
-                &lt;img width=&quot;135&quot; height=&quot;135&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/135/135&quot;&gt;
-            &lt;/a&gt;
-            &lt;div class=&quot;product-shop&quot;&gt;
-                &lt;div class=&quot;f-fix&quot;&gt;
-                    &lt;h2 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h2&gt;
-                    &lt;div class=&quot;ratings&quot;&gt;
-                        &lt;div class=&quot;rating-box&quot;&gt;
-                            &lt;div style=&quot;width:62%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;p class=&quot;rating-links&quot;&gt;
-                            &lt;a href=&quot;#&quot;&gt;3 Review(s)&lt;/a&gt;
-                            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
-                            &lt;a href=&quot;#&quot;&gt;Add Your Review&lt;/a&gt;
-                        &lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;price-box&quot;&gt;
-                        &lt;span id=&quot;product-price-83&quot; class=&quot;regular-price&quot;&gt;
-                            &lt;span class=&quot;price&quot;&gt;£15.99&lt;/span&gt;
-                        &lt;/span&gt;
-                    &lt;/div&gt;
-                    &lt;p&gt;&lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;&lt;/p&gt;
-                    &lt;div class=&quot;desc std&quot;&gt;
-                        Comfortable and fun to wear these clogs are the latest trend in fashion footwear
-                        &lt;a class=&quot;link-learn&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Learn More&lt;/a&gt;
-                    &lt;/div&gt;
-                    &lt;ul class=&quot;add-to-links&quot;&gt;
-                        &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;item last even&quot;&gt;
-            &lt;a class=&quot;product-image&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;
-                &lt;img width=&quot;135&quot; height=&quot;135&quot; alt=&quot;Product Name&quot; src=&quot;http://placekitten.com/135/135&quot;&gt;
-            &lt;/a&gt;
-            &lt;div class=&quot;product-shop&quot;&gt;
-                &lt;div class=&quot;f-fix&quot;&gt;
-                    &lt;h2 class=&quot;product-name&quot;&gt;&lt;a title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Product Name&lt;/a&gt;&lt;/h2&gt;
-                    &lt;div class=&quot;ratings&quot;&gt;
-                        &lt;div class=&quot;rating-box&quot;&gt;
-                            &lt;div style=&quot;width:62%&quot; class=&quot;rating&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;p class=&quot;rating-links&quot;&gt;
-                            &lt;a href=&quot;#&quot;&gt;3 Review(s)&lt;/a&gt;
-                            &lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt;
-                            &lt;a href=&quot;#&quot;&gt;Add Your Review&lt;/a&gt;
-                        &lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;price-box&quot;&gt;
-                        &lt;span id=&quot;product-price-83&quot; class=&quot;regular-price&quot;&gt;
-                            &lt;span class=&quot;price&quot;&gt;£15.99&lt;/span&gt;
-                        &lt;/span&gt;
-                    &lt;/div&gt;
-                    &lt;p&gt;&lt;button class=&quot;button btn-cart&quot; title=&quot;Add to Cart&quot; type=&quot;button&quot;&gt;&lt;span&gt;&lt;span&gt;Add to Cart&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;&lt;/p&gt;
-                    &lt;div class=&quot;desc std&quot;&gt;
-                        Comfortable and fun to wear these clogs are the latest trend in fashion footwear
-                        &lt;a class=&quot;link-learn&quot; title=&quot;Product Name&quot; href=&quot;#&quot;&gt;Learn More&lt;/a&gt;
-                    &lt;/div&gt;
-                    &lt;ul class=&quot;add-to-links&quot;&gt;
-                        &lt;li&gt;&lt;a class=&quot;link-wishlist&quot; href=&quot;#&quot;&gt;Add to Wishlist&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;span class=&quot;separator&quot;&gt;|&lt;/span&gt; &lt;a class=&quot;link-compare&quot; href=&quot;#&quot;&gt;Add to Compare&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ol&gt;</code></pre>
-</div>
+                    <div class="markup"><pre class="hljs"><code>
+	<span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"products-list"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"products-list"</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item odd"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/135/135"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-shop"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"f-fix"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:62%"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-links"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3 Review(s)<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add Your Review<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-box"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"product-price-83"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular-price"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-cart"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Add to Cart"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Add to Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"desc std"</span>&gt;</span>
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-learn"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Learn More<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"add-to-links"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-wishlist"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Wishlist<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-compare"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Compare<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"item last even"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-image"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"135"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placekitten.com/135/135"</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-shop"</span>&gt;</span>
+	            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"f-fix"</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"product-name"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Product Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ratings"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-box"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:62%"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"rating-links"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>3 Review(s)<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add Your Review<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price-box"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"product-price-83"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular-price"</span>&gt;</span>
+	                        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"price"</span>&gt;</span>£15.99<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button btn-cart"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Add to Cart"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Add to Cart<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"desc std"</span>&gt;</span>
+	                    Comfortable and fun to wear these clogs are the latest trend in fashion footwear
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-learn"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Product Name"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Learn More<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	                <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"add-to-links"</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-wishlist"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Wishlist<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"separator"</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-compare"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Add to Compare<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	                <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+	            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+	    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+</code></pre></div>
                 
                 
-                    <div class="source language-scss" data-source-type="scss"><pre><code>.products-list {
-	li { 
-		&.item {
-			border-bottom:1px solid #ddd; 
-			padding:12px 10px; 
-			&.last { border-bottom:0; }
+                    <div class="styles"><pre class="hljs"><code>
+<span class="hljs-class">.products-list</span> {
+	<span class="hljs-tag">li</span> { 
+		&amp;<span class="hljs-class">.item</span> {
+			<span class="hljs-attribute">border-bottom</span><span class="hljs-value">:<span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ddd</span>;</span> 
+			<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">12</span>px <span class="hljs-number">10</span>px;</span> 
+			&amp;<span class="hljs-class">.last</span> { <span class="hljs-attribute">border-bottom</span><span class="hljs-value">:<span class="hljs-number">0</span>;</span> }
 		}
 	}
-	.product-image { 
-		float:left; 
-		width:135px; 
-		height:135px; 
-		margin:0 0 10px; 
+	<span class="hljs-class">.product-image</span> { 
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+		<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">135</span>px;</span> 
+		<span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">135</span>px;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10</span>px;</span> 
 	}
-	.product-shop { margin-left:150px; }
-	.product-name { 
-		margin:0 0 5px; 
-		font-weight:bold; 
-		font-size:13px; 
-		a {}
+	<span class="hljs-class">.product-shop</span> { <span class="hljs-attribute">margin-left</span><span class="hljs-value">:<span class="hljs-number">150</span>px;</span> }
+	<span class="hljs-class">.product-name</span> { 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5</span>px;</span> 
+		<span class="hljs-attribute">font-weight</span><span class="hljs-value">:bold;</span> 
+		<span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">13</span>px;</span> 
+		<span class="hljs-tag">a</span> {}
 	}
-	.price-box { 
-		float:left; 
-		margin:3px 13px 5px 0; 
+	<span class="hljs-class">.price-box</span> { 
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">3</span>px <span class="hljs-number">13</span>px <span class="hljs-number">5</span>px <span class="hljs-number">0</span>;</span> 
 	}
-	.availability { 
-		float:left; 
-		margin:3px 0 0; 
+	<span class="hljs-class">.availability</span> { 
+		<span class="hljs-attribute">float</span><span class="hljs-pseudo">:left</span>; 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">3</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span> 
 	}
-	.desc { 
-		clear:both; 
-		padding:6px 0 0; 
-		margin:0 0 15px; 
-		line-height:1.35; 
-		.link-learn { font-size:11px; }
+	<span class="hljs-class">.desc</span> { 
+		<span class="hljs-attribute">clear</span><span class="hljs-value">:both;</span> 
+		<span class="hljs-attribute">padding</span><span class="hljs-value">:<span class="hljs-number">6</span>px <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span> 
+		<span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">15</span>px;</span> 
+		<span class="hljs-attribute">line-height</span><span class="hljs-value">:<span class="hljs-number">1.35</span>;</span> 
+		<span class="hljs-class">.link-learn</span> { <span class="hljs-attribute">font-size</span><span class="hljs-value">:<span class="hljs-number">11</span>px;</span> }
 	}
-	.add-to-links { 
-		clear:both; 
-		li { display:inline; }
-		.separator { display:inline; margin:0 2px; }
+	<span class="hljs-class">.add-to-links</span> { 
+		<span class="hljs-attribute">clear</span><span class="hljs-value">:both;</span> 
+		<span class="hljs-tag">li</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:inline;</span> }
+		<span class="hljs-class">.separator</span> { <span class="hljs-attribute">display</span><span class="hljs-value">:inline;</span> <span class="hljs-attribute">margin</span><span class="hljs-value">:<span class="hljs-number">0</span> <span class="hljs-number">2</span>px;</span> }
 	}
 }</code></pre></div>
                 
-
             </div>
         
     </div>
 
+</div>
+
     <script>
-        // Resize all iframes to exactly fit content within
         window.onload = function() {
             var iframes = document.querySelectorAll('iframe');
             for ( var i = 0; i < iframes.length; i++ ){
                 iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight;
             }
         };
+        var headings = document.querySelectorAll('#nav .heading');
+        for ( var i = 0; i < headings.length; i++ ){
+            headings[i].addEventListener('click', function () {
+                this.classList.toggle('is-open');
+                this.nextElementSibling.classList.toggle('is-open');
+            });
+        }
     </script>
+
+    <style>*{margin:0;padding:0;border:0;font-size:inherit}html{background:#e2e5dc}html,body{font-size:100%}body{font:14px/25px 'Calibri',Arial,sans-serif;color:black;padding:2em}a{text-decoration:none;color:black}h1,h2,h3,h4,ul,ol,dl,p,blockquote{margin-bottom:15px}h1,h2,h3,h4,dt{font-weight:bold}h1{font-size:25px}h2{font-size:21px}h3{font-size:17px}h4{font-size:14px}ul,ol{margin-left:1em;list-style:outside}.gutter{width:100%;max-width:960px;overflow:hidden;margin:0 auto}#nav{float:left;width:20%;min-width:150px;margin-right:25px}#content{overflow:hidden;min-width:400px}#nav{margin-bottom:25px}#nav ul,#nav li,#nav a{display:block}#nav ul{list-style:none;margin:0 0 1em}#nav h1{border-bottom:1px solid #d0d5c5;font-size:14px;padding-bottom:10px;margin:20px 0 10px}#nav .heading{margin-top:1em;text-transform:uppercase;font-size:12px;margin:0;padding:2px 5px;cursor:pointer;position:relative;border-radius:4px}#nav .heading:hover{background:#d0d5c5}#nav .heading:after{content:"+";position:absolute;top:2px;right:5px}#nav .heading.is-open:after{content:"-"}#nav ul ul,#nav ul .heading{margin-left:20px}#nav a{padding:2px 5px;border-radius:4px}#nav a:hover,#nav a:focus{background:#d0d5c5}#nav ul{display:none}#nav ul.is-open{display:block}.section{background:#fff;box-shadow:0 2px 3px rgba(0,0,0,0.2);margin-bottom:20px}.section .comment{padding:20px 20px 5px}.section .result{padding:0 20px 20px}.section .result iframe{display:block;overflow:hidden;position:relative;width:100%}.section .markup,.section .styles{border-top:1px solid #ddd;background:#f7f7f7;position:relative;overflow-y:auto;max-height:500px}.section .markup pre,.section .styles pre{padding:0 20px 20px}.section .markup:before,.section .styles:before{display:block;background:#eee;color:#ccc;padding:0 20px;position:absolute;top:0;right:0;border-radius:0 0 0 4px}.section .markup:before{content:"Markup"}.section .styles:before{content:"Styles"}.section .comment code{color:#3fbead;font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px}code,pre{font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:13px;line-height:20px;direction:ltr;text-align:left;white-space:pre-wrap;word-spacing:normal;margin:0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}</style>
+    <style>.hljs{display:block;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}</style>
 
 </body>
 </html>
