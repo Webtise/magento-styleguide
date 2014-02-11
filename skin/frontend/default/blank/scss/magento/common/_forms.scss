@@ -2,26 +2,126 @@
 
 # Form Elements 
 
+## Variables
+
+*/
+$input-bg: #fff !default;
+$input-bd: 1px solid #ddd !default;
+$input-color: #000 !default;
+$input-font: 12px Arial, Helvetica, sans-serif !default;
+$input-va: middle !default; 
+$input-text-pad: 2px !default;
+$input-sel-pad: 1px !default;
+$input-opt-pr: 10px !default;
+$input-multi-bdb: 1px solid #ddd !default;
+$input-multi-pad: 2px 5px !default; 
+$input-qty-width: 2.5em !default;
+$input-box-mr: 3px !default;
+$input-ctrl-box-mr: 6px !default;
+
+$fldset-bd: 1px solid #ddd !default;
+$fldset-bg: #fefefe !default;
+$fldset-pad: 22px 25px 12px 33px !default;
+$fldset-margin: 28px 0 !default;
+$fldset-leg-fw: bold !default;
+$fldset-leg-fz: 13px !default;
+$fldset-leg-bd: 1px solid #fefefe !default;
+$fldset-leg-bg: #dedede !default;
+$fldset-leg-color: #333 !default;
+$fldset-leg-margin: -33px 0 0 -10px !default;
+$fldset-leg-pad: 0 8px !default;
+
+$form-item-margin: 0 0 8px !default; 
+$form-control-box-mr: 6px !default;
+$form-wide-iptbox-width: 535px !default;
+$form-wide-text-width: 529px !default;
+$form-wide-sel-width: 535px !default;
+$form-addrow-bdt: 1px solid #ccc !default;
+$form-addrow-mt: 10px !default;
+$form-addrow-pt: 7px !default;
+$form-addrow-btn-margin: 5px 0 0 !default;
+$form-label-color: #111 !default;
+$form-label-fw: bold !default;
+$form-req-fs: normal !default;
+$form-req-color: #eb340a !default;
+$form-req-top: 0 !default;
+$form-req-right: -8px !default;
+$form-field-width: 275px !default;
+$form-iptbox-width: 260px !default;
+$form-text-width: 254px !default;
+$form-sel-width: 260px !default;
+$form-range-width: 74px !default;
+
+$form-name-prefix-width: 65px !default;
+$form-name-prefix-sel-width: 55px !default;
+$form-name-prefix-text-width: 49px !default;
+$form-name-suffix-width: 65px !default;
+$form-name-suffix-sel-width: 55px !default;
+$form-name-suffix-text-width: 49px !default;
+$form-name-middle-width: 70px !default;
+$form-name-middle-text-width: 49px !default;
+$form-name-prefix-middle-width: 140px !default;
+$form-name-prefix-middle-text-width: 124px !default;
+$form-name-prefix-middle-suffix-width: 205px !default;
+$form-name-prefix-middle-suffix-text-width: 189px !default;
+$form-name-prefix-suffix-firstname-width: 210px !default;
+$form-name-prefix-suffix-lastname-width: 205px !default;
+$form-name-prefix-suffix-text-width: 189px !default;
+$form-name-prefix-firstname-width: 210px !default;
+$form-name-middlename-firstname-width: 210px !default;
+$form-name-default-width: 205px !default;
+$form-name-default-text-width: 189px !default;
+
+$form-dob-def-width: 85px !default;
+$form-dob-def-text-width: 74px !default;
+$form-dob-label-fz: 10px !default;
+$form-dob-label-fw: normal !default;
+$form-dob-label-color: #888 !default;
+$form-dob-daymo-width: 60px !default;
+$form-dob-daymo-text-width: 46px !default;
+$form-dob-year-width: 140px !default;
+$form-dob-year-text-width: 134px !default;
+
+$btn-set-margin: 5px 0 0 !default;
+$btn-set-pad: 5px !default;
+$btn-set-bd: 1px solid #ddd !default;
+$btn-set-req-margin: 0 0 5px !default;
+$req-fz:10px !default;
+$req-ta: right !default;
+$req-color: #f00 !default;
+
+$val-fail-bd: 1px dashed #f00 !default;
+$val-fail-bg: #faebe7 !default;
+$val-adv-mh: 13px !default;
+$val-adv-margin: 3px 0 0 !default;
+$val-adv-pl: 17px !default;
+$val-adv-fz: 10px !default;
+$val-adv-lh: 13px !default;
+$val-adv-bg: url(../images/validation_advice_bg.gif) 2px 1px no-repeat !default;
+$val-adv-color: #f00 !default;
+
+/*
+
 ## Generic Styling
 
 */
 input, select, textarea { 
-	font:12px Arial, Helvetica, sans-serif; 
-	vertical-align:middle; 
-	color:#000;
+	font: $input-font; 
+	vertical-align: $input-va; 
+	color: $input-color;
 }
 input.input-text, select, textarea { 
-	background:#fff; 
-	border:1px solid #ddd;
+	background: $input-bg; 
+	border: $input-bd;
 }
-input.input-text, textarea { padding:2px; }
+input.input-text, textarea { padding: $input-text-pad; }
 select { 
-	padding:1px; 
-	option { padding-right:10px; }
+	padding: $input-sel-pad; 
+	option { padding-right: $input-opt-pr; }
 	&.multiselect {
 		option { 
-			border-bottom:1px solid #ddd; 
-			padding:2px 5px; 
+			border-bottom: $input-multi-bdb; 
+			padding: $input-multi-pad; 
 			&:last-child { border-bottom: 0; }
 		}
 	}
@@ -29,13 +129,13 @@ select {
 textarea { overflow:auto; }
 
 input {
-	&.qty { width:2.5em !important; }
-	&.radio, &.checkbox { margin-right:3px;  }
+	&.qty { width: $input-qty-width !important; }
+	&.radio, &.checkbox { margin-right: $input-box-mr;  }
 }
 
 p.control input.radio, 
 p.control input.checkbox {
-	margin-right: 6px;
+	margin-right: $input-ctrl-box-mr;
 }
 
 /*
@@ -57,21 +157,22 @@ Used to break down and encapsulate form lists with appropriate legends.
 ```
 
 */
+
 .fieldset { 
-	border:1px solid #ddd; 
-	background:#fefefe; 
-	padding:22px 25px 12px 33px; 
-	margin:28px 0; 
+	border: $fldset-bd; 
+	background: $fldset-bg; 
+	padding: $fldset-pad; 
+	margin: $fldset-margin; 
 	.legend { 
-		float:left;
-		font-weight:bold;
-		font-size:13px;
-		border:1px solid #fefefe;
-		background:#dedede;
-		color:#333;
-		margin:-33px 0 0 -10px;
-		padding:0 8px;
-		position:relative;
+		float: left;
+		font-weight: $fldset-leg-fw;
+		font-size: $fldset-leg-fz;
+		border: $fldset-leg-bd;
+		background: $fldset-leg-bg;
+		color: $fldset-leg-color;
+		margin: $fldset-leg-margin;
+		padding: $fldset-leg-pad;
+		position: relative;
 	}
 }
 
@@ -178,11 +279,11 @@ Generic form lists used site wide
 .form-list {
 
 	li { 
-		margin:0 0 8px; 
+		margin: $form-item-margin;
 		&.control {
 			label { float:none; }
 			input { 
-				&.radio, &.checkbox { margin-right:6px; }
+				&.radio, &.checkbox { margin-right: $form-control-box-mr; }
 			}
 			.input-box { 
 				clear:none; 
@@ -191,49 +292,48 @@ Generic form lists used site wide
 			}
 		}
 		&.wide {
-			.input-box { width:535px; }
+			.input-box { width: $form-wide-iptbox-width; }
 			input { 
-				&.input-text { width:529px; } 
+				&.input-text { width: $form-wide-text-width; } 
 			}
-			textarea { width:529px; }
-			select { width:535px; }
+			textarea { width: $form-wide-text-width; }
+			select { width: $form-wide-sel-width; }
 		}
 		&.additional-row { 
-			border-top:1px solid #ccc; 
-			margin-top:10px; 
-			padding-top:7px; 
-			.btn-remove { float:right; margin:5px 0 0; }
+			border-top: $form-addrow-bdt; 
+			margin-top: $form-addrow-mt; 
+			padding-top: $form-addrow-pt; 
+			.btn-remove { float:right; margin: $form-addrow-btn-margin; }
 		}
 	}
 
 	label {
-		float:left; 
-		color:#111; 
-		font-weight:bold; 
-		position:relative; 
-		z-index:0; 
+		float: left;
+		color: $form-label-color;
+		font-weight: $form-label-fw;
+		position: relative;
+		z-index: 0;
 		&.required {
 			em {
 				float:right; 
-				font-style:normal; 
-				color:#eb340a; 
+				font-style: $form-req-fs; 
+				color: $form-req-color; 
 				position:absolute; 
-				top:0; 
-				right:-8px;
+				top: $form-req-top; 
+				right: $form-req-right;
 			}
 		}
 	}
-
 	input {
-		&.input-text { width:254px; }
+		&.input-text { width: $form-text-width; }
 	}
-	textarea { width:254px; height:10em; }
-	select { width:260px; }
+	textarea { width: $form-text-width; height:10em; }
+	select { width: $form-sel-width; }
 
-	.field { float:left; width:275px; }
-	.input-box { display:block; clear:both; width:260px; }
+	.field { float:left; width: $form-field-width; }
+	.input-box { display:block; clear:both; width: $form-iptbox-width; }
 	.input-range { 
-		input.input-text { width:74px; }
+		input.input-text { width: $form-range-width; }
 	}	
 	
 }
@@ -306,59 +406,63 @@ Outer class changes based on what is enabled possible combinations:
 	.customer-name-prefix-middlename-suffix .input-box { width:auto; }
 
 	.name-prefix { 
-		width:65px;
-		select { width:55px; }
-		input.input-text { width:49px; }
+		width: $form-name-prefix-width;
+		select { width: $form-name-prefix-sel-width; }
+		input.input-text { width: $form-name-prefix-text-width; }
 	}
-	
+
 	.name-suffix { 
-		width:65px;
-		select { width:55px; }
-		input.input-text { width:49px; }
+		width: $form-name-suffix-width;
+		select { width: $form-name-suffix-sel-width; }
+		input.input-text { width: $form-name-suffix-text-width; }
 	}
 
 	.name-middlename { 
-		width:70px;
-		input.input-text { width:49px; }
+		width: $form-name-middle-width;
+		input.input-text { width: $form-name-middle-text-width; }
 	}
 
 	.customer-name-prefix-middlename,
 	.customer-name-prefix-middlename-suffix {
 		.name-firstname { 
-			width:140px;
-			input.input-text { width:124px; }
+			width: $form-name-prefix-middle-width;
+			input.input-text { width: $form-name-prefix-middle-text-width; }
 		}
 	}
 
 	.customer-name-prefix-middlename-suffix {
 		.name-lastname { 
-			width:205px;
-			input.input-text { width:189px; }
+			width: $form-name-prefix-middle-suffix-width;
+			input.input-text { width: $form-name-prefix-middle-suffix-text-width; }
 		}
 	}
 
 	.customer-name-prefix-suffix {
-		.name-firstname { width:210px; }
-		.name-lastname { width:205px; }
+		.name-firstname { width: $form-name-prefix-suffix-firstname-width; }
+		.name-lastname { width: $form-name-prefix-suffix-lastname-width; }
 		.name-firstname, .name-lastname {
-			input.input-text { width:189px; }
+			input.input-text { width: $form-name-prefix-suffix-text-width; }
 		}
 	}
 
-	.customer-name-prefix, .customer-name-middlename {
-		.name-firstname { width:210px; }
+	.customer-name-prefix {
+		.name-firstname { width: $form-name-prefix-firstname-width; }
+	} 
+
+	.customer-name-middlename {
+		.name-firstname { width: $form-name-middlename-firstname-width; }
 	}
 
 	.customer-name-middlename .name-firstname,
 	.customer-name-middlename-suffix .name-firstname,
 	.customer-name-suffix .name-lastname,
-	.customer-name-middlename-suffix .name-lastname { width:205px; }
+	.customer-name-middlename-suffix .name-lastname { width: $form-name-default-width; }
 
 	.customer-name-prefix .name-firstname input.input-text,
 	.customer-name-middlename .name-firstname input.input-text,
 	.customer-name-middlename-suffix .name-firstname input.input-text,
 	.customer-name-suffix .name-lastname input.input-text,
-	.customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
+	.customer-name-middlename-suffix .name-lastname input.input-text { width: $form-name-default-text-width; }
 }
 
 /*
@@ -388,18 +492,34 @@ Outer class changes based on what is enabled possible combinations:
 ```
 
 */
+.form-list {
+	.customer-dob {
+		.dob-month, .dob-day, .dob-year { 
+			float:left; 
+			width: $form-dob-def-width; 
+		}
+		input {
+			&.input-text { 
+				display:block; 
+				width: $form-dob-def-text-width;
+			}
+		}
+		label { 
+			font-size: $form-dob-label-fz; 
+			ont-weight: $form-dob-label-fw; 
+			color: $form-dob-label-color; 
+		}
+		.dob-day, .dob-month { 
+			width: $form-dob-daymo-width; 
+			input.input-text { width: $form-dob-daymo-text-width; }
+		}
+		.dob-year { 
+			width: $form-dob-year-width; 
+			input.input-text { width: $form-dob-year-text-width; }
+		}
+	}
+}
 
-.form-list .customer-dob .dob-month,
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-year { float:left; width:85px; }
-.form-list .customer-dob input.input-text { display:block; width:74px; }
-.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
-.form-list .customer-dob .dob-day,
-.form-list .customer-dob .dob-month { width:60px; }
-.form-list .customer-dob .dob-day input.input-text,
-.form-list .customer-dob .dob-month input.input-text { width:46px; }
-.form-list .customer-dob .dob-year { width:140px; }
-.form-list .customer-dob .dob-year input.input-text { width:134px; }
 
 /*
 ## Button Sets
@@ -417,16 +537,19 @@ Usually appends to a `.form-list` element providing actions for the form.
 
 */
 .buttons-set { 
-	clear:both; margin:5px 0 0; padding:5px; border:1px solid #ddd; 
+	clear:both; 
+	margin: $btn-set-margin; 
+	padding: $btn-set-pad; 
+	border: $btn-set-bd; 
 	.back-link { float:left; }
 	button.button { float:right; }
-	p.required { margin:0 0 5px; }
+	p.required { margin: $btn-set-req-margin; }
 }
 .buttons-set-order {}
 p.required { 
-	font-size:10px; 
-	text-align:right; 
-	color:#f00;
+	font-size: $req-fz; 
+	text-align: $req-ta; 
+	color: $req-color;
 }
 
 /* 
@@ -459,19 +582,19 @@ On invalid input appends class `.validation-failed` to the input element and add
 
 */
 .validation-failed { 
-	border:1px dashed #f00 !important; 
-	background:#faebe7 !important; 
+	border: $val-fail-bd !important;  
+	background: $val-fail-bg !important;  
 }
 .validation-passed {}
 .validation-advice {
 	clear:both;
-	min-height:13px;
-	margin:3px 0 0;
-	padding-left:17px;
-	font-size:10px;
-	line-height:13px;
-	background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat;
-	color:#f00;
+	min-height: $val-adv-mh;
+	margin: $val-adv-margin;
+	padding-left: $val-adv-pl;
+	font-size: $val-adv-fz;
+	line-height: $val-adv-lh;
+	background: $val-adv-bg;
+	color: $val-adv-color;
 }
 
 /* Expiration date and CVV number validation fix */

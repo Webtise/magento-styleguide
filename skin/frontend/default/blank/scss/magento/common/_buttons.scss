@@ -1,6 +1,23 @@
 /*
 # Button
 
+## Variables
+
+*/
+
+$reset-btn-font: 12px Arial, Helvetica, sans-serif !default;
+$reset-btn-color: #000 !default;
+$btn-height: 21px !default;
+$btn-bg: transparent url(../images/bkg_button.gif) 0 0 no-repeat !default;
+$btn-pad: 0 0 0 8px !default;
+$btn-font: bold 12px/21px Arial, Helvetica, sans-serif !default;
+$btn-ta: center !default;
+$btn-color: #fff !default;
+$btn-in-bgp: 100% 0 !default;
+$btn-in-pad: 0 12px 0 4px !default;
+
+/*
+
 ```
 	<button class="button" type="button"><span><span>Button</span></span></button>
 	<!-- Disabled -->
@@ -15,10 +32,11 @@
 
 */
 
+
 button { 
-	font:12px Arial, Helvetica, sans-serif;
+	font: $reset-btn-font;
 	vertical-align:middle;
-	color:#000;
+	color: $reset-btn-color;
 	&.button { 
 		overflow:visible;
 		width:auto;
@@ -29,16 +47,16 @@ button {
 		cursor:pointer;
 		span { 
 			float:left;
-			height:21px;
-			background:transparent url(../images/bkg_button.gif) 0 0 no-repeat;
-			padding:0 0 0 8px;
-			font:bold 12px/21px Arial, Helvetica, sans-serif;
-			text-align:center;
+			height: $btn-height;
+			background: $btn-bg;
+			padding: $btn-pad;
+			font: $btn-ta;
+			text-align: $btn-ta;
 			white-space:nowrap;
-			color:#fff;
+			color: $btn-color;
 			span { 
-				background-position:100% 0;
-				padding:0 12px 0 4px;
+				background-position: $btn-in-bgp;
+				padding: $btn-in-pad;
 			}
 		}
 	}

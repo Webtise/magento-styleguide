@@ -2,7 +2,121 @@
 
 # Product View
 
+## Variables
+
 */
+
+$no-rating-margin: 0 !default;
+$ratings-fz: 11px !default;
+$ratings-lh: 1.25 !default;
+$ratings-margin: 7px 0 !default;
+$ratings-links-margin: 0 !default;
+$ratings-links-sep-margin: 0 2px !default;
+$ratings-box-mr: 3px !default;
+
+$rating-box-width: 69px !default;
+$rating-box-height: 13px !default;
+$rating-box-star-empty-bg: url(../images/bkg_rating.gif) 0 0 repeat-x !default;
+$rating-box-star-full-bg: url(../images/bkg_rating.gif) 0 100% repeat-x !default;
+
+$ratings-table-fz: 11px !default;
+$ratings-table-lh: 1.15 !default;
+$ratings-table-pad: 3px 0 !default;
+$ratings-table-label-fw: bold !default;
+$ratings-table-label-pr: 8px !default;
+
+$avail-margin: 0 !default;
+$avail-msg-fw: bold !default;
+$avail-stock-color: inherit !default; 
+$avail-nostock-color: #d83820 !default;
+
+$avail-only-margin: 0 0 7px !default;
+$avail-only-bg: url(../images/i_availability_only_arrow.gif) 100% 0 no-repeat !default;
+$avail-only-pr: 15px !default;
+$avail-only-bg-pos: 100% -15px !default;
+$avail-only-margin: 0 0 7px !default;
+$avail-only-label-bg: #f2f2f2 !default;
+$avail-only-label-fz: 10px !default;
+$avail-only-label-pad: 0 8px !default;
+$avail-only-value-bdb: 1px solid #ddd !default;
+$avail-only-value-fz: 11px !default;
+$avail-only-value-pad: 2px 8px 1px !default;
+
+$price-box-price-fw: bold !default;
+$price-rp-price-fw: bold !default;
+$price-op-price-fw: bold !default;
+$price-op-price-td: line-through !default;
+$price-sp-label-fw: bold !default;
+$price-sp-price-fw: bold !default;
+$price-mp-label-fw: bold !default;
+$price-mpl-price-fw: normal !default;
+$price-excl-price-fw: normal !default;
+$price-inc-price-fw: bold !default;
+$price-cp-label-fw: bold !default;
+$price-cp-value-fw: bold !default;
+$price-from-label-fw: bold !default;
+$price-to-label-fw: bold !default;
+$price-notice-pl: 10px !default;
+$price-notice-price-fw: bold !default;
+$price-asconf-label-fw: bold !default;
+$price-teir-price-fw: bold !default;
+
+$add-cart-label-mr: 5px !default;
+$add-cart-btn-ml: 5px !default;
+$add-cart-pp-ta: right !default;
+$add-cart-pp-margin: 5px 60px 5px 0 !default;
+$add-cart-pppv-margin: 0 !default;
+$add-to-box-or-margin: 0 10px !default;
+$add-to-links-sep-disp: none !default;
+$prodcol-boxcol-margin: 0 0 15px !default;
+$prod-img-width: 267px !default;
+$prod-img-bd: 1px solid #ddd !default;
+$prod-img-zoom-width: 265px !default;
+$prod-img-zoom-height: 265px !default;
+$prod-img-zoom-notice-ta: center !default;
+$prod-img-zoom-slider-height: 18px !default;
+$prod-img-zoom-slider-margin: 0 auto 13px !default;
+$prod-img-zoom-slider-pad: 0 28px !default;
+$prod-img-zoom-slider-bg: url(../images/slider_bg.gif) 50% 50% no-repeat !default;
+$prod-img-zoom-slider-disabled-opacity: 0.3 !default;
+$prod-img-zoom-handle-bg: url(../images/magnifier_handle.gif) 0 0 no-repeat !default;
+$prod-img-zoom-handle-height: 22px !default;
+$prod-img-zoom-handle-width: 9px !default;
+$prod-img-more-ml: -4px !default;
+$prod-img-more-item-pad: 1px !default;
+$prod-img-more-item-bg: #ddd !default;
+$prod-img-more-item-margin: 0 0 8px 4px !default;
+$prod-img-popup-nav-margin: 0 100px !default;
+$prod-view-shop-width: 445px !default;
+$prod-view-shop-col1-width: 700px !default;
+$prod-opt-pad: 10px !default;
+$prod-opt-margin: 10px 0 0 !default;
+$prod-opt-bd: 1px solid #ddd !default;
+$prod-opt-bg: #f6f6f6 !default;
+$prod-opt-label-fw: bold !default;
+$prod-opt-disabled-bg: none !default;
+$prod-opt-disabled-bd: none !default;
+$prod-opt-disabled-pad: 3px !default;
+$prod-opt-disabled-color: #000 !default;
+$prod-opt-label-margin: 10px 0 !default;
+$prod-opt-text-width: 98% !default;
+$prod-opt-date-width: 150px !default;
+$prod-opt-textarea-width: 98% !default;
+$prod-opt-textarea-height: 8em !default;
+$prod-opt-sel-width: 100% !default;
+$prod-opt-time-disp: inline-block !default;
+$prod-opt-time-pad: 2px 0 !default;
+$prod-opt-list-radio-margin: 3px -18px 0 0 !default;
+$prod-opt-list-check-margin: 3px -20px 0 0 !default;
+$prod-opt-list-label-ml: 20px !default;
+$prod-opt-val-fail-pad: 0 7px !default;
+$prod-opt-req-pad: 15px 0 0 !default;
+$prod-opt-price-box-margin: 10px 0 !default;
+$prod-upsell-grid-item-width: 25% !default;
+$prod-tags-iptbox-width: 260px !default;
+$prod-tags-iptbox-margin: 0 5px !default;
+$prod-tags-ipttxt-width: 254px !default;
+
 
 /* 
 ## Ratings 
@@ -15,7 +129,7 @@
 	</p>
 ```
 */
-.no-rating { margin:0; }
+.no-rating { margin: $no-rating-margin; }
 
 /*
 
@@ -36,9 +150,9 @@
 
 */
 .ratings { 
-	font-size:11px; 
-	line-height:1.25; 
-	margin:7px 0; 
+	font-size: $ratings-fz; 
+	line-height: $ratings-lh; 
+	margin: $ratings-margin; 
 	strong { 
 		float:left; 
 		margin:1px 3px 0 0;
@@ -46,12 +160,12 @@
 	dt {}
 	dd {}
 	.rating-links { 
-		margin:0; 
-		.separator { margin:0 2px; }
+		margin: $ratings-links-margin; 
+		.separator { margin: $ratings-links-sep-margin; }
 	}
 	.rating-box { 
 		float:left; 
-		margin-right:3px;
+		margin-right: $ratings-box-mr;
 	}
 	.amount {}
 }
@@ -61,13 +175,13 @@
 	height:13px;
 	font-size:0;
 	line-height:0;
-	background:url(../images/bkg_rating.gif) 0 0 repeat-x;
+	background: $rating-box-star-empty-bg;
 	text-indent:-999em;
 	overflow:hidden;
 	.rating { 
 		float:left;
 		height:13px;
-		background:url(../images/bkg_rating.gif) 0 100% repeat-x;
+		background: $rating-box-star-full-bg;
 	}
 } 
 
@@ -115,8 +229,8 @@ Table to show ratings for each point (found on product review list page)
 */
 
 .ratings-table {
-	th, td { font-size:11px; line-height:1.15; padding:3px 0; } 
-	th { font-weight:bold; padding-right:8px; }
+	th, td { font-size: $ratings-table-fz; line-height: $ratings-table-lh; padding: $ratings-table-pad; } 
+	th { font-weight: $ratings-table-label-fw; padding-right: $ratings-table-label-pr; }
 }
 
 /* 
@@ -132,14 +246,15 @@ Shows current stock status for product.
 ```
 
 */
+
 .availability { 
-	margin:0; 
-	span { font-weight:bold; }
+	margin: $avail-margin; 
+	span { font-weight: $avail-msg-fw; }
 	&.in-stock {
-		span {}
+		span { color: $avail-stock-color; }
 	}
 	&.out-of-stock { 
-		span { color:#d83820; } 
+		span { color: $avail-nostock-color; } 
 	}
 }
 
@@ -154,15 +269,16 @@ When Configuration->Inventory->Stock Options->Only X left Threshold is set
     </p>
 ```
 */
+
 .availability-only { 
 	margin:0 0 7px; 
 	a { 
-		background:url(../images/i_availability_only_arrow.gif) 100% 0 no-repeat; 
+		background: $avail-only-bg; 
 		cursor:pointer; 
-		padding-right:15px; 
+		padding-right: $avail-only-pr; 
 	}
 	strong { }
-	.expanded { background-position:100% -15px; }
+	.expanded { background-position: $avail-only-bg-pos; }
 }
 /*
 Show stock levels for individual products on a configurable/bundle product
@@ -198,10 +314,11 @@ Show stock levels for individual products on a configurable/bundle product
 ```
 
 */
+
 .availability-only-details { 
-	margin:0 0 7px; 
-	th { background:#f2f2f2; font-size:10px; padding:0 8px; }
-	td { border-bottom:1px solid #ddd; font-size:11px; padding:2px 8px 1px; }
+	margin: $avail-only-margin; 
+	th { background: $avail-only-label-bg; font-size: $avail-only-label-fz; padding: $avail-only-label-pad; }
+	td { border-bottom: $avail-only-value-bdb; font-size: $avail-only-value-fz; padding: $avail-only-value-pad; }
 	tr.odd td.last {}
 }
 
@@ -260,10 +377,11 @@ Each price type commonly wrapped with:
 ```
 
 */
+
 .price { white-space:nowrap !important; }
 
 .price-box {
-	.price { font-weight:bold; }
+	.price { font-weight: $price-box-price-fw; }
 }
 
 /* 
@@ -277,19 +395,19 @@ Each price type commonly wrapped with:
 
 */
 .regular-price {
-	.price { font-weight:bold; }
+	.price { font-weight: $price-rp-price-fw; }
 }
 
 /* ### Old price */
 .old-price {
 	.price-label { white-space:nowrap; }
-	.price { font-weight:bold; text-decoration:line-through; }
+	.price { font-weight: $price-box-price-fw; text-decoration: $price-op-price-td; }
 }
 
 /* ### Special price */
 .special-price {
-	.price-label { font-weight:bold; white-space:nowrap; }
-	.price { font-weight:bold; }
+	.price-label { font-weight: $price-sp-label-fw; white-space:nowrap; }
+	.price { font-weight: $price-sp-price-fw; }
 }
 
 /* 
@@ -306,7 +424,7 @@ Grouped product:
 
 */
 .minimal-price {
-	.price-label { font-weight:bold; white-space:nowrap; }
+	.price-label { font-weight: $price-mp-label-fw; white-space:nowrap; }
 }
 
 /*
@@ -321,9 +439,9 @@ Configurable product (List/Grid view)
 
 */
 .minimal-price-link { 
-	display:block;
+	display: block;
 	.label {}
-	.price { font-weight:normal; }
+	.price { font-weight: $price-mpl-price-fw; }
 }
 
 /*
@@ -345,14 +463,14 @@ Configurable product (List/Grid view)
 
 */
 .price-excluding-tax { 
-	display:block;
-	.label { white-space:nowrap; }
-	.price { font-weight:normal; }
+	display: block;
+	.label { white-space: nowrap; }
+	.price { font-weight: $price-excl-price-fw; }
 }
 .price-including-tax { 
 	display:block; 
 	.label { white-space:nowrap; }
-	.price { font-weight:bold; }
+	.price { font-weight: $price-inc-price-fw; }
 }
 
 
@@ -370,8 +488,8 @@ Configurable product (List/Grid view)
 
 */
 .configured-price {
-	.price-label { font-weight:bold; white-space:nowrap; }
-	.price { font-weight:bold; }
+	.price-label { font-weight: $price-cp-label-fw; white-space:nowrap; }
+	.price { font-weight: $price-cp-value-fw; }
 }
 
 /* ### FPT */
@@ -389,14 +507,14 @@ Configurable product (List/Grid view)
 .price-excl-tax  { 
 	display:block;
 	.label { display:block; white-space:nowrap; }
-	.price { display:block; }
+	.price { display:block; font-weight: $price-excl-price-fw; }
 }
 
 /* ### Incl tax (for order tables) */
 .price-incl-tax { 
 	display:block;
 	.label { display:block; white-space:nowrap; }
-	.price { display:block; font-weight:bold; }
+	.price { display:block; font-weight: $price-inc-price-fw; }
 }
 
 /* 
@@ -417,10 +535,10 @@ Bundle Products:
 
 */
 .price-from {
-	.price-label { font-weight:bold; white-space:nowrap; }
+	.price-label { font-weight: $price-from-label-fw; white-space:nowrap; }
 }
 .price-to {
-	.price-label { font-weight:bold; white-space:nowrap; }
+	.price-label { font-weight: $price-to-label-fw; white-space:nowrap; }
 } 
 
 /* 
@@ -439,13 +557,13 @@ Next to the options on a configurable product.
 
 */
 .price-notice { 
-	padding-left:10px;
-	.price { font-weight:bold; }
+	padding-left: $price-notice-pl;
+	.price { font-weight: $price-notice-price-fw; }
 }
 
 /* ### Price as configured */
 .price-as-configured {
-	.price-label { font-weight:bold; white-space:nowrap; }
+	.price-label { font-weight: $price-asconf-label-fw; white-space:nowrap; }
 }
 
 .price-box-bundle {}
@@ -478,7 +596,7 @@ Offers discounts on higher quantity of single item purchases
 
 */
 .tier-prices {
-	.price { font-weight:bold; }
+	.price { font-weight: $price-teir-price-fw; }
 	.benefit {}
 }
 .tier-prices-grouped {}
@@ -498,20 +616,20 @@ Offers discounts on higher quantity of single item purchases
 ```
 */
 .add-to-cart {
-	label { float:left; margin-right:5px; }
+	label { float:left; margin-right: $add-cart-label-mr; }
 	.qty { float:left; }
-	button.button { float:left; margin-left:5px; }
+	button.button { float:left; margin-left: $add-cart-btn-ml; }
 	.paypal-logo { 
 		clear:left; 
-		text-align:right;
+		text-align: $add-cart-pp-ta;
 		.paypal-or { 
 			clear:both; 
 			display:block; 
-			margin:5px 60px 5px 0; 
+			margin: $add-cart-pp-margin; 
 		}
 	}
 }
-.product-view .add-to-cart .paypal-logo { margin:0; }
+.product-view .add-to-cart .paypal-logo { margin: $add-cart-pppv-margin; }
 
 /* 
 ### Links 
@@ -525,7 +643,7 @@ Offers discounts on higher quantity of single item purchases
 
 */
 .add-to-links {
-	.separator { display:none; }
+	.separator { display: $add-to-links-sep-disp; }
 }
 
 /* 
@@ -547,9 +665,10 @@ Offers discounts on higher quantity of single item purchases
 ```
 
 */
+
 .add-to-box {
 	.add-to-cart { float:left; }
-	.or { float:left; margin:0 10px; }
+	.or { float:left; margin: $add-to-box-or-margin; }
 	.add-to-links { float:left; }
 }
 
@@ -557,7 +676,7 @@ Offers discounts on higher quantity of single item purchases
 
 .product-essential {}
 
-.product-collateral .box-collateral { margin:0 0 15px; }
+.product-collateral .box-collateral { margin: $prodcol-boxcol-margin; }
 
 /* 
 ## Product Images 
@@ -605,19 +724,18 @@ Offers discounts on higher quantity of single item purchases
 ```
 
 */
-
 .product-img-box { 
 	float:left; 
-	width:267px;
+	width: $prod-img-width;
 	.col3-layout & { 
 		float:none; 
 		margin:0 auto; 
 	}
-	.product-image { border:1px solid #ddd; }
+	.product-image { border: $prod-img-bd; }
 	.product-image-zoom { 
 		position:relative; 
-		width:265px; 
-		height:265px; 
+		width: $prod-img-zoom-width; 
+		height: $prod-img-zoom-height; 
 		overflow:hidden; 
 		z-index:9; 
 		img { 
@@ -627,32 +745,31 @@ Offers discounts on higher quantity of single item purchases
 			cursor:move; 
 		}
 	}
-	.zoom-notice { text-align:center; }
+	.zoom-notice { text-align: $prod-img-zoom-notice-ta; }
 	.zoom { 
 		position:relative; 
 		z-index:9; 
-		height:18px;
-		margin:0 auto 13px;
-		padding:0 28px;
-		background:url(../images/slider_bg.gif) 50% 50% no-repeat;
+		height: $prod-img-zoom-slider-height;
+		margin: $prod-img-zoom-slider-margin;
+		padding: $prod-img-zoom-slider-pad;
+		background: $prod-img-zoom-slider-bg;
 		cursor:pointer;
 		&.disabled { 
-			-moz-opacity:.3;
-			-webkit-opacity:.3;
-			-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; // IE8
-			opacity:.3;
+			-moz-opacity: $prod-img-zoom-slider-disabled-opacity;
+			-webkit-opacity: $prod-img-zoom-slider-disabled-opacity;
+			opacity: $prod-img-zoom-slider-disabled-opacity;
 		}
 		#track { 
 			position:relative; 
-			height:18px;
+			height: $prod-img-zoom-slider-height;
 		}
 		#handle { 
 			position:absolute;
 			left:0;
 			top:-1px;
-			width:9px;
-			height:22px;
-			background:url(../images/magnifier_handle.gif) 0 0 no-repeat;
+			width: $prod-img-zoom-handle-width;
+			height: $prod-img-zoom-handle-height;
+			background: $prod-img-zoom-handle-bg;
 		}
 		.btn-zoom-out { 
 			position:absolute;
@@ -666,12 +783,12 @@ Offers discounts on higher quantity of single item purchases
 		}
 	}
 	.more-views {
-		ul { margin-left:-4px }
+		ul { margin-left: $prod-img-more-ml }
 		li { 
 			float:left; 
-			padding:1px; 
-			background-color:#ddd; 
-			margin:0 0 8px 4px ;
+			padding: $prod-img-more-item-pad; 
+			background-color: $prod-img-more-item-bg; 
+			margin: $prod-img-more-item-margin;
 		}
 	} 
 }
@@ -712,7 +829,7 @@ Popup when a product thumbnail is clicked from product page image thumbnails.
 		padding:0;
 	}
 	.nav { 
-		margin:0 100px; 
+		margin: $prod-img-popup-nav-margin; 
 		text-align:center;
 	}
 	.image { display:block; }
@@ -741,10 +858,11 @@ Contains vital product information, name, reviews, add to cart and short descrip
 ```
 
 */
+
 .product-view {
-	.product-shop { float:right; width:445px; }
+	.product-shop { float:right; width: $prod-view-shop-width; }
 	.col1-layout & {
-		.product-shop { float:right; width:700px; }
+		.product-shop { float:right; width: $prod-view-shop-col1-width; }
 	}
 	.col3-layout & {
 		.product-shop { float:none; width:auto; }
@@ -786,56 +904,56 @@ Contains vital product information, name, reviews, add to cart and short descrip
 ```
 
 */
+
 .product-options { 
-	padding:10px; 
-	margin:10px 0 0; 
-	border:1px solid #ddd; 
-	background-color:#f6f6f6;
+	padding: $prod-opt-pad; 
+	margin: $prod-opt-margin; 
+	border: $prod-opt-bd; 
+	background: $prod-opt-bg;
 	dt {
-		label { font-weight:bold; }
+		label { font-weight: $prod-opt-label-fw; }
 		.qty-holder { 
 			float:right; 
 			label { vertical-align:middle; }
 		}
 		.qty-disabled { 
-			background:none; 
-			border:0; 
-			padding:3px; 
-			color:#000; 
+			background: $prod-opt-disabled-bg; 
+			border: $prod-opt-disabled-bd; 
+			padding: $prod-opt-disabled-pad; 
+			color: $prod-opt-disabled-color; 
 		}
 	}
 	dd { 
 		margin:10px 0; 
 		input {
-			.input-text { width:98%; }
-			.datetime-picker { width:150px; }
+			.input-text { width: $prod-opt-text-width; }
+			.datetime-picker { width:$prod-opt-date-width; }
 		}
-		textarea { width:98%; height:8em; }
-		select { width:100%; }
+		textarea { width: $prod-opt-textarea-width; height: $prod-opt-textarea-height; }
+		select { width: $prod-opt-sel-width; }
 		.time-picker { 
-			display:-moz-inline-box; 
-			display:inline-block; 
-			padding:2px 0; 
+			display: $prod-opt-time-disp; 
+			padding: $prod-opt-time-pad; 
 			vertical-align:middle; 
 		}
 	}
 	dl.last dd.last {}
 	.options-list {
 		input {
-			.radio { float:left; margin:3px -18px 0 0; }
-			.checkbox { float:left; margin:3px -20px 0 0; }
+			.radio { float:left; margin: $prod-opt-list-radio-margin; }
+			.checkbox { float:left; margin: $prod-opt-list-check-margin; }
 		}
-		.label { display:block; margin-left:20px; }
+		.label { display:block; margin-left: $prod-opt-list-label-ml; }
 	}
-	ul.validation-failed { padding:0 7px; }
-	p.required { padding:15px 0 0; }
+	ul.validation-failed { padding: $prod-opt-val-fail-pad }
+	p.required { padding: $prod-opt-req-pad; }
 }
 
 .product-options-bottom { 
-	padding:10px; 
-	border:1px solid #ddd; 
+	padding: $prod-opt-pad; 
+	border: $prod-opt-bd; 
 	border-top:0; 
-	.price-box { margin:10px 0; }
+	.price-box { margin: $prod-opt-price-box-margin; }
 }
 
 /* Grouped Product */
@@ -954,10 +1072,11 @@ Contains table of attributes set to 'Show on Product View Page'
 ```
 
 */
+
 .product-view {
 	.box-up-sell {
 		.products-grid {
-			td { width:25%; }
+			td { width: $prod-upsell-grid-item-width; }
 		}
 	}
 } 
@@ -995,12 +1114,13 @@ Contains table of attributes set to 'Show on Product View Page'
 ```
 
 */
+
 .product-view { 
 	.box-tags {
 		.form-add {
 			label { float:left; }
-			.input-box { float:left; width:260px; margin:0 5px; }
-			input.input-text { width:254px; }
+			.input-box { float:left; width: $prod-tags-iptbox-width; margin: $prod-tags-iptbox-margin; }
+			input.input-text { width: $prod-tags-ipttxt-width; }
 			p { clear:both; }
 		}
 	}
@@ -1033,4 +1153,3 @@ Contains table of attributes set to 'Show on Product View Page'
 		.form-add {}
 	}
 }
-

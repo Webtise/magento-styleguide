@@ -2,15 +2,50 @@
 
 # Reset
 
+## Variables
+
+*/
+
+$rst-body-bg: #fff !default;
+$rst-body-color: #000 !default;
+$rst-body-font: 12px/1.35 Arial, Helvetica, sans-serif !default;
+
+$rst-link-color: #05c !default;
+
+$rst-h-fw: bold !default;
+$rst-h-lh: auto !default;
+$rst-h1-fw: $rst-h-fw !default;
+$rst-h1-lh: $rst-h-lh !default;
+$rst-h1-size: 20px !default;
+$rst-h2-fw: $rst-h-fw !default;
+$rst-h2-lh: $rst-h-lh !default;
+$rst-h2-size: 18px !default;
+$rst-h3-fw: $rst-h-fw !default;
+$rst-h3-lh: $rst-h-lh !default;
+$rst-h3-size: 16px !default;
+$rst-h4-fw: $rst-h-fw !default;
+$rst-h4-lh: $rst-h-lh !default;
+$rst-h4-size: 14px !default;
+$rst-h5-fw: $rst-h-fw !default;
+$rst-h5-lh: $rst-h-lh !default;
+$rst-h5-size: 12px !default;
+$rst-h6-fw: $rst-h-fw !default;
+$rst-h6-lh: $rst-h-lh !default;
+$rst-h6-size: 11px !default;
+
+/*
+
+## General
+
 */
 
 * 			  { margin: 0; padding: 0; }
 
-body          { background:#fff; font:12px/1.35 Arial, Helvetica, sans-serif; color:#000; }
+body          { background: $rst-body-bg; font: $rst-body-font; color: $rst-body-color; }
 
 img           { border:0; vertical-align:top; }
 
-a             { color:#05c; text-decoration:underline; }
+a             { color:$rst-link-color; text-decoration:underline; }
 a:hover       { text-decoration:none; }
 :focus        { outline:0; }
 
@@ -19,12 +54,12 @@ a:hover       { text-decoration:none; }
 ## Headings 
 
 */
-h1            { font-size:20px; font-weight:normal; line-height:1.15; }
-h2            { font-size:18px; font-weight:normal; line-height:1.25; }
-h3            { font-size:16px; font-weight:bold; line-height:1.25; }
-h4            { font-size:14px; font-weight:bold; }
-h5            { font-size:12px; font-weight:bold; }
-h6            { font-size:11px; font-weight:bold; }
+h1            { font-size: $rst-h1-size; font-weight: $rst-h1-fw; line-height: $rst-h1-lh; }
+h2            { font-size: $rst-h2-size; font-weight: $rst-h2-fw; line-height: $rst-h2-lh; }
+h3            { font-size: $rst-h3-size; font-weight: $rst-h3-fw; line-height: $rst-h3-lh; }
+h4            { font-size: $rst-h4-size; font-weight: $rst-h4-fw; line-height: $rst-h4-lh; }
+h5            { font-size: $rst-h5-size; font-weight: $rst-h5-fw; line-height: $rst-h5-lh; }
+h6            { font-size: $rst-h6-size; font-weight: $rst-h6-fw; line-height: $rst-h6-lh; }
 
 /* 
 

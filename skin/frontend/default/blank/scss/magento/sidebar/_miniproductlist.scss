@@ -1,5 +1,20 @@
 /* 
+
 # Mini Products List 
+
+## Variables
+
+*/
+$miniprod-li-pad: 5px 0 !default;
+$minprod-image-width: 50px !default;
+$minprod-image-pad: 5px !default;
+$minprod-image-bd: 1px solid #ddd !default;
+$minprod-det-ml: 75px !default;
+$minprod-title-fz: 1em !default;
+$minprod-title-fw: bold !default;
+$minprod-title-margin: 0 !default;
+
+/*
 
 ```
 	<ol class="mini-products-list">
@@ -47,21 +62,20 @@
 ```
 
 */
-
 .mini-products-list {
-	li { padding:5px 0; }
+	li { padding: $miniprod-li-pad; }
 	.product-image { 
 		float:left; 
-		width:50px; 
-		padding:5px; 
-		border:1px solid #ddd; 
+		width: $minprod-image-width; 
+		padding: $minprod-image-pad; 
+		border: $minprod-image-bd; 
 	}
 	.product-details { 
-		margin-left:75px;
+		margin-left: $minprod-det-ml;
 		h4 { 
-			font-size:1em; 
-			font-weight:bold; 
-			margin:0;
+			font-size: $minprod-title-fz; 
+			font-weight: $minprod-title-fw; 
+			margin: $minprod-title-margin;
 		}
 	}	
 	.block-cart & {

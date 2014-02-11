@@ -2,6 +2,19 @@
 
 # Page Heading
 
+## Variables
+
+*/
+
+$title-bdb: 1px solid #ddd !default;
+$title-pad: 0 0 5px !default;
+$title-margin: 0 0 10px !default;
+$title-h-fz: 18px !default;
+$title-h-color: #000 !default;
+$title-sep-margin: 0 3px !default;
+
+/*
+
 ## Page Title
 
 ```
@@ -30,16 +43,16 @@
 
 */
 .page-title { 
-	border-bottom:1px solid #ddd; 
-	padding:0 0 5px; 
-	margin:0 0 10px;
+	border-bottom: $title-bdb; 
+	padding: $title-pad; 
+	margin: $title-margin;
 	&.title-buttons { 
 		text-align:right;
 		h1, h2, h3,
 		h4, h5, h6 { float:left; }
 	}
-	h1, h2 { font-size:18px; color:#000; }
-	.separator { margin:0 3px; }
+	h1, h2 { font-size: $title-h-fz; color: $title-h-color; }
+	.separator { margin: $title-sep-margin; }
 	.link-rss { float:right; }
 }
 

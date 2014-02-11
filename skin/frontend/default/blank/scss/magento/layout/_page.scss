@@ -4,7 +4,29 @@
 
 Top level page layout for Magento's standard options, 1column, 2columns-left, 2-columns-right and 3columns.
 
+## Variables
+
 */
+
+$page-pad: 10px 0 !default;
+$page-ta: left !default;
+$page-width: 1000px !default;
+
+$main-margin: 10px 0 !default;
+
+$col-left-bd: 1px solid #ddd !default;
+$col-left-pad: 5px 5px 0 !default;
+$col-left-width: 230px !default;
+$col-main-bd: 1px solid #ddd !default;
+$col-main-pad: 5px !default;
+$col-main-width: 736px !default;
+$col-right-bd: 1px solid #ddd !default;
+$col-right-pad: 5px 5px 0 !default;
+$col-right-width: 230px !default;
+
+$page-col3-main-ml: 10px !default;
+$page-col3-main-width: 484px !default;
+$page-col3-wrap-width: 748px !default;
 
 /*
 
@@ -12,21 +34,21 @@ Top level page layout for Magento's standard options, 1column, 2columns-left, 2-
 
 */
 .wrapper {}
-.page { width:1000px; margin:0 auto; padding:10px 0; text-align:left; }
+.page { width: $page-width; margin:0 auto; padding: $page-pad; text-align:$page-ta; }
 .page-print { background:#fff; padding:20px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { padding:20px; text-align:left; }
 .main-container {}
-.main { margin:10px 0; }
+.main { margin: $main-margin; }
 
 /*
 
 ## Base Column Sizes
 
 */
-.col-left { float:left; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
-.col-main { float:left; width:736px; border:1px solid #ddd; padding:5px; }
-.col-right { float:right; width:230px; border:1px solid #ddd; padding:5px 5px 0; }
+.col-left { float:left; width: $col-left-width; border: $col-left-bd; padding: $col-left-pad; }
+.col-main { float:left; width: $col-main-width; border: $col-main-bd; padding: $col-main-pad; }
+.col-right { float:right; width: $col-right-width; border: $col-right-bd; padding: $col-right-pad; }
 
 /*
 
@@ -47,7 +69,9 @@ Top level page layout for Magento's standard options, 1column, 2columns-left, 2-
 ```
 
 */
-.col1-layout .col-main { float:none; width:auto; }
+.col1-layout {
+    .col-main { float:none; width:auto; }
+}
 
 
 /* 
@@ -123,12 +147,12 @@ Top level page layout for Magento's standard options, 1column, 2columns-left, 2-
 */
 .col3-layout {
     .col-main { 
-        width:484px; 
-        margin-left:10px; 
+        width: $page-col3-main-width; 
+        margin-left: $page-col3-main-ml; 
     }
     .col-wrapper { 
         float:left; 
-        width:748px; 
+        width: $page-col3-wrap-width; 
         .col-main { float:right; }
     }
 }

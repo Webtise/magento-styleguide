@@ -1,7 +1,18 @@
 /* 
 # Toolbar
-*/
 
+## Variables
+
+*/
+$pager-bd: 1px solid #ddd !default;
+$pager-margin: 5px 0 !default;
+$pager-pad: 5px !default;
+$pager-ta: center !default;
+$pager-pages-margin: 0 135px !default;
+
+$sorter-bd: 1px solid #ddd !default;
+$sorter-margin: 5px 0 !default;
+$sorter-pad: 5px !default;
 /* 
 
 ## Pager
@@ -46,14 +57,14 @@
 
 */
 .pager { 
-	border: 1px solid #ddd; 
-	margin: 5px 0; 
-	padding: 5px; 
-	text-align: center;
+	border: $pager-bd;
+	margin: $pager-margin;
+	padding: $pager-pad;
+	text-align: $pager-ta;
 	.amount { float: left; }
 	.limiter { float: right; }
 	.pages { 
-		margin: 0 135px; 
+		margin: $pager-pages-margin; 
 		ol { display: inline; }
 		li { display: inline; }
 		.current {}
@@ -87,9 +98,9 @@
 
 */
 .sorter { 
-	border: 1px solid #ddd; 
-	margin: 5px 0;
-	padding: 5px;  
+	border: $sorter-bd;
+	margin: $sorter-margin;
+	padding: $sorter-pad; 
 	.view-mode { float: left; }
 	.sort-by { float: right; }
 	.link-feed {}

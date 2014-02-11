@@ -1,6 +1,17 @@
 /* 
 # Login/Create Account
 
+## Variables
+
+*/
+$capta-img-bd: 1px solid #ccc !default;
+$capta-reload-top: 2px !default;
+$capta-reload-right: 2px !default;
+$window-overlay-bg: rgba(0, 0, 0, 0.35) !default;
+$window-overlay-bg-img: url(../images/window_overlay.png) repeat !default;
+
+/*
+
 User decision between logging in and creating account, can appear when a user tries to login to restricted pages or at the checkout.
 
 ```
@@ -77,14 +88,14 @@ Can be enabled in System->Configuration->Customer Configuration->CAPTCHA
 
 */
 .captcha-note  {}
-.captcha-image { float:left; position:relative; }
-.captcha-img { border:1px solid #ccc; }
+.captcha-image { float: left; position: relative; }
+.captcha-img { border: $capta-img-bd; }
 .registered-users .captcha-image    {}
 #checkout-step-login .captcha-image {}
 .captcha-reload { 
 	position:absolute; 
-	top:2px; 
-	right:2px;
+	top: $capta-reload-top; 
+	right: $capta-reload-right;
 	&.refreshing { 
 		animation:rotate 1.5s infinite linear; 
 		-webkit-animation:rotate 1.5s infinite linear; 
@@ -126,13 +137,14 @@ Can be enabled in System->Configuration->Customer Configuration->CAPTCHA
 
 */
 .window-overlay { 
-	background:url(../images/window_overlay.png) repeat; background:rgba(0, 0, 0, 0.35); 
-	position:absolute; 
-	top:0; 
-	left:0; 
-	height:100%; 
-	width:100%; 
-	z-index:990;
+	background: $window-overlay-bg-img; 
+	background: $window-overlay-bg; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	height: 100%; 
+	width: 100%; 
+	z-index: 990;
 }
 
 .remember-me {

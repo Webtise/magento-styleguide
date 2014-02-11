@@ -1,5 +1,26 @@
 /* 
+
 # Data Table 
+
+## Variables
+
+*/
+
+$table-width: 100% !default;
+$table-thead-bgc: #f2f2f2 !default;
+$table-tbody-odd-cell-bdw: 0 1px !default;
+$table-tbody-even-bgc: #f6f6f6 !default;
+$table-tbody-even-cell-bdw: 0 1px !default;
+$table-row-even-bgc: #f6f6f6 !default;
+$table-th-pad: 5px !default;
+$table-th-bd: 1px solid #ddd !default;
+$table-th-fw: bold !default;
+$table-td-pad: 5px !default;
+$table-td-bd: 1px solid #ddd !default;
+$table-label-fw: bold !default;
+$table-label-bgc: #f6f6f6 !default;
+
+/*
 ## Horizontal Labels
 
 ```
@@ -61,17 +82,18 @@
 ```
 
 */
+
 .data-table { 
 	width:100%; 
 
-	thead { background-color:#f2f2f2; }
+	thead { background-color: $table-thead-bgc; }
 	tbody {
 		&.odd {
-			td & { border-width:0 1px; }
+			td & { border-width: $table-tbody-odd-cell-bdw; }
 		}
 		&.even { 
-			background-color:#f6f6f6; 
-			td { border-width:0 1px; }
+			background-color: $table-tbody-even-bgc; 
+			td { border-width: $table-tbody-even-cell-bdw; }
 		}
 		&.odd, &.even {
 			tr {
@@ -89,13 +111,13 @@
 		&.first {}
 		&.last {}
 		&.odd {}
-		&.even { background-color:#f6f6f6; }
+		&.even { background-color: $table-row-even-bgc; }
 	}
 
 	th { 
-		padding:5px; 
-		border:1px solid #ddd; 
-		font-weight:bold;
+		padding: $table-th-pad;
+		border: $table-th-bd;
+		font-weight: $table-th-fw;
 		white-space:nowrap;
 		.tax-flag {
 			white-space:nowrap; 
@@ -103,34 +125,16 @@
 		}
 	}
 	td { 
-		padding:5px; 
-		border:1px solid #ddd;
+		padding: $table-td-pad; 
+		border: $table-td-bd;
 		.value {}
 	}
 
 	td, th { 
 		&.label {
-			font-weight:bold; 
-			background-color:#f6f6f6;
+			font-weight: $table-label-fw; 
+			background-color: $table-label-bgc;
 		}
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

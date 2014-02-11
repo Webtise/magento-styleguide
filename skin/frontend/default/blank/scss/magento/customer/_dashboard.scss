@@ -2,6 +2,60 @@
 
 # Dashboard 
 
+## Variables
+
+*/
+$dash-recent-margin: 10px 0 !default;
+$dash-reviews-num-fz: 10px !default;
+$dash-reviews-num-fw: bold !default;
+$dash-reviews-num-lh: 1 !default;
+$dash-reviews-num-color: #fff !default;
+$dash-reviews-num-margin: 3px -20px 0 0 !default;
+$dash-reviews-num-pad: 2px 3px !default;
+$dash-reviews-num-bg: #ddd !default;
+$dash-reviews-det-ml: 20px !default;
+$dash-tags-num-fz: 10px !default;
+$dash-tags-num-fw: bold !default;
+$dash-tags-num-lh: 1 !default;
+$dash-tags-num-color: #fff !default;
+$dash-tags-num-margin: 3px -20px 0 0 !default;
+$dash-tags-num-pad: 2px 3px !default;
+$dash-tags-num-bg: #ddd !default;
+$dash-tags-det-ml: 20px !default;
+$order-info-bd: 1px solid #ddd !default;
+$order-info-pad: 5px !default;
+$order-info-list-display: inline !default;
+$order-info-label-fw: bold !default;
+$order-date-margin: 10px 0 !default;
+$order-add-margin: 15px 0 !default;
+$gift-msg-dt-colour: #666 !default;
+$gift-msg-dd-fz: 13px !default;
+$gift-msg-dd-margin: 5px 0 0 !default;
+$order-about-label-fw: bold !default;
+$order-about-value-fz: 13px !default;
+$order-about-value-margin: 0 0 7px !default;
+$track-margin: 0 0 15px !default;
+$track-th-fw: bold !default;
+$track-pop-cell-pad: 1px 8px !default;
+$track-pop-th-fw: bold !default;
+$print-head-addr-ml: 15px !default;
+$review-title-fw: bold !default;
+$review-txt-fz: 13px !default;
+$review-txt-margin: 5px 0 0 !default;
+$review-img-box-width: 140px !default;
+$review-img-width: 125px !default;
+$review-img-height: 125px !default;
+$review-label-fz: 11px !default;
+$review-label-margin: 0 0 3px !default;
+$review-ratings-box-margin: 0 0 3px !default;
+$review-details-ml: 150px !default;
+$review-name-fz: 16px !default;
+$review-name-fw: bold !default;
+$review-name-margin: 0 0 10px !default;
+$review-ratings-table-margin: 0 0 10px !default;
+
+/*
+
 ## Welcome Message
 
 ```
@@ -69,9 +123,8 @@
 ```
 
 */
-
 .dashboard {
-	.box-recent { margin:10px 0; }
+	.box-recent { margin: $dash-recent-margin; }
 }
 
 /*
@@ -164,16 +217,16 @@
 .dashboard {
 	.box-reviews {
 		.number { 
-			float:left; 
-			font-size:10px; 
-			font-weight:bold; 
-			line-height:1; 
-			color:#fff; 
-			margin:3px -20px 0 0; 
-			padding:2px 3px; 
-			background:#ddd;
+			float: left; 
+			font-size: $dash-reviews-num-fz; 
+			font-weight: $dash-reviews-num-fw; 
+			line-height: $dash-reviews-num-lh; 
+			color: $dash-reviews-num-color; 
+			margin: $dash-reviews-num-margin; 
+			padding: $dash-reviews-num-pad; 
+			background: $dash-reviews-num-bg;
 		}
-		.details { margin-left:20px; }
+		.details { margin-left: $dash-reviews-det-ml; }
 	}
 }
 
@@ -431,25 +484,25 @@
 
 */
 .order-info { 
-	border:1px solid #ddd; 
-	padding:5px;
+	border: $order-info-bd; 
+	padding: $order-info-pad;
 	dt, dd,
-	ul, li { display:inline; }
-	dt { font-weight:bold; }
+	ul, li { display: $order-info-list-display; }
+	dt { font-weight: $order-info-label-fw; }
 }
-.order-date { margin:10px 0; }
+.order-date { margin: $order-date-margin; }
 .order-info-box {}
 .order-items { width:100%; overflow-x:auto; }
-.order-additional { margin:15px 0; }
+.order-additional { margin: $order-add-margin }
 /* Order Gift Message */
 .gift-message {
-	dt strong { color:#666; }
-	dd { font-size:13px; margin:5px 0 0; }
+	dt strong { color: $gift-msg-dt-colour; }
+	dd { font-size: $gift-msg-dd-fz; margin: $gift-msg-dd-margin; }
 } 
 /* Order Comments */
 .order-about {
-	dt { font-weight:bold; }
-	dd { font-size:13px; margin:0 0 7px; }
+	dt { font-weight: $order-about-label-fw; }
+	dd { font-size: $order-about-value-fz; margin: $order-about-value-margin; }
 }
 
 
@@ -477,8 +530,8 @@
 
 */
 .tracking-table { 
-	margin:0 0 15px;
-	th { font-weight:bold; white-space:nowrap; }
+	margin: $track-margin;
+	th { font-weight: $track-th-fw; white-space:nowrap; }
 }
 
 /*
@@ -501,15 +554,14 @@
 ```
 
 */
-
 .tracking-table-popup { 
 	width:100%;
 	th, td {
-		padding: 1px 8px;
+		padding: $track-pop-cell-pad;
 	}
 	th { 
-		font-weight:bold;
-		white-space:nowrap;
+		font-weight: $track-pop-th-fw;
+		white-space: nowrap;
 	}
 }
 
@@ -524,13 +576,12 @@
 ```
 
 */
-
 .page-print {
 	.print-head {
-		img { float:left; }
-		address { float:left; margin-left:15px; }
+		img { float: left; }
+		address { float: left; margin-left: $print-head-addr-ml; }
 	}
-	.gift-message-link { display:none; }
+	.gift-message-link { display: none; }
 	.price-excl-tax, .price-incl-tax { 
 		display:block; 
 		white-space:nowrap;
@@ -609,42 +660,42 @@
 .product-review {
 	h3 {}
 	dt { 
-		font-weight:bold;
+		font-weight: $review-title-fw;
 	}
 	dd { 
-		font-size:13px; 
-		margin:5px 0 0;
+		font-size: $review-txt-fz; 
+		margin: $review-txt-margin;
 	}
 	.product-img-box { 
-		float:left; 
-		width:140px;
+		float: left; 
+		width: $review-img-box-width;
 		.product-image { 
-			display:block; 
-			width:125px; 
-			height:125px;
+			display: block; 
+			width: $review-img-width; 
+			height: $review-img-height;
 		}
 		.label { 
-			font-size:11px; 
-			margin:0 0 3px;
+			font-size: $review-label-fz; 
+			margin: $review-label-margin;
 		}
 		.ratings {
 			.rating-box { 
-				float:none; 
-				display:block; 
-				margin:0 0 3px;
+				float: none; 
+				display: block; 
+				margin: $review-ratings-box-margin;
 			}
 		}
 	}
 	.product-details { 
-		margin-left:150px;
+		margin-left: $review-details-ml;
 	}
 	.product-name { 
-		font-size:16px; 
-		font-weight:bold; 
-		margin:0 0 10px;
+		font-size: $review-name-fz; 
+		font-weight: $review-name-fw; 
+		margin: $review-name-margin;
 	}
 	.ratings-table { 
-		margin:0 0 10px;
+		margin: $review-ratings-table-margin;
 	}
 }
 

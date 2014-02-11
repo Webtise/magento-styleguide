@@ -2,6 +2,19 @@
 
 # Footer
 
+## Variables
+
+*/
+
+$footer-bdb: 1px solid #ddd !default;
+$footer-pad: 10px !default;
+$footer-p-ta: right !default;
+$footer-addr-ta: right !default;
+$footer-li-disp: inline !default;
+$footer-bottom-ta: center !default;
+
+/*
+
 ```
     <div class="footer-container">
         <div class="footer">
@@ -25,14 +38,14 @@
 
 */
 .footer-container {
-	.bottom-container { text-align:center; }
+	.bottom-container { text-align: $footer-bottom-ta; }
 }
 .footer { 
-	border:1px solid #ddd; 
-	padding:10px;
-	p { text-align:right; }
-	address { text-align:right; }
+	border: $footer-bdb; 
+	padding: $footer-pad;
+	p { text-align: $footer-p-ta; }
+	address { text-align: $footer-addr-ta; }
 	ul {
-		li { display:inline; }
+		li { display: $footer-li-disp; }
 	}
 }

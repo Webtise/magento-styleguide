@@ -2,6 +2,64 @@
 
 # Sidebar Blocks
 
+## Variables
+
+*/
+
+$block-bd: 1px solid #ddd !default;
+$block-margin: 0 0 10px !default;
+$block-title-bdb: 1px solid #ddd !default;
+$block-title-pad: 3px 10px !default;
+$block-title-link-td: none !default;
+$block-title-strong-fz: 14px !default;
+$block-title-strong-fw: bold !default;
+$block-subtitle-fz: 13px !default;
+$block-subtitle-fw: bold !default;
+$block-content-pad: 10px !default;
+$block-item-pad: 5px 0 !default;
+$block-item-even-bgc: #f6f6f6 !default;
+$currency-sel-border: 1px solid #888 !default;
+$currency-sel-width: 100% !default;
+$layered-label-fw: bold !default;
+$layered-remove-margin: 2px 3px 0 0 !default;
+$block-cart-subtotal-ta: center !default;
+$block-cart-paypal-width: 100% !default;
+$block-cart-paypal-margin: 3px 0 0 !default;
+$block-cart-paypal-ta: right !default;
+$block-cart-paypal-or-disp: block !default;
+$block-cart-paypal-or-pad: 0 55px 5px 0 !default;
+$block-related-li-pad: 5px 0 !default;
+$block-related-checkbox-float: left !default;
+$block-related-checkbox-mr: -20px !default;
+$block-related-item-ml: 20px !default;
+$block-related-image-mr: -65px !default;
+$block-related-details-ml: 65px !default;
+$block-compare-li-pad: 5px 0 !default;
+$block-poll-radio-float: left !default;
+$block-poll-radio-margin: 1px -18px 0 0 !default;
+$block-poll-label-disp: block !default;
+$block-poll-label-ml: 18px !default;
+$block-poll-li-pad: 3px 9px !default;
+$block-poll-actions-margin: 5px 0 0 !default;
+$block-poll-answer-fw: bold !default;
+$block-poll-votes-float: right !default;
+$block-poll-votes-ml: 10px !default;
+$block-tags-li-display: inline !default;
+$block-reorder-li-pad: 5px 0 !default;
+$block-reorder-chkbox-float: left !default;
+$block-reorder-chkbox-margin: 3px -20px 0 0 !default;
+$block-reorder-prod-ml: 20px !default;
+$block-banner-content-ta: center !default;
+$block-login-label-fw: bold !default;
+$block-login-label-color: #666 !default;
+$block-login-input-width: 167px !default;
+$block-login-input-margin: 3px 0 !default;
+$side-paypal-logo-disp: block !default;
+$side-paypal-logo-margin: 10px 0 !default;
+$side-paypal-logo-ta: center !default;
+
+/*
+
 ## Generic
 
 ```
@@ -22,24 +80,24 @@
 
 */
 .block { 
-	border:1px solid #ddd; 
-	margin:0 0 10px; 
+	border: $block-bd; 
+	margin: $block-margin; 
 	.block-title { 
-		border-bottom:1px solid #ddd; 
-		padding:3px 10px; 
-		a { text-decoration:none !important; }
+		border-bottom: $block-title-bdb; 
+		padding: $block-title-pad; 
+		a { text-decoration: $block-title-link-td !important; }
 		strong { 
-			font-size:14px; 
-			font-weight:bold;
+			font-size: $block-title-strong-fz; 
+			font-weight: $block-title-strong-fw;
 			span {}
 		}
 	}
 	.block-subtitle { 
-		font-size:13px; 
-		font-weight:bold; 
+		font-size: $block-subtitle-fz; 
+		font-weight: $block-subtitle-fw; 
 	}
 	.block-content { 
-		padding:10px; 
+		padding: $block-content-pad; 
 	}
 	.btn-remove,
 	.btn-edit { float:right;}
@@ -49,9 +107,9 @@
 	}
 	.empty {}
 	li { 
-		&.item { padding:5px 0; } 
+		&.item { padding: $block-item-pad; } 
 		&.odd {}
-		&.even { background-color:#f6f6f6; }
+		&.even { background-color: $block-item-even-bgc; }
 	}
 }
 
@@ -106,7 +164,7 @@
 
 */
 .block-currency {
-	select { width:100%; border:1px solid #888; }
+	select { width: $currency-sel-width; border: $currency-sel-border; }
 }
 
 /* 
@@ -148,11 +206,11 @@
 
 */
 .block-layered-nav {
-	dt { font-weight:bold; }
+	dt { font-weight: $layered-label-fw; }
 	.currently {}
 	.btn-remove { 
-		float:left; 
-		margin:2px 3px 0 0; 
+		float: left; 
+		margin: $layered-remove-margin; 
 	}
 }
 
@@ -218,17 +276,17 @@
 .block-cart {
 	.summary {}
 	.amount {}
-	.subtotal { text-align:center; }
+	.subtotal { text-align: $block-cart-subtotal-ta; }
 	.actions {
 		.paypal-logo { 
 			float:left; 
-			width:100%; 
-			margin:3px 0 0; 
-			text-align:right; 
+			width: $block-cart-paypal-width; 
+			margin: $block-cart-paypal-margin; 
+			text-align: $block-cart-paypal-ta; 
 			.paypal-or { 
-				clear:both; 
-				display:block; 
-				padding:0 55px 5px 0; 
+				clear: both; 
+				display: $block-cart-paypal-or-disp; 
+				padding: $block-cart-paypal-or-pad; 
 			}
 		}
 	}
@@ -340,14 +398,14 @@
 
 */
 .block-related {
-	li { padding:5px 0; }
+	li { padding: $block-related-li-pad; }
 	input { 
-		&.checkbox { float:left; margin-right:-20px; }
+		&.checkbox { float: $block-related-checkbox-float; margin-right: $block-related-checkbox-mr; }
 	}
 	.product { 
-		margin-left:20px;
-		.product-image { float:left; margin-right:-65px; }
-		.product-details { margin-left:65px; }
+		margin-left: $block-related-item-ml;
+		.product-image { float:left; margin-right: $block-related-image-mr; }
+		.product-details { margin-left: $block-related-details-ml; }
 	}
 }
 
@@ -381,7 +439,7 @@
 
 */
 .block-compare {
-	li { padding:5px 0; }
+	li { padding: $block-compare-li-pad; }
 }
 
 /* 
@@ -472,24 +530,24 @@
 	label {}
 	input {
 		&.radio { 
-			float:left; 
-			margin:1px -18px 0 0; 
+			float: $block-poll-radio-float; 
+			margin: $block-poll-radio-margin; 
 		}
 	}
 	.label { 
-		display:block; 
-		margin-left:18px; 
+		display: $block-poll-label-disp; 
+		margin-left: $block-poll-label-ml; 
 	}
-	li { padding:3px 9px; }
+	li { padding: $block-poll-li-pad; }
 	.actions { 
-		margin:5px 0 0; 
+		margin: $block-poll-actions-margin; 
 	}
 	.answer { 
-		font-weight:bold;
+		font-weight: $block-poll-answer-fw;
 	}
 	.votes { 
-		float:right; 
-		margin-left:10px; 
+		float: $block-poll-votes-float; 
+		margin-left: $block-poll-votes-ml; 
 	}
 }
 
@@ -519,7 +577,7 @@
 
 */
 .block-tags {
-	ul, li { display:inline; }
+	ul, li { display: $block-tags-li-display; }
 }
 
 /* 
@@ -581,9 +639,11 @@
 
 */
 .block-reorder {
-	li { padding:5px 0; }
-	input.checkbox { float:left; margin:3px -20px 0 0; }
-	.product-name { margin-left:20px; }
+	li { padding: $block-reorder-li-pad }
+	input {
+		&.checkbox { float: $block-reorder-chkbox-float; margin: $block-reorder-chkbox-margin; }
+	}
+	.product-name { margin-left: $block-reorder-prod-ml; }
 }
 
 /* 
@@ -602,7 +662,7 @@
 
 */
 .block-banner {
-	.block-content { text-align:center; }
+	.block-content { text-align: $block-banner-content-ta; }
 }
 
 /* 
@@ -631,14 +691,14 @@
 */
 .block-login {
 	label { 
-		font-weight:bold; 
-		color:#666;
+		font-weight: $block-login-label-fw; 
+		color: $block-login-label-color;
 	}
 	input {
 		&.input-text { 
 			display:block; 
-			width:167px; 
-			margin:3px 0; 
+			width: $block-login-input-width; 
+			margin: $block-login-input-margin; 
 		}
 	}
 }
@@ -660,9 +720,9 @@
 */
 .sidebar {
 	.paypal-logo {
-		display:block; 
-		margin:10px 0; 
-		text-align:center;
-		a { float:none; }
+		display: $side-paypal-logo-disp; 
+		margin: $side-paypal-logo-margin; 
+		text-align: $side-paypal-logo-ta;
+		a { float: none; }
 	}
 }

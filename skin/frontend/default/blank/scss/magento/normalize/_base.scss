@@ -2,6 +2,36 @@
 
 # Admin controlled content
 
+## Variables
+
+*/
+
+$std-subtitle-pad: 0 !default;
+$std-ol-num-ls: decimal outside !default;
+$std-ol-num-pl: 1.5em !default;
+$std-ul-disc-ls: disc outside !default;
+$std-ul-disc-pl: 18px !default;
+$std-ul-disc-margin: 0 0 10px !default;
+$std-dt-fw: bold !default;
+$std-dd-margin: 0 0 10px !default;
+$std-addr-margin: 0 0 1em !default;
+$std-addr-pad: 0 !default;
+$std-addr-fs: normal !default;
+$std-ul-ls: disc outside !default;
+$std-ul-pl: 1.5em !default;
+$std-ol-ls: decimal outside !default;
+$std-ol-pl: 1.5em !default;
+$std-ul-ul-lst: circle !default;
+$std-list-sublist-margin: .5em 0 !default;
+$std-dd-pad: 0 0 0 1.5em !default;
+$std-bq-fs: italic !default;
+$std-bq-pad: 0 0 0 1.5em !default;
+$std-bq-margin: 0 0 1em !default;
+$std-strong-fw: bold !default;
+$std-em-fs: italic !default;
+
+/*
+
 ```
 <div class="std">
 	<h2 class="subtitle">Subtitle</h2>
@@ -47,26 +77,26 @@
 ```
 
 */
+
 .std {
-	.subtitle { padding:0; }
-	ol.ol { list-style:decimal outside; padding-left:1.5em; }
-	ul.disc { list-style:disc outside; padding-left:18px; margin:0 0 10px; }
+	.subtitle { padding: $std-subtitle-pad; }
+	ol.ol { list-style: $std-ol-num-ls; padding-left: $std-ol-num-pl; }
+	ul.disc { list-style:disc  $std-ul-disc-ls; padding-left: $std-ul-disc-pl; margin: $std-ul-disc-margin; }
 	dl { 
-		dt { font-weight:bold; }
-		dd { margin:0 0 10px; }
+		dt { font-weight: $std-dt-fw; }
+		dd { margin: $std-dd-margin; }
 	}
 	ul, ol,
 	dl, p,
-	address, blockquote { margin:0 0 1em; padding:0; }
-	ul { list-style:disc outside; padding-left:1.5em; }
-	ol { list-style:decimal outside; padding-left:1.5em; }
-	ul ul { list-style-type:circle; }
+	address { margin: $std-addr-margin; padding: $std-addr-pad; font-style: $std-addr-fs; }
+	ul { list-style: $std-ul-ls; padding-left: $std-ul-pl; }
+	ol { list-style: $std-ol-ls; padding-left: $std-ol-pl; }
+	ul ul { list-style-type: $std-ul-ul-lst; }
 	ul ul, ol ol,
-	ul ol, ol ul { margin:.5em 0; }
-	dt { font-weight:bold; }
-	dd { padding:0 0 0 1.5em; }
-	blockquote { font-style:italic; padding:0 0 0 1.5em; }
-	address { font-style:normal; }
-	b, strong { font-weight:bold; }
-	i, em { font-style:italic; }
+	ul ol, ol ul { margin: $std-list-sublist-margin; }
+	dt { font-weight: $std-dt-fw; }
+	dd { padding: $std-dd-pad; }
+	blockquote { font-style:$std-bq-fs; padding: $std-bq-pad; margin: $std-bq-margin; }
+	b, strong { font-weight: $std-strong-fw; }
+	i, em { font-style: $std-em-fs; }
 }

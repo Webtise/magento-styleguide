@@ -1,6 +1,99 @@
 /* 
+
 # One Page Checkout 
 
+## Variables
+
+*/
+$opc-bdb: 1px solid #ddd !default;
+$opc-sec-bd: 1px solid #ddd !default;
+$opc-sec-bdb: 0 !default;
+$opc-pls-wait-height: 21px !default;
+$opc-pls-wait-lh: 21px !default;
+$opc-title-bgc: #f6f6f6 !default;
+$opc-title-pad: 0 5px !default;
+$opc-title-ta: right !default;
+$opc-title-num-lh: 22px !default;
+$opc-title-num-mr: 5px !default;
+$opc-title-link-dis: none !default;
+$opc-title-active-bgc: #ccc !default;
+$opc-title-edit-disp: none !default;
+$opc-step-bdt: 1px solid #ddd !default;
+$opc-step-pad: 10px !default;
+$opc-step-tip-right: 10px !default;
+
+$blk-prog-label-fw: bold !default;
+$blk-prog-complete-bgc: #f6f6f6 !default;
+
+$mchk-tip-top: 50% !default;
+$mchk-tip-mt: -120px !default;
+$mchk-tip-right: 10px !default;
+$mchk-gtot-fz: 1.5em !default;
+$mchk-gtot-ta: right !default;
+
+$chk-prog-pad: 0 50px !default;
+$chk-prog-margin: 10px 0 !default;
+$chk-prog-item-width: 20% !default;
+$chk-prog-item-bdt: 5px solid #ccc !default;
+$chk-prog-item-ta: center !default;
+$chk-prog-item-color: #ccc !default;
+$chk-prog-item-active-bdtc: #000 !default;
+$chk-prog-item-active-color: #000 !default;
+
+$chk-spmeth-label-fw: bold !default;
+$chk-spmeth-price-fw: bold !default;
+$chk-spmeth-frmli-pl: 20px !default;
+$chk-spmeth-selmonth-width: 150px !default;
+$chk-spmeth-selmonth-mr: 10px !default;
+$chk-spmeth-selyear-width: 96px !default;
+$chk-spmeth-iptcvv-width: 3em !default;
+$chk-spmeth-checkli-margin: 0 0 5px !default;
+$chk-spmeth-checklbl-width: 135px !default;
+$chk-spmeth-checklbl-pr: 10px !default;
+$chk-spmeth-checklbl-ta: right !default;
+$chk-spmeth-centlog-mr: 3px !default;
+$chk-spmeth-relamt-margin: 0.5em 0.1em !default;
+$chk-spmeth-relamt-btn-margin: 5px 10px 0 0 !default;
+
+$chk-pls-wait-mr: 5px !default;
+$chk-cvv-ml: 5px !default;
+$chk-cent-auth-bd: 1px solid #ddd !default;
+$chk-cent-auth-bg: #fff !default;
+$chk-cent-auth-iframe-width: 99% !default;
+$chk-cent-auth-iframe-height: 400px !default;
+
+$chk-tip-bd: 1px solid #ddd !default;
+$chk-tip-bgc: #f6f6f6 !default;
+$chk-tip-pad: 5px !default;
+$chk-tip-close-margin: 0 0 0 auto !default;
+$chk-tip-close-width: 15px !default;
+$chk-tip-close-height: 15px !default;
+$chk-tip-close-bg: url(../images/btn_window_close.gif) 100% 0 no-repeat !default;
+$chk-tip-close-ta: left !default;
+$chk-tip-cnt-pad: 5px !default;
+
+$chk-agree-item-margin: 10px 0 !default;
+$chk-agree-cont-bd: 1px solid #ddd !default;
+$chk-agree-cont-bgc: #f6f6f6 !default;
+$chk-agree-cont-pad: 5px !default;
+$chk-agree-cont-height: 10em !default;
+$chk-agree-agree-pad: 6px !default;
+
+$gftmsg-form-bd: 1px solid #ddd !default;
+$gftmsg-form-bgc: #f5f5f5 !default;
+$gftmsg-form-item-margin: 0 0 10px !default;
+$gftmsg-form-img-width: 75px !default;
+$gftmsg-form-img-margin: 0 0 7px !default;
+$gftmsg-form-num-margin: 0 !default;
+$gftmsg-form-num-fw: bold !default;
+$gftmsg-form-num-ta: center !default;
+$gftmsg-form-det-ml: 90px !default;
+$gftmsg-link-bg: url(../images/bkg_collapse.gif) 0 4px no-repeat !default;
+$gftmsg-link-pl: 20px !default;
+$gftmsg-link-exp-bgp: 0 -53px !default;
+
+
+/*
 ## Checkout Steps
 
 ```
@@ -69,12 +162,12 @@
 */
 
 .opc { 
-	border-bottom:1px solid #ddd; 
+	border-bottom: $opc-bdb; 
 	position:relative;
 	li {
 		&.section { 
-			border:1px solid #ddd; 
-			border-bottom:0;
+			border: $opc-sec-bdb; 
+			border-bottom: $opc-sec-bdb;
 		}
 	}
 	.buttons-set {
@@ -82,22 +175,22 @@
 			button.button { display:none; }
 		}
 		.please-wait { 
-			height:21px; 
-			line-height:21px; 
+			height: $opc-pls-wait-height; 
+			line-height: $opc-pls-wait-lh; 
 		}
 	}
 	.step-title { 
-		background-color:#f6f6f6; 
-		padding:0 5px; 
-		text-align:right;
+		background-color: $opc-title-bgc; 
+		padding: $opc-title-pad; 
+		text-align: $opc-title-ta;
 		.number { 
 			float:left; 
-			line-height:22px; 
-			margin-right:5px;
+			line-height: $opc-title-num-lh; 
+			margin-right: $opc-title-num-mr;
 		}
 		h2 { float:left; }
 		a { 
-			display:none; 
+			display: $opc-title-edit-disp; 
 			float:right;
 		}
 	}
@@ -106,14 +199,14 @@
 		.step-title { cursor: pointer; }
 	}
 	.active {
-		.step-title { background-color:#ccc; cursor:default; }
+		.step-title { background-color: $opc-title-active-bgc; cursor:default; }
 	}
 	.step {
-		border-top:1px solid #ddd; 
-		padding:10px; 
-		position:relative;
+		border-top: $opc-step-bdt; 
+		padding: $opc-step-pad; 
+		position: relative;
 		.tool-tip { 
-			right:10px;
+			right: $opc-step-tip-right;
 		}
 	}
 	.order-review {
@@ -191,9 +284,9 @@
 */
 
 .block-progress {
-	dt { font-weight:bold; }
+	dt { font-weight: $blk-prog-label-fw; }
 	dt, dd {
-		.complete { background-color:#f6f6f6; }
+		.complete { background-color: $blk-prog-complete-bgc; }
 	}
 }
 
@@ -207,13 +300,13 @@
 .multiple-checkout { 
 	position:relative; 
 	.tool-tip { 
-		top:50%; 
-		margin-top:-120px; 
-		right:10px;
+		top: $mchk-tip-top; 
+		margin-top: $mchk-tip-mt; 
+		right:$mchk-tip-right;
 	}
 	.grand-total { 
-		font-size:1.5em; 
-		text-align:right;
+		font-size: $mchk-gtot-fz; 
+		text-align: $mchk-gtot-ta;
 		big {}
 		.price {}
 	}
@@ -235,17 +328,17 @@
 
 */
 .checkout-progress { 
-	padding:0 50px; 
-	margin:10px 0; 
+	padding: $chk-prog-pad; 
+	margin: $chk-prog-margin; 
 	li { 
 		float:left; 
-		width:20%; 
-		border-top:5px solid #ccc; 
-		text-align:center; 
-		color:#ccc; 
+		width: $chk-prog-item-width; 
+		border-top: $chk-prog-item-bdt; 
+		text-align: $chk-prog-item-ta; 
+		color: $chk-prog-item-ta; 
 		&.active { 
-			border-top-color:#000; 
-			color:#000;
+			border-top-color: $chk-prog-item-active-bdtc; 
+			color: $chk-prog-item-active-color;
 		}
 	}
 }
@@ -356,46 +449,47 @@
 ```
 
 */
+
 .sp-methods  {
-	dt { font-weight:bold; }
-	.price { font-weight:bold; }
-	.form-list { padding-left:20px; }
-	select.month { width:150px; margin-right:10px; }
-	select.year { width:96px; }
-	input.cvv { width:3em !important; }
+	dt { font-weight: $chk-spmeth-label-fw; }
+	.price { font-weight: $chk-spmeth-price-fw; }
+	.form-list { padding-left: $chk-spmeth-frmli-pl; }
+	select.month { width: $chk-spmeth-selmonth-width; margin-right: $chk-spmeth-selmonth-mr; }
+	select.year { width: $chk-spmeth-selyear-width; }
+	input.cvv { width: $chk-spmeth-iptcvv-width !important; }
 	.checkmo-list {
-		li { margin:0 0 5px; }
-		label { width:135px; padding-right:10px; text-align:right; }
+		li { margin: $chk-spmeth-checkli-margin; }
+		label { width: $chk-spmeth-checklbl-width; padding-right: $chk-spmeth-checklbl-pr; text-align: $chk-spmeth-checklbl-ta; }
 		address { float:left; }
 	}
 	.centinel-logos {
-		a { margin-right:3px; }
+		a { margin-right: $chk-spmeth-centlog-mr; }
 		img { vertical-align:middle; }
 	}
 	.release-amounts { 
-		margin:0.5em 0 1em;
-		button { float:left; margin:5px 10px 0 0; }
+		margin: $chk-spmeth-relamt-margin;
+		button { float:left; margin: $chk-spmeth-relamt-btn-margin; }
 	}
 }
 
 .please-wait { 
-	float:right; 
-	margin-right:5px; 
-	img { vertical-align:middle; }
+	float: right; 
+	margin-right: $chk-pls-wait-mr; 
+	img { vertical-align: middle; }
 }
-.cvv-what-is-this { cursor:help; margin-left:5px; }
+.cvv-what-is-this { cursor:help; margin-left: $chk-cvv-ml; }
 
 .centinel {
 	.authentication { 
-		border:1px solid #ddd; 
-		background:#fff;
+		border: $chk-cent-auth-bd; 
+		background: $chk-cent-auth-bg;
 		iframe { 
-			width:99%; 
-			height:400px; 
-			background:transparent !important; 
-			margin:0 !important; 
-			padding:0 !important; 
-			border:0 !important;
+			width: $chk-cent-auth-iframe-width; 
+			height: $chk-cent-auth-iframe-height; 
+			background: transparent !important; 
+			margin: 0 !important; 
+			padding: 0 !important; 
+			border: 0 !important;
 		}
 	}
 }
@@ -416,28 +510,28 @@ Used on the "What's This?" link next to CVV
 ```
 
 */
+
 .tool-tip { 
-	border:1px solid #ddd; 
-	background-color:#f6f6f6; 
-	padding:5px; 
+	border: $chk-tip-bd; 
+	background-color: $chk-tip-bgc; 
+	padding: $chk-tip-pad; 
 	position:absolute; 
 	z-index:9999;
 	.btn-close { 
-		text-align:right;
+		text-align: right;
 		a { 
-			display:block; 
-			margin:0 0 0 auto; 
-			width:15px; 
-			height:15px; 
-			background:url(../images/btn_window_close.gif) 100% 0 no-repeat; 
-			text-align:left; 
-			text-indent:-999em; 
-			overflow:hidden;
+			display: block; 
+			margin: $chk-tip-close-margin; 
+			width: $chk-tip-close-width; 
+			height: $chk-tip-close-height; 
+			background: $chk-tip-close-bg; 
+			text-align: $chk-tip-close-ta; 
+			text-indent: -999em; 
+			overflow: hidden;
 		}
 	}
-	.tool-tip-content { padding:5px; }
+	.tool-tip-content { padding: $chk-tip-cnt-pad; }
 }
-
 
 /* 
 
@@ -458,19 +552,20 @@ Used on the "What's This?" link next to CVV
 ```
 
 */
+
 .checkout-agreements {
 	li {
-		margin: 10px 0;
+		margin: $chk-agree-item-margin;
 	}
 	.agreement-content {
-		border: 1px solid #ddd;
-		background-color: #f6f6f6;
-		padding: 5px;
-		height: 10em;
+		border: $chk-agree-cont-bd;
+		background-color: $chk-agree-cont-bgc;
+		padding: $chk-agree-cont-pad;
+		height: $chk-agree-cont-height;
 		overflow: auto;
 	}
 	.agree {
-		padding: 6px;
+		padding: $chk-agree-agree-pad;
 	}
 }
 
@@ -570,8 +665,8 @@ Used on the "What's This?" link next to CVV
 */
 .gift-messages {}
 .gift-messages-form {
-	border: 1px solid #ddd;
-	background-color: #f5f5f5;
+	border: $gftmsg-form-bd;
+	background-color: $gftmsg-form-bgc;
 	position: relative;
 	label {
 		float: none !important;
@@ -580,21 +675,21 @@ Used on the "What's This?" link next to CVV
 	h4 {}
 	.whole-order {}
 	.item {
-		margin: 0 0 10px;
+		margin: $gftmsg-form-item-margin;
 		.product-img-box {
 			float: left;
-			width: 75px;
+			width: $gftmsg-form-img-width;
 		}
 		.product-image {
-			margin: 0 0 7px;
+			margin: $gftmsg-form-img-margin;
 		}
 		.number {
-			margin: 0;
-			font-weight: bold;
-			text-align: center;
+			margin: $gftmsg-form-num-margin;
+			font-weight: $gftmsg-form-num-fw;
+			text-align: $gftmsg-form-num-ta;
 		}
 		.details {
-			margin-left: 90px;
+			margin-left: $gftmsg-form-det-ml;
 			.product-name {}
 		}
 	}
@@ -602,9 +697,9 @@ Used on the "What's This?" link next to CVV
 
 .gift-message-link { 
 	display:block; 
-	background:url(../images/bkg_collapse.gif) 0 4px no-repeat; 
-	padding-left:20px; 
-	&.expanded { background-position:0 -53px; }
+	background: $gftmsg-link-bg; 
+	padding-left: $gftmsg-link-pl; 
+	&.expanded { background-position: $gftmsg-link-exp-bgp; }
 }
 .gift-message-row {
 	.btn-close { float:right; }

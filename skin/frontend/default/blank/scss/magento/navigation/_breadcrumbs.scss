@@ -2,6 +2,16 @@
 
 # Breadcrumbs
 
+## Variables
+
+*/
+
+$breadcrumbs-pad: 10px !default;
+$breadcrumbs-margin: 0 0 10px !default;
+$breadcrumbs-border: 1px solid #ddd !default;
+
+/*
+
 ```
 	<div class="breadcrumbs">
 		<ul>
@@ -26,9 +36,9 @@
 
 */
 .breadcrumbs { 
-	padding:10px;
-	margin:0 0 10px; 
-	border:1px solid #ddd;
+	padding: $breadcrumbs-pad;
+	margin: $breadcrumbs-margin;
+	border: $breadcrumbs-border;
 	li { 
 		display:inline; 
 	}

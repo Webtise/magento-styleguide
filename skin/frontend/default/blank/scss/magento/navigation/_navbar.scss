@@ -2,7 +2,36 @@
 
 # Nav Bar
 
+## Variables
+
 */
+
+$menu-bd: 1px solid #ddd !default;
+$menu-fz: 13px !default;
+$menu-margin: 10px 0 !default;
+$menu-pad: 5px 0 !default;
+$menu-li-float: left !default;
+$menu-li-ta: left !default;
+$menu-link-active-color: #000 !default;
+$menu-link-color: #888 !default;
+$menu-link-disp: block !default;
+$menu-link-fw: bold !default;
+$menu-link-pad: 5px 10px !default;
+$menu-link-td: none !default;
+$menu-link-hover-color: #000 !default;
+$menu-link-hover-td: none !default;
+$menu-l2-bg: #fafafa !default;
+$menu-l2-bd: 1px solid #ddd !default; 
+$menu-l2-top: 25px !default; 
+$menu-l2-width: 15em !default; 
+$menu-l3-top: 7px !default;
+$menu-l3-li-bdb: 1px solid #ddd !default;
+$menu-l3-link-active-color: #000 !default;
+$menu-l3-link-color: #888 !default;
+$menu-l3-link-fw: normal !default;
+$menu-l3-link-padding: 3px 9px !default;
+$menu-l3-link-hover-color: #000 !default;
+$menu-shown-sub-left: 100px !default;
 
 /*
 
@@ -59,17 +88,17 @@ Note: hovering on element Apparel > Shoes > Mens
 
 	// 1st Level
 
-	border: 1px solid #ddd; 
-	font-size: 13px;  
-	margin: 10px 0; 
-	padding: 5px 0;
+	border: $menu-bd; 
+	font-size: $menu-fz;  
+	margin: $menu-margin; 
+	padding: $menu-pad;
 	li { 
-		float:left;
-		position:relative;
-		text-align:left; 
+		float: $menu-li-float;
+		position: relative;
+		text-align: $menu-li-ta; 
 		&.active, &.over {
 			a {
-				color: #000;
+				color: $menu-link-active-color;
 			}
 		}
 		&.over { 
@@ -83,36 +112,38 @@ Note: hovering on element Apparel > Shoes > Mens
 		}
 	}
 	a {
-		color:#888;
-		display:block; 
-		float:left;
-		font-weight:bold;
-		padding:5px 10px;
-		text-decoration:none; 
+		color: $menu-link-color;
+		display: $menu-link-disp; 
+		float: left;
+		font-weight: $menu-link-fw;
+		padding: $menu-link-pad;
+		text-decoration: $menu-link-td; 
 		&:hover { 
-			color:#000;
-			text-decoration:none;
+			color: $menu-link-hover-color;
+			text-decoration: $menu-link-hover-td;
 		}
 		span { 
-			display:block; 
-			white-space:nowrap; 
-			cursor:pointer;
+			display: block; 
+			white-space: nowrap; 
+			cursor: pointer;
 		}
 	}
 
 	// 2nd Level
 
 	ul, div {
-		background:#fafafa;
-		border:1px solid #ddd;
+		background: $menu-l2-bg;
+		border: $menu-l2-bd;
 		left:-10000px; 
 		position:absolute; 
-		top:25px; 
-		width:15em; 
+		top: $menu-l2-top; 
+		width: $menu-l2-width; 
 	}
 	div {
 		ul {
-			position:static; width:auto; border:none; 
+			position: static; 
+			width: auto; 
+			border: none; 
 		}
 	}
 
@@ -123,19 +154,19 @@ Note: hovering on element Apparel > Shoes > Mens
 			top: 7px;
 		}
 		li {
-			border-bottom:1px solid #ddd;
+			border-bottom: $menu-l3-li-bdb;
 			float: none;
 			&.active, &.over {
-				> a { color: #000 !important; }
+				> a { color: $menu-l3-link-active-color !important; }
 			}
 			&.last { border-bottom: 0; }
 
 			a {
-				color:#888 !important; 
-				float:none;
-				font-weight:normal; 
-				padding:3px 9px; 
-				&:hover { color: #000 !important; }
+				color: $menu-l3-link-color !important; 
+				float: none;
+				font-weight: $menu-l3-link-fw; 
+				padding: $menu-l3-link-padding; 
+				&:hover { color: $menu-l3-link-hover-color !important; }
 			}
 		}
 	}
@@ -152,7 +183,7 @@ Note: hovering on element Apparel > Shoes > Mens
 		.shown-sub { 
 			li {
 				ul, div { 
-					&.shown-sub { left:100px; }
+					&.shown-sub { left: $menu-shown-sub-left; }
 				}
 			}
 		}

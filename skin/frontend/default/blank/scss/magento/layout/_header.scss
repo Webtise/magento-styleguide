@@ -2,6 +2,27 @@
 
 # Header
 
+## Variables
+
+*/
+
+$top-ta: right !default;
+$header-padding: 10px !default;
+$header-border: 1px solid #ddd !default;
+$header-welcome-fw: bold !default;
+$header-welcome-ta: right !default;
+$header-links-float: right !default;
+$header-search-ta: right !default;
+$header-seachauto-bd: 1px solid #ddd !default;
+$header-seachauto-bgc: #fff !default;
+$header-seachauto-item-pad: 30px !default;
+$header-seachauto-item-bdb: 1px solid #ddd !default;
+$header-seachauto-amount-float: right !default;
+$header-seachauto-amount-fw: bold !default;
+$header-lang-ta: right !default;
+
+/*
+
 ```
 	<div class="header-container">
 	    <div class="header">
@@ -45,11 +66,14 @@
 
 .logo { float:left; }
 .header-container {
-	.top-container { clear:both; text-align:right; }
+	.top-container { 
+		clear:both;
+		text-align: $top-ta;
+	}
 }
 .header { 
-	padding:10px; 
-	border:1px solid #ddd;
+	padding: $header-padding;
+	border: $header-border;
 	.logo { 
 		float:left; 
 		text-decoration:none !important;
@@ -70,8 +94,8 @@
 		}
 	}
 	.welcome-msg { 
-		font-weight:bold; 
-		text-align:right;
+		font-weight: $header-welcome-fw; 
+		text-align: $header-welcome-ta;
 		a {}
 	}
 	.links { float:right; }
@@ -79,15 +103,15 @@
 		text-align:right;
 		.search-autocomplete { 
 			z-index:999;
-			ul { border:1px solid #ddd; background-color:#fff; }
+			ul { border: $header-seachauto-bd; background-color: $header-seachauto-bgc; }
 			li { 
-				padding:3px; 
-				border-bottom:1px solid #ddd; 
+				padding: $header-seachauto-item-pad; 
+				border-bottom: $header-seachauto-item-bdb; 
 				cursor:pointer;
 				&.selected {}
-				.amount { float:right; font-weight:bold; }
+				.amount { float: $header-seachauto-amount-float; font-weight: $header-seachauto-amount-fw; }
 			}
 		}
 	}
-	.form-language { clear:both; text-align:right; }
+	.form-language { clear:both; text-align: $header-lang-ta; }
 }
